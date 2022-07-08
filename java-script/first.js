@@ -318,7 +318,27 @@
 // for(let key in nums)
 // {
 //     console.log(key);
+
+
+
+// function greet()
+// {
+//     return "Hello world!!"
 // }
+// let str=greet();
+// console.log(str);
+
+function add(num1,num2)
+{
+    return num1 + num2;
+}
+let result=add(5,7);
+console.log(result);
+
+
+
+
+
 
 
 
