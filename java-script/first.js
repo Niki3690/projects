@@ -217,10 +217,112 @@
 // }
 
 
-for(let i=1;i<=6;i++)
-{
-    console.log("bby",i);
-}
+// for(let i=1;i<=6;i++)
+// {
+//     console.log("bby",i);
+// }
+
+
+
+// for(let i=1;i<=100;i++)
+// {
+//     if(i%3===0)
+//     console.log(i);
+
+// }
+
+
+
+// let num=123456
+// while(num>0)
+// {
+//     console.log(num%10);
+//     num=parseInt(num /10)
+// }
+
+
+// let user={
+//     name:'niki' ,
+//     tech:'javascript'
+// }
+// console.log(user['tech']);
+
+// let user={
+//     name:'niki' ,
+//     tech:'javascript'
+// }
+// console.log(user.name);
+
+
+// let user={
+//     name:'niki',
+//     tech:'javascript',
+//     laptop:{
+//         cpu:'i7',
+//         ram:4,
+//         brand:'hp'
+//     }
+// }
+// console.log(user);
+
+
+// let user={
+//     name:'niki',
+//     tech:'javascript',
+//     laptop:{
+//         cpu:'i7',
+//         ram:5,
+//         brand:'hp'
+//     }
+// }
+// delete user.laptop
+// console.log(user);
+
+// let user={
+//     name:'niki',
+//     tech:'javascript',
+//     laptop:{
+//         cpu:'i7',
+//         ram:7,
+//         brand:'hp'
+//     }
+// }
+// for(let key in user)
+// {
+//     console.log(key,user[key]);
+// }
+
+
+// function greet()
+// {
+//     console.log("heyyy");
+
+// }
+
+// greet();
+// greet();
+// greet();
+// greet();
+
+
+// let nums=[];
+// nums[0]=5;
+// nums[99]=9;
+// console.log(nums.length);
+
+
+// let nums=[];
+// nums[0]=5;
+// nums[99]=9;
+
+// for(let key in nums)
+// {
+//     console.log(key);
+// }
+
+
+
+
 
 
 
