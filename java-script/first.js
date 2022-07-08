@@ -328,12 +328,216 @@
 // let str=greet();
 // console.log(str);
 
-function add(num1,num2)
-{
-    return num1 + num2;
+// function add(num1,num2)
+// {
+//     return num1 + num2;
+// }
+// let result=add(5,7);
+// console.log(result);
+
+// let greet=function(){
+//     console.log("hello world");
+//     return 1;
+// }
+// console.log(greet());
+
+// let greet=(user) => {
+//     console.log("HELLO" + user);
+//     return 1;
+// }
+// console.log(greet("niki"));
+
+
+// let add=(num1,num2)=>num1+num2;
+// let result=add(5,6)
+// console.log(result)
+
+
+// let laptop={
+//     cpu:'i9',
+//     ram:15,
+//     brand:'hp',
+
+//         greet:function(){
+//             console.log('Hello world');
+//         }
+//     }
+//     laptop.greet();
+
+// let laptop={
+//     cpu:'i9',
+//     ram:15,
+//     brand:'hp',
+
+//         getConfig: function(){
+//             console.log(this.cpu);
+//         }
+//     }
+    
+
+// function getFastLaptop(laptop1,laptop2)
+// {
+//     if(laptop1.cpu > laptop2.cpu)
+//     {
+//     console.log(laptop1);
+// }
+
+//         else{
+// console.log(laptop2);
+// }
+// }
+
+// let laptop2={
+//     cpu:'i7',
+//     ram:14,
+//     brand:'dell',
+
+//     getconfig:function(){
+//         console.log(this.cpu);
+//     }
+// }
+
+// let laptop1={
+//     cpu:'i9',
+//     ram:16,
+//     brand:'hp',
+
+//     getconfig:function(){
+//         console.log(this.cpu);
+//     }
+// }
+// getFastLaptop(laptop1,laptop2);
+
+
+
+
+
+
+
+
+
+
+
+// function User(name,teach){
+//     this.name=name;
+//     this.teach=teach;
+
+//     this.work=function(){
+//         console.log("Solving bugd from12 hours");
+
+//     }
+// }
+//  let user1=new User("niki" , "js");
+//  let useet2=new User("patel" , "java");
+ 
+//  user1.teach="Blockchain";
+//  console.log(user1);
+//  user1.work();
+
+
+// let values=[];
+
+// values.push(5);
+// values.push(7);
+
+// console.log(values);
+
+
+// let values=[5,6,7];
+// console.log(values[4]);
+
+
+// let names=['niki','patel','niks'];
+// names[3]='pats';
+// console.log(names);
+
+// let data = [5,7,8,9];
+// console.log(data.push(2));
+// // console.log(data.pop());
+
+// console.log(data);
+
+
+// let data=[5,6,7,8];
+// console.log(data.shift(2));
+// console.log(data);
+
+// let data=[5,6,7,8];
+// console.log(data.unshift(2));
+// console.log(data);
+
+// let data=[5,6,7,8,2];
+// console.log(data.splice(2));
+// console.log(data);
+
+
+// let nums=[5,7,2,4]
+// console.log(nums);
+// let[a,b,c,d]=nums;
+// console.log(a,b,d);
+
+
+// let a=5;
+// let b=6;
+// [a,b]=[b,a]
+// console.log(a,b);
+
+
+// let words="My Name Is Niki Patel".split(' ');
+// let [a,b,c,d,e]=words;
+// console.log(d,a);
+
+// let nums=[22,32,42,52,62];
+// nums.forEach((n) => {
+//     console.log(n+2);
+// })
+
+// let nums=[22,32,42,52,62];
+// nums.filter(n => n%2===0)
+//     .map(n =>n*2)
+//     .forEach(n =>{
+//         console.log(n);
+//     })
+
+
+
+// let nums=new Set();
+// nums.add(1);
+// nums.add(2);
+// nums.add(3);
+// nums.add(3);
+// nums.add('NIKI');
+// nums.add('patel');
+// console.log(nums.has(4));
+
+
+// let map=new Map();
+// map.set("Niki" ,"javascript");
+// map.set("patel" , "java");
+// map.set("KINI" , "js");
+
+// console.log(map.get("patel"));
+
+
+// function show(){
+//     console.log("HIIII");
+//     show();
+// }
+// show();
+
+
+function fact(n){
+    if(n==0)
+    return 1;
+    else
+    return n* fact(n-1);
+
 }
-let result=add(5,7);
+let num=5;
+let result=fact(num);
+
 console.log(result);
+
 
 
 
