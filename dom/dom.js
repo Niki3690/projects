@@ -25,7 +25,6 @@
 // headerTitle.innerHTML='<h3>Hell0</h3>';
 // header.style.borderBottom = 'solid 3px black';
 
-
 // Get element by class name//
 
 // var items=document.getElementsByClassName('list-group-item');
@@ -35,61 +34,57 @@
 // items[1].style.fontweight='bold';
 // items[1].style.backgroundColor='yellow';
 // for(var i=0;i<items.length;i++){
-    // items[i].style.backgroundColor='#f4f4f4';
+// items[i].style.backgroundColor='#f4f4f4';
 // }
-
 
 //Get element by tag name//
 
-var li=document.getElementsByTagName('li');
-console.log(li);
-console.log(li[1]);
-li[1].textContent='Hello 2';
-li[1].style.fontweight='bold';
-li[1].style.backgroundColor='yellow';
-
-for(var i=0;i<items.length;i++){
-    li[i].style.backgroundColor='#f4f4f4';
-}
-
-
+// var li=document.getElementsByTagName('li');
+// console.log(li);
+// console.log(li[1]);
+// li[1].textContent='Hello 2';
+// li[1].style.fontweight='bold';
+// li[1].style.backgroundColor='yellow';
+//
+// for(var i=0;i<items.length;i++){
+// li[i].style.backgroundColor='#f4f4f4';
+// }
+//
 
 //Query selector//
 
 // var header=document.querySelect('#main-header');
 // header.style.borderBottom='solid 5px #ccc';
-// 
+//
 // var input=document.querySelector('input');
 // input.value='Hello World'
-// 
+//
 // // var submit=document.querySelector('input[type="submit"]');
 // submit.value="SEND"
-// 
+//
 // var item=document.querySelector('.list-group-item');
 // item.style.color='red';
-// 
+//
 // // var lastItem=document.querySelector('.list-group-item:last-child');
 // lastItem.style.color='blue';
-// 
+//
 // var secondItem=document.querySelector('.
 // list-group-item:nth-child(2)');
 // secondItem.style.color='coral';
 
-
 //Query select all//
 
 // var titles=document.querySelectorAll('.title');
-// 
+//
 // console.log(titles);
 // titles[0].textContent="Hello";
-// 
+//
 // var odd=document.querySelectorAll('li:nth-child(odd)');
 // // var even=document.querySelectorAll('li:nth-child(even)');
 // for(var i=0;i<odd.length;i++){
-    // odd[i].style.backgroundColor='#f4f4f4';
-    // even[i].style.backgroundColor='#ccc';
+// odd[i].style.backgroundColor='#f4f4f4';
+// even[i].style.backgroundColor='#ccc';
 // }
-
 
 //Traversing the dom//
 
@@ -104,23 +99,134 @@ var itemList = document.querySelector("#items");
 // itemList.parentElement.style.backgroundColor='#f4f4f4';
 // // console.log(itemList.parentElement.parentElement..parentElement);
 
-
 //Child nods
 // console.log(itemList.childNodes);
 
-console.log(itemList.children);
-console.log(itemList.children[1]);
-itemList.children[1].style.backgroundcolor="yellow";
+// console.log(itemList.children);
+// console.log(itemList.children[1]);
+// itemList.children[1].style.backgroundcolor="yellow";
+//
+// firstchild
+// console.log(itemList.firstChild);
+//
+// First element child
 
-//firstchild
-console.log(itemList.firstChild);
+// console.log(itemList.lastElementChild);
+// itemList.lastElementChild.textContent="Hello";
 
-//First element child
+// Next sibling
+// console.log(itemlist.nextSibiling);
+// next Element sibiling
+// console.log(itemList.nextElementSibling);
 
-console.log(itemList.firstC);
+//previoussibling
+// console.log(itemList.previousElementSibling);
+//previouselementSibling
+// console.log(itemList.previousElementSibling);
+// // itemList.previousElementSibling.style.color='green';
+//
+//
+
+//Create a element
+
+//create  a div
+// var newDiv = document.createElement('div');
+
+//add class
+//    newDiv.className='hello';
+
+//add id
+//    newDiv.id='hello1';
+
+//add attr
+//    newDiv.setAttribute('title',"Hello Div");
+//
+//create text node
+//    var newDivText = document.createTextNode("Hello world");
+
+//Add text to div
+// newDiv.appendChild(newDivText);
+
+// var container = document.querySelector('header.container');
+// var h1=document.querySelector('header h1');
+//
+//    console.log(newDiv);
+//
+//    container.insertBefore(newDiv,h1);
+
+// var button = document
+//   .getElementById("button")
+//   .addEventListener("click", buttonClick);
+// 
+// function buttonClick(e) {
+  // console.log('Button clicked');
+  // document.getElementById('header-title').textContent='changed';
+  // // // document.querySelector('#main').getElementsByClassName .backgroundColor="#f4f4f4";
+  // console.log(e);
+  // console.log(e.target);
+  // console.log(e.target.id);
+  // console.log(e.target.className);
+  // console.log(e.target.clssList);
+  // console.log(e.type);
+  // console.log(e.clientX);
+  // console.log(e.offsetX);
+  // console.log(e.offsetY);
+  // console.log(e.altkey);
+  // console.log(e.ctrlkey);
+  // console.log(e.shiftkey);}
+
+// 
+  var button=document.getElementById('button');
+  var box = document.getElementById('box')
+   //button.addEventListener('click', runEvent);
+// button.addEventListener('dblclick', runEvent);
+// button.addEventListener('mousrDown', runEvent);
+// box.addEventListener('mouseenter', runEvent);
+// box.addEventListener('mouseleave', runEvent);
+
+// box.addEventListener('mouseover', runEvent);
+// box.addEventListener('mouseout', runEvent);
+
+var itemInput=document.querySelector('input[type="text"]');
+var form=document.querySelector('form');
+var select=document.querySelector('select');
+
+// itemInput.addEventListener('keydown', runEvent);
+// 
+// itemInput.addEventListener('keyup', runEvent);
+
+// itemInput.addEventListener('focus',runEvent);
+// itemInput.addEventListener('blur',runEvent);
+// 
+// itemInput.addEventListener('cut',runEvent);
+// itemInput.addEventListener('paste',runEvent);
+// 
+// itemInput.addEventListener('input',runEvent);
+
+// select.addEventListener('change',runEvent);
+// select.addEventListener('input',runEvent);
+
+form.addEventListener('submit',runEvent);
+
+  function runEvent(e){
+    e.preventDefault();
+    console.log('EVENT TYPE:'+e.type);
+
+
+    // console.log(e.target.value);
+    // // document.getElementById('output').innerHtml='<h3>'+e.+'</h3>';
+
+    // output.itemHTML='<h3>MouseX:'+e.offsetX +'</h3><h3>MouseY:'+e.offsetY +'</h3>';
+  
+    // document.body.style.backgroundColor="rgb("+e.offsetX+","+e.offsetY+",40)";
 
 
 
+
+
+
+
+}
 
 
 
