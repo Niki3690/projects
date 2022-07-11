@@ -12,10 +12,20 @@ buttonDanger.addEventListener("click",() => buttonDanger.style.backgroundColor="
 
 
 function changeSuccess(){
+    alert ("This is a change title color"); 
     clearAllBGClasses();
     let heroHeaderComp=document.querySelector('#heroHeaderComp');
     
     heroHeaderComp.classList.add("is-success");
+    console.log(heroHeaderComp);
+}
+
+function changeDanger(){
+    alert ("This is a change title color"); 
+    clearAllBGClasses();
+    let heroHeaderComp=document.querySelector('#heroHeaderComp');
+    
+    heroHeaderComp.classList.add("is-danger")
     console.log(heroHeaderComp);
 }
 function clearAllBGClasses(){
@@ -23,19 +33,35 @@ function clearAllBGClasses(){
     heroHeaderComp.classList.remove("is-primary");
     heroHeaderComp.classList.remove("is-success");
     heroHeaderComp.classList.remove("is-info");
-    heroHeaderComp.classList.remove("is-warning");
+    heroHeaderComp.classList.remove("is-link");
     heroHeaderComp.classList.remove("is-danger");
 
 }
 
 
 function changeInfo(){
+    alert ("This is a change title color"); 
     clearAllBGClasses();
     let heroHeaderComp=document.querySelector('#heroHeaderComp');
     
     heroHeaderComp.classList.add("is-info");
     console.log(heroHeaderComp);
 }
+
+function changeLink(){
+    alert ("This is a change title color"); 
+    clearAllBGClasses();
+    let heroHeaderComp=document.querySelector('#heroHeaderComp');
+    
+    heroHeaderComp.classList.add("is-link");
+    console.log(heroHeaderComp);
+}
+
+
+
+
+
+
 
 
 
