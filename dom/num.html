@@ -10,16 +10,46 @@
 </head>
 <body>
 
-<p>A: <input id="first"></p>
-<p>B: <input id="second"></p>
-<button onclick="add()">Add</button>
-<button onclick="minus()">Minus</button>
-<button onclick="multiply()">Multiple</button>
-<button onclick="divide()">Divide</button>
-<p>Result <input id="answer"></p>
+  <div class="container is-fluid m-2 p-2">
+    <div class="columns is-centered mt-5">
+        <div class="column is-5 has-text-centered">
+            <div class="card card-body text-center mt-7">
+               
 
+              <br>
+              <div text="number mt-2">
+                <span>A</span>
+                  <input id="first"type="number">
+              </div><br>
+
+              <div text="number mt-4">
+                <span>B</span>
+                 <input id="second"type="number">
+              </div><br>
+
+
+              <div text="number mt-2 has-text-centered">
+                <button onclick="add()">Add</button>
+                <button onclick="minus()">Minus</button>
+                <button onclick="multiply()">Multiple</button>
+                <button onclick="divide()">Divide</button>
+              </div><br>
+
+
+              <div text="number mt-4">
+                 <span>Result:</span>
+                    <input id="answer" type="number">
+              </div><br>
+            </div>
+        </div>
+    </div>
+  </div>
 </body>
 </html>
+ 
+
+
+
 
 <script>
 
@@ -47,7 +77,7 @@ function divide()
   numOne = parseInt(document.getElementById("first").value);
   numTwo = parseInt(document.getElementById("second").value);
   Result = numOne / numTwo;
-  document.getElementById("answer").value = result;
+  document.getElementById("answer").value = Result;
 }
 
 function multiply()
