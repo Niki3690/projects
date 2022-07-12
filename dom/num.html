@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    
+    <title>JS</title>
+</head>
+<body>
+
+<p>A: <input id="first"></p>
+<p>B: <input id="second"></p>
+<button onclick="add()">Add</button>
+<button onclick="minus()">Minus</button>
+<button onclick="multiply()">Multiple</button>
+<button onclick="divide()">Divide</button>
+<p>Result <input id="answer"></p>
+
+</body>
+</html>
+
+<script>
+
+function add()
+{
+  var numOne, numTwo, Result;
+  numOne = parseInt(document.getElementById("first").value);
+  numTwo = parseInt(document.getElementById("second").value);
+  Result = numOne + numTwo;
+  document.getElementById("answer").value = Result;
+}
+
+function minus()
+{
+  var numOne, numTwo, Result;
+  numOne = parseInt(document.getElementById("first").value);
+  numTwo = parseInt(document.getElementById("second").value);
+  Result = numOne - numTwo;
+  document.getElementById("answer").value = Result;
+}
+
+function divide()
+{
+  var numOne, numTwo, Result;
+  numOne = parseInt(document.getElementById("first").value);
+  numTwo = parseInt(document.getElementById("second").value);
+  Result = numOne / numTwo;
+  document.getElementById("answer").value = result;
+}
+
+function multiply()
+{
+  var numOne, numTwo, Result;
+  numOne = parseInt(document.getElementById("first").value);
+  numTwo = parseInt(document.getElementById("second").value);
+  Result = numOne * numTwo;
+  document.getElementById("answer").value = Result;
+}
+</script>
