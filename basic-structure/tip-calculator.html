@@ -4,41 +4,101 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    
     <title>Tip</title>
 </head>
 <body>
 
-    <div class="container">
-        <h1>Tip Calculator</h1>
-        <div class="text">
-            <span  class="bg">$</span>
-            <input type="number" id="num" placeholder="100" >
-        </div>
+
+    <div class="container is-fluid m-2 p-2">
+        <div class="columns is-centered mt-5">
+            <div class="column is-5">
+                <div class="card card-body text-center mt-7">
+<!-- <form action="" class="box"> -->
+                    <form id="form-tip">
+                        <div class="group-form">
+                            <div class="input-group has-text-centered ">
+                                <h4 class="is-size-4"><b>Tip Calculator</b></h4>
+
+<!-- <div class="text mt-2"> -->
+                                 <span  class="bg">$</span>
+                                    <input type="number"  class="form-control" id="totalBill" placeholder=""/>
+                            </div>
+                        </div>
+                        
 
         
 
-        <div class="text">
-            <label for="tip">Tip</label>
-            <input type="range" name="range" id="range" min="0" max="100" value="0" >
-        </div>
-        <br>
-        <hr>
+                            <div class="group-form mt-3 has-text-centered">
+                                <label for="tip">Tip:</label>
+                                    <input type="range"  class="form-control" id="tip"  value="0"/>
+                                        <span  class="bg" id="tipOutput"></span>
+                            </div>
+                    </form>
+                    
+                <hr>
 
-        <h3>Results</h3>
-        <div class="text">
-            <span  class="bg">Tip amount</span>
-            <input type="number" id="num" placeholder="19,00">
-        </div>
-        <br>
+            <div id="result" >
+                <h5 class="is-size-5 has-text-centered">Results</h5>
+      
 
-        <div class="text">
-            <span  class="bg">Total Bill With Tip</span>
-            <input type="number" id="num" placeholder="119,00">
+           <div class="group-form has-text-centered">
+                <div class="input-group">
+                    <span  class="bg ">Tip amount</span>
+                        <input type="number"  class="form-control" id="tipAmount" disabled>
+
+                </div>
+           </div>
+           
+
+           <div class="group-form has-text-centered mt-2">
+                <div class="input-group">
+                    <span  class="bg">Total Bill With Tip</span>
+                        <input type="number"  class="form-control" id="totalBillWithTip" disabled>
+                </div>
+           </div>
+            </div>
+                </div>
+            </div>
         </div>
+    </div>
+</body>
+</html>
+                      
+
+        
+            
+            
+    
+    
+
+        
+        
+        
+        
 
 
-        </div>
+        
+
+        <script src="tip-calculator.js"></script>
+
+
+
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+       
+
+       
+       
 
 
 
