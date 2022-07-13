@@ -28,7 +28,7 @@
                             
         <ul class="page-blocks">
             <li class="page-block js-course">
-                <input class="page-blocks" type="text" placeholder="Course name" data-type="name" >
+                <input class="page-blocks" type="text" placeholder="Course name" data-type="name" id="name" >
                     <select class="page-blocks" data-type="grade " >
                         <option selected="selected"disabled="disabled"hidden="hidden">Grade</option>
                         <option value="4.0">A+</option>
@@ -46,7 +46,7 @@
                         <option value="0.0">F</option>
                     </select>
                 <input class="page-blocks" type="text" placeholder="Credits"
-                    data-type="name" >
+                    data-type="name" id="name" >
                 </li></ul>
 
 
@@ -55,7 +55,7 @@
         <ul class="page-blocks">
             <li class="page-block js-course">
                 <input class="page-blocks" type="text" placeholder="Course name" 
-                data-type="name" >
+                data-type="name" id="name" >
                     <select class="page-blocks" data-type="grade " >
                         <option selected="selected" disabled="disabled" hidden="hidden">Grade</option>
                         <option value="4.0">A+</option>
@@ -73,7 +73,7 @@
                         <option value="0.0">F</option>
                     </select>
             <input class="page-blocks" type="text" placeholder="Credits"
-                data-type="name" >
+                data-type="name"id="name"  >
             </li></ul>
 
 
@@ -83,7 +83,7 @@
         <ul class="page-blocks">
             <li class="page-block js-course">
                 <input class="page-blocks" type="text" placeholder="Course name" 
-                data-type="name" >
+                data-type="name"id="name"  >
                     <select class="page-blocks" data-type="grade " >
                         <option selected="selected" disabled="disabled hidden="hidden>Grade</option>
                         <option value="4.0">A+</option>
@@ -101,7 +101,7 @@
                         <option value="0.0">F</option>
                     </select>
             <input class="page-blocks" type="text" placeholder="Credits"
-                data-type="name" >
+                data-type="name" id="name" >
             </li></ul>
 
 
@@ -110,7 +110,7 @@
         <ul class="page-blocks">
             <li class="page-block js-course">
                 <input class="page-blocks" type="text" placeholder="Course name" 
-                 data-type="name" >
+                 data-type="name"id="name"  >
                     <select class="page-blocks" data-type="grade " >
                         <option selected="selected" disabled="disabled 
                         hidden="hidden>Grade</option>
@@ -129,7 +129,6 @@
                         <option value="0.0">F</option>
                     </select>
             <input class="page-blocks" type="text" placeholder="Credits"
-                data-type="name" >
             </li></ul><br><br>
 
 
@@ -137,7 +136,9 @@
         
         <h6 class="is-size-6 ">Semester 1 GPA: </h6> 
             <div class="page-group__output page-group__output--semester 
-            js-semester-gpa">0.0 <a class="button is-rounded is-small">Add Course</a></div>
+            js-semester-gpa">0.0 
+            <button class="button is-rounded is-small" id="addCourse" onclick="addCourse()">Add Course</button ></div>
+          
                         
             
                 <!-- <a class="button is-rounded is-small" data-type="semester">Add  -->
@@ -152,12 +153,18 @@
 
         <div class="column is-4">
             <p><b>Weighted</b>
+                <label class="checkbox id=checkbox">
+                    <input type="checkbox">
+                  </label>
+                
+                <!-- <div class="field"> -->
+                    <!-- <!-- <input id="switchRoundedDefault" type="checkbox" class="switch is-rounded" checked="checked"> --> 
+
                 <button class="page-block" data-type="course"> <i class='fa fa-close '></i></button></p><br>
 
         <select class="page-blocks"disabled="" data-type="weight">
             <option selected="selected" disabled="disabled" hidden="hidden">Weight</option>
                 <div class="field">
-                    <option value="0.0">Regular</option>
                     <option value="0.5">Honors</option>
                     <option value="1.0">AP / IB</option>
                     <option value="1.0">College</option>
@@ -229,7 +236,7 @@
 </html>
 
                        
-                       
+<script src="marksheet.js"></script>     
                          
                        
                        
@@ -246,8 +253,6 @@
     
     
     
-</body>
-</html>
 
 
 
