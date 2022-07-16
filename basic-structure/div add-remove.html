@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/
+css/font-awesome.min.css">
+    
+    
+    <title>GPA</title>
+</head>
+<body>
+    <h1>Todo List</h1>
+   
+    <div class="container">
+        <input id="inputfield" type="text"><button id="addtodo">+</button>
+        <div clASS="todos" id="todContainer">
+        </div>
+        </div>
+
+        <script>
+            let addtodobutton=document.getElementById('addtodo');
+            let todContainer=document.getElementById('todContainer');
+            let inputfield=document.getElementById('inputfield');
+
+
+addtodobutton.addEventListener('click',function(){
+    var paragraph=document.createElement('p')
+    paragraph.innerText=inputfield.value;
+    todContainer.appendChild(paragraph);
+    inputfield.value="";
+
+})
+// paragraph.addEventListener('dblClick',function(){
+    // todContainer.removeChild(paragraph);           })
+// 
+// 
+        </script>
+   
+</body>
+</html>
+
+        
+        
+        
+    
+    
+    
+
+
+
+    
+    
+
+    
+
+
+
+
+
+<!--  -->
+
+<!-- <input type="button" value="+" onclick="addRow()"> -->
+<!--  -->
+<!-- <div id="content"> -->
+<!-- </div> -->
+<!--  -->
+<!--  -->
+<!--  -->
+<!-- <script> -->
+    <!-- // function addRow () { -->
+  <!-- // document.querySelector('#content').insertAdjacentHTML( -->
+    <!-- // 'afterbegin', -->
+    <!-- // `<div class="row"> -->
+      <!-- // <input type="text" name="name" value="" /> -->
+      <!-- // <input type="text" name="value" value="" /> -->
+      <!-- // <label><input type="checkbox" name="check" value="1" />Checked?</label> -->
+      <!-- // <input type="button" value="-" onclick="removeRow(this)"> -->
+    <!-- // </div>`       -->
+  <!-- // ) -->
+<!-- // } -->
+<!-- //  -->
+<!-- // function removeRow (input) { -->
+  <!-- // input.parentNode.remove() -->
+<!-- // } -->
+<!-- </script> -->

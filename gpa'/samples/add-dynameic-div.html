@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+table, td {
+  border: 1px solid black;
+}
+</style>
+ <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+</head>
+<body>
+
+<p>Click the button to add a new row at the first position of the table and then add cells and content.</p>
+
+<table id="myTable" class="table is-bordered">
+  <tr>
+    <td><input class="input is-link" type="text" placeholder="marks" ></td>
+    <td><button class="button is-danger"> X </button></td>
+  </tr>
+  <tr>
+    <td>Row2 cell1</td>
+    <td>Row2 cell2</td>
+  </tr>
+  <tr>
+    <td>Row3 cell1</td>
+    <td>Row3 cell2</td>
+  </tr>
+</table>
+<br>
+
+<button type="button" onclick="myFunction()">Try it</button>
+
+
+<script>
+var counter=1;
+function myFunction() {
+  var table = document.getElementById("myTable");
+  var row = table.insertRow(0);
+  var cell1 = row.insertCell(0);
+  if(counter %2==0)
+  {
+  cell1.classList.add("is-selected");
+  }
+  var cell2 = row.insertCell(1);
+
+  cell2.innerHTML = '<button class="button is-danger" onclick="myFunction1()">X</button>';
+  function myFunction1() {
+  document.getElementById("myTable").deleteRow(0);}
+
+
+  cell1.innerHTML = '<input id="'+counter+'" class="input is-link" type="text" placeholder="marks" value="'+counter+'">' ;
+  counter++;
+}
+</script>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<html>
+  <head>
+    <title>marks</title>
+  </head>
+  <body>
+    <table>
+      <thead>
+        <tr> 
+          <th>SNo</th>
+          <th>Name</th>
+          <th>Mark</th>
+          <th>Add</th>
+          <th>Remove</th>
+          
+        </tr>
+      </thead>
+      <tbody id="tbl">
+        <tr>
+          <td class='sno'>1</td>
+          <td><input type='text' name=''></td>
+          <td><input type='text' name=''></td>
+          <td><input type='button' value='+' onclick='add_row()' ></td>
+          <td><input type='button' value='-' onclick='remove_row(this)'></td>
+          
+        </tr>
+
+
+        <tr>
+          <td class='sno'>1</td>
+          <td><input type='text' name=''></td>
+          <td><input type='text' name=''></td>
+          <td><input type='button' value='+' onclick='add_row()' ></td>
+          <td><input type='button' value='-' onclick='remove_row(this)'>
+          
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <button class="button" onclick="totalValue()">total</button></td>
+    <input type='text' name='' placeholder="Total Marks" disabled></td>
+
+
+
+    
+    <script>
+    function add_row()
+    {
+      var sno=document.querySelectorAll(".sno").length;
+      sno++;
+      var tr=document.createElement("tr");
+      tr.innerHTML="<td class='sno'>"+sno+"</td> <td><input type='text'class='form-control'></td> <td><input type='text'class='form-control'></td> <td><input type='button' value='+' onclick='add_row()' class='btn btn-success btn-xs'></td> <td><input type='button' value='-' onclick='remove_row(this)' class='btn btn-danger btn-xs'></td>";
+      document.getElementById("tbl").appendChild(tr);
+    }
+    function remove_row(e)
+    {
+      var n=document.querySelector("#tbl").querySelectorAll("tr").length;
+    
+    	var ele=e.parentNode.parentNode;
+    	ele.remove();
+    	serial_no();
+      }
+    
+    function serialno(){
+      var cls=document.querySelectorAll(".sno");
+      for(var i=0;i<cls.length;i++)
+      {
+    	cls[i].innerHTML=i+1;
+      }
+    }
+
+    function  totalValue(){
+
+      alert("hiiii");
+      
+      
+    }
+   </script>
+  </body>
+</html>

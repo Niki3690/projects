@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/
+css/font-awesome.min.css">
+    
+    
+    <title>GPA</title>
+</head>
+<body>
+    <h1>To DO List</h1>
+    <div class="container">
+        <input id="inputField" type="text"><button id="addTODO">+</button>
+        <div class="to-dos" id="toDoContainer"></div>
+    </div>
+</body>
+
+<script>
+
+let addTODOButton=document.getElementById('addTODO');
+let toDoContainer=document.getElementById('toDoContainer');
+let inputField=document.getElementById('inputField');
+
+
+
+
+
+
+
+
+
+
+addTODOButton.addEventListener('click',function(){
+    var paragraph=document.createElement('p')
+    paragraph.innerText=inputField.value;
+    toDoContainer.appendChild(paragraph);
+    inputField.value="";
+
+})
+
+
+// addTODObutton.addEventListener('click', function(){
+    // var paragraph=document.createElement('p')
+    // 
+    // paragraph.innerText=inputField.value;
+    // toDoContainer.appendChild(paragraph);
+    // inputField.value="";
+//    
+//    
+// 
+// 
+// })
+</script>
+</html>

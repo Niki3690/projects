@@ -14,7 +14,7 @@ css/font-awesome.min.css">
 <body>
    <div class="container is-fluid m-2 p-2">
        <div class="columns is-centered mt-5">
-           <div class="column is-8">
+           <div class="column is-8" id="column-8">
                <div class="card card-body text-center mt-7">
 
     <!--use for Title(GPA calculator)-->
@@ -25,14 +25,15 @@ css/font-awesome.min.css">
                     
         <section class="section">
             <div class="columns">
-                <div class="column is-6">
+                <div class="column is-6" id="column-6">
                     <h5 class="is-size-5 has-text-left">
+            
                         <b>Semester 1</b>
                     </h5><br>
 
     <!--use for Column name-->
 
-                    <table class="table is-bordered">
+                    <table class="table is-bordered" id="tbl">
                         <thead>
                             <th>Subject Code</th>
                             <th>Subject Name</th>
@@ -40,12 +41,12 @@ css/font-awesome.min.css">
                         </thead>
 
     <!--use for 1 row-->
-                        <tbody>
+                        <tbody id='addSemester'>
                             <tr>
-                                <td><input class="input is-small" type="text" placeholder="Subject Code"></td>
-                                <td><input class="input is-small" type="text" placeholder="Subject Name"></td>
+                                <td><input class="input is-small" type="text" name="subjectCode" id="sujectCode"placeholder="Subject Code"></td>
+                                <td><input class="input is-small" type="text" name="subjectName" id="subjectName" placeholder="Subject Name"></td>
                                 <td>
-                                    <div class="select is-small">
+                                    <div class="select is-small" id="row-1" name="subjectGrade">
                                         <select>
                                             <option>SelectGrade</option>
                                             <option value="85-100">AA</option>
@@ -64,12 +65,12 @@ css/font-awesome.min.css">
 
     <!--use for 2 row-->
                             <tr>
-                                <td><input class="input is-small" type="text" 
+                                <td><input class="input is-small" type="text" name="subjectCode"id="subjectCode"
                                 placeholder="Subject Code"></td>
-                                <td><input class="input is-small" type="text" 
+                                <td><input class="input is-small" type="text" id="subjectName" name="subjectName"
                                 placeholder="Subject Name"></td>
                                 <td>
-                                    <div class="select is-small">
+                                    <div class="select is-small" id="row-2" name="subjectGrade">
                                         <select>
                                             <option>SelectGrade</option>
                                             <option value="85-100">AA</option>
@@ -88,12 +89,12 @@ css/font-awesome.min.css">
 
     <!--use for 3 row-->
                             <tr>
-                                <td><input class="input is-small" type="text" 
+                                <td><input class="input is-small" type="text" id="subjectCode" name="subjectCode"
                                 placeholder="Subject Code"></td>
-                                <td><input class="input is-small" type="text"
-                                placeholder="Subject Name"></td>
+                                <td><input class="input is-small" type="text" id="subjetName"
+                                placeholder="Subject Name" name="subjectName"></td>
                                 <td>
-                                    <div class="select is-small">
+                                    <div class="select is-small" id="row-3" name="subjectGrade">
                                         <select>
                                             <option>SelectGrade</option>
                                             <option value="85-100">AA</option>
@@ -111,12 +112,12 @@ css/font-awesome.min.css">
 
 <!--use for 4 row-->
                             <tr>
-                                <td><input class="input is-small" type="text" 
+                                <td><input class="input is-small" type="text" id="subjectCode" name="subjectCode"
                                 placeholder="Subject Code"></td>
-                                <td><input class="input is-small" type="text"
+                                <td><input class="input is-small" type="text" id="subjectName" name="subjectName"
                                 placeholder="Subject Name"></td>
                                 <td>
-                                    <div class="select is-small">
+                                    <div class="select is-small" id="row-4" name="subjectGrade">
                                         <select>
                                             <option>SelectGrade</option>
                                             <option value="85-100">AA</option>
@@ -134,12 +135,12 @@ css/font-awesome.min.css">
 
 <!--use for 5 row-->
                             <tr>
-                                <td><input class="input is-small" type="text" 
+                                <td><input class="input is-small" type="text" id="subjectCode" name="subjectCode"
                                 placeholder="Subject Code"></td>
-                                <td><input class="input is-small" type="text"
+                                <td><input class="input is-small" type="text" id="subjectName" name="subjectName"
                                 placeholder="Subject Name"></td>
                                 <td>
-                                    <div class="select is-small">
+                                    <div class="select is-small" id="row-5" name="subjectGrade">
                                         <select>
                                             <option>SelectGrade</option>
                                             <option value="85-100">AA</option>
@@ -164,7 +165,7 @@ css/font-awesome.min.css">
                             
     <!--use for Add more subject-->
                     
-                <button class="button is-rounded is-small">
+                <button class="button is-rounded is-small" id="addSubject" onclick="addSubject()">
                     <span class="icon is-small">
                         <i class="fa fa-book fa_custom"></i>
                     </span>
@@ -176,7 +177,7 @@ css/font-awesome.min.css">
 
     <!--use for subtitle(Credit)-->
 
-                <div class="column is-3">
+                <div class="column is-3" id="column-3">
                     <p><b>Subject Credit</b>
                         
                         <br><br></p>
@@ -192,7 +193,7 @@ css/font-awesome.min.css">
                 <tbody>
                     <tr>
                         <td>
-                            <div class="select is-small">
+                            <div class="select is-small" id="inputValue-1" name="subjectCredit">
                                 <select>
                                     <option>Credit</option>                           
                                     <option value="AA">10</option>
@@ -213,7 +214,7 @@ css/font-awesome.min.css">
 
                      <tr>
                         <td>
-                            <div class="select is-small">
+                            <div class="select is-small" id="inputValue-2" name="subjectCredit">
                                 <select>
                                     <option>Credit</option>
                                     <option value="AA">10</option>
@@ -233,7 +234,7 @@ css/font-awesome.min.css">
     <!--use for 3 row-->
                     <tr>
                         <td>
-                            <div class="select is-small">
+                            <div class="select is-small" id="inputValue-3" name="subjectCredit">
                                 <select>
                                     <option>Credit</option>
                                     <option value="AA">10</option>
@@ -253,7 +254,7 @@ css/font-awesome.min.css">
     <!--use for 4 row-->
                     <tr>
                         <td>
-                            <div class="select is-small">
+                            <div class="select is-small" id="inputValue-4" name="subjectCredit">
                                 <select>
                                     <option>Credit</option>
                                     <option value="AA">10</option>
@@ -272,7 +273,7 @@ css/font-awesome.min.css">
     <!--use for 5 row-->
                     <tr>
                         <td>
-                            <div class="select is-small">
+                            <div class="select is-small" id="inputValue-5" name="subjectCredit">
                                 <select>
                                     <option>Credit</option>
                                     <option value="AA">10</option>
@@ -294,7 +295,7 @@ css/font-awesome.min.css">
     
     <!--use for Remove all-->    
 
-        <div class="column is-3">
+        <div class="column is-3" id="column-3">
             <p><b>Remove Sub </b>
             </p>
             <br>
@@ -309,7 +310,7 @@ css/font-awesome.min.css">
                     <tbody>
                         <tr>
                             <td>
-                                <button class="button is-small">
+                                <button class="button is-small" id="remove" onclick="myFun()">
                                     <span class="icon is-small">
                                         <i class="fa fa-close"></i>
                                     </span>
@@ -321,7 +322,7 @@ css/font-awesome.min.css">
     <!--use for 2 row-->
                         <tr>
                             <td>
-                                <button class="button is-small">
+                                <button class="button is-small" id="remove" onclick="myFun()">
                                     <span class="icon is-small">
                                         <i class="fa fa-close"></i>
                                     </span>
@@ -334,7 +335,7 @@ css/font-awesome.min.css">
 
                         <tr>
                             <td>
-                                <button class="button is-small">
+                                <button class="button is-small" id="remove" onclick="myFun()">
                                     <span class="icon is-small">
                                         <i class="fa fa-close"></i>
                                     </span>
@@ -347,7 +348,7 @@ css/font-awesome.min.css">
 
                         <tr>
                             <td>
-                                <button class="button is-small">
+                                <button class="button is-small" id="remove" onclick="myFun()">
                                     <span class="icon is-small">
                                         <i class="fa fa-close"></i>
                                     </span>
@@ -360,7 +361,7 @@ css/font-awesome.min.css">
 
                         <tr>
                             <td>
-                                <button class="button is-small">
+                                <button class="button is-small" id="remove" onclick="myFun()">
                                     <span class="icon is-small">
                                         <i class="fa fa-close"></i>
                                     </span>
@@ -374,9 +375,10 @@ css/font-awesome.min.css">
         </tbody>
     </table>
 
+
     <!--use for Remove all subject-->
     
-    <button class="button is-small is-rounded mt-2 ">
+    <button class="button is-small is-rounded mt-2" id="removeAllSuject" onclick="removeAllSubject()">
         <span class="icon is-small">
             <i class="fa fa-close"></i>
         </span>
@@ -391,17 +393,19 @@ css/font-awesome.min.css">
 
     <!--use for ADD New Semester -->
     <p class="buttons">
-        <button class="button is-rounded is-small">
+        <button class="button is-rounded is-small" id="addSemester" onclick="addSemester()">
           <span class="icon is-small">
             <i class="fa fa-plus"></i>
           </span>
           <span>Add Semester</span>
         </button>
     </p>
+    
                </div>
            </div>
        </div>
    </div>
+
 </body>
 </html>
 
@@ -409,7 +413,7 @@ css/font-awesome.min.css">
     
 
 
-    
+<script src="marksheet-degree.js"></script>
                     
 
                        
