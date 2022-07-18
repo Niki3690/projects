@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    
+
+    
+    <title>GPA</title>
+</head>
+<body>
+
+<div class="container is-fluid m-2 p-2">
+    <div class="columns is-centered mt-5">
+        <div class="column is-12" id="column-12">
+            <div class="card card-body text-center mt-7 is-centered">
+
+
+
+
+                
+ <table class="table is-bordered" id="tbl">
+    <thead>
+        <th>Score</th>
+        <th>Add</th>
+        <th>Remove</th>
+    </thead>
+
+<!--use for Add Score-->
+<tbody>
+    <tr>
+        <td><input class="input is-small" type="number" name="score " placeholder="score" id="score"></td>
+
+
+        <td><button class="button is-small" id="addScore" onclick="addScore()">
+            <span><b>+</b></span>
+                </button>
+        </td>
+
+
+<!--use for Remove row-->
+
+    <td><button class="button is-small" id="removeScore" onclick="removeScore()">
+            <span><b>-</b></span>
+        </button>
+    </td>
+
+    </tr>
+</tbody>
+
+</table>
+
+<!--use for Calculate row-->
+
+    <button class="button has-background-grey-light "  onclick="calculate()">Calculate</button><br><br>
+
+<!--use for Total Score-->
+
+    <input class="input is-small" type="number" name="addTotal " placeholder="Total Score" id="addTotal" disabled></td>
+ 
+
+
+
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+<script>
+
+/* use for Add row JS*/
+
+function addScore() {
+  var table = document.getElementById("tbl");
+  var row = table.insertRow();
+  var cell1 = row.insertCell(0);
+  var cell2 = row.insertCell(1);
+  var cell3 = row.insertCell(2);
+
+  cell1.innerHTML ='<input class="input is-small" type="number" name="score " placeholder="score" id="score">'
+  cell2.innerHTML ='<button class="button is-small" id="addScore" onclick="addScore()"><span><b>+</b></span></button>'
+  cell3.innerHTML ='<button class="button is-small" id="removeScore" onclick="removeScore()"><span><b>-</b></span></button>'
+  
+}
+
+/*  use for Remove row JS*/
+
+  function removeScore(){
+    var table = document.getElementById('tbl');
+    var rowCount = table.rows.length;
+    if(rowCount > '2'){
+        var row = table.deleteRow(rowCount-1);
+        rowCount--;
+    }
+    else{
+        alert('There should be atleast two score');
+    }
+}
+
+
+/*  use for Calculate Button JS*/
+
+// function calculate(){
+    //  var table = document.getElementById('tbl');
+    //  score =parseInt(document.getElementById("score").value);
+    //  var cell1 = calculate;
+    //  calculatet=score+;
+    //  document.getElementById("addTotal").value = Calculate;
+//  }
+
+
+function calculate(){
+    var table = document.getElementById('tbl');
+    alert("hiiii");
+
+
+
+
+
+
+
+
+}
+    
+
+    
+
+
+    
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -373,9 +373,10 @@ css/font-awesome.min.css">
 
     <script>
         
+        
 
 
-
+       
     function addSubject() {
   var table = document.getElementById("tbl")
   var row = table.insertRow();
@@ -387,7 +388,7 @@ css/font-awesome.min.css">
   cell1.innerHTML ='<input class="input is-small" type="text" name="subjectCode" placeholder="Subject Code" id="subjectCode">'
   cell2.innerHTML ='<input class="input is-small" type="text" name="subjectName" placeholder="Subject Name" id="subjectName">'
   cell3.innerHTML ='<div class="select is-small" id="row-1" name="subjectGrade"><select><option>SelectGrade</option><option value="85-100">AA</option><option value="75-84">AB</option><option value="65-74">BB</option><option value="55-64">BC</option><option value="45-54">CC</option><option value="40-44">CD</option><option value="35-39">DD</option><option value="Less than 35">FF</option> </select></div>'
-  cell4.innerHTML ='<div class="select is-small" id="inputValue-1" name="subjectCredit"><select><option>Credit</option>                           <option value="AA">10</option><option value="AB">9</option><option value="BB">8</option><option value="BC">7</option><option value="CC">6</option><option value="CD">5</option>     <option value="DD">4</option><option value="FF">0</option</select></div>'
+  cell4.innerHTML ='<div class="select is-small" id="inputValue-1" name="subjectCredit"><select><option>Credit</option>                           <option value="AA">10</option><option value="AB">9</option><option value="BB">8</option><option value="BC">7</option><option value="CC">6</option><option value="CD">5</option><option value="DD">4</option><option value="FF">0</option</select></div>'
   cell5.innerHTML ='<button class="button is-small" id="remove" onclick="myFun()"><span class="icon is-small"><i class="fa fa-close"></i></span><span>Remove</span></button>' 
 }
 
@@ -416,6 +417,47 @@ css/font-awesome.min.css">
         document.getElementById("totalCGPA").value =Submit;
 
     }
+
+
+
+    
+    
+   function  addSemester(){
+
+
+   }
+
+
+
+
+
+
+   function subjectGrade(row1){
+    if(grade==="AA"){
+        return 85-100 * grade;
+    }else if(grade==="AB"){
+        return 75-84 * grade;
+    }else if(grade==="BB"){
+        return 65-74 * grade;
+    }else if(grade==="BC"){
+      return 55-64 * grade;
+    }else if(grade==="CC"){
+      return 45-54 * grade;
+    }else if(grade==="CD"){
+      return 40-44 * grade;
+    }else if(grade==="DD"){
+      return 35-39 * grade;
+    }else if(grade==="FF"){
+        return lessThan-35 * grade;
+    }
+    
+}
+var counter=1;
+
+
+
+
+
 
         
 

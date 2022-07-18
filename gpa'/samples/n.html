@@ -1,0 +1,31 @@
+var totalBudget=parseInt(document.getElementById("totalBudget").innerHTML);
+var currentBalance=parseInt(document.getElementById("currentBalance").innerHTML);
+var addMoney=parseInt(document.getElementById("addMoney").value);
+if(addMoney ==" "||isNaN(addMoney)){
+    alert("please enter valid value");
+}else{
+    totalBudget+=addMoney 
+    currentBalance+=addMoney;
+    document.getElementById("totalBudget").innerHTML=totalBudget;
+    document.getElementById("currentBalance").innerHTML=currentBalance;
+  }
+
+function addExpense(){
+var currentBalance=parseInt(document.getElementById("currentBalance").innerHTML);
+var expenseName=document.getElementById("expenseName").value;
+var addExpense=parseInt(document.getElementById("addExpense").value);
+if(expenseName.length ==""){
+    alert("please enter expense name");
+}else if(addExpense ==" "||isNaN(addExpense)){
+    alert("please enter valid expense money ")
+}else if(addExpense<=currentBalance){
+    currentBalance-=addExpense;
+    document.getElementById('currentBalance').innerHTML=currentBalance
+    var para=document.createElement('p')
+    para.innerHTML=`Expense Name:${expenseName}<br> Add Expense:${addExpense}`;
+    document.getElementById("addedExpense").appendChild(para);
+}                
+else{
+    alert("Sorry your expense amount is MoreThan your current balance")
+}
+}
