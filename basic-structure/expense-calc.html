@@ -10,11 +10,6 @@
 <body>
 
    
-
-   
-                        
-
-    
     <div class="has-background-danger-light is-fullheight">
         <div class="hero-body">
             <div class="container">
@@ -25,20 +20,21 @@
     <!--use for Expense calculator-->
 
                     <h5 class="is-size-5 is-centered"><b>Expense Calculator</b></h5>
+                    <hr>
                     <!-- <hr style="height:1px;color:gray;background-color:gray"> -->
 
     <!--use for Total budget-->
                     <h6 class="is-size-6"><b>Total Budget:</b></h6>
-                    <input class="input is-small" type="text" placeholder="0" id="totalBudget">
+                    <input class="input is-small" type="number" placeholder="0" id="totalBudget">
 
     <!--use for Current balance-->
                     <h6 class="is-size-6 mt-2"><b>Current Balance:</b></h6>
-                    <input class="input is-small" type="text" placeholder="0" id="currentBalance">
+                    <input class="input is-small" type="number" placeholder="0" id="currentBalance">
 
     <!--use for Add money to budget-->
                     <h6 class="is-size-6 mt-2"><b>Add money to budget:</b></h6>
                     <input class="input mt-2 is-small" type="number" placeholder="add money" id="addMoney">
-                    <button class="button is-small  mt-2" onclick="addMoney()">Add money</button>
+                    <button class="button is-small  mt-2" onclick="AddMoney()">Add money</button>
                    
     <!--use for Add expense-->
                     <h6 class="is-size-6 mt-2"><b>Add Expense:</b></h6>
@@ -46,7 +42,7 @@
                     <input class="input is-small mt-2" type="number" placeholder="add expense"  id="addExpense">
                     
     <!--use for Add expense button-->
-                    <button class="button is-small mt-3" onclick="addExpense()">Add Expense</button>
+                    <button class="button is-small mt-3" onclick="AddExpense()">Add Expense</button>
                     <br>
         
                 </form>
@@ -69,18 +65,36 @@
 
 
 
-<script>
+    <script>
 
-        function addMoney(){
+
+    const totalBudget=document.getElementById('totalBudget');
+    const currentBalance=document.getElementById('currentBalance');
+    const addMoney =document.getElementById('addMoney');
+    const expenseName=document.getElementById('expenseName');
+    const addExpense=document.getElementById('addExpense');
+    const addedExpense=document.getElementById('addedExpense');
+
+
+    function AddMoney(){
+
+        var totalBudget=parseInt(document.getElementById("totalBudget").innerHTML);
+        var currentBalance=parseInt(document.getElementById("currentBalance").innerHTML);
+        var addMoney=parseInt(document.getElementById("addMoney").value);
+        if(addMoney ==" "||isNaN(addMoney)){
             alert("please enter valid value");
+        }else{
+        totalBudget+=addMoney ;
+        currentBalance+=addMoney;
+        document.getElementById("totalBudget").innerHTML=totalBudget;
+        document.getElementById("currentBalance").innerHTML=currentBalance;
+        
+    }
         }
-
-       function  addExpense(){
     
-        alert("please enter valid amount");
 
-       }
-       
+
+
 </script>
 
 
