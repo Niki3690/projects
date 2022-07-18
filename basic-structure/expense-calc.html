@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Js</title>
+</head>
+<body>
+
+   
+
+   
+                        
+
+    
+    <div class="has-background-danger-light is-fullheight">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-5">
+                        <form action="" class="box">
+
+    <!--use for Expense calculator-->
+
+                    <h5 class="is-size-5 is-centered"><b>Expense Calculator</b></h5>
+                    <!-- <hr style="height:1px;color:gray;background-color:gray"> -->
+
+    <!--use for Total budget-->
+                    <h6 class="is-size-6"><b>Total Budget:</b></h6>
+                    <input class="input is-small" type="text" placeholder="0" id="totalBudget">
+
+    <!--use for Current balance-->
+                    <h6 class="is-size-6 mt-2"><b>Current Balance:</b></h6>
+                    <input class="input is-small" type="text" placeholder="0" id="currentBalance">
+
+    <!--use for Add money to budget-->
+                    <h6 class="is-size-6 mt-2"><b>Add money to budget:</b></h6>
+                    <input class="input mt-2 is-small" type="number" placeholder="add money" id="addMoney">
+                    <button class="button is-small  mt-2" onclick="addMoney()">Add money</button>
+                   
+    <!--use for Add expense-->
+                    <h6 class="is-size-6 mt-2"><b>Add Expense:</b></h6>
+                    <input class="input is-small mt-2" type="text" placeholder="expense name" id="expenseName">
+                    <input class="input is-small mt-2" type="number" placeholder="add expense"  id="addExpense">
+                    
+    <!--use for Add expense button-->
+                    <button class="button is-small mt-3" onclick="addExpense()">Add Expense</button>
+                    <br>
+        
+                </form>
+                     </div>
+
+    <!--use for column Added expense-->
+                     <div class="column is-5">
+                     <h6 class="is-size-6 mt-6 p-2 m-2"><b>Added Expense:</b></h6>
+                     <input class="input is-small mt-2" type="text" placeholder="added expense"  id="addedExpense">
+
+                     </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+
+
+
+<script>
+
+        function addMoney(){
+            alert("please enter valid value");
+        }
+
+       function  addExpense(){
+    
+        alert("please enter valid amount");
+
+       }
+       
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
