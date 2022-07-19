@@ -1,0 +1,94 @@
+<!DOCTYPE htmsl>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Counter</title>
+</head>
+<body>
+    
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-4">
+                        
+   
+                        
+       
+           
+            <div class="screen">
+                <form>
+                <input class="input has-text-right" type="text"  id="result">
+                
+                </form>
+           
+            
+                <div class="buttons">
+                    <button class="button is-medium has-background-warning" onclick="display('*')"><b>*</b></button>
+                    <button class="button is-medium has-background-warning" onclick="display('/')"><b>/</b></button>
+                    <button class="button is-medium has-background-warning" onclick="display('-')"><b>-</b></button>
+                    <button class="button is-medium has-background-warning" onclick="display('+')"><b>+</b></button>
+                    <button class="button is-medium has-background-danger-dark" onclick="clearScreen()"><b>C</b></button>
+                    <button class="button is-medium has-background-grey-lighter" onclick="display('9')"><b>9</b></button>
+                    <button class="button is-medium has-background-grey-lighter" onclick="display('8')"><b>8</b></button>
+                    <button class="button is-medium has-background-grey-lighter" onclick="display('7')"><b>7</b></button>
+                    <button class="button is-medium has-background-grey-lighter" onclick="display('6')"><b>6</b></button>
+                    <button class="button is-medium has-background-grey-lighter" onclick="display('5')"><b>5</b></button>
+                    <button class="button is-medium has-background-grey-lighter" onclick="display('4')"><b>4</b></button>
+                    <button class="button is-medium has-background-grey-lighter" onclick="display('3')"><b>3</b></button>
+                    <button class="button is-medium has-background-grey-lighter" onclick="display('2')"><b>2</b></button>
+                    <button class="button is-medium has-background-grey-lighter" onclick="display('1')"><b>1</b></button>
+                    <button class="button is-medium has-background-grey-lighter" onclick="display('0')"><b>0</b></button>
+                    <button class="button is-medium has-background-grey-lighter" onclick="display('.')"><b>.</b></button>
+                    <button class="button is-medium has-background-success-dark" onclick="solve()"><b>=</b></button>
+                </div>
+            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</body>
+</html>
+
+<script>
+     function clearScreen(){
+        document.getElementById("result").value = "";
+     }
+
+
+     function display(value) {
+    document.getElementById("result").value += value;
+}
+
+
+function solve() {
+    var p = document.getElementById("result").value;
+    var q = eval(p);
+    document.getElementById("result").value = q;
+}
+
+
+
+
+
+
+
+
+
+
+
+</script>
+
+
+
+;
+
+
+
+
+
+
+
