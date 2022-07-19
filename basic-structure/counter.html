@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="shortcut icon" href="#" />
+    <title>Counter</title>
+</head>
+<body>
+
+
+
+
+   
+                    <div class="has-background-warning	 is-fullheight">
+                        <div class="hero-body">
+                            <div class="container">
+                                <div class="columns is-centered">
+                                    <div class="column is-12">
+
+                    <div class="text  has-text-centered">
+                        
+    <!--use for Counter-->
+                    <h1 class="is-size-1 has-text-info">COUNTER</h1>
+
+    <!--use for Inecrement text-->
+                    <h1 class="is-size-1 has-text-success-dark" id="incrementText"><b>0</b></h1>
+                    <div class="myDiv">
+
+    <!--use for Decrement Button-->
+                        <button class="button mt-3 has-background-info-dark has-text-white" onclick="lowerCount()">LOWER COUNT</button><br>
+            
+    <!--use for Increment Button-->
+                        <button class="button mt-2 has-background-info-dark has-text-white" onclick="addCount()">ADD COUNT</button>
+                    </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+
+<script>
+
+    var data=0;
+    document.getElementById("incrementText").innerText=data;
+    function lowerCount(){
+        data=data-1;
+        console.log("1 data:->"-data);
+
+        document.getElementById("incrementText").innerText=data;
+        console.log("2 incrementText:->"-incrementText);
+    }
+
+
+    var data=0;
+    document.getElementById("incrementText").innerText=data;
+    function addCount(){
+        data=data+1;
+        console.log("1 data:->"+data);
+        
+        document.getElementById("incrementText").innerText=data;
+        console.log("2 incrementText:->"+incrementText);
+ }
+</script>
+
+
+
+
+
+
+
+

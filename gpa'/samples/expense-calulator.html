@@ -5,40 +5,37 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="shortcut icon" href="#" />
     <title>Js</title>
 </head>
 <body>
 
    
-
-   
-                        
-
-    
     <div class="has-background-danger-light is-fullheight">
         <div class="hero-body">
             <div class="container">
                 <div class="columns is-centered">
                     <div class="column is-5">
-                        <form action="" class="box">
+                       
 
     <!--use for Expense calculator-->
 
                     <h5 class="is-size-5 is-centered"><b>Expense Calculator</b></h5>
+                    <hr>
                     <!-- <hr style="height:1px;color:gray;background-color:gray"> -->
 
     <!--use for Total budget-->
                     <h6 class="is-size-6"><b>Total Budget:</b></h6>
-                    <input class="input is-small" type="text" placeholder="0" id="totalBudget">
+                    <input class="input is-small" type="number" placeholder="0" id="totalBudget">
 
     <!--use for Current balance-->
                     <h6 class="is-size-6 mt-2"><b>Current Balance:</b></h6>
-                    <input class="input is-small" type="text" placeholder="0" id="currentBalance">
+                    <input class="input is-small" type="number" placeholder="0" id="currentBalance">
 
     <!--use for Add money to budget-->
                     <h6 class="is-size-6 mt-2"><b>Add money to budget:</b></h6>
                     <input class="input mt-2 is-small" type="number" placeholder="add money" id="addMoney">
-                    <button class="button is-small  mt-2" onclick="addMoney()">Add money</button>
+                    <button class="button is-small  mt-2"    onclick="AddMoney()">Add Money</button>
                    
     <!--use for Add expense-->
                     <h6 class="is-size-6 mt-2"><b>Add Expense:</b></h6>
@@ -46,16 +43,17 @@
                     <input class="input is-small mt-2" type="number" placeholder="add expense"  id="addExpense">
                     
     <!--use for Add expense button-->
-                    <button class="button is-small mt-3" onclick="addExpense()">Add Expense</button>
+                    <button class="button is-small mt-3"  onclick="AddExpense()">Add Expense</button>
                     <br>
         
-                </form>
+                
                      </div>
 
     <!--use for column Added expense-->
                      <div class="column is-5">
                      <h6 class="is-size-6 mt-6 p-2 m-2"><b>Added Expense:</b></h6>
-                     <input class="input is-small mt-2" type="text" placeholder="added expense"  id="addedExpense">
+                     <div class="addedExpense" id="addedExpense"><br>
+                    <!-- <input class="input is-small mt-2" type="text" placeholder="added expense"  id="addedExpense"> -->
 
                      </div>
                 </div>
@@ -69,18 +67,74 @@
 
 
 
-<script>
+    <script>
 
-        function addMoney(){
+        var totalBudget = 0;  
+         
+         var currentBalance = 0; 
+         
+        function AddMoney(){
+            console.log("11 total budget:->"+totalBudget);
+            console.log("22 current balalce budget:->"+currentBalance);
+
+    //  var budget=parseInt(document.getElementById("totalBudget"));
+    //  var balance=parseInt(document.getElementById("currentBalance"));
+        var addMoney=parseInt(document.getElementById("addMoney").value);
+        console.log("33 addMoney :->"+addMoney);
+        if(addMoney ==" "||isNaN(addMoney)){
             alert("please enter valid value");
-        }
+        }else{
+        totalBudget+=addMoney ;
+        currentBalance+=addMoney;
+        console.log("55 total budget:->"+totalBudget);
+        console.log("66 current balalce budget:->"+currentBalance);
+        document.getElementById("totalBudget").value=""+totalBudget;
+        document.getElementById("currentBalance").value=""+currentBalance;
 
-       function  addExpense(){
-    
-        alert("please enter valid amount");
 
-       }
-       
+        console.log("77 total ele vl budget:->"+document.getElementById("totalBudget").value);
+        console.log("88 current ele balalce budget:->"+document.getElementById("currentBalance").value);
+     
+ }
+     }
+
+
+    var currentBalance = 0;  
+  
+    function AddExpense(){
+        console.log("1 current balance:->"-currentBalance);
+
+        var currentBalance=parseInt(document.getElementById("currentBalance").value);
+        console.log("2 current balance :->"-currentBalance);
+
+        var expenseName=document.getElementById("expenseName").value;
+        console.log("3 expense name :->"-expenseName);
+
+        var addExpense=parseInt(document.getElementById("addExpense").value);
+        console.log("4 add expense :->"-addExpense);
+
+        if(expenseName.length ==""){
+            alert("please enter expense name");
+        }else if(addExpense ==" "||isNaN(addExpense)){
+            alert("please enter valid expense money ")
+        }else if(addExpense<=currentBalance){
+
+    currentBalance-=addExpense;
+    console.log("5 currentBalance :->"-currentBalance);
+
+    document.getElementById('currentBalance').innerHTML=currentBalance
+    console.log("6 current ele current balance:->"+document.getElementById
+    ("currentBalance").value);
+
+    var para=document.createElement('p')
+    para.innerHTML=`Expense Name:${expenseName}<br> Add Expense:${addExpense}`;
+    document.getElementById("addedExpense").appendChild(para);
+    }                
+    else{
+        alert("Sorry your expense amount is MoreThan your current balance")
+    }
+    }
+
 </script>
 
 

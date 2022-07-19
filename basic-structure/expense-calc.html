@@ -52,7 +52,7 @@
     <!--use for column Added expense-->
                      <div class="column is-5">
                      <h6 class="is-size-6 mt-6 p-2 m-2"><b>Added Expense:</b></h6>
-                     <div class="addedExpense" id="addedExpense">
+                     <div class="addedExpense" id="addedExpense"><br>
                     <!-- <input class="input is-small mt-2" type="text" placeholder="added expense"  id="addedExpense"> -->
 
                      </div>
@@ -104,8 +104,6 @@
     function AddExpense(){
         console.log("1 current balance:->"-currentBalance);
 
-
-
         var currentBalance=parseInt(document.getElementById("currentBalance").value);
         console.log("2 current balance :->"-currentBalance);
 
@@ -114,7 +112,6 @@
 
         var addExpense=parseInt(document.getElementById("addExpense").value);
         console.log("4 add expense :->"-addExpense);
-
 
         if(expenseName.length ==""){
             alert("please enter expense name");
@@ -129,7 +126,6 @@
     console.log("6 current ele current balance:->"+document.getElementById
     ("currentBalance").value);
 
-
     var para=document.createElement('p')
     para.innerHTML=`Expense Name:${expenseName}<br> Add Expense:${addExpense}`;
     document.getElementById("addedExpense").appendChild(para);
@@ -138,10 +134,6 @@
         alert("Sorry your expense amount is MoreThan your current balance")
     }
     }
-
-
-
-
 
 </script>
 
