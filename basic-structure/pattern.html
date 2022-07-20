@@ -11,31 +11,178 @@
     <title>Pattern</title>
 </head>
 <body>
+    <table id="myTable" class="table is-bordered">
+        <tr>
+            <ul>
+            <li>1</li>
+            <li>2</li>
+            <li>3</li>
+            <li>4</li>
+            <li>5</li>
+            <li>6</li> 
+            <li>7</li>
+            <li>8</li>
+            <li>9</li>
+            <li>10</li>
+            </ul>
+        </tr>
 
-   
-   
-   
-   
+        
 
 
-    <tr>
-        <td>*</td>
-    </tr><br>
+      <input class="input" type="text" placeholder="" id="inputValue"><br><br>
 
-    <tr>
-        <td>* *</td>
-    </tr><br>
-    <tr>
-        <td>* * *</td>
-    </tr><br>
+
+      
+    <button onclick="myCreateFunction()">Create row</button>
+    <button onclick="myDeleteFunction()">Delete row</button>
+
+
+
+
+
+
+
+
+    <script>
+
+        addEventListener('DOMContentLoaded', pageLoaded());
+        function pageLoaded(){
+                //print
+                console.log()
+        }
+        function myCreateFunction() {
+          var table = document.getElementById("myTable");
+          var row = table.insertRow(0);
+          var cell1 = row.insertCell(0);
+          //cell1.innerHTML =
+          
+        }
+
+        function myDeleteFunction() {
+  document.getElementById("myTable").deleteRow(0);
+
+        }
+
+        </script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
     
-    <tr>
-        <td>* * * *</td>
-    </tr><br>
     
-    <tr>
-        <td>* * * * *</td>
-    </tr><br>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+
+
+   
+   
+   
+   
+
+
+
+    
+    
+    
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
 
 </body>
 </html>
