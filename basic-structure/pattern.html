@@ -1,191 +1,130 @@
-<!DOCTYPE htmsl>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    
-
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
 
     <title>Pattern</title>
-</head>
-<body>
-    <table id="myTable" class="table is-bordered">
-        <tr>
-            <ul>
-            <li>1</li>
-            <li>2</li>
-            <li>3</li>
-            <li>4</li>
-            <li>5</li>
-            <li>6</li> 
-            <li>7</li>
-            <li>8</li>
-            <li>9</li>
-            <li>10</li>
-            </ul>
-        </tr>
+  </head>
+  <body>
 
+
+
+    <div class="container is-fluid m-2 p-2">
+        <div class="columns is-centered mt-5">
+            <div class="column is-8" id="column-8">
+                <div class="card card-body text-center mt-7">
+
+                   
+
+
+    <input type="text" id="txt" name="txt1" placeholder="input" />
+
+    <button type="button" onclick="myFunction()" id="myFunction">Print</button><br><br>
+
+    <div id="listOfNumbers" name="tabs">
+     
+        <table class="table is-bordered" name="tabs" >
+            <th>Number</th>
         
-
-
-      <input class="input" type="text" placeholder="" id="inputValue"><br><br>
-
-
-      
-    <button onclick="myCreateFunction()">Create row</button>
-    <button onclick="myDeleteFunction()">Delete row</button>
-
-
-
-
-
-
+           <tr><td>1</td></tr>
+            <tr><td>2</td></tr>
+            <tr><td>3</td></tr>
+            <tr><td>4</td></tr>
+            <tr><td>5</td></tr>
+        
+      </table>
+    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <script>
+      let txt = document.getElementById("txt");
+      let myFunctionButton = document.getElementById("myFunction");
+    
+    
+// function listOfNumbers(){
+      // var table = document.getElementsByName('tabs');
+      // console.log(tabs);
+        // var div = document.getElementById('listOfNumbers');
+        // console.log(listOfNumbers);
+        // div.innerHTML += table;
+        // console.log(table);
 
-        addEventListener('DOMContentLoaded', pageLoaded());
-        function pageLoaded(){
-                //print
-                console.log()
-        }
-        function myCreateFunction() {
-          var table = document.getElementById("myTable");
-          var row = table.insertRow(0);
-          var cell1 = row.insertCell(0);
-          //cell1.innerHTML =
+
+
+
+      
+      function myFunction() {
+        //   alert("hiiii");
+        let listOfNumbersEle = document.getElementById("listOfNumbers");
+        let value = parseInt(document.getElementById("txt").value);
+      console.log("value:->"+value);
+
+
+      let stringOfNumbers = "<table class='table'>";
+          for(let i=1;i<value;i++){
           
-        }
+            stringOfNumbers = stringOfNumbers+" <tr><td> " + i + "</td></tr>";
+            console.log(stringOfNumbers);
+          }
+          stringOfNumbers = stringOfNumbers+" </table> ";
 
-        function myDeleteFunction() {
-  document.getElementById("myTable").deleteRow(0);
-
-        }
-
-        </script>
-
+          listOfNumbersEle.innerHTML = stringOfNumbers;
+            }
 
 
+       
+          
+       
+       
+
+        
+
+     
+     
+     
+     
 
 
 
+        // stringOfNumbers = stringOfNumbers + " <tr> ";
+          // console.log(stringOfNumbers);
 
+          // stringOfNumbers = stringOfNumbers + " <td> " + i + "</td>";
+          // 
+        // 
+        // stringOfNumbers = stringOfNumbers + " </tr> ";
+        // }
 
+        // stringOfNumbers = stringOfNumbers + " </table> ";
+        // console.log(stringOfNumbers);
 
-
-
-
-
-
- 
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
+        // }
+          // 
+        // listOfNumbersEle.innerHTML = stringOfNumbers;
+        // 
+          // 
+      // }
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+      
+       
+      
 
     
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-
-
-   
-   
-   
-   
-
-
-
-    
-    
-    
-
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-</body>
+     // Print console
+      // Show HTML
+    </script>
+  </body>
 </html>
-    
- 
-

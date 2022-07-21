@@ -16,6 +16,9 @@
 
     <button type="button" onclick="myFunction()" id="myFunction">Print</button>
 
+    <div id="listOfNumbers">
+          
+    </div>
 
    <script>
 
@@ -25,18 +28,44 @@
     let myFunctionButton=document.getElementById('myFunction');
 
     function myFunction(){
-    alert("hiiii");
+      alert("hiiii");
+      let listOfNumbersEle = document.getElementById("listOfNumbers");
+      let value = parseInt(document.getElementById("txt").value);
+
+      let stringOfNumbers = "<table class='table'>";
+      for(let i=1;i<value;i++){
+       
+        stringOfNumbers = stringOfNumbers+" <tr><td> " + i + "</td></tr>";
+        console.log(stringOfNumbers);
+      }
+      stringOfNumbers = stringOfNumbers+" </table> ";
+      
+      listOfNumbersEle.innerHTML = stringOfNumbers;
+
+  }
+
+  // Print console
+  // Show HTML
+
+
+    
     
   
-    }
+  
 
 
 
 
 
    addEventListener('DOMContentLoaded', pageLoaded());
-     function pageLoaded(){
-            
+
+   function pageLoaded(){
+    const d = new Date();
+ 
+  let hour = d.getHours();
+  let min = d.getMinutes();
+  console.log ("hours:->"+hour);
+      document.getElementById('txt').value=min;
              console.log();
      }
 
@@ -45,10 +74,10 @@
  
  
  
-    for(let i=1;i<21;i++){
-      console.log(i);
+    // for(let i=1;i<21;i++){
+      // console.log(i);
       
-    }
+    // }
 
       
       

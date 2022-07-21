@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <linkrel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+
+    <title>Pattern</title>
+  </head>
+  <body>
+
+    <script>
+
+        function team(name,points){
+            this.name=name;
+            this.points=points;
+        }
+
+        let t1=new team("Mon", 12);
+        let t2=new team("Fon", 15);
+        let t3=new team("Don", 18);
+        let t4=new team("Con", 16);
+        let t5=new team("Non", 14);
+        let t6=new team("Von",13);
+
+        console.table([t1,t2,t3,t4,t5,t6]);
+        </script>
