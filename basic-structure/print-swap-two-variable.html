@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <linkrel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+
+    <title>Pattern</title>
+  </head>
+  <body>
+
+    <script>
+
+        //using temporary variable
+
+        let a=prompt('Enter te first variable:');
+        let b=prompt('Enter te second variable:');
+
+        let temp;
+
+        temp=a;
+        a=b;
+        b=temp;
+
+        console.log(`The value of a after swapping: ${a}`);
+        console.log(`The value of b after swapping: ${b}`);
+
+
+
+        //using destructing assignment
+
+        let c=prompt('Enter te first variable:');
+        let d=prompt('Enter te second variable:');
+
+        [c,d] = [d,c];
+
+        console.log(`The value of c after swapping: ${c}`);
+        console.log(`The value of d after swapping: ${d}`);
+
+
+        //using arithmetic operators
+
+        let e=prompt('Enter te first variable:');
+        let f=prompt('Enter te second variable:');
+
+        e=e+f;
+        f=e-f;
+        e=e-f;
+
+        console.log(`The value of e after swapping: ${e}`);
+        console.log(`The value of f after swapping: ${f}`);
+
+    </script>
