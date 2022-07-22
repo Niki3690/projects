@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <linkrel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+
+    <title>Pattern</title>
+  </head>
+  <body>
+
+    <script> 
+
+//use of largest number among 3 numbers
+
+    const num1= parseFloat(prompt("Enter first number:"));
+    const num2=parseFloat(prompt("Enter second number:"));
+    const num3=parseFloat(prompt("Enter third number:"));
+    let largest;
+
+    if(num1>=num2 && num1>=num3){
+        largest= num1;
+     }
+     else if(num2>=num1 && num2>=num3){
+    largest= num2;
+     }
+     else{
+        largest=num3;
+     }
+
+     console.log("The largest number is "+ largest);
+
+
+//use of Math.max()
+
+const num5= parseFloat(prompt("Enter  five number:"));
+const num6=parseFloat(prompt("Enter six   number:"));
+const num7=parseFloat(prompt("Enter  seven number:"));
+
+const largests=Math.max(num5,num6,num7);
+console.log("The largest number is " + largest);
+
+
+
+
+     </script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <linkrel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+
+    <title>Pattern</title>
+  </head>
+  <body>
+
+    <script> 
+
+//use of fibonacci series uptp n terms
+
+        const number=parseInt(prompt('Enter the number of terms:'));
+        let n1=0 ,n2=1 , nextTerm;
+
+        console.log('fibonacci series:');
+
+        for(let i=1;i<=number;i++){
+            console.log(n1);
+            nextTerm=n1+n2;
+            n1=n2;
+            n2=nextTerm;
+        }
+
+
+//use of fibonacci series upto certain number
+
+    const numbers=parseInt(prompt('Enter the number of terms:'));
+    let n4=0 ,n5=1 , nextTerms;  
+    
+    console.log('fibonacci series:');
+    console.log(n4);
+    console.log(n5);
+
+    nextTerms=n4 + n5;
+
+    while(nextTerms <=numbers){
+        console.log(nextTerms);
+
+        n4=n5;
+        n5=nextTerms;
+        nextTerms=n4 +n5;
+
+    }
+        </script>
