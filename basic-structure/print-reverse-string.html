@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <linkrel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+
+    <title>Pattern</title>
+  </head>
+  <body>
+
+    <script> 
+
+//use of reverse a string usinf for loop
+
+            function reverseString(str){
+                
+                let newString ="";
+                for(let i=str.length -1;i>=0;i--){
+                    newString +=str[i];
+                }
+                return newString;
+            }
+
+            const string=prompt("Enter a string:");
+
+            const result=reverseString(string);
+            console.log(result);
+
+
+//reverse a string using built-in methods
+
+function reverseString(str){
+    const arraytrings=str.split("");
+    const reverseArray=arraytrings.reverse();
+    const joinArray = reverseArray.join("");
+    return joinArray;
+
+}
+
+const strings =prompt("Enter a strings :");
+
+const results=reverseString(strings);
+console.log(results);
+
+
+</script>

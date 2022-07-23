@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <linkrel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+
+    <title>Pattern</title>
+  </head>
+  <body>
+
+    <script> 
+
+//use of lcm using whileloop and if..statement
+//lcm=Least Common Multiple
+//hcf=Highest Common Factor
+
+const num1=prompt("Enter a first positive integer:");
+const num2=prompt("Enter a second positive integer:");
+
+let min =(num1 > num2) ? num1: num2;
+
+while(true){
+    if(min % num1== 0 && min % num2==0){
+        console.log(`The LCM of ${num1} and ${num2} is ${min}`);
+        break;
+    }
+
+    min++;
+}
+
+//use of LCM calculation using HCF
+
+let HighestCommonFactor;
+
+const number1=prompt("Enter a first positive integer:");
+const number2=prompt("Enter a second positive integer:");
+
+for(let i=1;i<=number1 && i<=number2;i++){
+
+    if(number1 % i==0 && number2 % i==0){
+        HighestCommonFactor=i;
+        
+    }
+}
+
+    let leastCommonMultiple = (number1 * number2)/HighestCommonFactor;
+
+    console.log(`HCF of ${number1} and ${number2} is ${leastCommonMultiple}`);
+    
+
+</script>

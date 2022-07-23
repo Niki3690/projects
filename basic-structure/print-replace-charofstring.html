@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <linkrel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+
+    <title>Pattern</title>
+  </head>
+  <body>
+
+    <script> 
+
+    //use of replace first occurrence of a character in a string
+
+        const string="Mrs Yellow has a yellow house and a yellow car";
+
+        const newText = string.replace("yellow","black");
+
+        console.log(newText);
+
+    
+    //use of replace character of a string using RegEx
+
+    const strings="Mrs Yellow has a yellow house and a yellow car";
+    
+    const  regex = /yellow/g;
+
+    const newTexts = strings.replace(regex,"black");
+
+    console.log(newTexts);
+            
+        
+        
+        
+        
+        </script>

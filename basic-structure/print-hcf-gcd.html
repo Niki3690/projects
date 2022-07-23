@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <linkrel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+
+    <title>Pattern</title>
+  </head>
+  <body>
+
+    <script> 
+
+  // use of HCF using for loop
+    let highestCommonFactor ;
+    const number1=prompt("Enter a first positive integer:");
+    const number2=prompt("Enter a second positive integer:");
+
+    for(let i=1;i<=number1 && i<= number2;i++){
+
+      if(number1 % i==0 && number2 % i==0){
+        highestCommonFactor=i;
+      }
+    }
+    console.log(`HCF of ${number1} and ${number2} is ${ highestCommonFactor
+      }`);
+
+
+//using of while loop and if...else
+
+      let numbers1=prompt("Enter a first positive integer:");
+      let numbers2=prompt("Enter a second positive integer:"); 
+
+      while(number1 != number2){
+        if(number1 > number2){
+          number1 -= number2;     
+      }
+      else{
+        number2 -=number1;
+
+      }
+    }
+    console.log(`highestCommonFactor is ${number1}`);
+
+
+
+    </script>
+
+      
+
+
+    

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <linkrel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+
+    <title>Pattern</title>
+  </head>
+  <body>
+
+    <script> 
+
+    //use of count the num of vowels using Regex
+
+    // function countVowel(str){
+
+        // const count =str.match(/[aeiou]/gi).length;
+        // return count;
+    // }
+
+    // const string=prompt("Enter a stirng:");
+    // const result = countVowel(string);
+    // console.log(result);
+
+
+    //use of count number fo vowels using for loop
+
+      const  vowels=["a","e","i","o","u"]
+
+      function countVowels(str){
+        let count=0;
+
+        for(let letter of str.toLowerCase()){
+          if(vowels.includes(letter)){
+            count++;
+          }
+        }
+        return count
+      }
+
+      const strings =prompt("Enter a string:");
+      const results=countVowels(strings);
+      console.log(results);
+
+
+
+
+
+    </script>

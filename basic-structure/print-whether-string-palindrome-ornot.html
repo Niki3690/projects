@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <linkrel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+
+    <title>Pattern</title>
+  </head>
+  <body>
+
+    <script> 
+//use of check weather a string is a palindrome or not
+
+function checkPalindrome(string){
+    const len =string.length;
+
+    for (let i=0;i<len/2;i++){
+        if(stirng[i]!== string [len-1-i]){
+            return "It is not a palindrome";
+
+        }
+    }
+    return "It is a palindrome";
+}
+
+const string =prompt("Enter a string:");
+const value=checkPalindrome(string);
+
+console.log(value);
+
+
+//use of palindrome usinf built in functuins
+
+
+function checksPalindrome(strings){
+    const arrayvalues =string.split(' ');
+    const reverseArrayValues =arrayValues.reverse();
+    const reverseString =reverseArrayValkues.join(' ');
+    if(string == reverseString){
+        console.log("It is a palindorme");
+    }
+    else{
+        console.log("It is not a palindrome");
+    }
+    }
+    const strings =propmt("Enter a strings:");
+    checksPalindrome(strings);
+
+
+
+
+</script>
+
+
+
+
+

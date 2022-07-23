@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <linkrel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+
+    <title>Pattern</title>
+  </head>
+  <body>
+
+    <script> 
+
+    //use of convert decimal to binary
+
+    function convertToBinary(x){
+        let bin=0;
+        let rem,i=1,step=1;
+        while(x !=0){
+            rem=x%2;
+            console.log(`step ${step++}: ${x} /2 , Remainder =${rem}, Quotient =${parseInt(x/2)}`);
+            x=parseInt(x/2);
+            bin =bin + rem *i;
+            i=i * 10;
+        }
+        console.log(`Binary:${bin}`);
+    }
+
+    let number=prompt("Enter a decimal number:");
+    convertToBinary(number);
+    </script>
+

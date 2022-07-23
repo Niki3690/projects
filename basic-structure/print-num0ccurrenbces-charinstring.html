@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <linkrel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+
+    <title>Pattern</title>
+  </head>
+  <body>
+
+    <script> 
+
+    //use of check occurrence of a caracter using loop
+
+    function countString(str,letter){
+        let count=0;
+
+        for(let i=0;i<str.length;i++){
+            if(str.charAt(i) == letter){
+                count +=1;
+            }
+        }
+
+        return count;
+    }
+            const string =prompt("Enter a string :");
+            const letterToCheck = prompt("Enter a letter to check:");
+
+            const result=countString(string,letterToCheck);
+
+            console.log(result);
+
+
+    //use of check occurence of a character using  a regex
+
+    // function countString(str,letter){
+
+        // 
+        // const re=new RegExp(letter,"g");
+        // const count = str.match(re).length;
+
+    //  return count;
+//  }
+        //  const strings =prompt("Enter a strings :");
+        //  const letterToChecks = prompt("Enter a letter to check:");
+        //  const results=countString(strings,letterToChecks);
+        //  console.log(results);
+
+
+    </script>

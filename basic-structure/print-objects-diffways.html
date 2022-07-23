@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <linkrel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+
+    <title>Pattern</title>
+  </head>
+  <body>
+
+    <script> 
+
+    //use of object literal
+
+    const person ={
+        name:"niki",
+        age:"23",
+        hobbies:["reading", "dancing" , "playing"],
+        greet:function(){
+            console.log("Helloooooo");
+        },
+        score:{
+            maths:80,
+            science:80
+        }
+        };
+    
+        console.log(typeof person);
+        console.log(person.name);
+        console.log(person.age);
+
+        console.log(person.hobbies[0]);
+        person.greet();
+
+        console.log(person.score.maths);
+
+//use of create an onject using instance of object directly
+
+        const persons = new object({
+            name:"niki",
+            age:"23",
+            hobbies:["reading", "dancing" , "playing"],
+            greet:function(){
+                console.log("Helloooooo");
+         },
+         score:{
+             maths:80,
+             science:80
+         }
+         });
+
+        console.log(typeof persons);
+        console.log(persons.name);
+        console.log(persons.age);
+        console.log(persons.hobbies[0]);
+        persons.greet();
+        console.log(persons.score.maths);
+
+// 
+// use of object using constructor fucntion
+// 
+            // function personss(){
+                // this.name="PATEL",
+                // this.age=24,
+                // this.hobbies=["reading", "dancing" , "playing"],
+                // this.greet=function(){
+                // console.log("Helloooooo");
+            // },
+            // this.score={
+                // maths:80,
+                // science:80 
+            // }
+        // }
+// 
+        // const personss=new personss();
+        // console.log(typeof personss);
+        // console.log(personss.name);
+        // console.log(personss.age);
+        // console.log(personss.hobbies[0]);
+        // personss.greet();
+        // console.log(personss.score.maths);
+            
+    
+
+
+</script>
