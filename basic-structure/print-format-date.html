@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Login Form</title>
+</head>
+<body>
+
+    <script>
+
+        let currentDate= new Date();
+        let day=currentDate.getDate();
+
+        let month=currentDate.getMonth() +1;
+        let year=currentDate.getFullYear();
+
+        if(day <10){
+            day="0" +day;
+        }
+        if(month <10){
+            month="0" +month;
+}
+
+
+        const formttedDate1=month+'/' + day +'/' + year;
+        console.log(formttedDate1);
+
+        const formttedDate2=month+'-' + day +'-' + year;
+        console.log(formttedDate2);
+
+        const formttedDate3=month+'+' + day +'+' + year;
+        console.log(formttedDate3);
+
+        const formttedDate4=month+'/' + day +'/' + year;
+        console.log(formttedDate4);
+
+
+
+        
+
+    </script>

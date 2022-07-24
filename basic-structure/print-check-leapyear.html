@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Login Form</title>
+</head>
+<body>
+
+    <script>
+
+//use of check leap year using if..else
+        function checkLeapYear(year){
+            if((0 ==year %4) && (0 !=year %100) || (0 ==year %400)){
+                console.log(year +'is a leap year');
+            }else{
+                console.log(year +'is not a leap year');
+
+            }
+            }
+        const year =prompt("Enter a year:");
+        checkLeapYear(year);
+
+
+
+
+//use of check leap year using newDate()
+
+            function checkLeapYear1(year){
+                const leap=new Date(year,1,29).getDate() ===29;
+                if(leap){
+                    console.log(year +"is a leap year");
+                }
+            else{
+                console.log(year +"is not a leap year");
+            }
+        }
+
+        const year1 =prompt("Enter a year:");
+        checkLeapYear1(year);
+
+    </script>

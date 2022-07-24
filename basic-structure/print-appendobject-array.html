@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Login Form</title>
+</head>
+<body>
+
+    <script>
+
+//use of append object to arrayUsingpush()
+
+        function insertObject(arr,obj){
+            arr.push(obj);
+        console.log(arr);
+                }
+            
+            let array=[1,2,3];
+            let object={x:12,y:8};
+
+            insertObject(array,object);
+
+
+//use of append object to array using splice()
+
+            function insertObject(arr,obj){
+                let index=arr.length;
+                arr.splice(index,0,object);
+                console.log(arr);
+            }
+
+            let array1=[1,2,3];
+            let object1={x:12,y:8};
+
+            insertObject(array,object);
+
+    
+        
+        
+    </script>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Login Form</title>
+</head>
+<body>
+
+    <script>
+
+//use of convert object to string using JSON.stringfly()
+
+        const person ={
+            name:"niki",
+            age:25,
+            gender:"female",
+
+        }
+
+        const result = JSON .stringify(person);
+        console.log(result);
+        console.log(typeof result);
+
+
+
+//use of convert object to string  using String()
+
+         const person1 ={
+            name:"niki",
+            age:25,
+            gender:"female",
+         }
+
+         const result1=String(person1);
+         const result2=String(person1["name"]);
+
+         console.log(result1);
+         console.log(result2);
+
+         console.log(typeof result1);
+
+
+
+
+    </script>

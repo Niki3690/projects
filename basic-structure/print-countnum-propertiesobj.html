@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Login Form</title>
+</head>
+<body>
+
+    <script>
+
+        //use of count th enumber of key in an object using for....in
+
+        const student={
+            name:"niki",
+            age:24,
+            hobbies:["reading", "art","painting"],
+        }
+
+        let count=0;
+
+        for(let key in student){
+            ++count;
+        }
+
+        console.log(count);
+
+
+
+        //use of count the number of key in an object using objetc.key()
+
+        const student1={
+            name:"niki",
+            age:24,
+            hobbies:["reading", "art","painting"],
+            sub:["maths","english","science","socialscience"],
+ }
+
+        const result = Object.keys(student).length;
+
+        console.log(result);
+
+
+
+
+
+    </script>

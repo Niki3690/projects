@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Login Form</title>
+</head>
+<body>
+
+    <script>
+
+//use of clone the object using object.assign()
+
+
+const person={
+    name:"niki",
+    age:24,
+}
+
+const clonePerson = object.assign({},person);
+
+console.log(clonePerson);
+
+clonePerson.name="NIK";
+
+
+console.log(clonePerson.name);
+console.log(person.name);
+
+
+
+//use of clone the object using spread syntax
+
+
+const person1={
+    name:"niki",
+    age:24,
+}
+
+const clonePerson = { ...person}
+
+console.log(clonePerson);
+
+clonePerson.name="NIK";
+
+
+console.log(clonePerson.name);
+console.log(person.name);
+    </script>
