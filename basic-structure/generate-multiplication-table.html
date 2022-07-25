@@ -13,39 +13,65 @@
   <body>
     <div class="container is-fluid m-2 p-2">
       <div class="columns is-centered mt-5">
-        <div class="column is-8" id="column-8">
+        <div class="column is-4" id="column-4">
           <div class="card card-body text-center mt-7">
 
+            <div class="text has-text-centered">
+            <input class="input is-primary" type="text"  id="number"><br><br>
 
-            <input type="number" id="number" name="txt1" /><br /><br />
+            <button class="button is-info" type="button " id="myFunction"  onclick="myFunction()">Print Table</button><br><br>
+            
 
-            <button type="button" onclick="myFunction()" id="myFunction">
-              Print Table</button><br><br>
 
               <div id="result">
           </div>
         </div>
       </div>
     </div>
+      </div>
+    </div>
     
 
     <script>
-        function myFunction() {
-        let number;
-        let result = "";
 
-        number = Number(document.getElementById("number").value);
-
-        for( i = 1; i<= 10; i++){
-          result = result + "<p>"+number + "*" + i + "=" + number * i+"</p>";
-        }
-        document.getElementById("result").innerHTML = result;
-
-    }
-
-</script>
+          function myFunction() {
+                  let number;
+                  let result = "";
+                  number = Number(document.getElementById("number").value);
+                  for( i = 1; i<= 10; i++){
+                    result = result + "<p>"+number + "*" + i + "=" + number * i+"</p>";
+                  }
+                  document.getElementById("result").innerHTML = result;
+                }
+              </script>
 </body>
 </html>
+
+      
+      
+      
+
+      
+
+      
+
+
+      
+      
+      
+      
+      
+      
+      
+      
+
+      
+      
+
+    
+
+
+
 
 
 

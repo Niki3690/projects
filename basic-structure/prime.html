@@ -28,6 +28,10 @@
                     <td id="randomNumber">1</td>
                   </tr>
               <tr>
+                <td>Primenumber</td>
+                <td id="primeNum">primeOrNot</td>
+              </tr>
+              <tr>
                 <td>NotPrimeNumber</td>
                 <td id="notPrimeNum">primeOrNot</td>
               </tr>
@@ -44,6 +48,7 @@
 
         function myFunction(){
             let randomNumberEle = document.getElementById("randomNumber");
+            let primeNumEle = document.getElementById("primeNum");
             let notPrimeNumEle = document.getElementById("notPrimeNum");
             let number = "";
         
@@ -82,7 +87,7 @@
                 console.log("The number is not a prime number.");
             }
 
-            // primeNumEle.innerHTML=myFunction;
+            primeNumEle.innerHTML=myFunction;
             notPrimeNumEle.innerHTML=isPrime;
                
             //    
