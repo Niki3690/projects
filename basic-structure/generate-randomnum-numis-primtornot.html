@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Login Form</title>
+</head>
+<body>
+
+    <div class="container is-fluid m-2 p-2">
+        <div class="columns is-centered mt-5">
+            <div class="column is-8" id="column-8">
+                <div class="card card-body text-center mt-7">
+
+
+    <button type="button" onclick="myFunction()" id="myFunction">convert</button><br><br>
+        
+        <div id="result">
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        //  const a=Math.floor(Math.random() * (100-1))+1;
+            // console.log(a);
+
+            
+
+    // random number 
+
+    function myFunction(){
+        let resultEle = document.getElementById("result");
+
+
+ const myFunction=Math.floor(Math.random() * (100-1))+1;
+    console.log(myFunction);
+
+    let isPrime = true;
+
+    // check if number is equal to 1 or not
+    if (myFunction === 1) {
+        console.log("1 is neither prime nor composite number.");
+    }
+
+    // check if number is greater than 1 or not
+    else if (myFunction > 1) {
+
+        // loop  2 to number-1
+    for (let i = 2; i < myFunction; i++) {
+        if (myFunction % i == 0) {
+            isPrime = false;
+            break;
+        }
+    }
+
+    if (isPrime) {
+        console.log(`${myFunction} is a prime number`);
+    } else {
+        console.log(`${myFunction} is a not prime number`);
+    }
+        }
+
+        // check if number is less than 1
+        else {
+            console.log("The number is not a prime number.");
+        }
+        resultEle.innerHTML = myFunction;
+        // resultEle.innerHTML = isPrime;
+    }
+    </script>
+
+</body>
+</html>
+
+
+            
+            
+ 
+
+
+
+           
+            
+
+
+
+
+
+
+
+
+
+
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

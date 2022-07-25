@@ -9,16 +9,53 @@
 </head>
 <body>
 
+    <div class="container is-fluid m-2 p-2">
+        <div class="columns is-centered mt-5">
+            <div class="column is-8" id="column-8">
+                <div class="card card-body text-center mt-7">
+
+
+    <!-- <input type="text" id="txt" name="txt1"  /> -->
+
+    
+        <button type="button" onclick="celsius()" id="myFunction">convert</button><br><br>
+        
+        <div id="number">
+        </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+
 
 <script>
-    
 
-    
 
-        const celsius=Math.floor(Math.random() * (100-1))+1;
+
+    function celsius() {
+        let numberEle = document.getElementById("number");
+        let number = "";
+
+        
+ 
+    
+        
+    
+       const celsius=Math.floor(Math.random(myFunction) * (100-1))+1;
         console.log(celsius);
-        const fahrenheit =(celsius *1.8)+32;
+        const   fahrenheit =(celsius *1.8)+32;
         console.log(`${celsius} degree celsiusis equal to ${fahrenheit} degree fahrenheit`);
+        numberEle.innerHTML = celsius;
+        numberEle.innerHTML =fahrenheit ;
+       
+    
+    }
+       
+       
+        
+    
+
         
 </script> 
 </body>
