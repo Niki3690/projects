@@ -9,14 +9,14 @@
 </head>
 <body>
 
+    <script>
+        function extractValue(arr,prop){
 
-<script>
-    
-        const celsius=Math.floor(Math.random() * (100-1))+1;
-        console.log(celsius);
-        const fahrenheit =(celsius *1.8)+32;
-        console.log(`${celsius} degree celsiusis equal to ${fahrenheit} degree fahrenheit`);
+            let extractedValue=arr.map(item =>item[prop]);
+            return extractedValue;
+        }
+        const objArray=[{a:1,b:2},{a:4,b:5},{a:8,b:6}];
         
-</script> 
-</body>
-</html>
+    const result=extractValue(objArray,"a");
+    console.log(result);
+    </script>

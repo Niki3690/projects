@@ -17,9 +17,9 @@
           <div class="card card-body text-center mt-7">
 
             <div class="text has-text-centered">
-            <input class="input is-primary" type="text"  id="number"><br><br>
+            <input class="input is-danger" type="text"  id="number"><br><br>
 
-            <button class="button is-info" type="button " id="myFunction"  onclick="myFunction()">Print Table</button><br><br>
+            <button class="button is-danger" type="button " id="myFunction"  onclick="myFunction()">Print Table</button><br><br>
             
 
 
@@ -37,11 +37,12 @@
           function myFunction() {
                   let number;
                   let result = "";
+
                   number = Number(document.getElementById("number").value);
                   for( i = 1; i<= 10; i++){
                     result = result + "<p>"+number + "*" + i + "=" + number * i+"</p>";
                   }
-                  document.getElementById("result").innerHTML = result;
+                  document.getElementById("result").innerHTML =result;
                 }
               </script>
 </body>
