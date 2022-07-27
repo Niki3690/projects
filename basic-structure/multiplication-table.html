@@ -11,7 +11,7 @@
 
     <div class="container is-fluid m-2 p-2">
         <div class="columns is-centered mt-5">
-            <div class="column is-7" id="column-8">
+            <div class="column is-8" id="column-8">
                 <div class="card card-body text-center mt-7">
 
 
@@ -128,10 +128,10 @@
                         </div>
                         
 
-    <div class="column">
-        <div class="text has-text-centered">
-            <input class="input is-danger" type="text"  id="number" placeholder="Table Number"/><br><br>
-            <button class="button is-danger"  id="myFunction"  onclick="myFunction()">Print Table</button>
+<div class="column">
+    <div class="text has-text-centered">
+        <input class="input is-danger" type="text"  id="number" placeholder="Table Number"/><br><br>
+        <button class="button is-danger"  id="myFunction"  onclick="myFunction()">Print Table</button>
         
         <div id="result">
         </div>
@@ -151,14 +151,80 @@
            
 
             number = Number(document.getElementById("number").value);
+           
             for( i = 1; i<= 10; i++){
-              result = result + "<p>"+number + "*" + i + "=" + number * i+"</p>";
-            }
-            document.getElementById("result").innerHTML =result;
+                
+           
+           
+
+            // result = result + "<p>"+number + "*" + i + "=" + number * i  + number + "+" + i +  "=" +  +  "</p>";
+            result = result + "<p>"+number + "*" + i + "=" + number * i  + number + "+" + i +  "=" +  +  "</p>"
+            
           }
-        </script>
+              document.getElementById("result").innerHTML =result;
+
+
+                //  if(number % 2 == 0) { 
+        // console.log("The number is even.");
+    // }
+    // else {
+        // console.log("The number is odd.");
+    // }
+    // numberEle.innerHTML=number % 2 == 0;
+ }
+
+</script>
 </body>
 </html>
+
+
+           
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+       
+      
+      
+      
+      
+ 
+      
+      
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+          
+
+
+
 
 
 

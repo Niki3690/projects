@@ -11,63 +11,340 @@
 
     <div class="container is-fluid m-2 p-2">
         <div class="columns is-centered mt-5">
-            <div class="column is-5" id="column-">
+            <div class="column is-8" id="column-8">
                 <div class="card card-body text-center mt-7">
 
 
-    <!-- <input type="text" id="txt" name="txt1"  /> -->
+                    <div class="columns">
+                        <div class="column">
 
+                            <table class="table is-bordered has-text-centered">
+                                <thead>
+                                   <th>12</th>
+                                    </thead>
+
+
+                                <tbody>
+                                    <tr>
+                                        <td>12</td>
+                                        <td>*</td>
+                                        <td>1</td>
+                                        <td>=</td>
+                                        <td>12</td>
+                                        <td>13</td>
+                                        <td>false</td>
+                                    </tr>
+                                    <tr>
+                                        <td>12</td>
+                                        <td>*</td>
+                                        <td>2</td>
+                                        <td>=</td>
+                                        <td>24</td>
+                                        <td>14</td>
+                                        <td>true</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>12</td>
+                                        <td>*</td>
+                                        <td>3</td>
+                                        <td>=</td>
+                                        <td>36</td>
+                                        <td>15</td>
+                                        <td>false</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>12</td>
+                                        <td>*</td>
+                                        <td>4</td>
+                                        <td>=</td>
+                                        <td>48</td>
+                                        <td>16</td>
+                                        <td>true</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>12</td>
+                                        <td>*</td>
+                                        <td>5</td>
+                                        <td>=</td>
+                                        <td>60</td>
+                                        <td>17</td>
+                                        <td>false</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>12</td>
+                                        <td>*</td>
+                                        <td>6</td>
+                                        <td>=</td>
+                                        <td>72</td>
+                                        <td>18</td>
+                                        <td>true</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>12</td>
+                                        <td>*</td>
+                                        <td>7</td>
+                                        <td>=</td>
+                                        <td>84</td>
+                                        <td>19</td>
+                                        <td>false</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>12</td>
+                                        <td>*</td>
+                                        <td>8</td>
+                                        <td>=</td>
+                                        <td>96</td>
+                                        <td>20</td>
+                                        <td>true</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>12</td>
+                                        <td>*</td>
+                                        <td>9</td>
+                                        <td>=</td>
+                                        <td>108</td>
+                                        <td>21</td>
+                                        <td>false</td>
+                                    </tr>
+                                    
+                                    <tr>
+                                        <td>12</td>
+                                        <td>*</td>
+                                        <td>10</td>
+                                        <td>=</td>
+                                        <td>120</td>
+                                        <td>22</td>
+                                        <td>true</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+
+<div class="column">
     <div class="text has-text-centered">
-        <input class="input is-danger" type="text"  id="number" placeholder="Table 
-       Number"/><br><br>
-        <button class="button is-danger"  id="myFunction"  onclick="myFunction()">Print 
-       Table</button><br><br>
+        <input class="input is-danger" type="text"  id="number" placeholder="Table Number"/><br><br>
+        <button class="button is-danger"  id="myFunction"  onclick="myFunction()">Print Table</button>
         
         <div id="result">
-    <table class="table is-bordered has-text-centered">
-            <thead>
-                <th>12</th>
-                    
-                
-                
-            </thead>
-
-            <tbody>
-                <tr><td>12*1=12</td></tr>
-                <tr><td>12*2=24</td></tr>
-                <tr><td>12*3=36</td></tr>
-                <tr><td>12*4=48</td></tr>
-                <tr><td>12*5=60</td></tr>
-                <tr><td>12*6=72</td></tr>
-                <tr><td>12*7=84</td></tr>
-                <tr><td>12*8=96</td></tr>
-                <tr><td>12*9=108</td></tr>
-                <tr><td>12*10=120</td></tr>
-            </tbody>
-        </table>
         </div>
     </div>
-                </div>
-            </div>
-        </div>
     </div>
+  </div>
+ </div>
+</div>
+</div>
+</div>
+
+<script>
+
+    function myFunction() {
+            let number;
+            let result = "";
+           
+
+            number = Number(document.getElementById("number").value);
+           
+            for( i = 1; i<= 10; i++){
+                
+           
+           
+
+            // result = result + "<p>"+number + "*" + i + "=" + number * i  + number + "+" + i +  "=" +  +  "</p>";
+            result = result + "<p>"+number + "*" + i + "=" + number * i  + number + "+" + i +  "=" +  +  "</p>"
+            
+          }
+              document.getElementById("result").innerHTML =result;
 
 
+                //  if(number % 2 == 0) { 
+        // console.log("The number is even.");
+    // }
+    // else {
+        // console.log("The number is odd.");
+    // }
+    // numberEle.innerHTML=number % 2 == 0;
+ }
 
-    <script>
-        function myFunction() {
-                let number;
-                let result = "";
-               
-                number = Number(document.getElementById("number").value);
-                for( i = 1; i<= 10; i++){
-                  result = result + "<p>"+number + "*" + i + "=" + number * i+"</p>";
-                }
-                document.getElementById("result").innerHTML =result;
-              }
-            </script>
+</script>
 </body>
 </html>
+
+
+           
+           
+
+
+
+
+
+
+
+
+
+
+
+
+
+       
+       
+      
+      
+      
+      
+ 
+      
+      
+      
+      
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+            
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                                    
+                                    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                       
+                         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                        
+                     
+                     
+                     
+                     
+                     
+                     
+
+    
+    
+    
+    
+    
+
+    
+
+    
+       
+       
+       
+   
+   
+   
+   
+   
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
  
  
  
