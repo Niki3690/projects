@@ -31,6 +31,8 @@
                                         <td>1</td>
                                         <td>=</td>
                                         <td>12</td>
+                                        <td>13</td>
+                                        <td>false</td>
                                     </tr>
                                     <tr>
                                         <td>12</td>
@@ -38,6 +40,8 @@
                                         <td>2</td>
                                         <td>=</td>
                                         <td>24</td>
+                                        <td>14</td>
+                                        <td>true</td>
                                     </tr>
                                     
                                     <tr>
@@ -46,6 +50,8 @@
                                         <td>3</td>
                                         <td>=</td>
                                         <td>36</td>
+                                        <td>15</td>
+                                        <td>false</td>
                                     </tr>
                                     
                                     <tr>
@@ -54,6 +60,8 @@
                                         <td>4</td>
                                         <td>=</td>
                                         <td>48</td>
+                                        <td>16</td>
+                                        <td>true</td>
                                     </tr>
                                     
                                     <tr>
@@ -62,6 +70,8 @@
                                         <td>5</td>
                                         <td>=</td>
                                         <td>60</td>
+                                        <td>17</td>
+                                        <td>false</td>
                                     </tr>
                                     
                                     <tr>
@@ -70,6 +80,8 @@
                                         <td>6</td>
                                         <td>=</td>
                                         <td>72</td>
+                                        <td>18</td>
+                                        <td>true</td>
                                     </tr>
                                     
                                     <tr>
@@ -78,6 +90,8 @@
                                         <td>7</td>
                                         <td>=</td>
                                         <td>84</td>
+                                        <td>19</td>
+                                        <td>false</td>
                                     </tr>
                                     
                                     <tr>
@@ -86,6 +100,8 @@
                                         <td>8</td>
                                         <td>=</td>
                                         <td>96</td>
+                                        <td>20</td>
+                                        <td>true</td>
                                     </tr>
                                     
                                     <tr>
@@ -94,6 +110,8 @@
                                         <td>9</td>
                                         <td>=</td>
                                         <td>108</td>
+                                        <td>21</td>
+                                        <td>false</td>
                                     </tr>
                                     
                                     <tr>
@@ -102,6 +120,8 @@
                                         <td>10</td>
                                         <td>=</td>
                                         <td>120</td>
+                                        <td>12</td>
+                                        <td>true</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -122,6 +142,25 @@
 </div>
 </div>
 </div>
+
+<script>
+
+    function myFunction() {
+            let number;
+            let result = "";
+           
+
+            number = Number(document.getElementById("number").value);
+            for( i = 1; i<= 10; i++){
+              result = result + "<p>"+number + "*" + i + "=" + number * i+"</p>";
+            }
+            document.getElementById("result").innerHTML =result;
+          }
+        </script>
+</body>
+</html>
+
+
 
 
 
