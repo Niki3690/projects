@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <title>Login Form</title>
+</head>
+<body>
+
+    <div class="container is-fluid m-2 p-2">
+        <div class="columns is-centered mt-5">
+            <div class="column is-5" id="column-">
+                <div class="card card-body text-center mt-7">
+
+
+    <!-- <input type="text" id="txt" name="txt1"  /> -->
+
+    <div class="text has-text-centered">
+        <input class="input is-danger" type="text"  id="number" placeholder="Table 
+       Number"/><br><br>
+        <button class="button is-danger"  id="myFunction"  onclick="myFunction()">Print 
+       Table</button><br><br>
+        
+        <div id="result">
+    <table class="table is-bordered has-text-centered">
+            <thead>
+                <th>12</th>
+                    
+                
+                
+            </thead>
+
+            <tbody>
+                <tr><td>12*1=12</td></tr>
+                <tr><td>12*2=24</td></tr>
+                <tr><td>12*3=36</td></tr>
+                <tr><td>12*4=48</td></tr>
+                <tr><td>12*5=60</td></tr>
+                <tr><td>12*6=72</td></tr>
+                <tr><td>12*7=84</td></tr>
+                <tr><td>12*8=96</td></tr>
+                <tr><td>12*9=108</td></tr>
+                <tr><td>12*10=120</td></tr>
+            </tbody>
+        </table>
+        </div>
+    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        function myFunction() {
+                let number;
+                let result = "";
+               
+                number = Number(document.getElementById("number").value);
+                for( i = 1; i<= 10; i++){
+                  result = result + "<p>"+number + "*" + i + "=" + number * i+"</p>";
+                }
+                document.getElementById("result").innerHTML =result;
+              }
+            </script>
+</body>
+</html>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
