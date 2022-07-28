@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <title>Login Form</title>
+  </head>
+  <body>
+    <div class="container is-fluid m-2 p-2">
+      <div class="columns is-centered mt-5">
+        <div class="column is-8" id="column-8">
+          <div class="card card-body text-center mt-7">
+
+            <div class="text has-text-centered">
+            <input class="input is-danger" type="text"  id="number" placeholder="enter number"><br><br>
+            <input class="input is-danger" type="text"  id="number1" placeholder="enter range"><br><br>
+
+ <button class="button is-danger"   id="myFunction"  onclick="myFunction()">Print Table</button><br><br>
+            
+
+
+              <div id="result">
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+    </div>
+    
+
+    <script>
+
+          function myFunction() {
+            alert("hi");
+
+
+
+
+            // let number;
+        let result = "<table class='table is-bordered'>";
+        result = result + "<thead><th>Num</th><th>*</th><th>S_No</th><th>=</th><th>Input</th><th>Num</  th><th>+</th><th>S_No</th><th>=</th><th>Input</th><th>True-False</th><th>Factorial</th></thead>"
+        
+ 
+
+                
+            let resultEle = document.getElementById("result");
+             let range = parseInt(document.getElementById("number1").value);
+                //   let number;
+                //   let result = "";
+                 
+
+                  number = Number(document.getElementById("number").value);
+                  for( i = 1; i<= range; i++){
+
+
+
+
+                    let sum= number + i;
+                    let mul = number * i;
+                    let isEven=(sum % 2 == 0);
+                    let fact = calFactorial(i);
+                    
+                    
+
+   
+   
+   
+   
+   
+   
+   
+    
+                   
+
+                    // result = result + "<p>"+number + "*" + i + "=" + number * i+"</p>";
+                    result = result + "<thead><tr><td>"+number + "</td><td>*</td><td>" + i + "</td><td>=</td><td>" + number  * i + "</td><td>" + number + "</td><td>+</td><td>" + i +  "</td><td>=</td><td>" + sum +  "</td><td>" + isEven + "</td><td>" + fact + "</td></tr></thead>";
+            
+                  document.getElementById("result").innerHTML =result;
+                }
+            }
+
+ 
+     function calFactorial(number){
+
+       
+  if (number < 0) 
+        return -1;
+  else if (number == 0) 
+      return 1;
+  else {
+      return (number *  calFactorial(number - 1));
+  }
+}
+     
+    //  calFactorial(5);
+    //    
+
+
+
+     
+     </script>
+  </body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+              
+              
+              

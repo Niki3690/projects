@@ -11,7 +11,7 @@
 
     <div class="container is-fluid m-2 p-2">
         <div class="columns is-centered mt-5">
-            <div class="column is-8" id="column-8">
+            <div class="column is-12" id="column-12">
                 <div class="card card-body text-center mt-7">
 
 
@@ -31,6 +31,10 @@
                                         <td>1</td>
                                         <td>=</td>
                                         <td>12</td>
+                                        <td>12</td>
+                                        <td>+</td>
+                                        <td>1</td>
+                                        <td>=</td>
                                         <td>13</td>
                                         <td>false</td>
                                     </tr>
@@ -40,6 +44,10 @@
                                         <td>2</td>
                                         <td>=</td>
                                         <td>24</td>
+                                        <td>12</td>
+                                        <td>+</td>
+                                        <td>2</td>
+                                        <td>=</td>
                                         <td>14</td>
                                         <td>true</td>
                                     </tr>
@@ -50,6 +58,10 @@
                                         <td>3</td>
                                         <td>=</td>
                                         <td>36</td>
+                                        <td>12</td>
+                                        <td>+</td>
+                                        <td>3</td>
+                                        <td>=</td>
                                         <td>15</td>
                                         <td>false</td>
                                     </tr>
@@ -60,6 +72,10 @@
                                         <td>4</td>
                                         <td>=</td>
                                         <td>48</td>
+                                        <td>12</td>
+                                        <td>+</td>
+                                        <td>4</td>
+                                        <td>=</td>
                                         <td>16</td>
                                         <td>true</td>
                                     </tr>
@@ -70,6 +86,10 @@
                                         <td>5</td>
                                         <td>=</td>
                                         <td>60</td>
+                                        <td>12</td>
+                                        <td>+</td>
+                                        <td>5</td>
+                                        <td>=</td>
                                         <td>17</td>
                                         <td>false</td>
                                     </tr>
@@ -80,6 +100,10 @@
                                         <td>6</td>
                                         <td>=</td>
                                         <td>72</td>
+                                        <td>12</td>
+                                        <td>+</td>
+                                        <td>6</td>
+                                        <td>=</td>
                                         <td>18</td>
                                         <td>true</td>
                                     </tr>
@@ -90,6 +114,10 @@
                                         <td>7</td>
                                         <td>=</td>
                                         <td>84</td>
+                                        <td>12</td>
+                                        <td>+</td>
+                                        <td>7</td>
+                                        <td>=</td>
                                         <td>19</td>
                                         <td>false</td>
                                     </tr>
@@ -100,6 +128,10 @@
                                         <td>8</td>
                                         <td>=</td>
                                         <td>96</td>
+                                        <td>12</td>
+                                        <td>+</td>
+                                        <td>8</td>
+                                        <td>=</td>
                                         <td>20</td>
                                         <td>true</td>
                                     </tr>
@@ -110,6 +142,10 @@
                                         <td>9</td>
                                         <td>=</td>
                                         <td>108</td>
+                                        <td>12</td>
+                                        <td>+</td>
+                                        <td>9</td>
+                                        <td>=</td>
                                         <td>21</td>
                                         <td>false</td>
                                     </tr>
@@ -120,6 +156,10 @@
                                         <td>10</td>
                                         <td>=</td>
                                         <td>120</td>
+                                        <td>12</td>
+                                        <td>+</td>
+                                        <td>10</td>
+                                        <td>=</td>
                                         <td>22</td>
                                         <td>true</td>
                                     </tr>
@@ -131,7 +171,7 @@
 <div class="column">
     <div class="text has-text-centered">
         <input class="input is-danger" type="text"  id="number" placeholder="Table Number"/><br><br>
-        <button class="button is-danger"  id="myFunction"  onclick="myFunction()">Print Table</button>
+        <button class="button is-danger"  id="myFunction"  onclick="myFunction()">Print Table</button><br><br>
         
         <div id="result">
         </div>
@@ -148,38 +188,69 @@
     function myFunction() {
             let number;
             let result = "<table class='table is-bordered'>";
-           
+            result = result + "<thead><th>num</th></thead>"
+            
+    
 
             number = Number(document.getElementById("number").value);
            
             for( i = 1; i<= 10; i++){
+
+                let sum= number + i;
+                let mul = number * i;
+               let isEven=isNumberEven(sum) ;
+               let factorial = calFactorial(i);
+               console.log(isEven);
+
+        
+
+                
                 
            
-           let sum= number + i;
-           let mul = number * i;
-          // let iseven = 
+           
 
-           let tdStart = "<td>";
-           let tdEndStart = "</td><td>"
+    //  result = result + "<p>"+number + "*" + i + "=" + number * i  + number + "+" + i +  "=" + sum +  "</p>";
+    //  result = result + "<p>"+number + "*" + i + "=" + number *  i + mul  + "+"  +  "=" + sum +  "</p>"
 
-            let firstTd = "<tr><td>"+number+"<td>"
-
-
-            // result = result + "<p>"+number + "*" + i + "=" + number * i  + number + "+" + i +  "=" +  +  "</p>";
-            result = result + firstTd +"*" + i + "</td><td> = <td>" + mul  + number + " </td><td>+ " + i +  " = " + sum +  "<td>"
-            
+    // result = result + "<tr><td>"+number + "</td><td>*</td><td>" + i + "</td><td>=</td><td>" + number  * i + "</td><td>" + number + "</td><td>+</td><td>" + i +  "</td><td>=</td><td>" + sum +  "</td></tr></p>";
+    result = result + "<thead><tr><td>"+number + "</td><td>*</td><td>" + i + "</td><td>=</td><td>" + number  * i + "</td><td>" + number + "</td><td>+</td><td>" + i +  "</td><td>=</td><td>" + sum +  "</td><td>" + isEven + "</td></tr></thead>";
+           
+           
+           
           }
+         
               document.getElementById("result").innerHTML =result;
 
+              
+            //   if(sum % 2 == 0) { 
+        // console.log("The number is even.");
+    // }
+    // else {
+        // console.log("The number is odd.");
+    // }
+    // sumEle.innerHTML=sum % 2 == 0;
+              
 
-                             //  if(number % 2 == 0) { 
-                     // console.log("The number is even.");
-                 // }
-                 // else {
-                     // console.log("The number is odd.");
-                 // }
-                 // numberEle.innerHTML=number % 2 == 0;
- }              
+
+
+
+                //  if(number % 2 == 0) { 
+        // console.log("The number is even.");
+    // }
+    // else {
+        // console.log("The number is odd.");
+    // }
+    // numberEle.innerHTML=number % 2 == 0;
+ }
+
+ function isNumberEven(number){
+    return (number % 2 == 0);
+ }
+
+ function calFactorial(number){
+
+    return 50;
+ }
 
 </script>
 </body>

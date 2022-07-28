@@ -36,8 +36,6 @@
                                         <td>1</td>
                                         <td>=</td>
                                         <td>13</td>
-                                        
-                                        
                                         <td>false</td>
                                     </tr>
                                     <tr>
@@ -190,7 +188,10 @@
     function myFunction() {
             let number;
             let result = "<table class='table is-bordered'>";
-           
+            result = result + "<thead><th>Num</th><th>*</th><th>S_No</th><th>=</th><th>Input</th><th>Num</th><th>+</th><th>S_No</th><th>=</th><th>Input</th><th>True-False</th></thead>"
+            
+            
+    
 
             number = Number(document.getElementById("number").value);
            
@@ -198,7 +199,8 @@
 
                 let sum= number + i;
                 let mul = number * i;
-               let isEven=(sum % 2 == 0) ;
+               let isEven=isNumberEven(sum) ;
+               let factorial = calFactorial(i);
                console.log(isEven);
 
         
@@ -212,7 +214,7 @@
     //  result = result + "<p>"+number + "*" + i + "=" + number *  i + mul  + "+"  +  "=" + sum +  "</p>"
 
     // result = result + "<tr><td>"+number + "</td><td>*</td><td>" + i + "</td><td>=</td><td>" + number  * i + "</td><td>" + number + "</td><td>+</td><td>" + i +  "</td><td>=</td><td>" + sum +  "</td></tr></p>";
-    result = result + "<tr><td>"+number + "</td><td>*</td><td>" + i + "</td><td>=</td><td>" + number  * i + "</td><td>" + number + "</td><td>+</td><td>" + i +  "</td><td>=</td><td>" + sum +  "</td><td>" + isEven + "</td></tr>";
+    result = result + "<thead><tr><td>"+number + "</td><td>*</td><td>" + i + "</td><td>=</td><td>" + number  * i + "</td><td>" + number + "</td><td>+</td><td>" + i +  "</td><td>=</td><td>" + sum +  "</td><td>" + isEven + "</td></tr></thead>";
            
            
            
@@ -240,6 +242,15 @@
         // console.log("The number is odd.");
     // }
     // numberEle.innerHTML=number % 2 == 0;
+ }
+
+ function isNumberEven(number){
+    return (number % 2 == 0);
+ }
+
+ function calFactorial(number){
+
+    return 50;
  }
 
 </script>
