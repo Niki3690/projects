@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <title>Login Form</title>
+  </head>
+  <body>
+    <div class="container is-fluid m-2 p-2">
+      <div class="columns is-centered mt-5">
+        <div class="column is-11" id="column-11">
+          <div class="card card-body text-center mt-7">
+
+            <div class="text has-text-centered">
+            <input class="input is-danger" type="text"  id="number" placeholder="enter number" name="number"><br><br>
+           
+
+ <button class="button is-danger"   id="myFunction"  onclick="myFunction()">Print Table</button><br><br>
+            
+
+
+              <div id="result">
+          </div>
+        </div>
+      </div>
+    </div>
+      </div>
+    </div>
+    
+
+  <script>
+    function myFunction(){
+
+
+      
+num = document.getElementById("number").value;
+if(num == '' || num < 1) {
+document.getElementById("result");
+document.getElementById("result").innerHTML = "Please Enter a Valid Number";
+return;
+}
+var i;
+var flag = true;
+if (num == 1) {
+flag = false;
+} else {
+for(i = 2; i < num-1; i++) {
+if (num % i == 0) {
+flag = false;
+break;
+}
+}
+}
+if(flag == true) {
+document.getElementById("result");
+document.getElementById("result").innerHTML = "The number: " + num + " is a Prime Number";
+} else {
+document.getElementById("result")
+document.getElementById("result").innerHTML = "The number: " + num + " is NOT a Prime Number";
+}
+}
+</script>
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     </script>
+
+      <!-- //  let number ,i -->
+    <!-- // var isPrimeNumber=true; -->
+    <!-- // for(let i =2;i<number;i++){ -->
+      <!-- // if(number % i == 0){ -->
+        <!-- // isPrimeNumber =false; -->
+      <!-- // } -->
+    <!-- // } -->
+    <!-- // if(isPrimeNumber ==true){ -->
+      <!-- // console.log(`${number} is a prime number`); -->
+    <!-- // } -->
+    <!-- // else{ -->
+      <!-- // console.log(`${number} is a not prime number`); -->
+    <!-- // } -->
+  <!-- } -->
+
+   </script>
+  </body>
+</html>
+
+   
+   
+   
+
+   
+   
+
+  

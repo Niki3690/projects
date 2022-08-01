@@ -13,7 +13,7 @@
   <body>
     <div class="container is-fluid m-2 p-2">
       <div class="columns is-centered mt-5">
-        <div class="column is-8" id="column-8">
+        <div class="column is-9" id="column-9">
           <div class="card card-body text-center mt-7">
 
             <div class="text has-text-centered">
@@ -43,7 +43,7 @@
 
             // let number;
         let result = "<table class='table is-bordered'>";
-        result = result + "<thead><th>Num</th><th>*</th><th>S_No</th><th>=</th><th>Input</th><th>Num</  th><th>+</th><th>S_No</th><th>=</th><th>Input</th><th>True-False</th><th>Factorial_No</th></thead>"
+        result = result + "<thead><th>Num</th><th>*</th><th>S_No</th><th>=</th><th>Input</th><th>Num</  th><th>+</th><th>S_No</th><th>=</th><th>Input</th><th>True-False</th><th>Factorial_No<th>Prime</th></thead>"
         
  
 
@@ -55,38 +55,33 @@
                  
 
                   number = Number(document.getElementById("number").value);
+
+
                   for( i = 1; i<= range; i++){
 
+
                    
+                    // if(range == null ||range != undefined) {
+                    // range=10;
+                       
+                    
+                
                     let sum= number + i;
                     let mul = number * i;
                     let isEven=(sum % 2 == 0);
                     let fact = calFactorial(i);
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-                    
-
-
-
-
-
-
-
-
-;                    
+                    let isPrime=isNumberPrime(sum);
+                    // let isPrime=(number % i ==0);
+                
+                
                     
 
     // result = result + "<p>"+number + "*" + i + "=" + number * i+"</p>";
-                    result = result + "<thead><tr><td>"+number + "</td><td>*</td><td>" + i + "</td><td>=</td><td>" + number  * i + "</td><td>" + number + "</td><td>+</td><td>" + i +  "</td><td>=</td><td>" + sum +  "</td><td>" + isEven + "</td><td>" + fact + "</td></tr></thead>";
+                    result = result + "<thead><tr><td>"+number + "</td><td>*</td><td>" + i + "</td><td>=</td><td>" + number  * i + "</td><td>" + number + "</td><td>+</td><td>" + i +  "</td><td>=</td><td>" + sum +  "</td><td>" + isEven + "</td><td>" + fact +  "</td><td>" + isPrime +  "</td></tr></thead>";
             
                   document.getElementById("result").innerHTML =result;
                 }
-          }
+            }
 
  
      function calFactorial(number){
@@ -100,30 +95,125 @@
       return (number *  calFactorial(number - 1));
   }
 }
-          
 
 
 
+function isNumberPrime(sum){
+   
+let isPrime =true;
 
+if(sum===1){
+    console.log("1 is neither prime nor composite number");
+}
 
+else if(sum>1){
 
+    for(let i=2 ; i<sum ; i++){
+        if(sum % i==0){
+            isPrime=false;
+            break;
+        }
+    }
 
+    if(isPrime){
+        console.log (`${sum} is a prime number`);
+    }else{
+        console.log (`${sum} is a not prime number`);
 
+    }
+}
+console.log();
+return isPrime;
+}
 
-
-
-
-
-     
-    
-    
-
-
-
-     
-     </script>
+</script>
   </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+
+
+
+     
+
+
 
 
 
