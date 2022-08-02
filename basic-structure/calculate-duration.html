@@ -27,7 +27,7 @@
             <br><br>
 
              <div class="box has-text-centered">
-            <button class="button is-dark is-small" type="submit" onclick="calculateDuration()" id="submit">Calculate Duration</button><br><br>
+            <button class="button is-dark is-small" type="submit" onclick="calculateDuration()">Calculate Duration</button><br><br>
             <div class="output" id="output"></div><br>
 
             </div>
@@ -45,9 +45,9 @@
 
     function calculateDuration(){
 
-       let submit=document.getElementById("submit");
+      
       let output=document.getElementById("output");
-      submit.addEventListener("click",()=>{
+      
        let date1=new Date(document.getElementById("date1").value);
        let date2=new Date(document.getElementById("date2").value);
        if(date1.getTime() && date2.getTime()){
@@ -66,20 +66,13 @@
     
             output.innerHTML=`<b>Alternative time units</b> <br> <b>${days}</b> days can be converted to one of these units: <br> <b>${seconds}</b> seconds <br> <b>${minutes}</b> minutes <br> <b>${hours}</b> hours <br> <b>${days}</b> days <br> <b>${weeks}</b> weeks   <br> <b> ${years}</b> years `;
 
-
-
-
-
-
-
-         }        
+  }        
 
        else{
        output.innerHTML="please select a valid date";
     }
     
-  });
-}
+  }
 
 </script>
   </body>
