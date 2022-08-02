@@ -61,6 +61,8 @@
             let weeks = Math.floor(days/7);
             let months = Math.floor(weeks/53);
             let years = Math.floor(days/365);
+
+        
     
     
     
@@ -76,10 +78,26 @@
 
        else{
        output.innerHTML="please select a valid date";
-    }
+     }
+    });
     
-  });
+
+    const isLeapYear = function(years){
+        return(years %100 ===0)?(years %400 ===0):(years %4 ===0)
+    }
+    console.log(isLeapYear(2000));
 }
+
+
+
+
+
+
+
+    
+
+
+
 
 </script>
   </body>
