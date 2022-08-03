@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+    <title>Calculate duration</title>
+  </head>
+  <body>
+
+
+
+<label><span>Min:</span><input id="input1" type="number"></label>
+<label><span>Max:</span><input id="input2" type="number"></label>
+<!-- <label><span>Range:</span><output id="outputRange"></output></label> -->
+<label><span>Range:</span><input id="outputRange"></input></label>
+<ul id="output"></ul>
+  
+
+<script>
+    function random(min, max) {
+  let range = max - min + 1;
+  return Math.floor( Math.random() * range ) + min
+}
+
+setInterval(
+  function() { 
+    let min = Math.min( input1.value, input2.value );
+    let max = Math.max(  input1.value, input2.value );
+    outputRange.value = max - min + 1;
+    let li = document.createElement('li');
+    li.textContent = random(min,max);
+    output.insertBefore(li, output.firstChild);
+    while (output.children.length > 10) {
+      output.removeChild(output.lastChild);
+    }
+  },
+  200
+)
+</script>
