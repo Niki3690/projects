@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <title>Calculate duration</title>
+  </head>
+
+  <body>
+    <div class="hero-body">
+      <div class="container">
+        <div class="columns is-centered">
+          <div class="column is-10">
+            <div class="card card-body text-center">
+
+
+              <section class="hero">
+                <div class="hero-body">
+                  <div class="container">
+
+  <!--use for first column-->                  
+
+          <div class="columns">
+          <div class="column is-6">
+
+  <!--use for heading-->          
+
+          <h5 class="is-size-5">
+            <b>Letter Generator Options</b>
+          </h5>
+          <br>
+
+  <!--use for number of letters-->        
+                       
+          <label class="label">
+              <b>How many Letters to generate?</b>
+          </label>
+           <input class="input is-small" type="number" placeholder="Number of letters"id="letters">
+          <br>
+
+  <!--use of number of chaeacters-->
+          
+          <label class="label">
+              <b>Length of each random letter</b>
+          </label>
+          <input class="input is-small" type="number" placeholder="Number of Characters"id="characters"/>
+          <br>
+
+  <!--use for textbox-->        
+                        
+          <label class="label">
+              <b>Letters to choose from</b>
+          </label>
+          <div class="control">
+          <textarea class="output" placeholder="" id="output" cols="50"></textarea>
+          </div>
+          <br>
+
+  <!--use for button generate letters-->
+
+             <button class="button is-success" onclick="getRandomeNumber()">
+                 <span class="icon">
+                    <i class="fas fa-user-cog"></i>
+                </span>
+                  <span>generate Letters</span>
+              </button>
+
+  <!--use for copy coad-->
+          <button class="button" onclick="copy()"><i class="fa-regular fa-copy"></i>
+          </button>
+
+  <!--use for download code-->        
+
+          <button class="button" name="button" id="btn" value="Download"><i class="fa fa-download"></i> </button>
+      </div>
+
+  <!--use for second column-->
+
+              <div class="column is-6">
+                  <div class="control">
+
+  <!--use for generated letters textbox-->                 
+                    
+          <textarea class="textarea is-primary"placeholder="Generated Letters"cols="10"rows="10"id="result"></textarea>
+
+
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    
+    <script>
+    
+function copy() {
+        var content = document.getElementById("result");
+        content.select();
+        document.execCommand("copy");
+      }
+
+
+      let i = 0;
+      let text = [];
+      while (i < characters) {}
+
+
+      function getNumber(characters, input) {
+        let i = 0;
+        let text = [];
+        while (i < characters) {
+          text += input.charAt(Math.floor(Math.random() * input.length));+"\n";
+          i++;
+        }
+        return text;
+      }
+      function generateLetters(characters, letters, input) {
+        let i = 0;
+        let text = [];
+        while (i < letters) {
+          text += getNumber(characters, input) + "\n";
+          i++;
+        }
+        return text;
+      }
+
+
+      function getRandomeNumber() {
+        var data = 0;
+        let text1 = document.getElementById("characters").value;
+        let text2 = document.getElementById("letters").value;
+        let range = document.getElementById("output").value;
+        document.getElementById("result").innerHTML = generateLetters(parseInt(text1),parseInt(text2),range.toString()
+        );
+      }
+    </script>
+  </body>
+</html>
