@@ -27,35 +27,25 @@
                 <div class="hero-body">
                   <div class="container">
 
-  <!--use for first column-->                  
-
           <div class="columns">
           <div class="column is-6">
-
-  <!--use for heading-->          
 
           <h5 class="is-size-5">
             <b>Letter Generator Options</b>
           </h5>
           <br>
-
-  <!--use for number of letters-->        
                        
           <label class="label">
               <b>How many Letters to generate?</b>
           </label>
            <input class="input is-small" type="number" placeholder="Number of letters"id="letters">
           <br>
-
-  <!--use of number of chaeacters-->
           
           <label class="label">
               <b>Length of each random letter</b>
           </label>
           <input class="input is-small" type="number" placeholder="Number of Characters"id="characters"/>
           <br>
-
-  <!--use for textbox-->        
                         
           <label class="label">
               <b>Letters to choose from</b>
@@ -65,32 +55,24 @@
           </div>
           <br>
 
-  <!--use for button generate letters-->
+          <button class="button is-success" onclick="getRandomeNumber()">
+            <span class="icon">
+               <i class="fas fa-user-cog"></i>
+           </span>
+             <span>generate Letters</span>
+         </button>
 
-             <button class="button is-success" onclick="getRandomeNumber()">
-                 <span class="icon">
-                    <i class="fas fa-user-cog"></i>
-                </span>
-                  <span>generate Letters</span>
-              </button>
-
-  <!--use for copy coad-->
+          <!-- <button class="button is-success" onclick="getRandomeNumber()">Generate Letters<i class="fas fa-user-cog"></i></button> -->
           <button class="button" onclick="copy()"><i class="fa-regular fa-copy"></i>
           </button>
-
-  <!--use for download code-->        
-
           <button class="button" name="button" id="btn" value="Download"><i class="fa fa-download"></i> </button>
       </div>
 
-  <!--use for second column-->
+
 
               <div class="column is-6">
                   <div class="control">
-
-  <!--use for generated letters textbox-->                 
-                    
-          <textarea class="textarea is-primary"placeholder="Generated Letters"cols="10"rows="10"id="result"></textarea>
+                      <textarea class="textarea is-primary"placeholder="Generated Letters" cols="15" rows="12" id="result"></textarea>
 
 
                         </div>
@@ -109,44 +91,62 @@
     
     <script>
 
-        function download(file, result) {
-    
-    var element = document.createElement("a");
-    element.setAttribute(
-      "href",
-      "data:text/plain;charset=utf-8, " + encodeURIComponent(result)
-    );
-    element.setAttribute("download", file);
-    
-    
-    document.body.appendChild(element);
-   
-    element.click();
-    document.body.removeChild(element);
-  }
- 
-  document.getElementById("btn").addEventListener(
-    "click",
-    function () {
+
+
+
+
+
+      function download(file, result) {
+        
+        var element = document.createElement("a");
+        element.setAttribute("href","data:text/plain;charset=utf-8, " + encodeURIComponent(result) );
+        element.setAttribute("download", file);
+
+        
+        
+
+        document.body.appendChild(element);
+
+       
+        element.click();
+
+        document.body.removeChild(element);
+      }
+
      
-     
-      var text = document.getElementById("result").value;
-      var filename = "GFG.txt";
-      download(filename, result);
-    },
-    false
-  );
-    
-function copy() {
+      document.getElementById("btn").addEventListener(
+        "click",
+        function () {
+         
+         
+          var text = document.getElementById("result").value;
+        //   var filename = "GFG.txt";
+        var filename = "download.txt";
+
+          download(filename, result);
+        },
+        false
+      );
+
+
+
+
+
+
+
+
+
+
+      function copy() {
         var content = document.getElementById("result");
         content.select();
         document.execCommand("copy");
       }
 
 
-    
-    
-    
+    //   let i = 0;
+    //   let text = [];
+    //   while (i < characters) {}
 
 
       function getNumber(characters, input) {
@@ -168,7 +168,7 @@ function copy() {
         return text;
       }
 
-
+      
       function getRandomeNumber() {
         var data = 0;
         let text1 = document.getElementById("characters").value;
