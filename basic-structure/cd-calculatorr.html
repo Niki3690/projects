@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"
+    />
+    <title>Certificate of Deposit Calculator</title>
+  </head>
+
+  <!-- <h3 class="is-size-3"> -->
+    <!-- <b>Code Beautify</b> -->
+  <!-- </h3> -->
+ 
+
+
+  <div class="navbar-end ml-3">
+    <h4 class="is-size-4 ">
+        <b>Code Beautify</b>
+      </h4>
+
+    <a href="https://jsonformatter.org" class="navbar-item is-link">JSON Formatter</a>
+    <a href="https://hexcolorcodes.org" class="navbar-item is-link">Hex Color Codes</a>
+    <a href="/jsonviewer" class="navbar-item is-link">JSON Beautifier</a>
+    <a href="/recentLinksPage" class="navbar-item is-link">Recent Links</a>
+    <a onclick="scrollToForm();" class="navbar-item is-link">More</a>
+    <div class="navbar-item">
+    <a id="notloggedin" href="/login" class="button is-primary">Login</a>
+    <div id="loggedin" class="dropdown is-right" style="display:none">
+    <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+    <span id="usernamelable">Dropdown button</span>
+    <span class="icon is-small">
+    <i class="material-icons">arrow_drop_down</i>
+    </span>
+    </button>
+    </div>
+    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+    <div class="dropdown-content">
+    <a href="https://127.0.0.1/calculators/userSaveLinkPage" class="dropdown-item">Links</a>
+    <a href="https://127.0.0.1/calculators/userSaveOldLinkPage" class="dropdown-item">Archived</a>
+    <a href="https://127.0.0.1/calculators/myFavouriteTools" class="dropdown-item">Favorite</a>
+    <hr class="dropdown-divider">
+    <a href="/logout" class="dropdown-item button is-light">Logout</a>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+
+  <body>
+
+    <div class="hero-body">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-12">
+
+              
+                      <div class="columns">
+                          <div class="column is-4">
+                             
+                              <h4 class="is-size-4">
+                                  <b>CD Calculator</b>
+                                </h4><br><br>
+                                <div class="field">
+                                  <label class="label">Initial Deposit</label>
+                                  <div class="control">
+                                    <input class="input is-small" type="text" placeholder="1000"
+                              id="selectCurrency" readonly>
+                                    <select>
+                                      <option selected>$</option>
+                                      <option>₹</option>
+                                      <option>€</option>
+                                      <option>£</option>
+                                    </select>
+                                  </div>
+                                </div>
+
+
+    
+                                <div class="field">
+                                    <label class="label">Interest Rate</label>
+                                    <div class="control">
+                                      <input class="input is-small" type="text" placeholder="8"
+                               id="selectYear" readonly>
+                                    </div>
+                                </div>
+
+
+
+
+
+                                <div class="field">
+                                  <label class="label">Tenure</label>
+                                  <div class="control">
+                                    <input class="input is-small" type="text" placeholder="10" 
+                             id="selectYear" readonly>
+
+
+
+                                    <select>
+                                      <option selected>Years</option>
+                                      <option>Months</option>
+                                  </select>
+                                  </div>
+                                </div>
+                                <select>
+                                  <option selected>Yearly</option>
+                                  <option>Quarterly</option>
+                                  <option>Monthly</option>
+                              </select>
+                              <br>
+                              <br>
+                              
+                              <button class="button is-success is-small" onclick="Calculate
+                              ()">Calculate</button>
+                          </div>
+                          
+                      
+                                
+                           
+                              <div class="column is-8">
+                                  <div class="columns">
+                                      <div class="column is-8">
+                                        
+                                          <div class="level-left ">
+                                              <div>
+                                                   <h4 class="is-size-4"><b>$21,589.25</b></h4>
+                                              </div>
+                                              <label class="level-item menu-label ml-2 
+                                         is-size-7">Total Amount
+                                              </label>
+                                              <br><br><br>
+                                          </div>
+                                          <h6 class="is-size-6 has-text-link">Twenty
+                                              One Thousand Five hundred and Eighty Nine 
+                                              Dollars</h6> 
+                                      </div>
+                                      <div class="column id -4">
+                                          <div class="level-right">
+                                              <div>
+                                                  <h4 class="is-size-4"><b>$11,589.25</b></h4>
+                                              </div>
+                                              <label class="level-item menu-label ml-2 
+                                              is-size-7">Interest
+                                              </label>
+                                             </div>
+                                      </div>
+                                  </div>
+                                  <hr>
+
+
+                                  <figure class="image is-3by1">
+
+                                    <img src="chart.png.png">
+                                  </figure>
+
+                              </div>
+                      </div>
+                  
+
+
+                      <section class="container section pt-1">
+                        <h1 class="title">Interest by Frequency</h1>
+                        <hr>
+                        <div class="table-container">
+                        <table class="table is-fullwidth is-striped has-text-centered" id="detailTable">
+                        <tbody>
+                        <tr class="has-text-centered is-link">
+                        <th>No.</th>
+                        <th>Opening Balance</th>
+                        <th>Interest</th>
+                        <th>Closing Balance</th>
+                        <th class="is-hidden-mobile">Period</th>
+                        </tr>
+                        <tr></tr>
+                        <tr><td>1</td><td>$10,000.00</td><td>$800.00</td><td>$10,800.00</td><td class="is-hidden-mobile">Aug 2022 - Jul 2023</td></tr><tr><td>2</td><td>$10,800.00</td><td>$864.00</td><td>$11,664.00</td><td class="is-hidden-mobile">Aug 2023 - Jul 2024</td></tr><tr><td>3</td><td>$11,664.00</td><td>$933.12</td><td>$12,597.12</td><td class="is-hidden-mobile">Aug 2024 - Jul 2025</td></tr><tr><td>4</td><td>$12,597.12</td><td>$1,007.77</td><td>$13,604.89</td><td class="is-hidden-mobile">Aug 2025 - Jul 2026</td></tr><tr><td>5</td><td>$13,604.89</td><td>$1,088.39</td><td>$14,693.28</td><td class="is-hidden-mobile">Aug 2026 - Jul 2027</td></tr><tr><td>6</td><td>$14,693.28</td><td>$1,175.46</td><td>$15,868.74</td><td class="is-hidden-mobile">Aug 2027 - Jul 2028</td></tr><tr><td>7</td><td>$15,868.74</td><td>$1,269.50</td><td>$17,138.24</td><td class="is-hidden-mobile">Aug 2028 - Jul 2029</td></tr><tr><td>8</td><td>$17,138.24</td><td>$1,371.06</td><td>$18,509.30</td><td class="is-hidden-mobile">Aug 2029 - Jul 2030</td></tr><tr><td>9</td><td>$18,509.30</td><td>$1,480.74</td><td>$19,990.05</td><td class="is-hidden-mobile">Aug 2030 - Jul 2031</td></tr><tr><td>10</td><td>$19,990.05</td><td>$1,599.20</td><td>$21,589.25</td><td class="is-hidden-mobile">Aug 2031 - Jul 2032</td></tr></tbody>
+                        </table>
+                        </div>
+                        <hr>
+                        <div>
+
+
+                
+                
+                
+                
+                
+                
+                
+                 
+                
+                
+                
+                
+                
+                
+
+
+
+
+
+
+
+
+                        <div class="container section">
+                          <div class="columns">
+                          <div class="column is-8">
+                          <section class="section pt-1">
+                          <h2 class="title">CD Calculator Online</h2>
+                          <hr>
+                          <div class="content">
+                          <h2> About </h2>
+                          <p>A certificate of deposit (CD) is a product offered by banks and credit unions that provides an interest rate premium in exchange for the customer agreeing to leave a lump-sum deposit untouched for a predetermined period of time.</p>
+                          <p>Almost all consumer financial institutions offer them, although it’s up to each bank which CD terms it wants to offer, how much higher the rate will be compared to the bank’s savings and money market products, and what penalties it applies for early withdrawal.</p>
+                          <p>The formula for calculating certificate of deposit is as follows:</p>
+                          <p><b>FB = ID * (1 + R/CF) ^ (T*CF)</b></p>
+                          <p>Where</p>
+                          <ul>
+                          <li>FB - Final balance or similarly called final value or future value,</li>
+                          <li>ID - Initial deposite or also referred as a principle amount or present value,</li>
+                          <li>R - Expected annual interest rate,</li>
+                          <li>T - Tenure or term,</li>
+                          <li>CF - Compound frequency means that the interest is how many times compounded per year.</li>
+                          </ul>
+                          <h2>What can you do with CD Calculator?</h2>
+                          <ul>
+                          <li>It helps to calculate CD and helps to project your future interest earnings.</li>
+                          <li>Users can see the accurate final balance and interest. And also can see the final balance in words.</li>
+                           <li>The chart represents the growth of the total amount and initial amount by the scale of two years.</li>
+                          <li>Users can easily see their calculations in detail by the table. Based on the selected compound frequency table describes the opening balance, your earned interest, closing balance and period.</li>
+                          <li>This calculator helps to share your calculations by URL.</li>
+                          </ul>
+                          </div></section>
+                          </div>
+                          <div class="column is-4 is-hidden-mobile">
+                          <section class="section pt-1">
+                          <h2 class="title">Related Tools</h2>
+                          <hr>
+                          <div class="content">
+                          <a class="button funbtn " href="https://codebeautify.org/calculators/compound-interest-calculator" title="Compound Interest Calculator">Compound Interest Calculator</a>
+                          <a class="button funbtn is-large" href="https://codebeautify.org/calculators/cagr-calculator" title="Compound Annual Growth Rate Calculator">CAGR Calculator</a>
+                          <a class="button funbtn is-large" href="https://codebeautify.org/calculators/appreciation-calculator" title="Appreciation Calculator">Appreciation Calculator</a>
+                          </div>
+                          </section>
+                          <section class="section">
+                          <h2 class="title">Recently visited pages</h2>
+                          <hr>
+                          <div class="content">
+                          <ul id="visitedTools">
+                          </ul>
+                          </div>
+                          </section>
+                          <section class="section">
+                          <h2 class="title">Tags</h2>
+                          <hr>
+                          <div class="tags">
+                          <a class="tag is-primary is-large" href="/formatters-and-beautifiers">Formatters</a>
+                          </div>
+                          </section>
+                          </div>
+                          </div>
+                          </div>
+
+
+
+
+
+  
+                               
+                               
+                               
+
+                               
+   
+   
+   
+
+
+   
+   
+   
+
+
+   
+   
+   
+   
+
+   
+   
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
+   
+
+
+   
+   
+   
+   
+   
+   
+   
+                    
+                    
+                    
+                    
+                
+                
+                
+                
+                    
+                    
+                        
+                        
+                        
+                        
+
+
+      
+      
+      
