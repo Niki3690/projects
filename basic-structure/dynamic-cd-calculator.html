@@ -17,7 +17,7 @@
     
 <!--use for first column-->
     
-              <div class="columns">
+          <div class="columns">
             <div class="column is-4">
                                 
                 <h4 class="is-size-4">
@@ -30,8 +30,8 @@
 <!--use for initial deposit-->
 
         <label class="label">Initial Deposit</label>
-          <div class="field has-addons has-addons-fullwidth">
-              <div class="control">
+          <div class="field has-addons ">
+              <div class="control is-expanded">
                 <input class="input" type="number" placeholder="" id="initialDeposit">
               </div>
                   <div class="control">
@@ -54,7 +54,7 @@
           <div class="field ">
               <label class="label">Interest Rate</label>
                   <p class="control  has-icons-right">
-                      <input class="input" type="number" placeholder="">
+                      <input class="input" type="number" placeholder="" id="interestRate">
                       <span class="icon is-small is-right has-text-success">
                           <i class="fa fa-percent"></i>
                       </span>
@@ -65,9 +65,9 @@
 <!--use for tenure-->
 
           <label class="label">Tenure</label>
-            <div class="field has-addons has-addons-fullwidth">
+            <div class="field has-addons">
                 <div class="control">
-                    <input class="input" type="number" placeholder="" id="selectYear">
+                    <input class="input" type="number" placeholder="" id="tenureYear">
                 </div>
                   <div class="control">
                     <span class="select">
@@ -84,15 +84,18 @@
 <!--use for compounding frequency-->
 
           <label class="label">Compounding Frequency</label>
-              <select style=" width: 310px ; height:35px">
+              <!-- <select style=" width: 310px ; height:35px"> -->
+                <div class="select is-fullwidth">
+                  <select id="frequency">
                   <option selected>Yearly</option>
                   <option>Quarterly</option>
                   <option>Monthly</option>
-              </select><br><br>
+              </select>
+                </div><br><br>
 
 <!--use for calculate button-->
 
-                <button class="button is-success is-small" 
+                <button class="button is-primary is-small" 
                 onclick="Calculate()">Calculate</button>
                 </form>
                 </div>
@@ -131,6 +134,18 @@
 </div>
 </div>
 </div>
+
+<script>
+
+  function Calculate(){
+    let initialDeposit = document.getElementById("initialDeposit").value;
+    let selectCurrency = document.getElementById("selectCurrency").value;
+    let interestRate =document.getElementById("interestRate").value;
+    let tenureYear= document.getElementById("tenureYear").value;
+    let selectYear = document.getElementById("selectYear").value;
+    let frequency = document.getElementById("frequency").value;
+  }
+</script>
   
                
                
@@ -157,9 +172,9 @@
    
   
 
-    <script>
+    
 
-    </script>
+    
 
 
 
