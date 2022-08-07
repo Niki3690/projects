@@ -25,7 +25,7 @@
                 </h4>
                 <br>
               
-                <form>
+                
 
 <!--use for initial deposit-->
 
@@ -97,7 +97,7 @@
 
                 <button class="button is-primary is-small" 
                 onclick="Calculate()">Calculate</button>
-                </form>
+              
                 </div>
               
               
@@ -144,6 +144,12 @@
     let tenureYear= document.getElementById("tenureYear").value;
     let selectYear = document.getElementById("selectYear").value;
     let frequency = document.getElementById("frequency").value;
+  
+
+  let interest = (initialDeposit * (interestRate * 0.01))/Months;
+ let totalAmount=((initialDeposit / months)+interest).toFixed(2);
+ 
+ document.getElementById("totalAmount").innerHTML="monthly payment =$" + totalAmount;
   }
 </script>
   
