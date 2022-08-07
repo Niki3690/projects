@@ -96,7 +96,7 @@
 <!--use for calculate button-->
 
                 <button class="button is-primary is-small" 
-                onclick="Calculate()">Calculate</button>
+                onclick="Calculate()" id="Calculate">Calculate</button>
               
                 </div>
               
@@ -138,21 +138,31 @@
 <script>
 
   function Calculate(){
-    let initialDeposit = document.getElementById("initialDeposit").value;
+    let initialDeposit = parseInt(document.getElementById("initialDeposit").value);
     let selectCurrency = document.getElementById("selectCurrency").value;
-    let interestRate =document.getElementById("interestRate").value;
-    let tenureYear= document.getElementById("tenureYear").value;
+    let interestRate = parseInt(document.getElementById("interestRate").value);
+    let tenureYear= parseInt(document.getElementById("tenureYear").value);
     let selectYear = document.getElementById("selectYear").value;
     let frequency = document.getElementById("frequency").value;
-  
+    let calculatebtn = document.getElementById("calculate");
 
-  let interest = (initialDeposit * (interestRate * 0.01))/Months;
- let totalAmount=((initialDeposit / months)+interest).toFixed(2);
+    console.log(initialDeposit,selectCurrency,interestRate,tenureYear,selectYear,
+frequency);
+ let simpleInterest=
+ selectYear == "year" ? (initialDeposit * interestRate * tenureYear)/100 :
+(initialDeposit * interestRate * tenureYear)/1200;
+ console.log(simpleInterest);
+ let amount=initialDeposit + simpleInterest;
  
- document.getElementById("totalAmount").innerHTML="monthly payment =$" + totalAmount;
+ console.log(amount);
+  document.getElementById("totalAmount").innerHTML = `${amount}`
+ document.getElementById("interest").innerHTML= `${simpleInterest}`
+
   }
-</script>
   
+</script>
+  </body>
+</html>
                
                
                

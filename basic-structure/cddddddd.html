@@ -96,7 +96,7 @@
 <!--use for calculate button-->
 
                 <button class="button is-primary is-small" 
-                onclick="Calculate()">Calculate</button>
+                onclick="Calculate()" id="Calculate">Calculate</button>
               
                 </div>
               
@@ -145,21 +145,25 @@
     let selectYear = document.getElementById("selectYear").value;
     let frequency = document.getElementById("frequency").value;
     let calculatebtn = document.getElementById("calculate");
+    let irate=interestRate/selectYear;
+    var year =tenureYear/12
 
-    console.log(initialDeposit,selectCurrency,interestRate,tenureYear,selectYear,
-frequency);
- let simpleInterest=
- selectYear == "year" ? (initialDeposit * interestRate * tenureYear)/100 :
-(initialDeposit * interestRate * tenureYear)/1200;
- console.log(simpleInterest);
- let amount=initialDeposit + simpleInterest;
- 
- console.log(amount);
-  document.getElementById("totalAmount").innerHTML = `${amount}`
- document.getElementById("interest").innerHTML= `${simpleInterest}`
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   }
-  
 </script>
   </body>
 </html>
