@@ -145,25 +145,59 @@
     let selectYear = document.getElementById("selectYear").value;
     let frequency = document.getElementById("frequency").value;
     let calculatebtn = document.getElementById("calculate");
-    let irate=interestRate/selectYear;
-    var year =tenureYear/12
 
-    
+    console.log(initialDeposit,selectCurrency,interestRate,tenureYear,selectYear,
+frequency);
 
+let yearly=
+selectYear == "Years" ? (initialDeposit * interestRate * tenureYear)/100:
+(initialDeposit , interestRate , tenureYear)
 
+console.log(yearly);
+let amount1=initialDeposit + yearly;
 
-
-
-
-
-
-
-
+console.log(amount1);
 
 
 
+ let simpleInterest=
+ selectYear == "Months" ? (initialDeposit * interestRate * tenureYear)/100 :
+(initialDeposit * interestRate * tenureYear)/1200;
+
+
+console.log(simpleInterest);
+ let amount=initialDeposit + simpleInterest;
+ 
+ console.log(amount);
+
+ 
+// let yearly=
+// selectYear == "Years" ? (initialDeposit * interestRate * tenureYear)/100:
+// (initialDeposit , interestRate , tenureYear)
+// 
+// 
+// 
+// 
+// console.log(yearly);
+// let amount1=initialDeposit + yearly;
+// 
+// console.log(amount1);
+
+document.getElementById("totalAmount").innerHTML = `${amount1}`
+document.getElementById("interest").innerHTML= `${yearly}`
+
+
+
+
+//  console.log(simpleInterest);
+//  let amount=initialDeposit + simpleInterest;
+//  
+//  console.log(amount);
+  document.getElementById("totalAmount").innerHTML = `${amount}`
+ document.getElementById("interest").innerHTML= `${simpleInterest}`
 
   }
+  
 </script>
   </body>
 </html>

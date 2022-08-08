@@ -72,8 +72,8 @@
                   <div class="control">
                     <span class="select">
                       <select id="selectYear">
-                         <option selected>Years</option>
-                              <option>Months</option> 
+                         <option selected>Months</option>
+                              <option>Years</option> 
                               
                           </select>
                        </select>
@@ -96,7 +96,7 @@
 <!--use for calculate button-->
 
                 <button class="button is-primary is-small" 
-                onclick="Calculate()">Calculate</button>
+                onclick="Calculate()" id="Calculate">Calculate</button>
               
                 </div>
               
@@ -148,13 +148,40 @@
 
     console.log(initialDeposit,selectCurrency,interestRate,tenureYear,selectYear,
 frequency);
+
  let simpleInterest=
- selectYear == "year" ? (initialDeposit * interestRate * tenureYear)/100 :
+ selectYear == "Years" ? (initialDeposit * interestRate * tenureYear)/100 :
 (initialDeposit * interestRate * tenureYear)/1200;
- console.log(simpleInterest);
+
+
+console.log(simpleInterest);
  let amount=initialDeposit + simpleInterest;
  
  console.log(amount);
+
+ 
+let yearly=
+selectYear == "Months" ? (initialDeposit * interestRate * tenureYear)/100:
+(initialDeposit , interestRate , tenureYear)
+
+
+
+
+console.log(yearly);
+let amount1=initialDeposit + yearly;
+
+console.log(amount1);
+
+document.getElementById("totalAmount").innerHTML = `${amount1}`
+document.getElementById("interest").innerHTML= `${yearly}`
+
+
+
+
+//  console.log(simpleInterest);
+//  let amount=initialDeposit + simpleInterest;
+//  
+//  console.log(amount);
   document.getElementById("totalAmount").innerHTML = `${amount}`
  document.getElementById("interest").innerHTML= `${simpleInterest}`
 
