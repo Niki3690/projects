@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
-    <title>Certificate of Deposit Calculator</title>
+ <title>Certificate of Deposit Calculator</title>
   </head>
-  <body>
+  <body onload="Calculate()">
 
     <div class="hero-body">
         <div class="container">
@@ -32,11 +32,12 @@
         <label class="label">Initial Deposit</label>
           <div class="field has-addons ">
               <div class="control is-expanded">
-                <input class="input" type="number" placeholder="" id="initialDeposit">
+                <input class="input" type="number" title="value" value="10000" id="initialDeposit">
               </div>
                   <div class="control">
                   <span class="select">
-                    <select id="selectCurrency">
+                    <!-- <select id="selectCurrency" onchange="selectCurrency(this)"> -->
+                      <select id="selectCurrency" title="value">
                        <option selected>$</option>
                             <option>₹</option> 
                             <option>€</option> 
@@ -44,6 +45,7 @@
                     </select>
                   </select>
                   </span>
+                  
               
                 
   </div>
@@ -54,7 +56,7 @@
           <div class="field ">
               <label class="label">Interest Rate</label>
                   <p class="control  has-icons-right">
-                      <input class="input" type="number" placeholder="" id="interestRate">
+                      <input class="input" type="number" title="value"  value="3" id="interestRate">
                       <span class="icon is-small is-right has-text-success">
                           <i class="fa fa-percent"></i>
                       </span>
@@ -67,11 +69,11 @@
           <label class="label">Tenure</label>
             <div class="field has-addons">
                 <div class="control">
-                    <input class="input" type="number" placeholder="" id="tenureYear">
+                    <input class="input" type="number" title="value" value="4"  id="tenureYear">
                 </div>
                   <div class="control">
                     <span class="select">
-                      <select id="selectYear">
+                      <select id="selectYear" title="value">
                          <option selected>Months</option>
                               <option>Years</option> 
                               
@@ -86,7 +88,7 @@
           <label class="label">Compounding Frequency</label>
               <!-- <select style=" width: 310px ; height:35px"> -->
                 <div class="select is-fullwidth">
-                  <select id="frequency">
+                  <select id="frequency" title="value">
                   <option selected>Yearly</option>
                   <option>Quarterly</option>
                   <option>Monthly</option>
@@ -115,6 +117,9 @@
                   <h4 class="is-size-4"  id="totalAmount"><b>$</b></h4>
                   <label class="level-item menu-label ml-2 is-size-6"><b>Total Amount</b></label>
               </div>
+
+              <p class=" ml-2 subtitle has-text-link" id="showAmountInWord"></p>
+ 
           </div>
 
 <!--use for second column-->
@@ -137,106 +142,122 @@
 
 <script>
 
-  function Calculate(){
-    let initialDeposit = parseInt(document.getElementById("initialDeposit").value);
-    let selectCurrency = document.getElementById("selectCurrency").value;
-    let interestRate = parseInt(document.getElementById("interestRate").value);
-    let tenureYear= parseInt(document.getElementById("tenureYear").value);
-    let selectYear = document.getElementById("selectYear").value;
-    let frequency = document.getElementById("frequency").value;
-    let calculatebtn = document.getElementById("calculate");
-
-    console.log(initialDeposit,selectCurrency,interestRate,tenureYear,selectYear,
-frequency);
-
- let simpleInterest=
- selectYear == "Years" ? (initialDeposit * interestRate * tenureYear)/100 :
-(initialDeposit * interestRate * tenureYear)/1200;
+// function selectCurrency(){
+  // let select =document.getElementById("selectCurrency");
+  // let dispalytext=selectCurrency.option[selectCurrency.selectedIndex].text;
+  // document.getElementById("totalAmount").value=dispalytext;
+  // document.getElementById("interest").value=dispalytext;
+// }
+    // 
 
 
-console.log(simpleInterest);
- let amount=initialDeposit + simpleInterest;
- 
- console.log(amount);
-
- 
-let yearly=
-selectYear == "Months" ? (initialDeposit * interestRate * tenureYear)/100:
-(initialDeposit , interestRate , tenureYear)
-
-
-
-
-console.log(yearly);
-let amount1=initialDeposit + yearly;
-
-console.log(amount1);
-
-document.getElementById("totalAmount").innerHTML = `${amount1}`
-document.getElementById("interest").innerHTML= `${yearly}`
-
-
-
-
-//  console.log(simpleInterest);
-//  let amount=initialDeposit + simpleInterest;
-//  
-//  console.log(amount);
-  document.getElementById("totalAmount").innerHTML = `${amount}`
- document.getElementById("interest").innerHTML= `${simpleInterest}`
-
-  }
+    selectCurrency.onchange=function(){
+      totalAmount.innerText=this.value;
+      interest.innerText=this.value;
+    }
   
-</script>
+
+
+
+
+
+     
+
+
+
+
+
+
+
+     function Calculate() {
+       let initialDeposit = parseInt(document.getElementById("initialDeposit").value);
+       let selectCurrency = document.getElementById("selectCurrency").value;
+       let interestRate = parseInt(document.getElementById("interestRate").value);
+       let tenureYear = parseInt(document.getElementById("tenureYear").value);
+       let selectYear = document.getElementById("selectYear").value;
+       let frequency = document.getElementById("frequency").value;
+       let calculatebtn = document.getElementById("calculate");
+ 
+       console.log(initialDeposit, selectCurrency, interestRate, tenureYear, selectYear,
+         frequency);
+ 
+       let simpleInterest =
+         selectYear == "Years" ? (initialDeposit * interestRate * tenureYear) / 100 :
+          (initialDeposit * interestRate * tenureYear) / 1200;
+       console.log(simpleInterest);
+ 
+       let amount = initialDeposit + simpleInterest;
+       console.log(amount);
+
+     
+       let yearly = selectYear == "Months" ? (initialDeposit * interestRate*tenureYear)/ 100 : 
+       (initialDeposit * interestRate*tenureYear)/ 100;
+       console.log(yearly);
+ 
+       let price = initialDeposit * (Math.pow(1 + interestRate / 100, tenureYear));
+       console.log(price);
+
+       var select = document.getElementById('selectCurrency');
+       var option = select.options[select.selectedIndex];
+
+
+
+       
+       if(selectYear=="Months"){
+       document.getElementById("totalAmount").innerHTML = `${amount.toFixed(2)}`
+ 
+       document.getElementById("interest").innerHTML = `${simpleInterest.toFixed(2)}`
+    }
+
+       else if(selectYear=="Years"){
+       document.getElementById("totalAmount").innerHTML = `${price.toFixed(2)}`
+       debugger
+       document.getElementById("interest").innerHTML = `${yearly.toFixed(2)}`
+       }
+     
+      }
+
+
+
+
+
+       let totalAmount = document.getElementById("totalAmount").value;
+       let showAmountInWord= document.getElementById("showAmountInWord");
+      //  document.getElementById("showAmountInWord").innerHTML = `${totalAmount}`
+   
+
+      var a = ['','one ','two ','three ','four ', 'five ','six ','seven ','eight ','nine ',
+'ten ','eleven ','twelve ','thirteen ','fourteen ','fifteen ','sixteen ','seventeen ',
+'eighteen ','nineteen '];
+var b = ['', '', 'twenty','thirty','forty','fifty', 'sixty','seventy','eighty','ninety'];
+
+
+function inWords (num) {
+    if ((num = num.toString()).length > 9) return 'overflow';
+    n = ('000000000' + num).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
+    if (!n) return; var str = '';
+    str += (n[1] != 0) ? (a[Number(n[1])] || b[n[1][0]] + ' ' + a[n[1][1]]) + 'crore ' : 
+'';
+    str += (n[2] != 0) ? (a[Number(n[2])] || b[n[2][0]] + ' ' + a[n[2][1]]) + 'lakh ' : 
+'';
+    str += (n[3] != 0) ? (a[Number(n[3])] || b[n[3][0]] + ' ' + a[n[3][1]]) + 'thousand ' : 
+    '';
+    str += (n[4] != 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'hundred ' 
+: '';
+    str += (n[5] != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] + 
+' ' + a[n[5][1]]) + 'only ' : '';
+    return str;
+}
+
+// document.getElementById('totalAmount').onkeyup = function () {
+    // document.getElementById('showAmountInWord').innerHTML = inWords(document.getElementById
+// ('totalAmount').value);
+
+document.getElementById("showAmountInWord").innerHTML = `${totalAmount}`
+
+
+  
+     
+   </script>
   </body>
 </html>
-               
-               
-               
-               
-               
-
-               
-               
-               
-
-
-
-
-
-   
-   
-   
-   
-   
-   
-   
-   
-   
-  
-
-    
-
-    
-
-
-
-
-
-
-
-              
-              
-              
-              
-              
-
-              
-
-              
-              
-              
-              
-              
-              
-

@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
- <title>Certificate of Deposit Calculator</title>
+    <title>Certificate of Deposit Calculator</title>
   </head>
-  <body onload="Calculate()">
+  <body>
 
     <div class="hero-body">
         <div class="container">
@@ -32,12 +32,11 @@
         <label class="label">Initial Deposit</label>
           <div class="field has-addons ">
               <div class="control is-expanded">
-                <input class="input" type="number" placeholder=""  value="10000" id="initialDeposit">
+                <input class="input" type="number" placeholder="" id="initialDeposit">
               </div>
                   <div class="control">
                   <span class="select">
-                    <!-- <select id="selectCurrency" onchange="selectCurrency(this)"> -->
-                      <select id="selectCurrency">
+                    <select id="selectCurrency">
                        <option selected>$</option>
                             <option>₹</option> 
                             <option>€</option> 
@@ -55,7 +54,7 @@
           <div class="field ">
               <label class="label">Interest Rate</label>
                   <p class="control  has-icons-right">
-                      <input class="input" type="number" placeholder=""  value="3" id="interestRate">
+                      <input class="input" type="number" placeholder="" id="interestRate">
                       <span class="icon is-small is-right has-text-success">
                           <i class="fa fa-percent"></i>
                       </span>
@@ -68,7 +67,7 @@
           <label class="label">Tenure</label>
             <div class="field has-addons">
                 <div class="control">
-                    <input class="input" type="number" placeholder="" value="4"  id="tenureYear">
+                    <input class="input" type="number" placeholder="" id="tenureYear">
                 </div>
                   <div class="control">
                     <span class="select">
@@ -113,23 +112,25 @@
 
           <div class="column is-8">
               <div class="level-left">
-                  <h4 class="is-size-4"  id="totalAmount"><b></b></h4>
+                  <h4 class="is-size-4"  id="totalAmount"><b>$</b></h4>
                   <label class="level-item menu-label ml-2 is-size-6"><b>Total Amount</b></label>
               </div>
-       
-
-
-          <p class=" ml-2 subtitle has-text-link" id="showAmountInWord"></p>
-          
           </div>
-          
+
+
+
+
+
+
+
+
 
 <!--use for second column-->
 <!--use for interest amount-->
 
           <div class="column id-4">
               <div class="level-right">
-                  <h4 class="is-size-4"  id="interest"><b></b></h4>
+                  <h4 class="is-size-4"  id="interest"><b>$</b></h4>
                   <label class="level-item menu-label ml-2 is-size-6"><b>Interest</b></label>
               </div>
           </div>
@@ -144,69 +145,14 @@
 
 <script>
 
-
-//use for select currency//
-
-    selectCurrency.onchange=function(){
-      totalAmount.innerText=this.value;
-      interest.innerText=this.value;
-    }
-  
-
-
-
-
-
-     
-
-
-
-
-
-
-
-     function Calculate() {
-       let initialDeposit = parseInt(document.getElementById("initialDeposit").value);
-       let selectCurrency = document.getElementById("selectCurrency").value;
-       let interestRate = parseInt(document.getElementById("interestRate").value);
-       let tenureYear = parseInt(document.getElementById("tenureYear").value);
-       let selectYear = document.getElementById("selectYear").value;
-       let frequency = document.getElementById("frequency").value;
-       let calculatebtn = document.getElementById("calculate");
- 
-       console.log(initialDeposit, selectCurrency, interestRate, tenureYear, selectYear,
-         frequency);
- 
-       let simpleInterest =
-         selectYear == "Years" ? (initialDeposit * interestRate * tenureYear) / 100 :
-          (initialDeposit * interestRate * tenureYear) / 1200;
-       console.log(simpleInterest);
- 
-       let amount = initialDeposit + simpleInterest;
-       console.log(amount);
-
-     
-       let yearly = selectYear == "Months" ? (initialDeposit * interestRate*tenureYear)/ 100 : 
-       (initialDeposit * interestRate*tenureYear)/ 100;
-       console.log(yearly);
-       debugger
- 
-       let price = initialDeposit * (Math.pow(1 + interestRate / 100, tenureYear));
-       console.log(price);
-
-      
-       
-       if(selectYear=="Months"){
-       document.getElementById("totalAmount").innerHTML = `${amount.toFixed(2)}`
- 
-       document.getElementById("interest").innerHTML = `${simpleInterest.toFixed(2)}`
-    }
-
-       else if(selectYear=="Years"){
-       document.getElementById("totalAmount").innerHTML = `${price.toFixed(2)}`
-       debugger
-       document.getElementById("interest").innerHTML = `${yearly.toFixed(2)}`
-       }
+  function Calculate(){
+    let initialDeposit = parseInt(document.getElementById("initialDeposit").value);
+    let selectCurrency = document.getElementById("selectCurrency").value;
+    let interestRate = parseInt(document.getElementById("interestRate").value);
+    let tenureYear= parseInt(document.getElementById("tenureYear").value);
+    let selectYear = document.getElementById("selectYear").value;
+    let frequency = document.getElementById("frequency").value;
+    let calculatebtn = document.getElementById("calculate");
 
 
 
@@ -216,36 +162,57 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
-
-   </script>
-
-
+  }
+</script>
   </body>
 </html>
+               
+               
+               
+               
+               
 
+               
+               
+               
+
+
+
+
+
+   
+   
+   
+   
+   
+   
+   
+   
+   
   
 
-
-
+    
 
     
+
+
+
+
+
+
+
+              
+              
+              
+              
+              
+
+              
+
+              
+              
+              
+              
+              
+              
+
