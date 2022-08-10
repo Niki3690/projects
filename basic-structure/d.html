@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+ <title>Certificate of Deposit Calculator</title>
+  </head>
+  <body onload="Calculate()">
+  
+
+    <div class="hero-body">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-12">
+    
+<!--use for first column-->
+    
+          <div class="columns">
+            <div class="column is-4">
+                                
+                <h4 class="is-size-4">
+                    <b>CD Calculator</b>
+                </h4>
+                <br>
+              
+                
+
+<!--use for initial deposit-->
+
+        <label class="label">Initial Deposit</label>
+          <div class="field has-addons ">
+              <div class="control is-expanded">
+                <input class="input" type="number" placeholder=""  value="10000" id="initialDeposit">
+              </div>
+                  <div class="control">
+                  <span class="select">
+                    <!-- <select id="selectCurrency" onchange="selectCurrency(this)"> -->
+                      <select id="selectCurrency">
+                       <option selected>$</option>
+                            <option>₹</option> 
+                            <option>€</option> 
+                            <option>£</option> 
+                    </select>
+                  </select>
+                  </span>
+              
+                
+  </div>
+</div>
+
+<!--use for interest rate-->
+
+          <div class="field ">
+              <label class="label">Interest Rate</label>
+                  <p class="control  has-icons-right">
+                      <input class="input" type="number" placeholder=""  value="3" id="interestRate">
+                      <span class="icon is-small is-right has-text-success">
+                          <i class="fa fa-percent"></i>
+                      </span>
+                  </p>
+          </div>
+
+
+<!--use for tenure-->
+
+          <label class="label">Tenure</label>
+            <div class="field has-addons">
+                <div class="control">
+                    <input class="input" type="number" placeholder="" value="4"  id="tenureYear">
+                </div>
+                  <div class="control">
+                    <span class="select">
+                      <select id="selectYear">
+                         <option selected>Months</option>
+                              <option>Years</option> 
+                              
+                          </select>
+                       </select>
+                    </span>
+                  </div>
+              </div>
+
+<!--use for compounding frequency-->
+
+          <label class="label">Compounding Frequency</label>
+              <!-- <select style=" width: 310px ; height:35px"> -->
+                <div class="select is-fullwidth">
+                  <select id="frequency">
+                  <option selected>Yearly</option>
+                  <option>Quarterly</option>
+                  <option>Monthly</option>
+              </select>
+                </div><br><br>
+
+<!--use for calculate button-->
+
+                <button class="button is-primary is-small" 
+                onclick="Calculate()" id="Calculate">Calculate</button>
+              
+                </div>
+              
+              
+<!--use for second column-->                
+
+                <div class="column is-8">
+                    <div class="columns">
+
+<!--use for first column-->
+<!--use for total amount-->
+
+
+          <div class="column is-8">
+              <div class="level-left">
+                  <h4 class="is-size-4"  id="totalAmount"><b></b></h4>
+                  <label class="level-item menu-label ml-2 is-size-6"><b>Total Amount</b></label>
+              </div>
+       
+
+
+          <p class=" ml-2 subtitle has-text-link" id="showAmountInWord"></p>
+          
+          </div>
+          
+
+<!--use for second column-->
+<!--use for interest amount-->
+
+          <div class="column id-4">
+              <div class="level-right">
+                  <h4 class="is-size-4"  id="interest"><b></b></h4>
+                  <label class="level-item menu-label ml-2 is-size-6"><b>Interest</b></label>
+              </div>
+          </div>
+      </div>
+    <hr>
+ </div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+<script>
+
+
+//use for select currency//
+//Swap value 
+//dom Videos
+// Debugging videos
+// focus more on String, and Array
+// String manuplation videos
+// HTML and Bulma to learn design
+// Understand variable in Javascript , compare with Java
+
+
+selectCurrency.onchange=function(){
+
+
+let tempTotalAmount = totalAmount.innerText;
+console.log(" Before tempTotalAmount:->" + tempTotalAmount);
+tempTotalAmount = tempTotalAmount.replaceAll("$","");
+tempTotalAmount = tempTotalAmount.replaceAll("₹","");
+tempTotalAmount = tempTotalAmount.replaceAll("€","");
+tempTotalAmount = tempTotalAmount.replaceAll("£","");
+
+console.log(" After tempTotalAmount:->" + tempTotalAmount);
+
+totalAmount.innerHTML="<b>"+this.value+"</b>"+ " "+ tempTotalAmount;
+interest.innerText=this.value;
+}/*
+debugger
+
+
+let tempInterest = interest.innerText;
+debugger
+console.log("Before tempInterest :->" + tempInterest);
+tempInterest = tempInterest.replaceAll("$","");
+tempInterest = tempInterest.replaceAll("₹","");
+tempInterest = tempInterest.replaceAll("€","");
+tempInterest = tempInterest.replaceAll("£","");
+
+console.log(" After tempInterest:->" + tempInterest);
+
+interest.innerHTML="<b>"+this.value+"</b>"+ " "+ tempInterest;
+// interest.innerText=this.value;
+}
+
+
+
+
+
+
+
+     
+
+
+
+
+
+
+
+     function Calculate() {
+       let initialDeposit = parseInt(document.getElementById("initialDeposit").value);
+       let selectCurrency = document.getElementById("selectCurrency").value;
+       let interestRate = parseInt(document.getElementById("interestRate").value);
+       let tenureYear = parseInt(document.getElementById("tenureYear").value);
+       let selectYear = document.getElementById("selectYear").value;
+       let frequency = document.getElementById("frequency").value;
+       let calculatebtn = document.getElementById("calculate");
+ 
+       console.log(initialDeposit, selectCurrency, interestRate, tenureYear, selectYear,
+         frequency);
+ 
+       let simpleInterest =
+         selectYear == "Years" ? (initialDeposit * interestRate * tenureYear) / 100 :
+          (initialDeposit * interestRate * tenureYear) / 1200;
+       console.log(simpleInterest);
+ 
+       let amount = initialDeposit + simpleInterest;
+       console.log(amount);
+
+     
+       let yearly = selectYear == "Months" ? (initialDeposit * interestRate*tenureYear)/ 100 : 
+       (initialDeposit * interestRate*tenureYear)/ 100;
+       console.log(yearly);
+    //    debugger
+ 
+       let price = initialDeposit * (Math.pow(1 + interestRate / 100, tenureYear));
+       console.log(price);
+  
+      
+       if(selectYear=="Months"){
+       document.getElementById("totalAmount").innerHTML ="$"+ `${amount.toFixed(2)}`
+ 
+       document.getElementById("interest").innerHTML = "$"+ `${simpleInterest.toFixed(2)}`
+        document.getElementById("showAmountInWord").innerHTML = inWords(Math.floor(amount));
+    }
+
+       else if(selectYear=="Years"){
+       document.getElementById("totalAmount").innerHTML = "$"+ `${price.toFixed(2)}`
+    //    debugger
+       document.getElementById("interest").innerHTML ="$"+ `${yearly.toFixed(2)}`
+       document.getElementById("showAmountInWord").innerHTML = inWords(Math.floor(price));
+       }
+    }
+      
+
+      var a = ['','One ','Two ','Three ','Four ', 'Five ','Six ','Seven ','Eight ','Nine ',
+'Ten ','Eleven ','Twelve ','Thirteen ','Fourteen ','Fifteen ','Sixteen ','Seventeen ',
+'Eighteen ','Nineteen '];
+var b = ['', '', 'Twenty','Thirty','Forty','Fifty', 'Sixty','Seventy','Eighty','Ninety'];
+
+function inWords (price) {
+    if ((price = price.toString()).length > 9) return 'overflow';
+    n = ('000000000' + price).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
+    if (!n) return; var str = '';
+    str += (n[1] != 0) ? (a[Number(n[1])] || b[n[1][0]] + ' ' + a[n[1][1]]) + 'Crore ' : 
+'';
+    str += (n[2] != 0) ? (a[Number(n[2])] || b[n[2][0]] + ' ' + a[n[2][1]]) + 'Lakh ' : 
+'';
+    str += (n[3] != 0) ? (a[Number(n[3])] || b[n[3][0]] + ' ' + a[n[3][1]]) + 'Thousand ' : 
+    '';
+    str += (n[4] != 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'Hundred ' 
+: '';
+    str += (n[5] != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] + 
+' ' + a[n[5][1]]) + 'Only ' : '';
+    return str;
+}
+
+
+
+     
+    
+   </script>
+
+
+  </body>
+</html>
+
+  
+
+
+
+
+    
