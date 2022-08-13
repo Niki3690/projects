@@ -12,7 +12,7 @@ css/font-awesome.min.css">
   <body>
 
     
-<body onload="Calculate()">
+<!-- <body onload="Calculate()"> -->
 
   <div class="hero-body">
       <div class="container">
@@ -136,6 +136,10 @@ css/font-awesome.min.css">
         </div>
     </div>
   <hr>
+  <canvas id="canvas" width="478" height="239" class="chartjs-render-monitor"></canvas>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.9.1/chart.min.js" integrity="sha512-ElRFoEQdI5Ht6kZvyzXhYG9NqjtkmlkfYk0wr6wHxU9JEHakS7UJZNeml5ALk+8IKlU6jDgMabC3vkumRokgJA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  
+
 </div>
 </div>
 </div>
@@ -168,6 +172,8 @@ css/font-awesome.min.css">
         let selectYear = document.getElementById("selectYear").value;
         let frequency = document.getElementById("frequency").value;
         let calculatebtn = document.getElementById("calculate");
+        let data=[];
+        let labels=[];
   
         console.log(initialDeposit, selectCurrency, interestRate, tenureYear, selectYear,
           frequency);
@@ -229,8 +235,82 @@ css/font-awesome.min.css">
         str += (n[5] != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] +
           ' ' + a[n[5][1]]) + 'Only ' : '';
         return str;
+
       }
-  
-  
-  
-    </script>
+
+
+
+
+
+
+      const ctx = document.getElementById('canvas').getContext('2d');
+      const myChart = new Chart(ctx, {
+    type: 'line',
+    data: {
+       
+        labels:[ "0yr","2yr","4yr","6yr","8yr","10yr",],
+        datasets: [{
+            label: 'Initial Amount',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: "transparent",
+            borderColor:"pink",
+            borderWidth: 3
+        },
+        {
+        label: 'Total Amount',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: "transparent",
+            borderColor:"blue",
+            borderWidth: 3
+    }]
+        
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true,
+                title:{
+                  display:true,
+                  text:"principle",
+               
+                }
+            }
+        }
+    }
+});
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

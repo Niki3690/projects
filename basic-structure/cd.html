@@ -142,130 +142,95 @@ css/font-awesome.min.css">
 </div>
 </div>
 </div>
-
 <script>
 
-selectCurrency.onchange=function(){
-
-
-let tempTotalAmount = totalAmount.innerText;
-console.log(" Before tempTotalAmount:->" + tempTotalAmount);
-tempTotalAmount = tempTotalAmount.replaceAll("$","");
-tempTotalAmount= tempTotalAmount.replaceAll("₹","");
-tempTotalAmount = tempTotalAmount.replaceAll("€","");
-tempTotalAmount = tempTotalAmount.replaceAll("£","");
-
-console.log(" After tempTotalAmount:->" + tempTotalAmount);
-
-totalAmount.innerHTML="<b>"+this.value+"</b>"+ " "+ tempTotalAmount;
-interest.innerText=this.value;
-
-
-
-
-
-let tempInterest = interest.innerText;
-console.log(" Beforeeee tempInterest:->" + tempInterest);
-tempInterest = tempInterest.replaceAll("$","");
-tempInterest= tempInterest.replaceAll("₹","");
-tempInterest = tempInterest.replaceAll("€","");
-tempInterest = tempInterest.replaceAll("£","");
-
-console.log(" Aftereeee   tempInterest:->" + tempInterest);
-
-interest.innerHTML="<b>"+this.value+"</b>"+ " "+tempInterest;
-interest.innerText=this.value;
-
-}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
- 
-
-   function Calculate() {
-     let initialDeposit = parseInt(document.getElementById("initialDeposit").value);
-     let selectCurrency = document.getElementById("selectCurrency").value;
-     let interestRate = parseInt(document.getElementById("interestRate").value);
-     let tenureYear = parseInt(document.getElementById("tenureYear").value);
-     let selectYear = document.getElementById("selectYear").value;
-     let frequency = document.getElementById("frequency").value;
-     let calculatebtn = document.getElementById("calculate");
-
-     console.log(initialDeposit, selectCurrency, interestRate, tenureYear, selectYear,
-       frequency);
-
-     let simpleInterest =
-       selectYear == "Years" ? (initialDeposit * interestRate * tenureYear) / 100 :
-        (initialDeposit * interestRate * tenureYear) / 1200;
-     console.log(simpleInterest);
-    
-     let amount = initialDeposit + simpleInterest;
-     console.log(amount);
-     console.log(inWords(Math.floor(amount)))
-
-   
-     let yearly = selectYear == "Months" ? (initialDeposit * interestRate*tenureYear)/ 100 : 
-     (initialDeposit * interestRate*tenureYear)/ 100;
-     console.log(yearly);
-
-     let price = initialDeposit * (Math.pow(1 + interestRate / 100, tenureYear));
-     console.log(price);
-     console.log(inWords(Math.floor(price)))
-
-     
-
-     if(selectYear=="Months"){
-     document.getElementById("totalAmount").innerHTML ="$"+ `${amount.toFixed(2)}`
-
-     document.getElementById("interest").innerHTML = "$"+`${simpleInterest.toFixed(2)}`
-     document.getElementById("showAmountInWord").innerHTML = inWords(Math.floor(amount));
-
-  }
-
-     else if(selectYear=="Years"){
-     document.getElementById("totalAmount").innerHTML ="$"+ `${price.toFixed(2)}`
+    function  selectCurrency  () {
   
-     document.getElementById("interest").innerHTML = "$"+`${yearly.toFixed(2)}`
-     document.getElementById("showAmountInWord").innerHTML = inWords(Math.floor(price));
-     }
-  }
-    
-
-    var a = ['','One ','Two ','Three ','Four ', 'Five ','Six ','Seven ','Eight ','Nine ',
-'Ten ','Eleven ','Twelve ','Thirteen ','Fourteen ','Fifteen ','Sixteen ','Seventeen ',
-'Eighteen ','Nineteen '];
-var b = ['', '', 'Twenty','Thirty','Forty','Fifty', 'Sixty','Seventy','Eighty','Ninety'];
-
-function inWords (price) {
-  if ((price = price.toString()).length > 9) return 'overflow';
-  n = ('000000000' + price).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
-  if (!n) return; var str = '';
-  str += (n[1] != 0) ? (a[Number(n[1])] || b[n[1][0]] + ' ' + a[n[1][1]]) + 'Crore ' : 
-'';
-  str += (n[2] != 0) ? (a[Number(n[2])] || b[n[2][0]] + ' ' + a[n[2][1]]) + 'Lakh ' : 
-'';
-  str += (n[3] != 0) ? (a[Number(n[3])] || b[n[3][0]] + ' ' + a[n[3][1]]) + 'Thousand ' : 
-  '';
-  str += (n[4] != 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'Hundred ' 
-: '';
-  str += (n[5] != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] + 
-' ' + a[n[5][1]]) + 'Only ' : '';
-  return str;
-}
-   
-
-   
- </script>
-
-</body>
+  
+        let tempTotalAmount = totalAmount.innerText;
+        console.log(" Before tempTotalAmount:->" + tempTotalAmount);
+        tempTotalAmount = tempTotalAmount.replaceAll("$", "");
+        tempTotalAmount = tempTotalAmount.replaceAll("₹", "");
+        tempTotalAmount = tempTotalAmount.replaceAll("€", "");
+        tempTotalAmount = tempTotalAmount.replaceAll("£", "");
+  
+        console.log(" After tempTotalAmount:->" + tempTotalAmount);
+  
+        totalAmount.innerHTML = "<b>" + this.value + "</b>" + " " + tempTotalAmount;
+        interest.innerText = this.value;
+      }
+  
+      function Calculate() {
+        let initialDeposit = parseInt(document.getElementById("initialDeposit").value);
+        let selectCurrency = document.getElementById("selectCurrency").value;
+        let interestRate = parseInt(document.getElementById("interestRate").value);
+        let tenureYear = parseInt(document.getElementById("tenureYear").value);
+        let selectYear = document.getElementById("selectYear").value;
+        let frequency = document.getElementById("frequency").value;
+        let calculatebtn = document.getElementById("calculate");
+  
+        console.log(initialDeposit, selectCurrency, interestRate, tenureYear, selectYear,
+          frequency);
+  
+        let simpleInterest =
+          selectYear == "Years" ? (initialDeposit * interestRate * tenureYear) / 100 :
+            (initialDeposit * interestRate * tenureYear) / 1200;
+        console.log(simpleInterest);
+  
+        let amount = initialDeposit + simpleInterest;
+        console.log(amount);
+        console.log(inWords(Math.floor(amount)))
+  
+  
+        let yearly = selectYear == "Months" ? (initialDeposit * interestRate * tenureYear) / 100 :
+          (initialDeposit * interestRate * tenureYear) / 100;
+        console.log(yearly);
+  
+        let price = initialDeposit * (Math.pow(1 + interestRate / 100, tenureYear));
+        console.log(price);
+        console.log(inWords(Math.floor(price)))
+  
+  
+  
+        if (selectYear == "Months") {
+          document.getElementById("totalAmount").innerHTML = `${selectCurrency}` + `${amount.toFixed(2)}`
+  
+          document.getElementById("interest").innerHTML = `${selectCurrency}`  + `${simpleInterest.toFixed(2)}`
+          document.getElementById("showAmountInWord").innerHTML = inWords(Math.floor(amount));
+  
+        }
+  
+        else if (selectYear == "Years") {
+          document.getElementById("totalAmount").innerHTML = `${selectCurrency}` + `${price.toFixed(2)}`
+  
+          document.getElementById("interest").innerHTML = `${selectCurrency}` + `${yearly.toFixed(2)}`
+          document.getElementById("showAmountInWord").innerHTML = inWords(Math.floor(price));
+        }
+      }
+  
+  
+      var a = ['', 'One ', 'Two ', 'Three ', 'Four ', 'Five ', 'Six ', 'Seven ', 'Eight ', 'Nine ',
+        'Ten ', 'Eleven ', 'Twelve ', 'Thirteen ', 'Fourteen ', 'Fifteen ', 'Sixteen ', 'Seventeen ',
+        'Eighteen ', 'Nineteen '];
+      var b = ['', '', 'Twenty', 'Thirty', 'Forty', 'Fifty', 'Sixty', 'Seventy', 'Eighty', 'Ninety'];
+  
+      function inWords(price) {
+        if ((price = price.toString()).length > 9) return 'overflow';
+        n = ('000000000' + price).substr(-9).match(/^(\d{2})(\d{2})(\d{2})(\d{1})(\d{2})$/);
+        if (!n) return; var str = '';
+        str += (n[1] != 0) ? (a[Number(n[1])] || b[n[1][0]] + ' ' + a[n[1][1]]) + 'Crore ' :
+          '';
+        str += (n[2] != 0) ? (a[Number(n[2])] || b[n[2][0]] + ' ' + a[n[2][1]]) + 'Lakh ' :
+          '';
+        str += (n[3] != 0) ? (a[Number(n[3])] || b[n[3][0]] + ' ' + a[n[3][1]]) + 'Thousand ' :
+          '';
+        str += (n[4] != 0) ? (a[Number(n[4])] || b[n[4][0]] + ' ' + a[n[4][1]]) + 'Hundred '
+          : '';
+        str += (n[5] != 0) ? ((str != '') ? 'and ' : '') + (a[Number(n[5])] || b[n[5][0]] +
+          ' ' + a[n[5][1]]) + 'Only ' : '';
+        return str;
+      }
+  3
+  
+  
+    </script>
