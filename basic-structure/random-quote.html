@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+
+    <title>Random QUOTE Generator</title>
+</head>
+
+<body>
+    <div class="hero-body">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-6">
+              <div class="card card-body text-center">
+  
+  
+                <section class="hero">
+                  <div class="hero-body">
+                    <div class="container">
+  
+  
+
+                            <h4 class="is-size-4">
+                                <b>Random QUOTE Generator</b>
+                            </h4><br><br>
+
+                            <div id="container">
+                               
+                                <button class="button has-background-dark has-text-white"  onclick="randomQuote()">Generate Random Quote</button><br>
+                                <hr>
+                                <div id="result">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    
+
+    
+
+
+
+
+
+    <script>
+
+        let quotes=
+[
+    "When you have a dream, youve got to grab it and never let go.<b>-Carol Burnett</b>",
+    "Life has got all those twists and turns. Youve got to hold on tight and off you go.<b>- Nicole Kidman</b>",
+    "There is nothing impossible to they who will try.<b>-Alexander the Great</b>",
+    "Keep your face always toward the sunshine, and shadows will fall behind you.<b>-Walt Whitman</b>",
+    "Success is not final, failure is not fatal: it is the courage to continuthat counts.<b>- Winston Churchill</b>",
+    "You define your own life. Dont let other people write your script.<b>-Oprah Winfrey</b>",
+    "You are never too old to set another goal or to dream a new dream.<b>-Malala Yousafzai</b>",
+    "Spread love everywhere you go.<b>-Mother Teresa</b>",
+    "You can be everything. You can be the infinite amount of things that people are.<b>-Kesha</b>",
+    "DO OR DIE NO QUESTION WHY.<b>-Niki</b>",   
+ ]
+        
+ function randomQuote(){
+
+    let randomNumber=Math.floor(Math.random() * quotes.length)
+    document.getElementById("result").innerHTML=quotes[randomNumber]
+ }
+</script>
+</body>
+</html>
+
+
+    
+
