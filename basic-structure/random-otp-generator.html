@@ -11,7 +11,7 @@
 </head>
 
 <body>
-    <div class="hero-body">
+	<div class="hero-body">
         <div class="container">
           <div class="columns is-centered">
             <div class="column is-6">
@@ -19,18 +19,25 @@
   
   
                 <section class="hero">
+                    <div class="has-background-grey-lighter">
                   <div class="hero-body">
                     <div class="container">
   
-  
+	<h4 class="is-size-4">
+		<b>Random OTP Generator</b>
+	</h4><br><br>
 
-                            <h4 class="is-size-4">
-                                <b>Random QUOTE Generator</b>
-                            </h4><br><br>
+    
+        <!-- Your OTP for registarttion app is -->
+        <!-- <div id="otp"></div> -->
+    
 
-                            <button class="button has-background-dark has-text-white"  onclick="generator()">Generate Random Image</button><br><br>
-                            <div id="divImage">
-                            </div>
+    <button class="button has-background-dark has-text-white" onclick="generateOTP()">
+        Generate OTP</button><br />
+        <hr>
+        <div id="otp">
+            
+        </div>
                     </div>
                   </div>
                 </section>
@@ -40,22 +47,22 @@
         </div>
     </div>
     
+    
 
     <script>
 
-function generator(){
-    let x=Math.floor((Math.random() * 5)+1);
-    console.log(x);
-    document.getElementById("divImage").innerHTML=`
-     <img src="codes/projects/img/fruit1 ${x}.jpg" style="width:350px;">`;
-   
-    
-    
- 
-}
-    
-  </script>
+        function generateOTP(){
+            let number="0123456789";
+            let OTP='';
+
+            for (let i=0;i<6;i++){
+                OTP +=number[Math.floor(Math.random()*10)];
+
+            }
+
+            document.getElementById("otp").innerHTML=OTP;
+        }
+
+    </script>
 </body>
 </html>
-
-

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+
+    <title>Random QUOTE Generator</title>
+</head>
+
+<body>
+	<div class="hero-body">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-6">
+              <div class="card card-body text-center">
+  
+  
+                <section class="hero">
+                  <div class="hero-body">
+                    <div class="container">
+  
+	<h4 class="is-size-4">
+		<b>Random Image Generator</b>
+	</h4><br><br>
+
+<button class="button has-background-dark has-text-white" onclick = "getRandomImage()"> Generate Image </button>
+<br> <br>
+
+<span id="result"> 
+
+</span> 
+					</div>
+				  </div>
+				</section>
+			  </div>
+			</div>
+		  </div>
+		</div>
+	</div>
+	
+
+<script>
+
+function getRandomImage() {
+
+var randomImage = new Array();
+
+
+randomImage[0] = "https://media.gettyimages.com/photos/sunset-at-a-mountain-pasture-over-garmischpartenkirchen-picture-id963717812?s=2048x2048";
+ randomImage[1] = "https://media.gettyimages.com/photos/aerial-view-of-misty-mountains-at-sunrise-picture-id1195458582?s=2048x2048";
+ randomImage[2] = "https://media.gettyimages.com/photos/hvalnes-east-iceland-picture-id86038204?s=2048x2048";
+ randomImage[3] = "https://media.gettyimages.com/photos/starry-night-picture-id519760984?s=2048x2048";
+ randomImage[4] = "https://media.gettyimages.com/photos/fog-and-clouds-on-mountain-picture-id1160438555?s=2048x2048";
+ randomImage[5] = "https://media.gettyimages.com/photos/difficult-conditions-on-snowy-road-picture-id1246980976?s=2048x2048";
+
+
+var number = Math.floor(Math.random()*randomImage.length);
+
+
+return document.getElementById("result").innerHTML = '<img src="'+randomImage[number]+'" />';
+}
+
+</script>
+  
+</body>  
+</html>
+
+
+
+ 
