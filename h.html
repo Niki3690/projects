@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+
+    <title>Flip a coin</title>
+</head>
+
+<body>
+    <div class="container">
+
+    </div>
+    <div class="coin" id="coin">
+
+        <div class="heads">
+           <img src="basic-structure/img1.jpg">
+        </div>
+     
+        <div class="tails">
+           <img src="basic-structure/img2.jpg">
+        </div>
+     
+     </div>
+
+     <div class="stats">
+        <p id="heads-count">Heads: 0</p>
+        <p id="tails-count">Tails: 0</p>
+    </div>
+
+    <style>
+        .container{
+    background-color: #ffffff;
+    width: 400px;
+    padding: 35px;
+    position: absolute;
+    transform: translate(-50%,-50%);
+    top: 50%;
+    left: 50%;
+    box-shadow: 15px 30px 35px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    -webkit-perspective: 300px;
+    perspective: 300px;
+}
+
+.coin{
+    height: 150px;
+    width: 150px;
+    position: relative;
+    margin: 32px auto;
+    -webkit-transform-style: preserve-3d;
+            transform-style: preserve-3d;
+}
+.coin img{
+    width: 145px;
+}
+.heads,.tails{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+}
+.tails{
+    transform: rotateX(180deg);
+}
+
+@keyframes spin-tails{
+    0%{
+        transform: rotateX(0);
+    }
+    100%{
+        transform: rotateX(1980deg);
+    }
+}
+@keyframes spin-heads{
+    0%{
+        transform: rotateX(0);
+    }
+    100%{
+        transform: rotateX(2160deg);
+    }
+}
+
+.stats{
+    display: flex;
+    color: #101020;
+    font-weight: 500;
+    padding: 20px;
+    margin-bottom: 40px;
+    margin-top: 55px;
+    box-shadow: 0 0 20px rgba(0,139,253,0.25);
+}
+
+.stats p:nth-last-child(1){
+  margin-left: 50%;
+}
+
+.buttons{
+    display: flex;
+    justify-content: space-between;
+}
+button{
+    width: 150px;
+    padding: 15px 0;
+    border: none;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#flip-button{
+    background-color: #053469;
+    color: #ffffff;
+}
+
+#reset-button{
+    background-color: #674706;
+    color: white;
+}
+
+#flip-button:disabled{
+    background-color: #e1e0ee;
+    border-color: #e1e0ee;
+    color: #101020;
+}
+    </style>
+
+    <script>
+        let coin = document.querySelector(".coin");
+let flipBtn = document.querySelector("#flip-button");
+let resetBtn = document.querySelector("#reset-button");
+
+let heads = 0;
+let tails = 0;
+
+flipBtn.addEventListener("click", () => {
+    let i = Math.floor(Math.random() * 2);
+    coin.style.animation = "none";
+    if(i){
+        setTimeout(function(){
+            coin.style.animation = "spin-heads 3s forwards";
+        }, 100);
+        heads++;
+    }
+    else{
+        setTimeout(function(){
+            coin.style.animation = "spin-tails 3s forwards";
+        }, 100);
+        tails++;
+    }
+    setTimeout(updateStats, 3000);
+    disableButton();
+});
+
+function updateStats(){
+    document.querySelector("#heads-count").textContent = `Heads: ${heads}`;
+    document.querySelector("#tails-count").textContent = `Tails: ${tails}`;
+}
+
+function disableButton(){
+    flipBtn.disabled = true;
+    setTimeout(function(){
+        flipBtn.disabled = false;
+    },3000);
+}
+
+resetBtn.addEventListener("click",() => {
+    coin.style.animation = "none";
+    heads = 0;
+    tails = 0;
+    updateStats();
+});
+
+
+    </script>

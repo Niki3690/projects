@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+
+    <title>Flip a coin</title>
+</head>
+
+<body>
+    <style>
+        .coin{
+            height:150px;
+            width: 150px;
+            position: relative;
+            margin: 32px auto;
+            transform-style: preserve-3d;
+        }
+
+
+        .heads,.tails{
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+        }
+
+        .tails{
+            transform: rotateX(180deg);
+        }
+
+    </style>
+    <div class="hero-body">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-6">
+              <div class="card card-body text-center">
+  
+  
+                <section class="hero">
+                  <div class="hero-body">
+                    <div class="container">
+  
+  
+                        <div class="text has-text-centered">
+                            <h3 class="is-size-3">
+                                <b>Flip a coin</b>
+                            </h3><br>
+
+                            <div class="status has-text-right">
+                                <p id="heads-count"><b>Heads: 0</b></p>
+                                <p id="tails-count"><b>Tails: 0</b></p>
+                            </div>
+                        
+
+                            <div class="container">
+                                <div class="coin" id="coin">
+
+                                    <div class="heads" >
+                                        <img src="img1.jpg">
+                                    </div>
+
+                                    <div class="tails" >
+                                        <img src="img2.jpg">
+                                    </div>
+
+                                </div><br>
+
+
+                                <div class="buttons" id="flip">
+                                    <button class="button is-medium has-background-dark has-text-white"  onclick="flipButton()">Flip coin
+                                    </button>
+
+                                    <div class="navbar-end">
+                                        <div class="navbar-item">
+                                    <div  id="reset">
+                                        <button class="button is-medium has-background-dark has-text-white"  onclick="resetButton()">Reset</button>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        let coin=document.getElementById("coin");
+        let flipBtn=document.getElementById("flip");
+        let resetBtn=document.getAnimations("reset");
+
+        let heads=0;
+        let tails=0;
+
+       function flipButton(){
+        let i=Math.floor(Math.random() *2);
+        coin.style.animation="none";
+
+        if(i){
+            setTimeout(function(){
+                coin.style.animation="spin-heads 3s forwords";},100);
+                heads++;
+            }
+
+            else{
+                setTimeout(function(){
+                coin.style.animation="spin-tails 3s forwords";},100);
+                tails++;
+                
+            }
+
+            setTimeout(updateStatus,3000);
+            disableButton();
+
+       }
+
+       function updateStatus(){
+         document.getElementById("heads-count").innerHTML=`<b>Heads: ${heads}</b>`;
+        document.getElementById("tails-count").innerHTML=`<b>Tails: ${tails}</b>`;
+       }
+
+
+       function resetButton(){
+        coin.style.animation="none";
+        heads=0;
+        tails=0;
+        updateStatus();
+
+       }
+
+
+    </script>
+  
