@@ -11,56 +11,7 @@
 </head>
 
 <body>
-    <style>
-        .coin{
-            height:150px;
-            width: 150px;
-            position: relative;
-            margin: 32px auto;
-            transform-style: preserve-3d;
-        }
 
-        .coin img{
-            width: 100%;
-        }
-
-        .heads,.tails{
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            backface-visibility: hidden;
-        }
-
-        .tails{
-            transform: rotateX(180deg);
-        }
-
-        @keyframes spin-tails{
-            0%{
-                transform: rotateX(0);
-            }
-            100%{
-                transform: rotateX(1980deg);
-            }
-        }
-
-        @keyframes spin-heads{
-            0%{
-                transform: rotateX(0);
-            }
-            100%{
-                transform: rotateX(2160deg);
-            }
-        }
-
-    
-
-
-
-
-
-
-    </style>
     <div class="hero-body">
         <div class="container">
           <div class="columns is-centered">
@@ -71,44 +22,43 @@
                 <section class="hero">
                   <div class="hero-body">
                     <div class="container">
+
+                      <div class="text has-text-centered">
+                        <h3 class="is-size-3">
+                            <b>Flip a coin</b>
+                        </h3><br>
+
+                        <div class="status has-text-right">
+                            <p id="heads-count"><b>Heads: 0</b></p>
+                            <p id="tails-count"><b>Tails: 0</b></p>
+                        </div>
   
   
-                        <div class="text has-text-centered">
-                            <h3 class="is-size-3">
-                                <b>Flip a coin</b>
-                            </h3><br>
+                      <div class="container">
+                        <div id="coin">
+                          <div class="heads">
+                           
+                            <img src="basic-structure/img1.jpg" alt="Image for coin's head" class="center"/>
+                          </div>
+                          <div class="tails">
+                            <img src="basic-structure/img2.jpg" alt="Image for coin's tail"  class="center" />
+                          </div>
+                        </div>
+                      </div> 
 
-                            <div class="status has-text-right">
-                                <p id="heads-count"><b>Heads: 0</b></p>
-                                <p id="tails-count"><b>Tails: 0</b></p>
+                      <div class="buttons" id="flip">
+                        <button class="button is-medium has-background-dark has-text-white"  onclick="flipButton()">Flip coin
+                        </button>
+
+                        <div class="navbar-end">
+                            <div class="navbar-item">
+                        <div  id="reset">
+                            <button class="button is-medium has-background-dark has-text-white"  onclick="resetButton()">Reset</button>
+                        </div>
                             </div>
-                        
-
-                            <div class="container">
-                                <div class="coin" id="coin">
-
-                                    <div class="heads" >
-                                        <img src="basic-structure/img1.jpg">
-                                    </div>
-
-                                    <div class="tails" >
-                                        <img src="basic-structure/img2.jpg">
-                                    </div>
-
-                                </div><br>
-
-
-                                <div class="buttons" id="flip">
-                                    <button class="button is-medium has-background-dark has-text-white"  onclick="flipButton()">Flip coin
-                                    </button>
-
-                                    <div class="navbar-end">
-                                        <div class="navbar-item">
-                                    <div  id="reset">
-                                        <button class="button is-medium has-background-dark has-text-white"  onclick="resetButton()">Reset</button>
-                                    </div>
-                                </div>
-                            </div>
+                        </div>
+                      </div>
+                      </div>
                     </div>
                   </div>
                 </section>
@@ -118,51 +68,42 @@
         </div>
     </div>
 
+<script >
+
+          let coin=document.getElementById("coin");
+          let flipBtn=document.getElementById("flip");
+          let resetBtn=document.getAnimations("reset");
+
+          let heads=0;
+          let tails=0;
+
+        function flipButton() {
+                                const coin = document.getElementById("coin");
+                                coin.style.animation = "none";
+                                if (Math.random() <= 0.5) {
+                                  setTimeout(function(){
+                                  coin.style.animation = "flip-heads 3s forwards"},100);
+                                  heads++;
+                                
+                              }
+                                else {
+                                  setTimeout(function(){
+                                  coin.style.animation = "flip-tails 3S forwards"},100);
+                                  tails++;
+                                
+                              }
+
+                                setTimeout(updateStatus,3000);
+                                disableButton();
+                              }
 
 
-    <script>
-        let coin=document.getElementById("coin");
-        let flipBtn=document.getElementById("flip");
-        let resetBtn=document.getAnimations("reset");
+          function updateStatus(){
+            document.getElementById("heads-count").innerHTML=`<b>Heads: ${heads}</b>`;
+            document.getElementById("tails-count").innerHTML=`<b>Tails: ${tails}</b>`;
+          }
 
-        let heads=0;
-        let tails=0;
-
-       function flipButton(){
-        let i=Math.floor(Math.random() *2);
-        coin.style.animation="none";
-
-        if(i){
-            setTimeout(function(){
-                coin.style.animation="spin-heads 3s forwords";},100);
-                heads++;
-            }
-
-            else{
-                setTimeout(function(){
-                coin.style.animation="spin-tails 3s forwords";},100);
-                tails++;
-                
-            }
-
-            setTimeout(updateStatus,3000);
-            disableButton();
-
-       }
-
-       function updateStatus(){
-         document.getElementById("heads-count").innerHTML=`<b>Heads: ${heads}</b>`;
-        // headsCount.innerHTML = "<b>"+heads+"</b>";
-        document.getElementById("tails-count").innerHTML=`<b>Tails: ${tails}</b>`;
-       }
-
-        
-    //    function disableButton(){
-    //     flipBtn.disabled=true;
-    //     setTimeout(function(){
-    //         flipBtn.disabled=false;
-    //     },3000);
-    //    }
+    
 
 
        function resetButton(){
@@ -172,7 +113,50 @@
         updateStatus();
 
        }
+</script>
 
+<style>
 
-    </script>
+ 
+  #coin {
+    height: 120px;
+    width: 120px;
+    position: relative;
+    margin: 0;
+    transform-style: preserve-3d;
+    align-items: center;
+  }
   
+  .tails {
+    transform: rotateX(180deg);
+  }
+  
+  .heads,
+  .tails {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+  }
+  
+  @keyframes flip-heads {
+    0% {
+      transform: rotateX(0);
+    }
+    100% {
+      transform: rotateX(2520deg);
+    }
+  }
+  
+  @keyframes flip-tails {
+    0% {
+      transform: rotateX(0);
+    }
+    100% {
+      transform: rotateX(2340deg);
+    }
+  }
+  
+  </style>
+  
+        
