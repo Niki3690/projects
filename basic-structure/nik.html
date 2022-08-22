@@ -1,22 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
-    />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/
-css/font-awesome.min.css"
-    />
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/
+css/font-awesome.min.css">
     <title>Calculate duration</title>
   </head>
 
-  <body>
+  <body onload="Calculate()">
   
  <style>
   table{
@@ -28,7 +20,7 @@ css/font-awesome.min.css"
 
       
  </style>
-    <body onload="Calculate()">
+    
       <div class="hero-body">
         <div class="container">
           <div class="columns is-centered">
@@ -40,20 +32,14 @@ css/font-awesome.min.css"
                   <h4 class="is-size-4">
                     <b>CD Calculator</b>
                   </h4>
-                  <br />
+                  <br>
 
                   <!--use for initial deposit-->
 
                   <label class="label">Initial Deposit</label>
                   <div class="field has-addons">
                     <div class="control is-expanded">
-                      <input
-                        class="input"
-                        type="number"
-                        title="value"
-                        value="10000"
-                        id="initialDeposit"
-                      />
+                      <input class="input" type="number" title="value" value="10000" id="initialDeposit">
                     </div>
                     <div class="control">
                       <span class="select">
@@ -73,13 +59,7 @@ css/font-awesome.min.css"
                   <div class="field">
                     <label class="label">Interest Rate</label>
                     <p class="control has-icons-right">
-                      <input
-                        class="input"
-                        type="number"
-                        title="value"
-                        value="3"
-                        id="interestRate"
-                      />
+                      <input class="input" type="number" title="value" value="3" id="interestRate">
                       <span class="icon is-small is-right has-text-success">
                         <i class="fa fa-percent"></i>
                       </span>
@@ -91,13 +71,7 @@ css/font-awesome.min.css"
                   <label class="label">Tenure</label>
                   <div class="field has-addons">
                     <div class="control">
-                      <input
-                        class="input"
-                        type="number"
-                        title="value"
-                        value="4"
-                        id="tenureYear"
-                      />
+                      <input class="input" type="number" title="value" value="4" id="tenureYear">
                     </div>
                     <div class="control">
                       <span class="select">
@@ -120,15 +94,11 @@ css/font-awesome.min.css"
                       <option>Monthly</option>
                     </select>
                   </div>
-                  <br /><br />
+                  <br><br>
 
                   <!--use for calculate button-->
 
-                  <button
-                    class="button is-primary is-small"
-                    onclick="Calculate()"
-                    id="Calculate"
-                  >
+                  <button class="button is-primary is-small" onclick="Calculate()" id="Calculate">
                     Calculate
                   </button>
                 </div>
@@ -142,18 +112,11 @@ css/font-awesome.min.css"
 
                     <div class="column is-8">
                       <div class="level-left">
-                        <h4 class="is-size-4" id="totalAmount">1010000.00</h4>
-                        <label class="level-item menu-label ml-2 is-size-6"
-                          ><b>Total Amount</b></label
-                        >
+                        <h4 class="is-size-4" id="totalAmount">$10100.00</h4>
+                        <label class="level-item menu-label ml-2 is-size-6"><b>Total Amount</b></label>
                       </div>
 
-                      <p
-                        class="ml-2 subtitle has-text-link"
-                        id="showAmountInWord"
-                      >
-                        Ten Lakh Ten Thousand
-                      </p>
+                      <p class="ml-2 subtitle has-text-link" id="showAmountInWord">Ten Thousand One Hundred </p>
                     </div>
 
                     <!--use for second column-->
@@ -161,14 +124,12 @@ css/font-awesome.min.css"
 
                     <div class="column id-4">
                       <div class="level-right">
-                        <h4 class="is-size-4" id="interest">10000.00</h4>
-                        <label class="level-item menu-label ml-2 is-size-6"
-                          ><b>Interest</b></label
-                        >
+                        <h4 class="is-size-4" id="interest">$100.00</h4>
+                        <label class="level-item menu-label ml-2 is-size-6"><b>Interest</b></label>
                       </div>
                     </div>
                   </div>
-                  <hr />
+                  <hr>
                 </div>
               </div>
             </div>
@@ -179,17 +140,18 @@ css/font-awesome.min.css"
           </h3>
           <hr style="height:1px;color:gray;background-color:gray">
           
-          <div  id="result"></div>
+          <div id="result"></div>
           <table>
             <thead>
               <tr>
-            <th>No.</th>
-            <th>Opening Balance</th>
-            <th>Interest</th>
-            <th>Closing Balance</th>
-            <th>Period</th>
+                <th>No.</th>
+                <th>Opening Balance</th>
+                <th>Interest</th>
+                <th>Closing Balance</th>
+                <th>Period</th>
               </tr>
           </thead>
+          <tbody id="tbl_body"><tr><td>1</td><td>1000</td><td>3</td><td>1000</td><td>12</td></tr><tr><td>2</td><td>1000</td><td>3</td><td>1000</td><td>12</td></tr><tr><td>3</td><td>1000</td><td>3</td><td>1000</td><td>12</td></tr><tr><td>4</td><td>1000</td><td>3</td><td>1000</td><td>12</td></tr></tbody>
           </table>
           <hr style="height:1px;color:gray;background-color:gray">
         </div>
@@ -212,17 +174,6 @@ css/font-awesome.min.css"
         }
 
         function Calculate() {
-
-          let result = "<table class='table is-bordered'>";
-          result = result + "<thead><th>No.</th><th>Opening Balance</th><th>Interest</th><th>Closing Balance</th><th>Period</th></thead>"
-            
-
-
-
-
-
-
-
           let initialDeposit = parseInt(
             document.getElementById("initialDeposit").value
           );
@@ -288,6 +239,13 @@ css/font-awesome.min.css"
               Math.floor(price)
             );
           }
+
+          var btn_html_content = '';
+          for(var index = 1; index <= tenureYear; index++) {
+            btn_html_content += '<tr><td>' + index + '</td><td>1000</td><td>' + interestRate + '</td><td>1000</td><td>12</td></tr>';
+          }
+
+          document.getElementById("tbl_body").innerHTML = btn_html_content;
         }
 
         var a = [
@@ -356,6 +314,9 @@ css/font-awesome.min.css"
               : "";
           return str;
         }
+
+        
       </script>
-    </body>
-</html>
+    
+
+</body></html>
