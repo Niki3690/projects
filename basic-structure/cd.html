@@ -1,5 +1,5 @@
-<html lang="en">
-  <meta charset="UTF-8">
+
+<head><meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
@@ -7,9 +7,8 @@
 css/font-awesome.min.css">
   <title>Calculate duration</title>
 </head>
-
 <body onload="Calculate()">
-  
+
   <style>
    table{
          width: 1100px;
@@ -89,9 +88,9 @@ css/font-awesome.min.css">
                    <!-- <select style=" width: 310px ; height:35px"> -->
                    <div class="select is-fullwidth">
                      <select id="frequency" title="value">
-                       <option selected="">Yearly</option>
-                       <option>Quarterly</option>
-                       <option>Monthly</option>
+                       <option value="1" selected="">Yearly</option>
+                       <option value="4">Quarterly</option>
+                       <option value="12">Monthly</option>
                      </select>
                    </div>
                    <br><br>
@@ -151,7 +150,7 @@ css/font-awesome.min.css">
                  <th>Period</th>
                </tr>
            </thead>
-           <tbody id="tbl_body"><tr><td>1</td><td>$10000.00</td><td>$300.00</td><td>$10300.00</td><td>12</td></tr><tr><td>2</td><td>$10300.00</td><td>$309.00</td><td>$10609.00</td><td>12</td></tr><tr><td>3</td><td>$10609.00</td><td>$318.27</td><td>$10927.27</td><td>12</td></tr><tr><td>4</td><td>$10927.27</td><td>$327.82</td><td>$11255.09</td><td>12</td></tr></tbody>
+           <tbody id="tbl_body"><tr><td>1</td><td>10000.00</td><td>100.00</td><td>10100.00</td><td>12</td></tr></tbody>
            </table>
            <hr style="height:1px;color:gray;background-color:gray">
          </div>
@@ -172,6 +171,8 @@ css/font-awesome.min.css">
              "<b>" + this.value + "</b>" + " " + tempTotalAmount;
            interest.innerText = this.value;
          }
+
+         
  
          function Calculate() {
            let initialDeposit = parseInt(
@@ -202,8 +203,8 @@ css/font-awesome.min.css">
                ? (initialDeposit * interestRate * tenureYear) / 100
                : (initialDeposit * interestRate * tenureYear) / 1200;
  
-           result = result + "<thead><tr><td>" + initialDeposit;
-           console.log(simpleInterest);
+          //  result = result + "<thead><tr><td>" + initialDeposit;
+          //  console.log(simpleInterest);
  
            let amount = initialDeposit + simpleInterest;
            console.log(amount);
@@ -220,42 +221,68 @@ css/font-awesome.min.css">
            console.log(price);
            console.log(inWords(Math.floor(price)));
  
+           
+
+          //  document.getElementById('totalAmount').value = (document.getElementById('initialDeposit').value * Math.pow((1 + interestRate / 100), (time / 12 * frequency))).toFixed(2)
+    
+
+ 
+           let btn_html_content   = '';
+           let opening_blance     = initialDeposit;
+           let interest           = interestRate;
+           let closing_blance     = opening_blance;
+           let period             = '';
+           
+           
+ 
+           
+           
            if (selectYear == "Months") {
+           for(let index = 1; index < tenureYear/12+1; index++) {
+                
+                let interestRateNew = interestRate * tenureYear/12;
+                  let interest = (opening_blance * interestRateNew) / 100;
+                 closing_blance += interest;
+                    
+                 btn_html_content += '<tr><td>' + index + '</td><td>' + opening_blance.toFixed(2) + '</td><td>' + interest.toFixed(2) + '</td><td>' + closing_blance.toFixed(2) + '</td><td>12</td></tr>';
+     
+                 opening_blance += interest;
+                 
+               };
+               let interestRateFinal = closing_blance.toFixed(2)-initialDeposit.toFixed(2)
+               document.getElementById("tbl_body").innerHTML = btn_html_content ;
              document.getElementById("totalAmount").innerHTML =
                `${selectCurrency}` + `${amount.toFixed(2)}`;
  
              document.getElementById("interest").innerHTML =
-               `${selectCurrency}` + `${simpleInterest.toFixed(2)}`;
+               `${selectCurrency}` + `${interestRateFinal.toFixed(2)}`;
              document.getElementById("showAmountInWord").innerHTML = inWords(
                Math.floor(amount)
              );
            } else if (selectYear == "Years") {
+               for(let index = 1; index <= tenureYear; index++) {
+                let interestRateNew = interestRate * tenureYear/12;
+                  let interest = (opening_blance * interestRate) / 100;
+                 closing_blance += interest;
+                    
+                 btn_html_content += '<tr><td>' + index + '</td><td>' + opening_blance.toFixed(2) + '</td><td>' + interest.toFixed(2) + '</td><td>' + closing_blance.toFixed(2) + '</td><td>12</td></tr>';
+     
+                 opening_blance += interest;
+                 
+               };
+               let interestRateFinal = closing_blance.toFixed(2)-initialDeposit.toFixed(2)
+               document.getElementById("tbl_body").innerHTML = btn_html_content ;
              document.getElementById("totalAmount").innerHTML =
                `${selectCurrency}` + `${price.toFixed(2)}`;
  
              document.getElementById("interest").innerHTML =
-               `${selectCurrency}` + `${yearly.toFixed(2)}`;
+               `${selectCurrency}` + `${interestRateFinal.toFixed(2)}`;
              document.getElementById("showAmountInWord").innerHTML = inWords(
                Math.floor(price)
              );
            }
- 
-           var btn_html_content   = '';
-           var opening_blance     = initialDeposit;
-           var closing_blance     = opening_blance;
-           var period             = '';
-           
-           for(var index = 1; index <= tenureYear; index++) {
-             var interest = (opening_blance * 1 * interestRate) / 100;
-             closing_blance += interest;
- 
-             btn_html_content += '<tr><td>' + index + '</td><td>$' + opening_blance.toFixed(2) + '</td><td>$' + interest.toFixed(2) + '</td><td>$' + closing_blance.toFixed(2) + '</td><td>12</td></tr>';
- 
-             opening_blance += interest;
-           }
- 
-           document.getElementById("tbl_body").innerHTML = btn_html_content;
-         }
+
+          }
  
          var a = [
            "",

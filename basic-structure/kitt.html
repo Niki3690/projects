@@ -1,0 +1,544 @@
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.1 Transitional//EN">
+<HTML>
+<!--   HTML coding exclusively with the CoffeeCup HTML 2007 Editor --> 
+<!--          http://www.coffeecup.com                             --> 
+<!--   First online in September 1977 as part of the ARPAnet group --> 
+<!--   Brewed on December 6 1994 1:09:21 PM                        --> 
+<!--   Updated on September 6 2001 4:18:12 AM                      --> 
+<!--   Updated on December 9 2004 8:22:45 PM                       --> 
+<!--   Created by Dr. Gene Davis - Computer Support Group          --> 
+<!--   re-tested 6/6/07 1000,0,5,5.5,1,1306.960                    --> 
+<HEAD>
+<title>Compounding Options Certificate Of Deposit Calculator</title>
+<META NAME="Title" CONTENT="CSGNetwork Compounding Options Certificate Of Deposit Calculator">
+<META NAME="Author" CONTENT="For CSGNetwork.Com, Computer Support Group - Dr. Gene Davis">
+<META NAME="Subject" CONTENT="CSGNetwork public use calculator">
+<META NAME="Description" CONTENT="Compounding Options Certificate Of Deposit Calculator, Palm Springs, Cathedral City, Palm Desert, La Quinta, Desert Hot Springs, Indio, Thermal, Thousand Palms, Rancho Mirage, Coachella Valley, Southern California, computer service, requires JavaScript">
+<META NAME="Keywords" CONTENT="certificate of deposit, cd, investment, time deposit, savings, yield, financial, compound, interest">
+<META NAME="Language" CONTENT="English">
+<META NAME="Expires" CONTENT="Never">
+<META NAME="Copyright" CONTENT="© 1977 - 2007 Computer Support Group - CSGNetwork and CSGNetwork.Com are registered trademarks with the US Patent and Trademark Office">
+<META NAME="Designer" CONTENT="Dr. Gene Davis">
+<META NAME="Publisher" CONTENT="Computer Support Group, Inc.">
+<META NAME="Revisit-After" CONTENT="14 Days">
+<META NAME="Distribution" CONTENT="Global">
+<META NAME="Robots" CONTENT="All">
+<script language="JavaScript">
+<!--
+
+// CED subroutine for cleaning up JavaScript rounding errors 
+// to any reasonable number of decimal places 5/5/1997 last mod 2/19/2004
+// round for decimal of (value of precision) places, default is 3
+// This routine can be used to pass a number and a number for precision
+// or just a number only, that is to be rounded to a set number of decimal
+// places. This routine supports leading and trailing zeros, leading and
+// trailing spaces, and padding. To prevent errors, pass variables as a string.
+
+function perRound(num, precision) {
+	var precision = 3; //default value if not passed from caller, change if desired
+	// remark if passed from caller
+	precision = parseInt(precision); // make certain the decimal precision is an integer
+    var result1 = num * Math.pow(10, precision);
+    var result2 = Math.round(result1);
+    var result3 = result2 / Math.pow(10, precision);
+    return zerosPad(result3, precision);
+}
+
+function zerosPad(rndVal, decPlaces) {
+    var valStrg = rndVal.toString(); // Convert the number to a string
+    var decLoc = valStrg.indexOf("."); // Locate the decimal point
+    // check for a decimal 
+    if (decLoc == -1) {
+        decPartLen = 0; // If no decimal, then all decimal places will be padded with 0s
+        // If decPlaces is greater than zero, add a decimal point
+        valStrg += decPlaces > 0 ? "." : "";
+    }
+    else {
+        decPartLen = valStrg.length - decLoc - 1; // If there is a decimal already, only the needed decimal places will be padded with 0s
+    }
+     var totalPad = decPlaces - decPartLen;    // Calculate the number of decimal places that need to be padded with 0s
+    if (totalPad > 0) {
+        // Pad the string with 0s
+        for (var cntrVal = 1; cntrVal <= totalPad; cntrVal++) 
+            valStrg += "0";
+        }
+    return valStrg;
+}
+// send the value in as "num" in a variable
+
+// clears field of default value
+function clear_field(field) {
+		if (field.value==field.defaultValue) {
+			field.value=''
+		}
+	}
+
+function func(){
+    a = document.calc;
+    c = 0;
+    if (a.amount.value == ""){
+	    alert("Enter the CD amount");
+		a.amount.focus();
+		a.amount.select();
+                c++;
+		return(false);
+     }
+	 if(a.amount.value){
+	     s = a.amount.value;
+		 if ((s.match(/[a-z A-Z]/)) != null){
+		     alert("Enter CD amount in numbers only");
+			 a.amount.focus();
+			 a.amount.select();
+                         c++;  
+			 return(false);
+          } 
+      }
+	  if(a.time.value == ""){
+	      alert("Enter the period");
+		  a.time.focus();
+		  a.time.select();
+                  c++;
+		  return(false);
+      }
+	  if(a.time.value){
+	      s = a.time.value;
+		  if((s.match(/[. a-z A-Z]/)) != null){
+		      alert("Enter period in numbers only");
+		      a.time.focus();
+		      a.time.select();
+                      c++;
+		      return(false);
+	      }
+		
+       }
+	   if(a.ir.value == ""){
+	       alert("Enter the interest rate");
+		   a.ir.focus();
+		   a.ir.select();
+                   c++;
+		   return(false);
+       }
+        
+	   if(a.ir.value){
+	       s = a.ir.value;
+		   if((s.match(/[a-z A-Z \- `  ! @ # $ % ^ & * ]/)) != null){
+		       alert("Enter only positive numbers for the interest rate");
+			   a.ir.focus();
+			   a.ir.select();
+                           c++;
+			   return(false);
+            }
+            if((s.indexOf(".",0)) != (-1))
+			{
+                if(((s.length - s.indexOf(".",0)))> 3) 
+			    {
+			       alert("Enter a valid interest rate");
+			       a.ir.focus();
+			       a.ir.select();
+			       c++;
+			       return(false);
+			    }
+				
+			}
+			if((s.indexOf(".",0)) == (-1)){
+				if(s.length > 2){
+				    alert("Enter a valid interest rate");
+					a.ir.focus();
+			        a.ir.select();
+			        c++;
+			        return(false);
+                }
+				
+            }
+        }
+		if(a.cf.selectedIndex ==0){
+		    alert("Please select the compounding frequency");
+                        c++;
+			return(false);
+                }
+ 
+     z=document.calc.cf.selectedIndex;
+	 
+   if(z==1){
+   n=12;
+   }
+   if(z==2){
+   n=4;
+   }
+   if(z==3){
+   n=2;
+   }
+   if(z==4){
+   n=1;
+   }
+   if(z==5){
+   n=0;
+   }
+   
+ 
+  
+      t = document.calc.time.value;
+	  t = (t)*1;
+      p = document.calc.amount.value;
+	  p = (p)*1;
+      s = document.calc.ir.value;
+	  s =  (s)*1;
+      r = (s/100);
+      if(n != 0) 
+      {
+	      
+		  
+           a=(t*n);
+		   b=(1+(r/n)); 
+		   		   
+	       y = (((Math.pow(b,a))-1)/t)*100;
+           amount = (p*(Math.pow(b,a))); 
+           y = ((Math.floor(y*100))/100);
+
+		   amount =(((Math.floor(amount*100))/100))*1;
+		   document.calc.yield.value = y;
+	       document.calc.amoi.value = perRound(amount - p);
+	       document.calc.amo.value = perRound(amount);
+		   return(false);
+      } 
+      else
+      {
+	   y = r
+	   amount = (p*(1 + (r*t)))
+       y = (Math.floor(y*100));
+	   amount = ((Math.floor(amount*100))/100);
+       document.calc.yield.value = y;
+	   document.calc.amoi.value = perRound(amount - p);
+	   document.calc.amo.value = perRound(amount);
+       return(false);
+      } 
+    
+}
+
+//-->
+</script>
+</head>
+<center>
+<font face="Arial,Helvetica,Geneva,Swiss,SunSans-Regular">
+<BODY BGCOLOR=FFFFFF TEXT=000000 LINK=0000FF VLINK=800080>
+
+
+
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<STYLE TYPE="text/css">
+<!--
+body { font-family: Tahoma, Verdana; }
+input.btn {
+  color:black;
+  font: bold 75% 'tahoma',helvetica,sans-serif;
+  background-color:#ffd148;
+  border: 2px solid;
+  border-color: #c7c5c8;
+ }
+ 
+ input.btn2 {
+  color:black;
+  font: bold 95% 'tahoma',helvetica,sans-serif;
+  background-color:#ffd148;
+  border: 2px solid;
+  border-color: #c7c5c8;
+ 
+}
+//-->
+</STYLE>
+<meta name="viewport" content="width=958, initial-scale=1">
+<div align="center"><table width="949" border="0" cellpadding="0" bgcolor="#899194" cellspacing="0">
+  <tr>
+    <td colspan="13"><div align="left"><img src="http://storage.googleapis.com/csgnetworkstatic/allbar_header.png" width="950" height="37" alt="CSGNetwork.com Free Information"></div></td>
+  </tr>
+<tr valign="middle"><td><div align="left" style="float:left;">
+<form action="http://www.csgnetwork.com/search_frame.html" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-8018289210612122:1424138921" />
+    <input type="hidden" name="cof" value="FORID:10" />
+    <input type="hidden" name="ie" value="UTF-8" />
+    <input type="text" name="q" size="55" />
+    <input type="submit" name="sa" value="Search" class="btn" />
+  </div>
+</form>
+</div>
+
+<div align="center" style="float:right; margin-right:40px;"><span style="decoration:none; color:white; font-weight:bold; font-size:smaller;">
+<a href="http://www.csgnetwork.com" style="decoration:none; color:white;"><b>Home</a></b>  |  
+<a href="http://www.csgnetwork.com/top_free_apps.html" style="decoration:none; color:white;"><b>Top Free Apps</b></a>  |<br />
+<a href="http://www.csgnetwork.com/converters.html" style="decoration:none; color:white;"><b>CALCULATORS and CONVERTERS</b></a>  |  
+<a href="#" onClick="history.go(-1)" style="decoration:none; color:white;"><b>Back</b></a> </span></div>
+</td></tr>
+</table></div>
+
+<tr><td colspan="3"><br />
+<div align="center">
+<!-- Financial Top Link Unit -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:15px"
+     data-ad-client="ca-pub-8018289210612122"
+     data-ad-slot="5801455384"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+</td></tr>
+</table></div>
+
+
+
+<TABLE align="center" BORDER=0 width="950" CELLPADDING=5>
+<TR BGCOLOR=#FFFFFF>
+<!--ROW 1-->
+<TD WIDTH=80%>
+<h1>Compounding Options Certificate<br>
+Of Deposit Calculator</h1>
+<center>
+<TABLE align="center" BORDER=5 CELLPADDING=5>
+<TR BGCOLOR=#FFFFFF>
+<!--ROW 1-->
+<TD WIDTH=80% BGCOLOR="#B6D4D2">
+This <A HREF="http://www.csgnetwork.com/glossaryc.html#calculator" target="blank"><B>calculator</B></a> requires the use of <A HREF="http://www.csgnetwork.com/glossaryj.html#Javascript" target="blank"><B>Javascript</B></a> enabled and capable browsers. This script calculates the future value of a one-time, single amount investment, typically a certificate of deposit or CD. Enter the dollar amount invested using just numbers and the decimal. Next, enter the number of years of the term of deposit. Next, enter the published interest rate you expect to earn on that investment. Finally, select the compounding frequency. Click on the Calculate button and the effective yield, value at maturity and interest will be returned. The value at maturity and interest amounts are rounded to the nearest dollar. You may click on Clear Values to do another calculation. This calculation does compounding depending on whether the interest paid is monthly, quarterly, annually or semi-annually. Effective yield is the actual return on the deposit. It depends on the rate of interest and the frequency of compounding.
+<br><br>
+<form name="calc" onSubmit="return func()">
+<center>
+<TABLE align="center" BORDER=5 CELLPADDING=5>
+<TR BGCOLOR=#FFFFFF>
+<!--ROW 1-->
+<td valign="top">
+<!-- Financial L W Sky -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:160px;height:600px"
+     data-ad-client="ca-pub-8018289210612122"
+     data-ad-slot="6723677678"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</td>
+<TD WIDTH=80%>
+<center>
+<TABLE align="center" BORDER=5 CELLPADDING=5>
+<TR BGCOLOR=#FFFFFF>
+<!--ROW 1-->
+<TD WIDTH=80%>
+<center>
+<TABLE align="center" BORDER=5 CELLPADDING=5>
+<TR BGCOLOR="#B6D4D2">
+<!--ROW 1-->
+<td>
+<center>Designation</center>
+</td>
+<td>
+<center>Value</center>
+</td>
+</tr>
+<TR BGCOLOR="#B6D4D2">
+<TD align="center" colspan="2">
+Required Data Entry
+</td>
+</tr>
+<tr>             
+<td>
+Enter CD Amount
+</td>
+<td> 
+$&nbsp;<input type="text" name="amount" size="12">
+</td>
+</tr>
+<tr>
+<td>Enter Time Period
+</td>
+<td> 
+&nbsp;&nbsp;&nbsp;<input type="text" name="time" maxlength="2" size="12">Years
+</td>
+</tr>
+<tr>
+<td>
+Enter Annual Interest Rate
+</td>
+<td> 
+&nbsp;&nbsp;&nbsp;<input type="text" name="ir" maxlength="5" size="12">&nbsp;%
+</td>
+</tr>
+<tr>
+<td>
+Frequency of Compounding
+</td>
+<td> 
+&nbsp;&nbsp;&nbsp;<select name="cf">
+<option>Select</option>
+<option>Monthly</option>
+<option>Quarterly</option>
+<option>Semi-Annual</option>
+<option>Annual</option>
+<option>None</option>
+</select>
+</td>
+</tr>
+<tr>
+<td colspan=2 align="center" BGCOLOR="#B6D4D2">
+<input type="submit" value="Calculate">&nbsp;&nbsp;&nbsp;
+<input type="Reset" value="Clear Values">
+<br />
+<hr style="background:#ffd148; border:0; height:5px" />
+<!-- Everyday Mid 300 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:300px;height:250px"
+     data-ad-client="ca-pub-8018289210612122"
+     data-ad-slot="7884845227"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+<hr style="background:#ffd148; border:0; height:5px" />
+</td>
+</tr>
+<TR BGCOLOR="#B6D4D2">
+<TD align="center" colspan="2">
+Calculated Results
+</td>
+</tr>
+<tr>
+<td>
+Term Effective Yield
+</td>
+<td> 
+&nbsp;&nbsp;&nbsp;<input type="text" size="12" name="yield" onFocus="this.blur()">&nbsp;%
+</td>
+</tr>
+<tr>
+<td>
+Total Interest Amount
+</td>
+<td> 
+&nbsp;$<input type="text" size="12" name="amoi" onFocus="this.blur()">
+</td>
+</tr>
+<tr>
+<td>
+Deposit Maturity Amount
+</td>
+<td> 
+&nbsp;$<input size="12" type="text" name="amo" onFocus="this.blur()">
+</td>
+</tr>
+</table>
+</form>
+</td>
+</tr>
+</table>
+Version 1.4.5
+</center>
+</td>
+</tr>
+</table>
+
+</center>
+</center>
+<BR><BR>
+<!-- google_ad_section_start(weight=ignore) -->
+<!--Below is thumbnail code for facebook-->
+<link rel="image_src" href="http://www.csgnetwork.com/Icons/thumb_information.png">
+<link rel="image_src" href="http://www.csgnetwork.com/Icons/thumb_calculator.png">
+</td></tr></table>
+<div style="clear:both;"></div>
+<div align="center">
+<table border="0" bgcolor="#FFFFFF" width="750">	   
+<tr><td><div style="float:left;font-size:smaller;margin-left:70px;">
+Leave us a question or comment on <a href="http://www.facebook.com/pages/CSGNetworkcom-Free-Apps/139436549442339" target="_blank">Facebook <img src="http://storage.googleapis.com/csgnetworkstatic/facebook-icon.png" height="20" width="20" border="0"/></a></div></td></tr>
+<tr valign="middle">
+<td></td><td colspan="2" bgcolor="#999DA8"><div align="center" style="font-size:14pt; color:#FFFFFF;"><b>Search or Browse Our Site</b></div></font></td>
+</tr><tr><td>  
+<div align="center">
+<script async src="//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- All pages Large Rectangle -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:336px;height:280px"
+     data-ad-client="ca-pub-8018289210612122"
+     data-ad-slot="3358458988"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</td>
+<!-- SiteSearch Google -->
+</td><td bgcolor="ffffff" valign="top">
+<div align="center"><table border="0" cellpadding="4" width="70%" bgcolor="FFFFFF">
+  <tr><td colspan="3"><div align="center">
+<form action="http://www.csgnetwork.com/search_frame.html" id="cse-search-box">
+  <div>
+    <input type="hidden" name="cx" value="partner-pub-8018289210612122:li00ja-20in" />
+    <input type="hidden" name="cof" value="FORID:10" />
+    <input type="hidden" name="ie" value="ISO-8859-1" />
+    <input type="text" name="q" size="40" />
+    <input type="submit" class="btn2" width="40" name="sa" value="Search" />
+  </div></form>
+<script async type="text/javascript" src="http://www.google.com/cse/brand?form=cse-search-box&amp;lang=en"></script></div>
+</td></tr><tr valign="top" bgcolor="FFFFFF"><td></b><span style="font-size:smaller;">
+<A HREF="http://www.csgnetwork.com/automotiveconverters.html"><b>Automotive</b></a><BR>
+<A HREF="http://www.csgnetwork.com/aviationconverters.html"><b>Aviation</b></a><BR>
+<A HREF="http://www.csgnetwork.com/financialconverters.html"><b>Business</b></a><BR>
+<A HREF="http://www.csgnetwork.com/communicateconverters.html"><b>Communications</b></a><BR>
+<A HREF="http://www.csgnetwork.com/computerconverters.html"><b>Computer</b></a><BR>
+<A HREF="http://www.csgnetwork.com/constructionconverters.html"><b>Construction</b></a><BR>
+<A HREF="http://www.csgnetwork.com/electronicsconverters.html"><b>Electronics</b></a><BR>
+<A HREF="http://www.csgnetwork.com/everydayconverters.html"><b>Everyday Use</b></a><BR>
+<A HREF="http://www.csgnetwork.com/financialconverters.html"><b>Financial</b></a><BR>
+<A HREF="http://www.csgnetwork.com/generalconverters.html"><b>General Interest</b></a><BR>
+<A HREF="http://www.csgnetwork.com/geographyconverters.html"><b>Geography Related</b></a><BR>
+<A HREF="http://www.csgnetwork.com/healthconverters.html"><b>Health</b></a></span>
+</td>   
+ <td width="125"><span style="font-size:smaller;">
+<A HREF="http://www.csgnetwork.com/constructionconverters.html"><b>Home Repair</b></a><BR>
+<A HREF="http://www.csgnetwork.com/sssconverters.html"><b>Javascript</b></a><BR>
+<A HREF="http://www.csgnetwork.com/lotterycalcs.html"><b>Lottery</b></a><BR>
+<A HREF="http://www.csgnetwork.com/marineconverters.html"><b>Marine</b></a><BR>
+<A HREF="http://www.csgnetwork.com/mathhelpconverters.html"><b>Math Help</b></a><BR>
+<A HREF="http://www.csgnetwork.com/mathconverters.html"><b>Math Scripts</b></a><BR>
+<A HREF="http://www.csgnetwork.com/automotiveconverters.html"><b>Mechanical</b></a><BR>
+<A HREF="http://www.csgnetwork.com/financialconverters.html"><b>Money</b></a><BR>
+<A HREF="http://www.csgnetwork.com/scienceconverters.html"><b>Science</b></a><BR>
+<A HREF="http://www.csgnetwork.com/sportsconverters.html"><b>Sports</b></a><BR>
+<A HREF="http://www.csgnetwork.com/timeconverters.html"><b>Time</b></a><BR>
+<A HREF="http://www.csgnetwork.com/weatherconverters.html"><b>Weather</b></a></span>
+</td></tr></table>
+<!-- google_ad_section_stop(weight=ignore) -->
+</td></tr>
+<tr><td colspan="4"><div align="center"><img src="http://storage.googleapis.com/csgnetworkstatic/allbottom.png" alt="Free Information Calculators and Converters" /></div>
+</td></tr></table>
+<br />
+<!-- google_ad_section_start(weight=ignore) -->
+<div align="center"><table width="950" border="0" cellpadding="0" cellspacing="0"><tr><td>
+</td>
+<td valign="middle" align="left"><img src="http://storage.googleapis.com/csgnetworkstatic/cslogo.png" width="234" height="16" alt="International Copyright Violation" border="0"></td>
+</tr></table></div>
+<div align="center">
+<table border="0" cellpadding="0" cellspacing="0" width="950">
+<tr><td><SCRIPT LANGUAGE="JavaScript"><!--
+    today=new Date();
+    y0=today.getFullYear();//  --->
+</SCRIPT>
+<div align="center" style="font-size:x-small">Registered&reg; Trademark&trade; and Copyright© 1973 - <SCRIPT LANGUAGE="JavaScript">
+ <!--- 
+    document.write(y0);
+ // ---></SCRIPT>
+<a href="http://www.csgnetwork.com/">CSG, Computer Support Group, Inc. and CSGNetwork.Com</a> All Rights Reserved</b></div><br />
+</td></tr></table>
+<font size="3"><div align="center"><a href="http://www.csgnetwork.com/">Home</a> | <a href="http://www.csgnetwork.com/advertising.html" rel="nofollow">Advertising</a> | <a href="http://www.csgnetwork.com/converters.html">Calculators and Converters</a> | <a href="http://www.csgnetwork.com/contact.html">Contact Us</a> | <a href="http://www.csgnetwork.com/sssconverters.html">Javascript</a> | <a href="http://www.csgnetwork.com/sitemap.html">Sitemap</a> | <a href="http://www.csgnetwork.com/glossary.html">Glossary</a> | <a href="http://www.csgnetwork.com/top_free_apps.html">Top Free Apps</a></div></font>
+<!-- google_ad_section_stop(weight=ignore) -->
+<!-- END of Last Page Load or Refresh JavaScript -->
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-586965-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</TD>
+</TR>
+</TABLE>
+</BODY> 
+</HTML>
