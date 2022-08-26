@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <title>Image change</title>
+</head>
+<body>
+
+    <style>
+        .container{
+            height: 100vh;
+        }
+        .final{
+            max-width:500px;
+            margin: auto;
+            display: block;
+        }
+        .product{
+            text-align: center;
+           
+        }
+        .box{
+            display: inline-block;
+            height: 70px;
+            width: 70px;
+            border:2px solid black;
+            margin: 2px;;
+        }
+        .active{
+            border-color: cornflowerblue;
+            background-color:lightcyan;
+            border-width: 2px;
+        }
+    </style>
+
+
+    <div class="hero-body">
+        <div class="container">
+          <div class="columns is-centered">
+            <div class="column is-6">
+              <div class="card card-body text-center">
+  
+  
+                <section class="hero has-background-warning">
+                  <div class="hero-body">
+                    <div class="container ">
+
+                      <div class="text has-text-centered">
+                        <h3 class="is-size-3">
+                            <b>Image Change</b>
+                        </h3><br>
+                    
+
+
+<div class="container">
+    <div class="final">
+        <img src="green.webp" alt="container" class="image">
+    </div>
+
+        <div class="product" id="product">
+        <button class="box active " onclick="imageChange(this)">
+                <img src="green.webp" alt="product">
+            </button>
+            <button class="box" onclick="imageChange(this)">
+                <img src="black.webp" alt="product">
+            </button>
+            <button class="box" onclick="imageChange(this)">
+                <img src="grey.webp" alt="product">
+            </button>
+                </div>
+            </div>
+                      </div>
+                    </div>
+                  </div>
+                </section>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+    
+
+
+
+    <script>
+         let products=document.getElementById("product").children;
+      
+    function imageChange(event){
+        document.querySelector(".image").src=event.children[0].src;
+
+        for(i=0;i<products.length;i++){
+            products[i].classList.remove("active");
+        }
+        event.classList.add("active");
+    }
+
+    </script>
+</body>
+</html>
+        
+   
+
