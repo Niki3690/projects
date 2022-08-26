@@ -1,5 +1,4 @@
-
-<head><meta charset="UTF-8">
+<html lang="en"><head><meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
@@ -7,16 +6,17 @@
 css/font-awesome.min.css">
   <title>Calculate duration</title>
 </head>
-<body onload="Calculate()">
 
+<body onload="Calculate()">
+  
   <style>
-   table{
+   thead{
          width: 1100px;
          margin: 20px auto;
          border-collapse: collapse;
          text-align: center;
-       }
- 
+      }
+  
        
   </style>
      
@@ -44,10 +44,14 @@ css/font-awesome.min.css">
                        <span class="select">
                          <!-- <select id="selectCurrency" onchange="selectCurrency(this)"> -->
                          <select id="selectCurrency" title="value">
-                           <option selected="">$</option>
-                           <option>₹</option>
-                           <option>€</option>
-                           <option>£</option>
+                          <option label="dollar">$</option>
+                          <option label="rupee">₹</option>
+                          <option label="euro">€</option>
+                          <option label="pound">£</option>
+
+                           <!-- <option value="quater">Quarterly</option>
+                       <option value="month">Monthly</option> -->
+
                          </select>
                        </span>
                      </div>
@@ -69,7 +73,7 @@ css/font-awesome.min.css">
  
                    <label class="label">Tenure</label>
                    <div class="field has-addons">
-                     <div class="control">
+                     <div class="control is-expanded ">
                        <input class="input" type="number" title="value" value="4" id="tenureYear">
                      </div>
                      <div class="control">
@@ -88,9 +92,9 @@ css/font-awesome.min.css">
                    <!-- <select style=" width: 310px ; height:35px"> -->
                    <div class="select is-fullwidth">
                      <select id="frequency" title="value">
-                       <option value="1" selected="">Yearly</option>
-                       <option value="4">Quarterly</option>
-                       <option value="12">Monthly</option>
+                       <option value="year" selected="">Yearly</option>
+                       <option value="quater">Quarterly</option>
+                       <option value="month">Monthly</option>
                      </select>
                    </div>
                    <br><br>
@@ -111,9 +115,10 @@ css/font-awesome.min.css">
  
                      <div class="column is-8">
                        <div class="level-left">
-                         <h4 class="is-size-4" id="totalAmount">$10100.00</h4>
-                         <label class="level-item menu-label ml-2 is-size-6"><b>Total Amount</b></label>
+                         <h3 class="is-size-3" id="totalAmount">$10100.00</h3>
+                         <label class="level-item menu-label ml-2 is-size-5">TOTAL AMOUNT</label>
                        </div>
+                       <br>
  
                        <p class="ml-2 subtitle has-text-link" id="showAmountInWord">Ten Thousand One Hundred </p>
                      </div>
@@ -123,8 +128,8 @@ css/font-awesome.min.css">
  
                      <div class="column id-4">
                        <div class="level-right">
-                         <h4 class="is-size-4" id="interest">$100.00</h4>
-                         <label class="level-item menu-label ml-2 is-size-6"><b>Interest</b></label>
+                         <h3 class="is-size-3" id="interest">$100.00</h3>
+                         <label class="level-item menu-label ml-2 is-size-5">INTEREST</label>
                        </div>
                      </div>
                    </div>
@@ -137,11 +142,12 @@ css/font-awesome.min.css">
            <h3 class="is-size-3">
              <b>Interest by Frequency</b>
            </h3>
-           <hr style="height:1px;color:gray;background-color:gray">
+           <hr>
            
-           <div id="result"></div>
-           <table>
-             <thead>
+           <div id="result" class="table-container">
+           <table class="table is-striped is-narrow is-hoverable is-fullwidth">
+
+            <thead>
                <tr>
                  <th>No.</th>
                  <th>Opening Balance</th>
@@ -152,7 +158,7 @@ css/font-awesome.min.css">
            </thead>
            <tbody id="tbl_body"><tr><td>1</td><td>10000.00</td><td>100.00</td><td>10100.00</td><td>12</td></tr></tbody>
            </table>
-           <hr style="height:1px;color:gray;background-color:gray">
+           <hr>
          </div>
        </div>
      
@@ -170,6 +176,8 @@ css/font-awesome.min.css">
            totalAmount.innerHTML =
              "<b>" + this.value + "</b>" + " " + tempTotalAmount;
            interest.innerText = this.value;
+
+           
          }
 
          
@@ -188,7 +196,8 @@ css/font-awesome.min.css">
            let selectYear = document.getElementById("selectYear").value;
            let frequency = document.getElementById("frequency").value;
            let calculatebtn = document.getElementById("calculate");
- 
+			let compoundFreq = document.getElementById("frequency");
+			let compoundVal = compoundFreq.value;
            console.log(
              initialDeposit,
              selectCurrency,
@@ -234,51 +243,138 @@ css/font-awesome.min.css">
            let period             = '';
            
            
- 
-           
-           
-           if (selectYear == "Months") {
-           for(let index = 1; index < tenureYear/12+1; index++) {
-                
-                let interestRateNew = interestRate * tenureYear/12;
-                  let interest = (opening_blance * interestRateNew) / 100;
-                 closing_blance += interest;
-                    
-                 btn_html_content += '<tr><td>' + index + '</td><td>' + opening_blance.toFixed(2) + '</td><td>' + interest.toFixed(2) + '</td><td>' + closing_blance.toFixed(2) + '</td><td>12</td></tr>';
-     
-                 opening_blance += interest;
-                 
-               };
-               let interestRateFinal = closing_blance.toFixed(2)-initialDeposit.toFixed(2)
-               document.getElementById("tbl_body").innerHTML = btn_html_content ;
+		   
+		   if (selectYear == "Months" && compoundVal == "year") {
+		   for(let index = 1; index < tenureYear/12+1; index++) {
+				
+				let interestRateNew = interestRate * tenureYear/12;
+				  let interest = (opening_blance * interestRateNew) / 100;
+				 closing_blance += interest;
+					
+				 btn_html_content += '<tr><td>' + index + '</td><td>'+ `${selectCurrency}` + opening_blance.toFixed(2) + '</td><td>' + `${selectCurrency}`+ interest.toFixed(2) + '</td><td>' + `${selectCurrency}`+ closing_blance.toFixed(2) + '</td><td>12</td></tr>';
+	 
+				 opening_blance += interest;
+				 
+			   };
+			   let interestRateFinal = closing_blance.toFixed(2)-initialDeposit.toFixed(2)
+			   document.getElementById("tbl_body").innerHTML = btn_html_content ;
              document.getElementById("totalAmount").innerHTML =
-               `${selectCurrency}` + `${amount.toFixed(2)}`;
+               `${selectCurrency}` + `${closing_blance.toFixed(2)}`;
+ 
+             document.getElementById("interest").innerHTML =
+               `${selectCurrency}` + `${interestRateFinal.toFixed(2)}`;
+             document.getElementById("showAmountInWord" ).innerHTML =inWords(
+               Math.floor(closing_blance) 
+             ); 
+        }
+		   else if (selectYear == "Years" && compoundVal == "year") {
+			   for(let index = 1; index <= tenureYear; index++) {
+				let interestRateNew = interestRate * tenureYear/12;
+				  let interest = (opening_blance * interestRate) / 100;
+				 closing_blance += interest;
+					
+				 btn_html_content += '<tr><td>' + index + '</td><td>' + `${selectCurrency}`+ opening_blance.toFixed(2) + '</td><td>' + `${selectCurrency}`+ interest.toFixed(2) + '</td><td>' + `${selectCurrency}`+ closing_blance.toFixed(2) + '</td><td>12</td></tr>';
+	 
+				 opening_blance += interest;
+				 
+			   };
+			   let interestRateFinal = closing_blance.toFixed(2)-initialDeposit.toFixed(2)
+			   document.getElementById("tbl_body").innerHTML = btn_html_content ;
+             document.getElementById("totalAmount").innerHTML =
+               `${selectCurrency}` + `${closing_blance.toFixed(2)}`;
  
              document.getElementById("interest").innerHTML =
                `${selectCurrency}` + `${interestRateFinal.toFixed(2)}`;
              document.getElementById("showAmountInWord").innerHTML = inWords(
-               Math.floor(amount)
+               Math.floor(closing_blance)
              );
-           } else if (selectYear == "Years") {
-               for(let index = 1; index <= tenureYear; index++) {
-                let interestRateNew = interestRate * tenureYear/12;
-                  let interest = (opening_blance * interestRate) / 100;
-                 closing_blance += interest;
-                    
-                 btn_html_content += '<tr><td>' + index + '</td><td>' + opening_blance.toFixed(2) + '</td><td>' + interest.toFixed(2) + '</td><td>' + closing_blance.toFixed(2) + '</td><td>12</td></tr>';
-     
-                 opening_blance += interest;
-                 
-               };
-               let interestRateFinal = closing_blance.toFixed(2)-initialDeposit.toFixed(2)
-               document.getElementById("tbl_body").innerHTML = btn_html_content ;
+           }
+		   else if (selectYear == "Years" && compoundVal == "quater") {
+			   for(let index = 1; index <= tenureYear*4; index++) {
+					let interestRateNew = interestRate/4;
+					  let interest = (opening_blance * interestRateNew) / 100;
+					 closing_blance += interest;
+						
+					 btn_html_content += '<tr><td>' + index + '</td><td>' +`${selectCurrency}`+ opening_blance.toFixed(2) + '</td><td>' + `${selectCurrency}`+ interest.toFixed(2) + '</td><td>' + `${selectCurrency}`+ closing_blance.toFixed(2) + '</td><td>12</td></tr>';
+		 
+					 opening_blance += interest;
+					 
+				   };
+				   let interestRateFinal = closing_blance.toFixed(2)-initialDeposit.toFixed(2)
+				   document.getElementById("tbl_body").innerHTML = btn_html_content ;
+				 document.getElementById("totalAmount").innerHTML =
+				   `${selectCurrency}` + `${closing_blance.toFixed(2)}`;
+	 
+				 document.getElementById("interest").innerHTML =
+				   `${selectCurrency}` + `${interestRateFinal.toFixed(2)}`;
+				 document.getElementById("showAmountInWord").innerHTML = inWords(
+				   Math.floor(closing_blance)
+				 );
+		   }
+		   else if (selectYear == "Months" && compoundVal == "quater") {
+			   for(let index = 1; index <= tenureYear/4+1; index++) {
+					let interestRateNew = interestRate/4;
+					  let interest = (opening_blance * interestRateNew) / 100;
+					 closing_blance += interest;
+						
+					 btn_html_content += '<tr><td>' + index + '</td><td>' +`${selectCurrency}`+ opening_blance.toFixed(2) + '</td><td>' + `${selectCurrency}`+ interest.toFixed(2) + '</td><td>' + `${selectCurrency}`+ closing_blance.toFixed(2) + '</td><td>12</td></tr>';
+		 
+					 opening_blance += interest;
+					 
+				   };
+				   let interestRateFinal = closing_blance.toFixed(2)-initialDeposit.toFixed(2)
+				   document.getElementById("tbl_body").innerHTML = btn_html_content ;
+				 document.getElementById("totalAmount").innerHTML =
+				   `${selectCurrency}` + `${closing_blance.toFixed(2)}`;
+	 
+				 document.getElementById("interest").innerHTML =
+				   `${selectCurrency}` + `${interestRateFinal.toFixed(2)}`;
+				 document.getElementById("showAmountInWord").innerHTML = inWords(
+				   Math.floor(closing_blance)
+				 );
+		   }
+			else if (selectYear == "Months" && compoundVal == "month") {
+			   for(let index = 1; index <= tenureYear; index++) {
+					let interestRateNew = interestRate/12;
+					  let interest = (opening_blance * interestRateNew) / 100;
+					 closing_blance += interest;
+						
+					 btn_html_content += '<tr><td>' + index + '</td><td>' +  `${selectCurrency}`+opening_blance.toFixed(2) + '</td><td>' + `${selectCurrency}`+ interest.toFixed(2) + '</td><td>' + `${selectCurrency}`+closing_blance.toFixed(2) + '</td><td>12</td></tr>';
+		 
+					 opening_blance += interest;
+					 
+				   };
+				   let interestRateFinal = closing_blance.toFixed(2)-initialDeposit.toFixed(2)
+				   document.getElementById("tbl_body").innerHTML = btn_html_content ;
+				 document.getElementById("totalAmount").innerHTML =
+				   `${selectCurrency}` + `${closing_blance.toFixed(2)}`;
+	 
+				 document.getElementById("interest").innerHTML =
+				   `${selectCurrency}` + `${interestRateFinal.toFixed(2)}`;
+				 document.getElementById("showAmountInWord").innerHTML = inWords(
+				   Math.floor(closing_blance)
+				 );
+		   }
+		 else if (selectYear == "Years" && compoundVal == "month") {
+			   for(let index = 1; index <= tenureYear*12; index++) {
+				let interestRateNew = interestRate/12;
+				  let interest = (opening_blance * interestRateNew) / 100;
+				 closing_blance += interest;
+					
+				 btn_html_content += '<tr><td>' + index + '</td><td>' + `${selectCurrency}`+ opening_blance.toFixed(2) + '</td><td>' + `${selectCurrency}`+ interest.toFixed(2) + '</td><td>' + `${selectCurrency}`+ closing_blance.toFixed(2) + '</td><td>12</td></tr>';
+	 
+				 opening_blance += interest;
+				 
+			   };
+			   let interestRateFinal = closing_blance.toFixed(2)-initialDeposit.toFixed(2)
+			   document.getElementById("tbl_body").innerHTML = btn_html_content ;
              document.getElementById("totalAmount").innerHTML =
-               `${selectCurrency}` + `${price.toFixed(2)}`;
+               `${selectCurrency}` + `${closing_blance.toFixed(2)}`;
  
              document.getElementById("interest").innerHTML =
                `${selectCurrency}` + `${interestRateFinal.toFixed(2)}`;
              document.getElementById("showAmountInWord").innerHTML = inWords(
-               Math.floor(price)
+               Math.floor(closing_blance)
              );
            }
 
@@ -350,9 +446,8 @@ css/font-awesome.min.css">
                : "";
            return str;
          }
- 
-         
+   
        </script>
      
  
- </body>
+ </body></html>

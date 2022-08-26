@@ -1,0 +1,1054 @@
+<html lang="en"><head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <title>CD Calculator Online</title>
+    <meta name="author" content="Jimmy">
+    <meta name="description" content="Online CD Calculator to calculate Checking Deposit interest and help user to share the result.">
+    <meta name="keywords" content="cd calculator, cd calculator online, online cd calculator">
+    
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@codebeautify">
+    <meta name="twitter:title" content="CD Calculator Online">
+    <meta name="twitter:description" content="Online CD Calculator to calculate Checking Deposit interest and help user to share the result.">
+    <meta name="twitter:image" content="https://127.0.0.1/calculators/img/cb/img/cb/logo.png">
+    <meta name="twitter:url" content="https://127.0.0.1/calculators/cd-calculator">
+    <meta name="twitter:creator" content="@allaboutjson">
+    
+    
+    <meta property="og:title" content="CD Calculator Online">
+    <meta property="og:description" content="Online CD Calculator to calculate Checking Deposit interest and help user to share the result.">
+    <meta property="og:image" content="https://127.0.0.1/calculators/img/cb/img/cb/logo.png">
+    <meta property="og:url" content="https://127.0.0.1/calculators/cd-calculator">
+    <meta property="og:type" content="website">
+    
+    <script async="" src="//www.google-analytics.com/analytics.js"></script><script type="application/ld+json">
+            {
+                "@context": "http://schema.org/",
+                "@type": "WebSite",
+                "name": "CD Calculator",
+                "image": "https://codebeautify.org/img/cb/img/cb/logo.png",
+                "url": "https://codebeautify.org/cd-calculator",
+                "description": "Online CD Calculator to calculate Checking Deposit interest and help user to share the result.",
+                "isPartOf": {
+                    "@type": "Website",
+                    "name": "Code Beautify",
+                    "url": "https://codebeautify.org"
+                },
+                "sameAs" : [
+                    "https://twitter.com/codebeautify"
+                ]
+            }
+            </script>
+    
+    <link rel="canonical" href="https://127.0.0.1/calculators/cd-calculator">
+    <link href="https://codebeautify.org/calculators/img/cb.png" rel="icon">
+    
+    
+    
+    <style>
+        /* starts Material Icons CSS */
+        /* in ccase of update Compare with https://fonts.googleapis.com/icon?family=Material+Icons */
+        /* fallback */
+                @font-face {
+                font-family: 'Material Icons';
+                font-style: normal;
+                font-weight: 400;
+                src: url(https://fonts.gstatic.com/s/materialicons/v55/flUhRq6tzZclQEJ-Vdg-IuiaDsNc.woff2) format('woff2');
+            }
+    
+            .material-icons {
+                font-family: 'Material Icons';
+                font-weight: normal;
+                font-style: normal;
+                font-size: 24px;
+                line-height: 1;
+                letter-spacing: normal;
+                text-transform: none;
+                display: inline-block;
+                white-space: nowrap;
+                word-wrap: normal;
+                direction: ltr;
+                -webkit-font-feature-settings: 'liga';
+                -webkit-font-smoothing: antialiased;
+            }
+            /* Ends Material Icons CSS */
+    </style>
+    
+    <link rel="stylesheet" href="https://codebeautify.org/calculators/dist/1.1/css/calc/b-main.min.css">
+    
+    
+    
+    <style type="text/css">/* Chart.js */
+    @keyframes chartjs-render-animation{from{opacity:.99}to{opacity:1}}.chartjs-render-monitor{animation:chartjs-render-animation 1ms}.chartjs-size-monitor,.chartjs-size-monitor-expand,.chartjs-size-monitor-shrink{position:absolute;direction:ltr;left:0;top:0;right:0;bottom:0;overflow:hidden;pointer-events:none;visibility:hidden;z-index:-1}.chartjs-size-monitor-expand>div{position:absolute;width:1000000px;height:1000000px;left:0;top:0}.chartjs-size-monitor-shrink>div{position:absolute;width:200%;height:200%;left:0;top:0}</style></head>
+    <body><input type="hidden" id="viewName" value="cd-calculator">
+    <input id="fTitle" type="hidden" value="CD Calculator Online">
+    
+    
+    <div id="app">
+    <section class="hero">
+    <div class="hero-head">
+    <nav class="navbar is-transparent" role="navigation" aria-label="main navigation">
+    <div class="container is-fluid">
+    <div class="navbar-brand">
+    <a class="navbar-item" href="/"><img src="/img/slogo.png" alt="" srcset=""></a>
+    <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarTopMain">
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    <span aria-hidden="true"></span>
+    </a>
+    </div>
+    <div class="navbar-menu" id="navbarTopMain">
+    <div class="navbar-end">
+    <a href="https://jsonformatter.org" class="navbar-item is-link">JSON Formatter</a>
+    <a href="https://hexcolorcodes.org" class="navbar-item is-link">Hex Color Codes</a>
+    <a href="/jsonviewer" class="navbar-item is-link">JSON Beautifier</a>
+    <a href="/recentLinksPage" class="navbar-item is-link">Recent Links</a>
+    <a onclick="scrollToForm();" class="navbar-item is-link">More</a>
+    <div class="navbar-item">
+    <a id="notloggedin" href="/login" class="button is-primary">Login</a>
+    <div id="loggedin" class="dropdown is-right" style="display:none">
+    <div class="dropdown-trigger">
+    <button class="button" aria-haspopup="true" aria-controls="dropdown-menu">
+    <span id="usernamelable">Dropdown button</span>
+    <span class="icon is-small">
+    <i class="material-icons">arrow_drop_down</i>
+    </span>
+    </button>
+    </div>
+    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+    <div class="dropdown-content">
+    <a href="https://127.0.0.1/calculators/userSaveLinkPage" class="dropdown-item">Links</a>
+    <a href="https://127.0.0.1/calculators/userSaveOldLinkPage" class="dropdown-item">Archived</a>
+    <a href="https://127.0.0.1/calculators/myFavouriteTools" class="dropdown-item">Favorite</a>
+    <hr class="dropdown-divider">
+    <a href="/logout" class="dropdown-item button is-light">Logout</a>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </div>
+    </nav>
+    </div>
+    </section>
+    <hr class="my-0">
+    <progress id="ajaxProgressBar" class="progress is-tiny is-dark" max="100">50%</progress><section class="container section pt-5">
+    <div class="columns">
+    <div class="column is-4">
+    <h1 class="title">CD Calculator</h1>
+    <form>
+    <input type="hidden" name="csrfmiddlewaretoken" value="WnfDXcLUlrcavoaLFePaOO0uyhjzQnBs41dHQnlgdaU7LVpZKwHITbChopAOmLL1">
+    <label class="label">Initial Deposit</label>
+    <div class="field has-addons">
+    <p class="control is-expanded">
+    <input class="input" id="initialDeposit" oninput="updateData();" type="number" value="10000">
+    </p>
+    <p class="control">
+    <span class="select">
+    <select id="dropdownCurrency" oninput="updateData();">
+    <option label="$">dollar</option>
+    <option label="₹">rupee</option>
+    <option label="€">euro</option>
+    <option label="£">pound</option>
+    </select>
+    </span>
+    </p>
+    </div>
+    <div class="field">
+    <label class="label">Interest Rate</label>
+    <div class="control">
+    <p class="control has-icons-right">
+    <input class="input" id="inputpercentage" type="number" value="8" oninput="updateData();">
+    <span class="icon is-small is-right">
+     <b style="color: #00a38c; font-size: 20px;">%</b>
+    </span>
+    </p>
+    </div>
+    </div>
+    <label class="label">Tenure</label>
+    <div class="field has-addons">
+    <p class="control is-expanded">
+    <input class="input" id="inputTenure" type="number" value="10" oninput="updateData();">
+    </p>
+    <p class="control">
+    <span class="select">
+    <select id="dropdownTenure" oninput="updateData();">
+    <option>Years</option>
+    <option>Months</option>
+    </select>
+    </span>
+    </p>
+    </div>
+    <div class="field is-primary">
+    <label class="label" for="id_frequency">Compounding Frequency</label>
+    <div class="control">
+    <div class="select is-fullwidth">
+    <select id="dropdownCompounding" oninput="updateData();">
+    <option label="Yearly">Yearly</option>
+    <option label="Quarterly">Quarterly</option>
+    <option label="Monthly">Monthly</option>
+    </select>
+    </div>
+    </div>
+    </div>
+    <button class="button is-primary" type="button" onclick="updateData();">Calculate</button>
+    </form>
+    </div>
+    <div class="column is-8"><div class="chartjs-size-monitor"><div class="chartjs-size-monitor-expand"><div class=""></div></div><div class="chartjs-size-monitor-shrink"><div class=""></div></div></div>
+    <div class="level mb-2 ml-2">
+    <div class="level-right">
+    <div>
+    <h2 class="level-item subtitle is-2" id="showTotalAmount">₹10,100</h2>
+    </div>
+    <label class="level-item menu-label ml-2 is-size-5">Total Amount</label>
+    </div>
+    <div class="level-left ">
+    <div>
+    <h2 class="level-item subtitle is-2" id="showInterest">₹100</h2>
+    </div>
+    <label class="level-item menu-label ml-2 is-size-5">Interest</label>
+    </div>
+    </div> 
+    <p class=" ml-2 subtitle has-text-link-dark is-primary has-text-centered-mobile" id="showAmountInWord">Ten Thousand One Hundred  Rupees</p>
+    <hr>
+    <canvas id="canvas" width="482" height="241" class="chartjs-render-monitor" style="display: block; height: 268px; width: 536px;"></canvas>
+    </div>
+    </div> 
+    </section>
+    
+    <section class="container section pt-1">
+    <h1 class="title">Interest by Frequency</h1>
+    <hr>
+    <div class="table-container">
+    <table class="table is-fullwidth is-striped has-text-centered" id="detailTable">
+    <tbody>
+    <tr class="has-text-centered is-link">
+    <th>No.</th>
+    <th>Opening Balance</th>
+    <th>Interest</th>
+    <th>Closing Balance</th>
+    <th class="is-hidden-mobile">Period</th>
+    </tr>
+    
+    <tr><td>1</td><td>₹10,000.00</td><td>₹100.00</td><td>₹10,100.00</td><td class="is-hidden-mobile">Aug-2022 - Nov 2022</td></tr></tbody>
+    </table>
+    </div>
+    <hr>
+    <div>
+    <p class="subtitle">To share your calculation, paste this link into an email, web page or social media:</p>
+    <div class="columns"> &nbsp;&nbsp;&nbsp;
+    <div class="column notification">
+    <p class="subtitle is-6" id="shareLink">https://codebeautify.org/calculators/cd-calculator?&amp;ID=10000&amp;CT=rupee&amp;IR=3&amp;Term=4&amp;TT=Months&amp;CF=Yearly</p>
+    </div>
+    <div class="column">
+    <button class="button is-link" id="copyToClipboard" onclick="copyToClipboard();">
+    <span class="icon"><i class="material-icons md-18">content_copy</i></span>
+    <span>Copy To Clipboard</span>
+    </button>
+    </div>
+    </div>
+    </div>
+    </section>
+    <div class="container section">
+    <div class="columns">
+    <div class="column is-8">
+    <section class="section pt-1">
+    <h2 class="title">CD Calculator Online</h2>
+    <hr>
+    <div class="content">
+    <h2> About </h2>
+    <p>A certificate of deposit (CD) is a product offered by banks and credit unions that provides an interest rate premium in exchange for the customer agreeing to leave a lump-sum deposit untouched for a predetermined period of time.</p>
+    <p>Almost all consumer financial institutions offer them, although it’s up to each bank which CD terms it wants to offer, how much higher the rate will be compared to the bank’s savings and money market products, and what penalties it applies for early withdrawal.</p>
+    <p>The formula for calculating certificate of deposit is as follows:</p>
+    <p><b>FB = ID * (1 + R/CF) ^ (T*CF)</b></p>
+    <p>Where</p>
+    <ul>
+    <li>FB - Final balance or similarly called final value or future value,</li>
+    <li>ID - Initial deposite or also referred as a principle amount or present value,</li>
+    <li>R - Expected annual interest rate,</li>
+    <li>T - Tenure or term,</li>
+    <li>CF - Compound frequency means that the interest is how many times compounded per year.</li>
+    </ul>
+    <h2>What can you do with CD Calculator?</h2>
+    <ul>
+    <li>It helps to calculate CD and helps to project your future interest earnings.</li>
+    <li>Users can see the accurate final balance and interest. And also can see the final balance in words.</li>
+    <li>The chart represents the growth of the total amount and initial amount by the scale of two years.</li>
+    <li>Users can easily see their calculations in detail by the table. Based on the selected compound frequency table describes the opening balance, your earned interest, closing balance and period.</li>
+    <li>This calculator helps to share your calculations by URL.</li>
+    </ul>
+    </div></section>
+    </div>
+    <div class="column is-4 is-hidden-mobile">
+    <section class="section pt-1">
+    <h2 class="title">Related Tools</h2>
+    <hr>
+    <div class="content">
+    <a class="button funbtn " href="https://codebeautify.org/calculators/compound-interest-calculator" title="Compound Interest Calculator">Compound Interest Calculator</a>
+    <a class="button funbtn is-large" href="https://codebeautify.org/calculators/cagr-calculator" title="Compound Annual Growth Rate Calculator">CAGR Calculator</a>
+    <a class="button funbtn is-large" href="https://codebeautify.org/calculators/appreciation-calculator" title="Appreciation Calculator">Appreciation Calculator</a>
+    </div>
+    </section>
+    <section class="section">
+    <h2 class="title">Recently visited pages</h2>
+    <hr>
+    <div class="content">
+    <ul id="visitedTools">
+    </ul>
+    </div>
+    </section>
+    <section class="section">
+    <h2 class="title">Tags</h2>
+    <hr>
+    <div class="tags">
+    <a class="tag is-primary is-large" href="/formatters-and-beautifiers">Formatters</a>
+    </div>
+    </section>
+    </div>
+    </div>
+    </div>
+    
+    <footer id="jumptofooter" class="footer">
+    <div class="container is-fluid">
+    <section class="has-text-centered">
+    <h2 class="subtitle is-size-2 ">
+    <strong>Code Beautify</strong>
+    </h2>
+    </section>
+    <hr>
+    <div class="columns has-text-centered-mobile">
+    <div class="column">
+    <h5 class="title has-text-dark is-5">Color Converters</h5>
+    <ul class="content">
+    <li>
+    <a href="/hex-to-pantone-converter">HEX to Pantone Converter</a>
+    </li>
+    <li>
+    <a href="/rgb-to-pantone-converter">RGB to Pantone Converter</a>
+    </li>
+    <li>
+    <a href="/hsv-to-pantone-converter">HSV to Pantone Converter</a>
+    </li>
+    <li>
+    <a href="/cmyk-to-pantone-converter">CMYK to Pantone Converter</a>
+    </li>
+    <li>
+    <a href="/cmyk-to-hex-converter">CMYK to HEX Converter</a>
+    </li>
+    <li>
+    <a href="/cmyk-to-rgb-converter">CMYK to RGB Converter</a>
+    </li>
+    <li>
+    <a href="/cmyk-to-hsv-converter">CMYK to HSV Converter</a>
+    </li>
+    <li>
+    <a href="/hsv-to-hex-converter">HSV to HEX Converter</a>
+    </li>
+    <li>
+    <a href="/hsv-to-rgb-converter">HSV to RGB Converter</a>
+    </li>
+    <li>
+    <a href="/hsv-to-cmyk-converter">HSV to CMYK Converter</a>
+    </li>
+    <li>
+    <a href="/hex-to-hsv-converter">HEX to HSV Converter</a>
+    </li>
+    <li>
+    <a href="/rgb-to-hex-converter">RGB to HEX Converter</a>
+    </li>
+    <li>
+    <a href="/rgb-to-hsv-converter">RGB to HSV Converter</a>
+    </li>
+    <li>
+    <a href="/rgb-to-cmyk-converter">RGB to CMYK Converter</a>
+    </li>
+    <li>
+    <a href="/hex-to-rgb-converter">HEX to RGB Converter</a>
+    </li>
+    <li>
+    <a href="/hex-to-cmyk-converter">HEX to CMYK Converter</a>
+    </li>
+    </ul> <h5 class="title has-text-dark is-5">Unit Converter</h5>
+    <ul class="content">
+    <li>
+    <a href="/length-converter">Length Converter</a>
+    </li>
+    <li>
+    <a href="/weight-converter">Weight Converter</a>
+    </li>
+    <li>
+    <a href="/volume-converter">Volume Converter</a>
+    </li>
+    <li>
+    <a href="/area-converter">Area Converter</a>
+    </li>
+    <li>
+    <a href="/temperature-converter">Temperature Converter</a>
+    </li>
+    <li>
+    <a href="/density-converter">Density Converter</a>
+    </li>
+    <li>
+    <a href="/electric-current-converter">Electric Current Converter</a>
+    </li>
+    <li>
+    <a href="/speed-converter">Speed Converter</a>
+    </li>
+    <li>
+    <a href="/angle-converter">Angle Converter</a>
+    </li>
+    <li>
+    <a href="/bytes-converter">Bytes/Bits Converter</a>
+    </li>
+    <li>
+    <a href="/energy-converter">Energy Converter</a>
+    </li>
+    <li>
+    <a href="/force-converter">Force Converter</a>
+    </li>
+    <li>
+    <a href="/fuel-converter">Fuel Converter</a>
+    </li>
+    <li>
+    <a href="/mass-converter">Mass Converter</a>
+    </li>
+    <li>
+    <a href="/power-converter">Power Converter</a>
+    </li>
+    <li>
+    <a href="/pressure-converter">Pressure Converter</a>
+    </li>
+    <li>
+    <a href="/time-converter">Time Converter</a>
+    </li>
+    <li>
+    <a href="/astronomical-converter">Astronomical Converter</a>
+    </li>
+    <li>
+    <a href="/frequency-converter">Frequency Converter</a>
+    </li>
+    <li>
+    <a href="/unix-time-stamp-converter">Unix Timestamp Converter</a>
+    </li>
+    </ul> <h5 class="title has-text-dark is-5">SQL Converters</h5>
+    <ul class="content">
+    <li>
+    <a href="/sql-to-csv-converter">SQL to CSV Converter</a>
+    </li>
+    <li>
+    <a href="/sql-to-json-converter">SQL to JSON Converter</a>
+    </li>
+    <li>
+    <a href="/sql-to-xml-converter">SQL to XML Converter</a>
+    </li>
+    <li>
+    <a href="/sql-to-yaml-converter">SQL to YAML Converter</a>
+    </li>
+    <li>
+    <a href="/sql-to-html-converter">SQL to HTML Converter</a>
+    </li>
+    </ul> </div>
+    <div class="column">
+    <h5 class="title has-text-dark is-5">Converters</h5>
+    <ul class="content">
+    <li>
+    <a href="/image-to-base64-converter">Image to Base64</a>
+    </li>
+    <li>
+    <a href="/base64-to-image-converter">Base64 to Image</a>
+    </li>
+    <li>
+    <a href="/date-time-calculater">Date Calculater</a>
+    </li>
+    <li>
+    <a href="/excel-to-html">EXCEL to HTML</a>
+    </li>
+    <li>
+    <a href="/excel-to-xml">EXCEL to XML</a>
+    </li>
+    <li>
+    <a href="/excel-to-json">EXCEL to JSON</a>
+    </li>
+    <li>
+    <a href="/opml-to-json-converter">OPML to JSON</a>
+    </li>
+    <li>
+    <a href="/word-to-html-converter">Word to HTML</a>
+    </li>
+    <li>
+    <a href="/tableizer">Online Tableizer</a>
+    </li>
+    </ul> <h5 class="title has-text-dark is-5">JSON Converters</h5>
+    <ul class="content">
+    <li>
+    <a href="/json-to-java-converter">JSON to JAVA</a>
+    </li>
+    <li>
+    <a href="/jsontoxml">JSON to XML</a>
+    </li>
+    <li>
+    <a href="/json-to-yaml">JSON to YAML</a>
+    </li>
+    <li>
+    <a href="/json-to-csv">JSON to CSV</a>
+    </li><li>
+    </li><li>
+    <a href="/json-to-tsv-converter">JSON to TSV</a>
+    </li>
+    <li>
+    <a href="/json-to-excel-converter">JSON to Excel</a>
+    </li>
+    <li>
+    <a href="/json-to-html-converter">JSON to HTML</a>
+    </li>
+    </ul> <h5 class="title has-text-dark is-5">XML Converters</h5>
+    <ul class="content">
+    <li>
+    <a href="/xml-to-java-converter">XML to JAVA</a>
+    </li>
+    <li>
+    <a href="/xmltojson">XML to JSON</a>
+    </li>
+    <li>
+    <a href="/xml-to-yaml">XML to YAML</a>
+    </li>
+    <li>
+    <a href="/xml-to-csv-converter">XML to CSV</a>
+    </li>
+    <li>
+    <a href="/xml-to-tsv-converter">XML to TSV</a>
+    </li>
+    <li>
+    <a href="/xml-xsl-transformation">XML-XSL Transform</a>
+    </li>
+    <li>
+    <a href="/xml-to-html-converter">XML to HTML</a>
+    </li>
+    <li>
+    <a href="/xml-to-excel-converter">XML to Excel</a>
+    </li>
+    </ul> <h5 class="title has-text-dark is-5">HTML Converters</h5>
+    <ul class="content">
+    <li>
+    <a href="/html-to-csv-converter">HTML to CSV Converter</a>
+    </li>
+    <li>
+    <a href="/html-to-tsv-converter">HTML to TSV Converter</a>
+    </li>
+    <li>
+    <a href="/html-to-php-converter">HTML to PHP Converter</a>
+    </li>
+    <li>
+    <a href="/html-to-csv-converter">HTML to CSV</a>
+    </li>
+    </ul> <h5 class="title has-text-dark is-5">YAML Converters</h5>
+    <ul class="content">
+    <li>
+    <a href="/yaml-to-json-xml-csv">YAML Converter</a>
+    </li>
+    <li>
+    <a href="/yaml-to-json-xml-csv">YAML to XML</a>
+    </li>
+    <li>
+    <a href="/yaml-to-json-xml-csv">YAML to JSON</a>
+    </li>
+    <li>
+    <a href="/yaml-to-json-xml-csv">YAML to CSV</a>
+    </li>
+    <li>
+    <a href="/yaml-to-excel-converter">YAML to Excel</a>
+    </li>
+    </ul> <h5 class="title has-text-dark is-5">Utility</h5>
+    <ul class="content">
+    <li>
+    <a href="/send-snap-message">Send Snap Message</a>
+    </li>
+    <li>
+    <a href="/responsive-website-tester">Responsive Website Tester</a>
+    </li>
+    <li>
+    <a href="/credit-card-validate">Credit Card Validator</a>
+    </li>
+    <li>
+    <a href="/credit-card-fake-number-generator">Credit Card Fake Number Generator</a>
+    </li>
+    <li>
+    <a href="/Xpath-Tester">XPath Tester</a>
+    </li>
+    <li>
+    <a href="/jsonpath-tester" title="Json Path Tester">Json Path Tester</a>
+    </li><li>
+    <a href="/jsonminifier" title="JSON Minifier">Json Minifier</a>
+    </li>
+    <li>
+    <a href="/file-diff">File Difference</a>
+    </li>
+    <li>
+    <a href="/json-diff">JSON Diff</a>
+    </li><li>
+    <a href="/xml-diff">XML Diff</a>
+    </li>
+    <li>
+    <a href="/broken-link-checker">Broken Link Checker</a>
+    </li>
+    </ul> </div>
+    <div class="column">
+    <h5 class="title has-text-dark is-5">Viewers</h5>
+    <ul class="content">
+    <li>
+    <a href="/jsonviewer" class="firstchild">JSON Viewer</a>
+    </li>
+    <li>
+    <a href="/xmlviewer">XML Viewer</a>
+    </li>
+    <li>
+    <a href="/mxmlviewer">MXML Viewer</a>
+    </li>
+    <li>
+    <a href="/htmlviewer/">HTML Viewer </a>
+    </li>
+    <li>
+    <a href="/jsviewer">JAVASCRIPT Viewer</a>
+    </li>
+    <li>
+    <a href="/rssviewer">RSS Viewer</a>
+    </li>
+    <li>
+    <a href="/source-code-viewer">SOURCE CODE Viewer</a>
+    </li>
+    <li>
+    <a href="/opmlviewer">OPML Viewer</a>
+    </li>
+    <li>
+    <a href="/csv-viewer">CSV Viewer</a>
+    </li>
+    </ul> <h5 class="title has-text-dark is-5">Programming Editors</h5>
+    <ul class="content">
+    <li>
+    <a href="/online-xml-editor">XML Editor</a>
+    </li>
+    <li>
+    <a href="/online-json-editor">JSON Editor</a>
+    </li>
+    <li>
+    <a href="/alleditor">ONLINE Editor</a>
+    </li>
+    <li>
+    <a href="/javaviewer">JAVA Editor</a>
+    </li>
+    <li>
+    <a href="/csharpviewer">C# Editor</a>
+    </li>
+    <li>
+    <a href="/actionscript">Actionscript Editor</a>
+    </li>
+    </ul> <h5 class="title has-text-dark is-5">Escape Unescape</h5>
+    <ul class="content">
+    <li>
+    <a href="/html-escape-unescape" title="HTML Escape Unescape">HTML Escape Unescape</a>
+    </li>
+    <li>
+    <a href="/xml-escape-unescape" title="XML Escape Unescape">XML Escape Unescape</a>
+    </li>
+    <li>
+    <a href="/java-escape-unescape" title="Java Escape Unescape">Java Escape Unescape</a>
+    </li>
+    <li>
+    <a href="/csharp-escape-unescape" title="C# Escape Unescape">C# Escape Unescape</a>
+    </li>
+    <li>
+    <a href="/javascript-escape-unescape" title="Javascript Escape Unescape">Javascript Escape Unescape</a>
+    </li>
+    <li>
+    <a href="/csv-escape-unescape" title="CSV Escape Unescape">CSV Escape Unescape</a>
+    </li>
+    <li>
+    <a href="/sql-escape-unescape" title="SQL Escape Unescape">SQL Escape Unescape</a>
+    </li>
+    <li>
+    <a href="/json-escape-unescape" title="JSON Escape Unescape">JSON Escape Unescape</a>
+    </li>
+    <li>
+    <a href="/un-google-link" title="Un-Google Link">Un-Google Link</a>
+    </li>
+    </ul> <h5 class="title has-text-dark is-5">CryptoGraphy Tools</h5>
+    <ul class="content">
+    <li>
+    <a href="/encrypt-decrypt">Encryption-Decryption</a>
+    </li>
+    <li>
+    <a href="/hmac-generator">HMAC Generator</a>
+    </li>
+    <li>
+    <a href="/md5-hash-generator">MD5 HASH Generator</a>
+    </li>
+    <li>
+    <a href="/sha256-hash-generator">SHA256 HASH Generator</a>
+    </li>
+    <li>
+    <a href="/sha512-hash-generator">SHA512 HASH Generator</a>
+    </li>
+    </ul>
+    <h5 class="title has-text-dark is-5">Other Tools</h5>
+    <ul class="content">
+    <li>
+    <a href="/lorem-ipsum">Lorem-Ipsum</a>
+    </li>
+    <li>
+    <a href="/share-link-generator">Sharelink Generator</a>
+    </li>
+    <li>
+    <a href="/hostname-to-ip" title="Hostname to IP">Hostname to IP</a>
+    </li>
+    <li>
+    <a href="/ip-to-hostname" title="IP to Hostname">IP to Hostname</a>
+    </li>
+    <li>
+    <a href="/dns-lookup" title="DNS Lookup">DNS Lookup</a>
+    </li>
+    <li>
+    <a href="/mx-lookup" title="MX Lookup">MX Lookup</a>
+    </li>
+    <li>
+    <a href="/name-server-lookup" title="name-server-lookup">Nameserver Lookup</a>
+    </li>
+    <li>
+    <a href="/website-to-ip-address" title="Website to IP Address">Website to IP Address</a>
+    </li><li>
+    </li><li>
+    <a href="/open-port-checker" title="Open Port Checker">Open Port Checker</a>
+    </li><li>
+    </li></ul> </div>
+    <div class="column">
+    <h5 class="title has-text-dark is-5">Beautifiers</h5>
+    <ul class="content">
+    <li>
+    <a href="/jsonviewer">JSON Beautifier</a>
+    </li>
+    <li>
+    <a href="/css-beautify-minify">CSS Beautifier</a>
+    </li>
+    <li>
+    <a href="/xmlviewer">XML Beautifier</a>
+    </li>
+    <li>
+    <a href="/html-formatter-beautifier">HTML Beautifier</a>
+    </li>
+    <li>
+    <a href="/jsviewer">Javascript Beautifier</a>
+    </li>
+    <li>
+    <a href="/yaml-beautifier">YAML Beautifier</a>
+    </li>
+    <li>
+    <a href="/csharpviewer">C# Beautifier</a>
+    </li>
+    <li>
+    <a href="/javaviewer">Java Beautifier</a>
+    </li>
+    <li>
+    <a href="/c-formatter-beautifier">C Beautifier</a>
+    </li>
+    <li>
+    <a href="/cpp-formatter-beautifier">C++ Beautifier</a>
+    </li>
+    <li>
+    <a href="/typescript-formatter-online">TypeScript Formatter</a>
+    </li>
+    <li>
+    <a href="/sqlformatter">SQL Formatter</a>
+    </li>
+    <li> <a href="/babel-formatter">Babel Formatter</a> </li>
+    <li> <a href="/markdown-formatter">Markdown Formatter</a> </li>
+    <li> <a href="/mdx-formatter">MDX Formatter</a> </li>
+    <li> <a href="/less-beautifier">LESS Beautifier</a> </li>
+    <li> <a href="/scss-beautifier">SCSS Beautifier</a> </li>
+    <li> <a href="/graphql-beautifier">GraphQL Beautifier</a> </li>
+    <li> <a href="/php-beautifier">PHP Beautifier</a> </li>
+    <li> <a href="/python-formatter-beautifier">Python Beautifier</a> </li>
+    <li> <a href="/perl-formatter-beautifier">Perl Beautifier</a> </li>
+    <li> <a href="/ruby-formatter-beautifier">Ruby Beautifier</a> </li>
+    <li> <a href="/angular-formatter">Angular Formatter</a> </li>
+    </ul> <h5 class="title has-text-dark is-5">Minifier</h5>
+    <ul class="content">
+    <li>
+    <a href="/jsonminifier">JSON Minify</a>
+    </li>
+    <li>
+    <a href="/xml-minifier">XML Minify</a>
+    </li>
+    <li>
+    <a href="/minify-js">Minify JS</a>
+    </li>
+    <li>
+    <a href="/css-beautify-minify">CSS Minify</a>
+    </li>
+    <li>
+    <a href="/sql-minifier">SQL Minifier</a>
+    </li>
+    <li>
+    <a href="/minify-html">Minify HTML</a>
+    </li>
+    </ul> <h5 class="title has-text-dark is-5">String Utilities</h5>
+    <ul class="content">
+    <li>
+    <a href="/random-word-generator">Random Word Generator</a>
+    </li>
+    <li>
+    <a href="/ntlm-hash-generator">NTLM Hash Generator</a>
+    </li>
+    <li>
+    <a href="/password-generator">Password Generator</a>
+    </li>
+    <li>
+    <a href="/string-builder">String Builder</a>
+    </li>
+    <li>
+    <a href="/number-to-word-converter">NUMBER to WORD Converter</a>
+    </li>
+    <li>
+    <a href="/wordcounter">WORD COUNTER</a>
+    </li>
+    <li>
+    <a href="/reverse-string">Reverse String</a>
+    </li>
+    <li>
+    <a href="/html-encode-string">HTML Encode</a>
+    </li>
+    <li>
+    <a href="/html-decode-string">HTML Decode</a>
+    </li>
+    <li>
+    <a href="/base64-encode">Base64-Encode</a>
+    </li>
+    <li>
+    <a href="/base64-decode">Base64-Decode</a>
+    </li>
+    <li>
+    <a href="/url-encode-string">URL-Encode A String</a>
+    </li>
+    <li>
+    <a href="/url-decode-string">URL-Decode A String</a>
+    </li>
+    <li>
+    <a href="/string-hex-converter">String to Hex Converter</a>
+    </li>
+    <li>
+    <a href="/hex-string-converter">Hex to String Converter</a>
+    </li>
+    <li>
+    <a href="/string-binary-converter">String to Binary Converter</a>
+    </li>
+    <li>
+    <a href="/binary-string-converter">Binary to String Converter</a>
+    </li>
+    <li>
+    <a href="/case-converter">Case Converter </a>
+    </li>
+    <li>
+    <a href="/delimited-text-extractor">Delimited Text Extractor </a>
+    </li>
+    <li>
+    <a href="/remove-accents">Remove Accents </a>
+    </li>
+    <li>
+    <a href="/remove-duplicate-lines">Remove Duplicate Lines</a>
+    </li>
+    <li>
+    <a href="/remove-empty-lines">Remove Empty Lines</a>
+    </li>
+    <li>
+    <a href="/remove-extra-spaces">Remove Extra Spaces </a>
+    </li>
+    <li>
+    <a href="/remove-line-breaks">Remove Line Breaks</a>
+    </li>
+    <li>
+    <a href="/remove-lines-containing">Remove Lines Containing</a>
+    </li>
+    <li>
+    <a href="/sort-text-lines">Sort Text Lines</a>
+    </li>
+    </ul> </div>
+    <div class="column">
+    <h5 class="title has-text-dark is-5">Validators</h5>
+    <ul class="content">
+    <li>
+    <a href="/cssvalidate">CSS Validator</a>
+    </li>
+    <li>
+    <a href="/jsvalidate">JAVASCRIPT Validator</a>
+    </li>
+    <li>
+    <a href="/jsonvalidator">JSON Validator</a>
+    </li>
+    <li>
+    <a href="/json5-validator">JSON5 Validator</a>
+    </li>
+    <li>
+    <a href="/xmlvalidator">XML Validator</a>
+    </li>
+    <li>
+    <a href="/credit-card-validate">Credit Card Validator</a>
+    </li>
+    <li>
+    <a href="/api-test">API Test</a>
+    </li>
+    <li>
+    <a href="/yaml-validator">YAML Validator</a>
+    </li>
+    </ul> <h5 class="title has-text-dark is-5">Number Utilities</h5>
+    <ul class="content">
+    <li>
+    <a href="/all-number-converter">All NumbersConverter</a>
+    </li>
+    <li>
+    <a href="/decimal-binary-converter">Decimal toBinary Converter</a>
+    </li>
+    <li>
+    <a href="/decimal-octal-converter">Decimal to Octal Converter</a>
+    </li>
+    <li>
+    <a href="/binary-decimal-converter">Binary to Decimal Converter</a>
+    </li>
+    <li>
+    <a href="/binary-hex-converter">Binary to Hex Converter</a>
+    </li>
+    <li>
+    <a href="/binary-octal-converter">Binary to Octal Converter</a>
+    </li>
+    <li>
+    <a href="/hex-decimal-converter">Hex to Decimal Converter</a>
+    </li>
+    <li>
+    <a href="/hex-binary-converter">Hex to Binary Converter</a>
+    </li>
+    <li>
+    <a href="/hex-octal-converter">Hex to Octal Converter</a>
+    </li>
+    <li>
+    <a href="/octal-decimal-converter">Octal toDecimal Converter</a>
+    </li>
+    <li>
+    <a href="/octal-binary-converter">Octal to BinaryConverter</a>
+    </li>
+    <li>
+    <a href="/octal-hex-converter"> Octal to HexConverter </a>
+    </li>
+    </ul> <h5 class="title has-text-dark is-5">Image Tools</h5>
+    <ul class="content">
+    <li>
+    <a href="/jpg-to-png-converter">JPG to PNG Converter</a>
+    </li>
+    <li>
+    <a href="/jpg-to-bmp-converter">JPG to BMP Converter</a>
+    </li>
+    <li>
+    <a href="/jpg-to-gif-converter">JPG to GIF Converter</a>
+    </li>
+    <li>
+    <a href="/bmp-to-png-converter">BMP to PNG Converter</a>
+    </li>
+    <li>
+    <a href="/bmp-to-jpg-converter">BMP to JPG Converter</a>
+    </li>
+    <li>
+    <a href="/bmp-to-gif-converter">BMP to GIF Converter</a>
+    </li>
+    <li>
+    <a href="/gif-to-png-converter">GIF to PNG Converter</a>
+    </li>
+    <li>
+    <a href="/gif-to-jpg-converter">GIF to JPG Converter</a>
+    </li>
+    <li>
+    <a href="/gif-to-bmp-converter">GIF to BMP Converter</a>
+    </li>
+    <li>
+    <a href="/png-to-jpg-converter">PNG to JPG Converter</a>
+    </li>
+    <li>
+    <a href="/png-to-bmp-converter">PNG to BMP Converter</a>
+    </li>
+    <li>
+    <a href="/png-to-gif-converter">PNG to GIF Converter</a>
+    </li>
+    </ul> </div>
+    </div>
+    </div>
+    </footer>
+    
+    <section class="hero is-light">
+    <div class="hero-body">
+    <div class="container is-fluid">
+    <div class="columns is-centered buttons are-medium">
+    <a class="button is-light" href="https://goo.gl/1oWmPe" target="_blank" title="Buy us a Coffee">Buy us a Coffee</a>
+    <a class="button is-light" href="https://jsonformatter.org" target="_blank" title="JSON Formatter">JSON Formatter</a>
+    <a class="button is-light" href="/faq">FAQ</a>
+    <a class="button is-light" href="/policy">Privacy Policy</a>
+    <a class="button is-light" href="/aboutus">About</a>
+    <a class="button is-light" href="/contactus">Contact</a>
+    <a class="button is-light" href="/history">History</a>
+    <a class="button is-light" href="/where-am-i-right-now">Where am I right now?</a>
+    <a class="button is-light" href="https://codeblogmoney.com">Blog</a>
+    </div>
+    </div>
+    </div>
+    </section>
+    <footer class="footer has-background-dark" style="padding-bottom: 1rem;">
+    <div class="container has-text-centered">
+    <p class="has-text-light">
+    <span class="has-text-light has-text-weight-bold">Copyright ©</span> CodeBeautify 2020 | v1.1 </p>
+    <br>
+    <p class="has-text-light">
+    Built with
+    <span class="icon has-text-primary"><i class="material-icons md-18">local_cafe</i></span>
+    and
+    <span class="icon has-text-danger"><i class="material-icons md-18">favorite</i></span>
+    for you
+    </p>
+    </div>
+    </footer>
+    
+    </div> 
+    
+    
+    <script src="https://codebeautify.org/calculators/dist/1.1/js/calc/cd-calculator.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/dayjs/1.9.7/dayjs.min.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    
+      ga('create', 'UA-51765955-1', 'codebeautify.org');
+      ga('send', 'pageview');
+    
+    </script>
+    
+    <div id="errorModal" class="modal">
+    <div class="modal-background" onclick="closeAllModal();"></div>
+    <div class="modal-content">
+    <article class="message is-light">
+    <div class="message-header">
+    <p>Error Message</p>
+    </div>
+    <div class="message-body">
+    <strong><p id="errorMessage"></p></strong>
+    <div class="has-text-right">
+    <button class="button is-link" onclick="closeAllModal();">Close</button>
+    </div>
+    </div>
+    </article>
+    </div>
+    <button class="modal-close is-large" aria-label="close" onclick="closeAllModal();"></button>
+    </div>
+    
+    
+    
+    </body></html>
