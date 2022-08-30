@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+
+<p id="map"></p>
+
+<script>
+const numbers1 = [7, 4, 9, 6, 5];
+const numbers2 = numbers1.map(myFunction);
+
+document.getElementById("map").innerHTML = numbers2;
+
+function myFunction(value) {
+  return value * 3;
+}
+</script>
+
+</body>
+</html>

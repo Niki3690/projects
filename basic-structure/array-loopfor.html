@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>For Loop</h2>
+
+<p id="loop"></p>
+
+<script>
+const nums= ["5", "9", "6", "2", "4", "8"];
+
+let text = "";
+for (let i = 0; i < nums.length; i++) {
+  text += nums[i] + "<br>";
+}
+
+document.getElementById("loop").innerHTML = text;
+</script>
+
+</body>
+</html>

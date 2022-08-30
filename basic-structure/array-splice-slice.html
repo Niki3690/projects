@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+
+<!-- The splice() method adds new items to an array. -->
+
+<!-- The slice() method slices out a piece of an array. -->
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+
+
+
+<script>
+
+//array splice
+const Colors= ["Black", "Blue", "Orange", "Yellow"];
+document.getElementById("demo1").innerHTML = Colors;
+
+Colors.splice(2, 0, "White", "Gray");
+document.getElementById("demo2").innerHTML = Colors;
+
+
+//array slice
+const Color= ["Black", "Blue", "Orange", "Yellow"];
+document.getElementById("demo3").innerHTML = Color;
+
+const citrus = Color.slice(1,3);
+document.getElementById("demo3").innerHTML = Color + "<br><br>" + citrus;
+</script>
+
+</body>
+</html>

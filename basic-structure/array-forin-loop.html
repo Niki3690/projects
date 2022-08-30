@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+
+<p id="For-in"></p>
+
+<script>
+    //array for-in loop properties of an object
+const Human = {firstName:"Niks", lastName:"Patel", age:23}; 
+
+let text = "";
+for (let x in Human) {
+  text += Human[x] + " ";
+}
+
+document.getElementById("For-in").innerHTML = text;
+</script>
+
+</body>
+</html>

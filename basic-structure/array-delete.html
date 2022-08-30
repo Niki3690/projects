@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+const Name = ["Beena", "Neeta", "Meena","Nayna"];
+
+document.getElementById("demo1").innerHTML =
+"The first Name is: " + Name[2];
+
+delete Name[2];
+
+document.getElementById("demo2").innerHTML =
+"The first Name is: " + Name[2];
+</script>
+
+</body>
+</html>

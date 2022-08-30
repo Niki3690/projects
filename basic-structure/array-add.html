@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Arrays</h2>
+
+<button onclick="myFunction()">Click here</button>
+
+<p id="name"></p>
+
+<script>
+const Name = ["Beena", "Neeta", "Meena"];
+document.getElementById("name").innerHTML = Name;
+
+function myFunction() {
+  Name.push("Niki");
+  
+  document.getElementById("name").innerHTML = Name;
+}
+</script>
+
+</body>
+</html>
