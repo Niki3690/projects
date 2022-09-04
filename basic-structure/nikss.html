@@ -6,22 +6,26 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <title>Randome phonenumber</title>
 </head>
-<body><div class="section">
-    <div class="container">
+<section class="container section pt-5 is-fluid">
+    <div class="columns">
+        <div class="column is-3"></div>
+        <div class="column">
+
         <div class="text has-text-centered">
             <h3 class="is-size-3">
                 Random Phone Number
             </h3>
         </div>
+        </div>
 
 
-        <div class="buttons mt-6">
+        <div class="column is-3">
             <button class="button is-medium is-primary" id="primary" onclick="primary()">5 Numbers</button>
             <button class="button  is-medium is-link" onclick="link()">10 Numbers</button>
             <button class="button  is-medium is-success" onclick="success()">15 Numbers</button>
             <button class="button  is-medium is-link is-outlined" id="Outlined" onclick="Outlined()">Random</button>
 
-            <div class="column is-3">
+
             <div class="field has-addons ml-5">
                 <div class="control is-expanded">
                     <input type="number" class="input is-medium" id="randomNumber" placeholder="Enter Number">
@@ -30,11 +34,9 @@
                     <button class="button is-primary is-medium" type="button" onclick="randomeButton()">Generate</button>
                 </div>
             </div>
-            </div>
 
-            <div class="column is-2 has-text-centered">
+
             <button class="button is-medium is-link is-outlined ml-5" name="button" id="text" value="Download"><i class="fa fa-download"></i>Download </button>
-        </div>
         </div>
 	
 
