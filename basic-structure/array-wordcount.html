@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+    <title>repeted word count</title>
+  </head>
+
+
+  
+  <div class="hero-body">
+    <div class="container">
+      <div class="columns is-centered">
+        <div class="column is-6">
+          <div class="card card-body text-center">
+
+        
+            <h3 class="is-size-3 has-text-centered">
+                <b>Repeted word count</b>
+            </h3><br><br>
+
+
+
+        <input class="input is-large is-primary" type="text" id="text">
+            <div class="box has-text-centered">
+                    <button class="button is-medium is-dark is-small" type="submit" onclick="characters()" >Count the characters</button><br><br>
+
+                    <div class="output" id="output">
+
+                    </div>
+                </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+
+    // function characters(){
+    // let output=document.getElementById("output");
+      
+    // let text=document.getElementById("text").value;
+
+let str="abbcccdddeeeee";
+    var chars={};
+    var arr=str.split(' ');
+
+    for(let word of str){
+        if(!chars[word]){
+            chars[word]=1;
+        }
+        else{
+            chars[word]++;
+        }
+        }
+   console.log(chars);
+    
+    
+//ahiya che ne hu textbox ma lakhu ke "abbcccdddeeeee" and button pr click kru to output ma row table sathe avu  print thavu joiye//
+// a: 1
+// b: 2
+// c: 3
+// d: 3
+// e: 5 
+//like repeating count word  'me upper vadu logic try kryu but ene text box ma convert kemnu kru ke button dbavu ne table ma avu output ave e nai khbar pdti baki js logic sachhu che
+
+
+
+
+    
+
+     
+
+
+
+ 
+
+    
+    
+  </script>
+</html>

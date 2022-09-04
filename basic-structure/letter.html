@@ -65,7 +65,7 @@
 
               <div class="column is-6">
                   <div class="control">
-                      <textarea class="textarea is-primary"placeholder="Generated Letters"cols="10"rows="10"id="result"></textarea>
+                      <textarea class="textarea is-primary"placeholder="Generated Letters"cols="10"rows="10"id="text"></textarea>
 
 
                         </div>
@@ -83,39 +83,39 @@
 
     
     <script>
-      // function download(file, result) {
-        // 
-        // var element = document.createElement("a");
-        // element.setAttribute(
-          // "href",
-          // "data:text/plain;charset=utf-8, " + encodeURIComponent(result)
-        // );
-        // element.setAttribute("download", file);
+      function download(file, text) {
+        
+        var element = document.createElement("a");
+        element.setAttribute(
+          "href",
+          "data:text/plain;charset=utf-8, " + encodeURIComponent(text)
+        );
+        element.setAttribute("download", file);
 
-        // 
-        // 
+        
+        
 
-        // document.body.appendChild(element);
+        document.body.appendChild(element);
 
-      //  
-        // element.click();
+       
+        element.click();
 
-        // document.body.removeChild(element);
-      // }
+        document.body.removeChild(element);
+      }
 
-    //  
-      // document.getElementById("btn").addEventListener(
-        // "click",
-        // function () {
-        //  
-        //  
-          // var text = document.getElementById("result").value;
-          // var filename = "GFG.txt";
+     
+      document.getElementById("btn").addEventListener(
+        "click",
+        function () {
+         
+         
+          var text = document.getElementById("text").value;
+          var filename = "GFG.txt";
 
-          // download(filename, result);
-        // },
-        // false
-      // );
+          download(filename, text);
+        },
+        false
+      );
 
       function copy() {
         var content = document.getElementById("result");
