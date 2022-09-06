@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/
+css/font-awesome.min.css">
+    <title>Document Object Model</title>
+</head>
+
+<body>
+    <style>
+        .section {
+            background-image: url("photo-1481627834876-b7833e8f5570.avif");
+        }
+    </style>
+
+
+
+    <div class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-5">
+                    <div class="header has-background-black has-text-white">
+                        <h3 class="is-size-3 has-text-centered">
+                            JS Quote Generator
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        <div class="columns is-centered">
+            <div class="column is-5">
+                <div class="card">
+                    <div class="card-content has-text-centered">
+                        <div class="content">
+                            <h4 class="is-size-4 content">
+                                Lorem ipsum leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi
+                                porta gravida at eget metus. Cum sociis natoque penatibus et magnis dis parturient
+                                montes, nascetur ridiculus mus. Cras mattis consectetur purus sit amet fermentum.
+                            </h4>
+                            <br>
+
+                            <div class="columns is-centered">
+                                <div class="card">
+                                    <header class="cardHeader">
+                                        <h4 class="is-size-4   cardHeader   has-text-success has-text-centered">
+                                            Card header
+                                        </h4>
+                                    </header>
+                                </div>
+                            </div><br>
+
+
+
+                            <button class="button is-black mt-4"  id="new-quote">New Quote</button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+  
+
+    <script>
+
+  let btn=document.querySelector('#new-quote');
+  let content=document.querySelector('.content');
+  let cardHeader=document.querySelector('.cardHeader');
+
+
+  let quotes=[{
+    content:`"A women's friendships are one of the best measures of his worth."`,
+    cardHeader:`Charles Darwin`
+  },{
+    content:`"A friendship can weather most things and thrive in thin soil; but it needs a little mulch of letters and phone calls and small, silly presents every so often - just to save it from drying out completely."`,
+    cardHeader:`Pam Brown`
+  },{
+    content:`"If you have one true friend you have more than your share."`,
+    cardHeader:`Thomas Fuller`
+  },{
+    content:`"A quarrel between friends, when made up, adds a new tie to friendship."`,
+    cardHeader:`Saint Francis de Sales`
+  },{
+    content:`"A true friend accepts who you are, but also helps you become who you should be."`,
+    cardHeader:`Unknown`
+  },{
+    content:`"Anything is possible when you have the right people there to support you."`,
+    cardHeader:`Misty Copeland`
+  },{
+    content:`"Share your smile with the world. It's a symbol of friendship and peace."`,
+    cardHeader:`Christie Brinkley`
+  },{
+    content:`"A sweet friendship refreshes the soul."`,
+    cardHeader:`Proverbs `
+  },{
+    content:`"It's not that diamonds are a girl's best friend, but it's your best friends who are your diamonds."`,
+    cardHeader:`Gina Barreca`
+  },{
+    content:`"Many people will walk in and out of your life, but only true friends will leave footprints in your heart."`,
+    cardHeader:`Eleanor Roosevelt`
+  },];
+
+
+
+
+  
+
+  btn.addEventListener('click',function(){
+    
+    let random=Math.floor(Math.random()* quotes.length);
+
+    content.innetText=quotes[random].content;
+    cardHeader.innetText=quotes[random].cardHeader;
+
+  })
+
+
+    </script>
+</body>

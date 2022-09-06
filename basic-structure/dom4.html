@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/
+css/font-awesome.min.css">
+    <title>Document Object Model</title>
+</head>
+
+<body>
+
+    <div class="section">
+        <div class="container">
+            
+            <div class="columns is-centered">
+                <div class="box">
+                <div class="columns is-4">
+                    <ul id="sports">
+                   <li><div class="box" id="football">
+                        Football
+                    </div></li><br>
+
+                    <li><div class="box" id="basketball">
+                        Basketball
+                    </div></li><br>
+
+                   <li><div class="box" id="boxing">
+                        Boxing
+                    </div></li><br>
+
+                   <li><div class="box" id="tennis">
+                        Tennis
+                    </div></li><br>
+
+                    <li><div class="box" id="golf">
+                        Golf
+                    </div></li>
+                    </ul>
+                    
+            </div>
+           
+
+            </div>
+        </div>
+    </div>
+    </div>
+    
+
+    <script>
+    
+    document.querySelector('#football').addEventListener
+        ('click',function(e){
+            console.log("Football is clicked");
+            let target = e.target;
+            if(target.matches('li')){
+                target.style.backgroundColor='grey';
+            }
+        })
+
+
+        document.querySelector('#basketball').addEventListener
+        ('click',function(e){
+            console.log("Basketball is clicked");
+            let target = e.target;
+            if(target.matches('li')){
+                target.style.backgroundColor='red';
+            }
+        })
+
+
+        document.querySelector('#boxing').addEventListener
+        ('click',function(e){
+            console.log("Boxing is clicked");
+            let target = e.target;
+            if(target.matches('li')){
+                target.style.backgroundColor='red';
+            }
+        })
+
+
+
+        document.querySelector('#tennis').addEventListener
+        ('click',function(e){
+            console.log("Tennis is clicked");
+            let target = e.target;
+            if(target.matches('li')){
+                target.style.backgroundColor='red';
+            }
+        })
+
+
+
+        document.querySelector('#golf').addEventListener
+        ('click',function(e){
+            console.log("Golf is clicked");
+            let target = e.target;
+            if(target.matches('li')){
+                target.style.backgroundColor='red';
+            }
+        })
+
+
+
+
+        let sports = document.querySelector("#sports");
+        let newSport = document.createElement('li');
+    
+
+
+        newSport.innerText="rubby";
+        newSport.setAttribute('id','rubby');
+
+        sports.appendChild(newSport);
+       
+    </script>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/
+css/font-awesome.min.css">
+    <title>Document Object Model</title>
+</head>
+
+<body>
+
+    <div class="section">
+        <div class="container">
+
+
+            <h1 class="is-size-1" id="main-heading">
+                <b>Event Listener</b>
+            </h1>
+
+
+            <div class="container mt-5">
+                    <div class="columns">
+                        <div class="column is-3">
+                        <div class="box box-1">
+                        
+                    <h2 class="is-szie-2" id="heading">
+                        Example 1
+                    </h2>
+                    <button class="button button-1" onclick="alert('I love JS')">Enter</button>
+                </div>
+                        </div>
+
+               
+                        <div class="column is-3">
+                    <div class="box box-2 ml-6">
+                      
+                        <h3 class="is-szie-3" id="heading">
+                            Example 2
+                        </h3>
+                        <button class="button button-2">Enter</button>
+                    </div>
+                    </div>
+
+                    <div class="column is-3">
+                        <div class="box box-3 ml-6">
+                            
+                            <h3 class="is-szie-3" id="heading">
+                                Example 3
+                            </h3>
+                            <button class="button button-3">Enter</button>
+                        </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </div>
+
+
+        
+
+    <script>
+
+        //alertbutton
+        
+        let buttonTwo=document.querySelector('.button-2');
+        function alertbutton(){
+            alert("I alos love js");
+        };
+
+        buttonTwo.addEventListener("click",alertbutton);
+
+
+    // /mouseover
+
+    let newBackgroundColor=document.querySelector('.button-3');
+
+    function changeBgColor(){
+        newBackgroundColor.style.backgroundColor="red";
+    }
+    newBackgroundColor.addEventListener("mouseover",changeBgColor);
+
+    </script>
+
+

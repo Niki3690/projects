@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/
+css/font-awesome.min.css">
+    <title>Document Object Model</title>
+</head>
+
+<body>
+
+    <div class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-8">
+                    
+            <div class="box has-background-dark has-text-white has-text-centered">
+                    <div class="container">
+                        <h2 class="is-size-2" id="main-heading">
+                            Favourite Movie
+                        </h2>
+                    </div>
+            
+
+            <div class="box">
+
+            <div class="container has-text-centered">
+                        <ul >
+                            <li class="list-items">The Matrix</li><hr>
+                            <li class="list-items">Star Wars</li><hr>
+                            <li class="list-items">Harry potter</li><hr>
+                            <li class="list-items">Lord of the Rings</li><hr>
+                            <li class="list-items">Marvel</li>
+                        </ul>
+                    </div>
+
+
+</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    
+
+
+    <script>
+
+        //GetElementBtId()
+        // let title=document.getElementById("main-heading");
+        // console.log(title);
+
+        //GetElementBYClassName()
+        let listItem=document.getElementsByClassName("list-items");
+        console.log(listItem);
+
+        //getElementByTagName()
+        // let listItems=document.getElementsByClassName("list-items");
+        // console.log(listItems);
+
+
+        //QuerySelector()
+        let container=document.querySelector('div');
+        console.log(container);
+
+
+         //QuerySelector()
+         let title=document.querySelector('#main-heading');
+         title.style.color="blue";
+        console.log(title);
+
+        let  listItems =document.querySelectorAll(".list-items");
+        for(i=0;i<listItems.length;i++){
+            listItems[i].style.fontSize="4rem";
+        }
+
+
+        //Creating elements
+        // let ul=document.querySelector('ul');
+        // const li=document.createElement('li');
+        // ul.append(li)
+
+
+      
+
+//parent node traversal
+// 
+let ul=document.querySelector('ul');
+    //    console.log(ul.parentNode.parentNode);
+    //    console.log(ul.parentElement.parentElement);
+
+
+    //    let html=document.documentElement;
+    //    console.log(html);
+
+        console.log(ul.childNodes);
+        console.log(ul.firstChild);
+        console.log(ul.lastChild);
+
+        ul.childNodes[1].style.backgroundColor='red';
+        ul.childNodes[2].style.backgroundColor='black';
+        ul.childNodes[4].style.backgroundColor='green';
+        ul.childNodes[5].style.backgroundColor='grey';
+        ul.childNodes[7].style.backgroundColor='purple';
+        ul.childNodes[8].style.backgroundColor='red';
+        ul.childNodes[10].style.backgroundColor='maroon';
+        ul.childNodes[11].style.backgroundColor='green';
+        ul.childNodes[13].style.backgroundColor='yellow';
+
+
+
+
+
+       
+
+
+
+
+
+
+    </script>
+
+
+
