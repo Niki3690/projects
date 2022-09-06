@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Matt farley</title>
+</head>
+<body>
+
+<script>
+    function createcards(){
+    let name = ['H','C','D','S'];
+    let deck = ['2','3','4','5','6','7','8','9','A','T','J','Q','K'];
+    let cards=[];
+
+    for(let nameCounter = 0; nameCounter < 4; nameCounter++){
+        for(let deckCounter = 0; deckCounter < 13; deckCounter++){
+            cards.push(deck[deckCounter]  +  name[nameCounter]);
+        }
+    }
+
+    return cards;
+}
+
+function shufflecards(cards){
+for(let i=0;i<52;i++){
+    let temp=cards[i];
+    let randomIndex = Math.floor(Math.random()*52);
+    cards[i]=cards[randomIndex];
+    cards[randomIndex]=temp
+
+}
+}
+
+let tryDeck= createcards();
+shufflecards(tryDeck);
+document.write(tryDeck);
+</script>

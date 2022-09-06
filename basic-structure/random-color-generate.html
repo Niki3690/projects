@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Randome color generator</title>
+
+</head>
+
+<body>
+    <style>
+        .box {
+            width: 200px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: darkslategray;
+            border: 2px solid cornsilk;
+        }
+
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+        }
+    </style>
+
+
+    <div class="text has-text-centered">
+        <button class="button is-large is-dark" onclick="createColor()">Click me!</button><br><br><br>
+        <section class="container"></section>
+    </div>
+
+
+    <script>
+        for (let i = 1; i <= 18; i++) {
+            let box = document.createElement('div');
+            box.classList.add('box');
+            document.querySelector('.container').appendChild(box);
+            // console.log(box)
+        }
+
+
+        let box = document.querySelectorAll('.box');
+
+        function colorCode() {
+            let chars = "0123456789abcdef";
+            let colorLength = 6;
+            let color = "";
+
+            for (let i = 0; i < colorLength; i++) {
+                let randomColor = Math.floor(Math.random() * chars.length);
+                color += chars.substring(randomColor, randomColor + 1);
+            }
+            return "#" + color;
+
+        }
+
+        let button = document.querySelector('.button');
+        button.addEventListener('click', createColor)
+
+        function createColor() {
+
+            box.forEach(e => {
+                let newColor = colorCode();
+                e.style.backgroundColor = newColor;
+                e.innerHTML = newColor
+
+
+            })
+        }
+
+
+
+    </script>
+</body>
+
+</html>
