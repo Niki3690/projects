@@ -11,7 +11,7 @@
 
 
   
-  <div class="hero-body">
+  <body><div class="hero-body">
     <div class="container">
       <div class="columns is-centered">
         <div class="column is-6">
@@ -26,10 +26,20 @@
 
         <input class="input is-large is-primary" type="text" id="text">
             <div class="box has-text-centered">
-                    <button class="button is-medium is-dark is-small" type="submit" onclick="characters()" >Count the characters</button><br><br>
+                    <button onclick="characters()" class="button is-medium is-dark is-small">Count the characters</button><br><br>
 
                     <div class="output" id="output">
-
+						<table class="table is-bordered">
+							
+							<thead>
+								<tr>
+									<th> Key</th>
+									<th>value </th>
+								</tr>
+							</thead>
+							<tbody id="tableValues"><tr><td>1</td><td>1</td></tr><tr><td>2</td><td>2</td></tr><tr><td>5</td><td>1</td></tr><tr><td>7</td><td>1</td></tr><tr><td>8</td><td>1</td></tr><tr><td>9</td><td>2</td></tr></tbody>
+							
+						</table>
                     </div>
                 </div>
           </div>
@@ -41,16 +51,14 @@
 
   <script>
 
-    // function characters(){
-    // let output=document.getElementById("output");
+     function characters(){
+    let output=document.getElementById("output");
       
-    // let text=document.getElementById("text").value;
-
-let str="abbcccdddeeeee";
+   var text=document.getElementById("text").value;
     var chars={};
-    var arr=str.split(' ');
+    var arr=text.split(' ');
 
-    for(let word of str){
+    for(let word of text){
         if(!chars[word]){
             chars[word]=1;
         }
@@ -58,29 +66,18 @@ let str="abbcccdddeeeee";
             chars[word]++;
         }
         }
-   console.log(chars);
-    
-    
-//ahiya che ne hu textbox ma lakhu ke "abbcccdddeeeee" and button pr click kru to output ma row table sathe avu  print thavu joiye//
-// a: 1
-// b: 2
-// c: 3
-// d: 3
-// e: 5 
-//like repeating count word  'me upper vadu logic try kryu but ene text box ma convert kemnu kru ke button dbavu ne table ma avu output ave e nai khbar pdti baki js logic sachhu che
-
-
-
-
-    
-
-     
-
-
-
- 
-
+		
+		var tableContent = ''
+		for (const [key, value] of Object.entries(chars)) {
+			tableContent = tableContent + '<tr ><td>'+key +'</td><td>'+value+'</td></tr>' ;
+			
+}
+document.getElementById("tableValues").innerHTML =tableContent;
+   }
+   
+   
     
     
   </script>
-</html>
+
+</body>
