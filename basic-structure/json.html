@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+
+    <title>JSON Schema Generator</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        text-decoration: none;
+        list-style: none;
+        box-sizing: border-box;
+    }
+
+    nav {
+        background-color: blue;
+        height: 60px;
+        width: 100%;
+       
+    }
+
+    nav .image {
+        margin-top: 4px;
+        margin-right: 20px;
+
+    }
+
+    nav ul .li {
+        float: left;
+        margin-right: 20px;
+        margin-top: 0%;
+    }
+
+
+
+    nav ul li a {
+
+        border-radius: 3px;
+        color: black;
+        text-decoration-line: underline;
+        font-weight: bold;
+        width: (128.77 × 24);
+    }
+
+    nav ul li {
+        display: inline-block;
+        line-height: 80px;
+        margin: 0 5px;
+    }
+
+    .login .button {
+        background-color: hsl(195, 100%, 50%);
+        padding: 7px; 
+       
+    }
+        a.login {
+        color: black;
+        text-decoration: underline;
+    }
+
+
+    .fa-google {
+        background: conic-gradient(from -45deg, #ea4335 110deg, #4285f4 90deg 180deg, #34a853 180deg 270deg, #fbbc05 270deg) 73% 55%/150% 150% no-repeat;
+        -webkit-background-clip: text;
+        background-clip: text;
+        color: transparent;
+
+    }
+
+    footer .size .login{
+        margin-left: 9px;
+        margin: 0%;
+        padding: 2;
+    }
+</style>
+
+
+
+
+<body>
+    <nav>
+
+
+
+        <figure class="image" style="height: 40px;width: 40px">
+            <img src="logo.svg">
+        </figure>
+        <ul>
+
+            <li><a href="#">JSON Schema</a></li>
+
+            <li>
+                <p>The first API Management platform the entire Engineering team loves.<span style="color:	#FF1493"> Try zuplo</span></p>
+            </li>
+            <li><button class="button" style="background-color:#FF1493">See Demo</button></li>
+            <li></li>
+
+            <li><span class="icon">
+                    <i class="fa-brands fa-github" style='font-size:24px'></i>
+                </span>
+                <span><b>Github</b></span>
+            </li>
+
+
+            <li><span class="icon">
+                    <i class="fas fa-user-circle" style='font-size:24px'></i>
+                </span></li>
+        </ul>
+    </nav>
+
+
+    <div class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-3">
+
+                    <input class="input is-danger" type="email" placeholder="Email" required>
+                    <div class="has-text-right">
+                        <h7 class="is-size-7 has-text-danger mr-3">
+                            Email is required
+                        </h7>
+                    </div>
+
+                    <input class="input is-danger" type="password" placeholder="password" required>
+                    <div class="has-text-right">
+                        <h7 class="is-size-7 has-text-danger mr-3">
+                            Password is required
+                        </h7>
+                    </div>
+
+                    <div class="text has-text-centered     has-text-black-bis login">
+                        <button class="button" style="width: 260px;">Login</button>
+                    </div><br>
+
+
+                    <div class="text has-text-centered  has-text-black-bis mt-3">
+                        <h7 class="is-size-7" >
+                            Forgot your password?<a class="login" href="#"> Recover it</a>
+                        </h7>
+                    </div>
+
+                    <div class="text has-text-centered has-text-black-bis  mt-2">
+                        <h7 class="is-size-7">
+                            Don’t have an account? <a class="login" href="#">Sign up</a>
+                        </h7>
+                    </div>
+
+                    <div class="text has-text-centered has-text-black-bis mt-1">
+                        <h7 class="is-size-7">
+                            or
+                        </h7>
+                    </div>
+
+                    <div class="text has-text-centered mt-2">
+                        <a class="button is-small  is-outlined" style="width: 260px">
+                            <span class="icon">
+                                <i class="fab fa-google" style='font-size:22px'></i>
+                            </span>
+                            <span><b>Log in with Google</b></span>
+                        </a>
+                        </span>
+                    </div>
+
+
+
+
+                    <div class="text has-text-centered mt-2">
+                        <a class="button is-small  is-outlined" style="width: 260px">
+                            <span class="icon">
+                                <i class='fa-brands fa-github' style='font-size:22px'></i>
+                            </span>
+                            <span><b>Log in with Github</b></span>
+                        </a>
+                        </span>
+                    </div>
+
+
+
+                    <div class="text has-text-centered mt-2">
+                        <a class="button is-small  is-outlined" style="width: 260px">
+                            <span class="icon">
+                                <div class="has-text-link has-text-right my-2">
+                                    <i class="fa-brands fa-facebook" style='font-size:22px'></i>
+                                </div>
+                            </span>
+                            <span><b>Log in with Facebook</b></span>
+                        </a>
+                        </span>
+                    </div>
+
+                    <div class="text has-text-centered has-text-black-bis mt-3">
+                        <h7 class="is-size-7">
+                            You can also<a class="login" href="#"> continue as a Guest</a>
+                        </h7>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <footer class="footer" style="height:40px;background-color: transparent;">
+        <div class="content has-text-centered ">
+            <h7 class="is-size-7">
+            <p style="color:grey">This site is protected by reCAPTCHA and the Google <span style="color:black;text-decoration: underline">Privacy Policy</span> and <span style="color:black ; text-decoration: underline"> Terms of Service</span> apply.</p>
+            </h7>
+
+            <h7 class="is-size-7">
+                <div class="text mt-3 size">
+            <a class="login" href="#">Github</a>
+            <a class="login" href="#">Contact</a>
+            <a class="login" href="#">JSON Systems</a>
+            <a class="login" href="#">Privacy Policy</a>
+            <a  class="login"href="#">Cookie Policy</a>
+            </h7>
+           
+
+
+        </div>
+      </footer>
+</body>
+
+</html>
