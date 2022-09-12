@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.12.0/css/all.css">
+
+    <title>JSON page</title>
+</head>
+
+<style>
+    header {
+        border-bottom: 1px solid grey;
+       
+    }
+
+
+    .right {
+        border-bottom: 1px solid grey;
+        
+    }
+    
+
+    .textarea {
+        border-bottom: 1px solid grey;
+       
+    }
+    
+
+    .left {
+        padding: 2px;
+        margin-top: 4px;
+        margin: 4px;
+    }
+
+    .h7 .chair {
+        margin-top: 8px;
+        margin: 5px;
+    }
+
+    .apply {
+        margin-top: 22px;
+    }
+
+   
+</style>
+
+<body>
+    <div class="section has-background-light">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-5">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">
+                                JSON
+                            </p>
+
+
+                            <a class="button is-small is-white mb-2">
+                                <!-- <span class="icon"> -->
+                                <div class="has-text-right">
+                                    <i class="fa fa-cog" style='font-size:20px;margin-top:25px'></i>
+
+                                    <span>
+                                        <h7 class="is-size-7 setting"style="margin-right:10px">Settings</h7>
+                                    </span>
+                                </div>
+                            </a>
+                        </header>
+
+                        <div class="validjson" style="height:15px;">
+                            <a class="button is-white">
+                                <!-- <span class="icon"> -->
+                                <div class="has-text-left">
+                                    <i class="fa fa-check" style="font-size:25px"></i>
+                                  
+
+                                    <span>
+                                        <h7 class="is-size-7 setting ml-1" style="margin-top:15px">Valid JSON</h7>
+                                    </span>
+                                </div>
+                            </a>
+                        </div>
+
+
+
+
+                        <div class="has-text-right"style="padding-bottom:7px;margin-right:11px">
+                            <p class="control">
+                                <button class="button"style="height:35px;width:61px">
+                                    <span class="icon is-small">
+                                        <i class="fas fa-align-left" id="left"></i>
+                                    </span>
+                                </button>
+                            </p>
+                        </div>
+
+                        <textarea class="textarea is-gray" cols="10" rows="13"></textarea>
+
+                        <div class="text" style="height:56px;padding-top: 10px;">
+                            <h7 class="is-size-7" id="char" style="margin-left:8px;margin-top:15px;">205/20,000
+                                characters<span style="margin-left: 205px;"><b>Reset</b></span><span
+                                    style="margin-left: 13px"><button class=" button is-small"
+                                        style="height: 35px;width: 75px;background-color: hsl(195, 100%, 50%);border-radius: 4px"><b>Submit</b></button></span>
+                            </h7>
+                            </button></h7>
+
+                            <!-- <div class="has-text-right">
+                                <button class=" button is-white">
+                                    <h7 class="is-size-7"id="reset"><b>Reset</b></h7>
+                                </button>
+
+                                <button class=" button is-small" id="submit"
+                                    style=" background-color: hsl(195, 100%, 50%);border-radius: 3px;height: 35px;width: 75px;"><b>Submit</b></button>
+
+                            </div> -->
+                        </div>
+                    </div>
+                </div>
+
+
+
+
+
+
+                <div class="column is-7">
+                    <div class="card">
+                        <header class="card-header">
+                            <p class="card-header-title">
+                                Schema
+                            </p>
+
+
+                            <a class="button is-white">
+                                <button class=" button is-white"><b>
+                                        <p style="color: hsl(195, 100%, 50%);font-weight: bold;">
+                                            <> Syntax
+                                        </p>
+                                    </b></button>
+                                <div class="has-text-right">
+                                    <p class="control">
+                                        <button class="button is-white">
+                                            <span class="icon is-small">
+                                                <i class="fas fa-pencil-alt" id="pencil" style="font-size:18px"></i>
+                                            </span>
+                                            <span>
+                                                <h7 class="is-size-7"><b>Edit</b></h7>
+                                            </span>
+                                        </button>
+                                    </p>
+                                </div>
+                            </a>
+                        </header>
+
+                        <div class="validjson" style="height:15px;">
+                            <a class="button is-white">
+                                <!-- <span class="icon"> -->
+                                <div class="has-text-left">
+                                    <!-- <i class="fa fa-check" style="font-size:25px"></i> -->
+
+                                    <span>
+                                        <h7 class="is-size-7" style="font-style: italic">Example JSON Schema</h7>
+                                    </span>
+
+                                </div>
+                            </a>
+                        </div>
+
+
+
+
+                        <div class="has-text-right"style="padding-bottom:7px;margin-right:11px">
+                            <p class="control">
+                                <button class="button"style="height:35px;width:61px">
+                                    <span class="icon is-small">
+                                        <i class="fa fa-clone" style="font-size:24px"></i>
+                                    </span>
+                                </button>
+                            </p>
+                        </div>
+
+                        <textarea class="textarea is-gray" cols="10" rows="13"></textarea>
+
+                        <div class="text" style="height:56px;padding-top: 10px;">
+                            <h7 class="is-size-7" id="char" style="margin-left:8px;margin-top:15px;">Created: Sep 10,
+                                2022 9:53 AM<span style="margin-left: 11px;"> Updated: Sep 10, 2022 9:53 AM</h7>
+                        </div>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="has-text-grey apply">
+            <h7 class="is-size-7">This site is protected by reCAPTCHA and the Google <span
+                    style="text-decoration: underline;"><b> Privacy Policy</b>
+                </span> and <span style="text-decoration: underline;"><b>Terms of Service</b></span> apply<span
+                    style="margin-left:430px ;"> Please use GitHub to</span> <span
+                    style="text-decoration:underline"><b>report issues</b></span></h7>
+        </div>
+    </div>
+</body>
+
+</html>
