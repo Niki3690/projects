@@ -11,8 +11,71 @@
 
     <title>JSON page</title>
 </head>
+<figure class="image" style="height: 300px;width:450px">
+    <img src="jsonpage.png">
+  </figure>
 
 <style>
+
+* {
+        margin: 0%;
+        padding: 0%;
+    }
+
+    .body {
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .navbar {
+        background-color: white;
+        width: 100%;
+        height: 60px;
+        margin: 0px;
+        padding: 0px;
+    }
+
+    .navbar .image .logs {
+        margin-top: 7px;
+        margin-left: 12px;
+    }
+
+    .navbar-menu .schema {
+        margin-left: 12px;
+        color: black;
+        text-decoration: underline;
+        font-weight: bolder;
+
+    }
+
+
+
+    .navbar-item .api {
+        font-size: 1rem;
+        margin-left: 12px;
+    }
+
+
+    .seedemo {
+        border-radius: 4px;
+        background-color: #FF1493;
+        color: white;
+        border: #FF1493;
+        width: 89px;
+        height: 33px;
+        margin-top: 3px;
+        margin-right: 4px;
+
+    }
+
+
+
+
+
+
+
+
+
     header {
         border-bottom: 1px solid grey;
        
@@ -50,6 +113,73 @@
 </style>
 
 <body>
+    <ul>
+
+        <nav class="navbar" role="navigation" aria-label="main navigation">
+            <div class="navbar-brand">
+                <hr>
+
+                <li>
+                    <figure class="image" style="height: 40px;width: 40px">
+                        <img class="logs" src="logo.svg">
+                    </figure>
+                </li>
+
+                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
+                    data-target="navbarBasicExample">
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                    <span aria-hidden="true"></span>
+                </a>
+            </div>
+
+            <div id="navbarBasicExample" class="navbar-menu">
+                <div class="navbar-start ml-3 mt-4">
+                    <li><a class="schema" href="#">JSON Schema</a></li>
+                </div>
+
+                <a class="navbar-item">
+                    <li>
+                        <h6 class="is-size-6 api">
+                            The first API Management platform the entire Engineering team loves.<span
+                                style="color:	#FF1493"><b> Try zuplo</b></span>
+                        </h6>
+                    </li>
+
+                </a>
+
+
+                <li><button class="button is-small seedemo mr-5 mt-3"><b>See Demo</b></button></li>
+
+
+
+
+
+                <div class="navbar-rigth">
+                    <li><span class="icon mt-3">
+                            <i class="fa-brands fa-github" style='font-size:24px'></i>
+                        </span>
+                        <span><b>
+                                <h7 class="is-size-7 github">Github</h6>
+                            </b></span>
+                    </li>
+                </div>
+
+                <div class="navbar-rigth">
+
+                    <li><span class="icon mt-3 ml-4">
+                            <i class="fas fa-user-circle" style='font-size:21px'></i>
+                        </span></li>
+                </div>
+            </div>
+
+        </nav>
+    </ul>
+
+
+
+
+
     <div class="section has-background-light">
         <div class="container">
             <div class="columns">
@@ -204,6 +334,7 @@
                     style="text-decoration:underline"><b>report issues</b></span></h7>
         </div>
     </div>
+    
 </body>
 
 </html>
