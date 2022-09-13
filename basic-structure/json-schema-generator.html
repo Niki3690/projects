@@ -28,45 +28,63 @@
         padding: 0px;
     }
 
-    .navbar {
-        background-color: white;
-        width: 100%;
-        height: 60px;
-        margin: 0px;
-        padding: 0px;
-    }
-
-    .navbar .image .logs {
-        margin-top: 7px;
-        margin-left: 12px;
-    }
-
-    .navbar-menu .schema {
-        margin-left: 12px;
+ .schema{
         color: black;
         text-decoration: underline;
-        font-weight: bolder;
+       
+        font-size: 1.3rem;
+    }
+
+    .image .logs{
+        height: 40px;
+        width: 40px;
+        margin-left:6px;
+        margin-top: 12px;
 
     }
 
-
-
-    .navbar-item .api {
-        font-size: 1rem;
-        margin-left: 12px;
+    .navbar .ul{
+        overflow: auto;
     }
 
+    .navbar li{
+    float: left;
+    list-style:none ;
+    margin:13px 20px ;
+}
 
-    .seedemo {
+.api{
+    margin-left:100px;
+    margin-top: 9px;
+    
+}
+
+.seedemo {
         border-radius: 4px;
         background-color: #FF1493;
         color: white;
         border: #FF1493;
-        width: 89px;
+        width: 95px;
         height: 33px;
-        margin-top: 3px;
-        margin-right: 4px;
+        margin-top:0px;
+        margin-left: 18px;
+        
+      
+    }
 
+    .icon1{
+        margin-left: 134px;
+       
+     
+    }
+
+    .demo{
+        margin-top: 13px;
+    }
+
+    .contact{
+        margin-top: 13px;
+        
     }
 
     .login .button {
@@ -128,68 +146,41 @@
 </style>
 
 <body>
-    <ul>
 
-        <nav class="navbar" role="navigation" aria-label="main navigation">
-            <div class="navbar-brand">
-                <hr>
+ 
 
-                <li>
-                    <figure class="image" style="height: 40px;width: 40px">
-                        <img class="logs" src="logo.svg">
-                    </figure>
-                </li>
-
-                <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false"
-                    data-target="navbarBasicExample">
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                    <span aria-hidden="true"></span>
-                </a>
-            </div>
-
-            <div id="navbarBasicExample" class="navbar-menu">
-                <div class="navbar-start ml-3 mt-4">
-                    <li><a class="schema" href="#">JSON Schema</a></li>
-                </div>
-
-                <a class="navbar-item">
-                    <li>
-                        <h6 class="is-size-6 api">
-                            The first API Management platform the entire Engineering team loves.<span
-                                style="color:	#FF1493"><b> Try zuplo</b></span>
-                        </h6>
-                    </li>
-
-                </a>
-
-
-                <li><button class="button is-small seedemo mr-5 mt-3"><b>See Demo</b></button></li>
-
-
-
-
-
-                <div class="navbar-rigth">
-                    <li><span class="icon mt-3">
-                            <i class="fa-brands fa-github" style='font-size:24px'></i>
-                        </span>
-                        <span><b>
-                                <h7 class="is-size-7 github">Github</h6>
-                            </b></span>
-                    </li>
-                </div>
-
-                <div class="navbar-rigth">
-
-                    <li><span class="icon mt-3 ml-4">
-                            <i class="fas fa-user-circle" style='font-size:21px'></i>
-                        </span></li>
-                </div>
-            </div>
-
+    <nav class="navbar">
+        <ul>
+            <figure class="image" style="height: 40px;width: 40px;margin-top: 10px;margin-left: 10px;">
+                <img class="logs" src="logo.svg">
+                </figure></ul>
+            </figure>
+        
+        
+           <ul><li><a class="schema" href="#"><b>JSON Schema</b></a></li></ul>
+            <!-- <ul><li><a href="#" >Business</a></li></ul> -->
+            <ul><li><h6 class="is-size-6 api">
+                The first API Management platform the entire Engineering team loves.<span
+                    style="color:	#FF1493"><b> Try zuplo</b></span><button class="button is-small seedemo"><b>See Demo</b></button></li></ul>
+        
+                    <div class="demo">
+           <ul><li> <span class="icon1">
+            <i class="fa-brands fa-github" style='font-size:24px'></i>
+        </span>
+        <span><b>
+                <h7 class="is-size-7 github">Github</h6>
+            </b></span>
+        </li></ul>
+                    </div>
+        
+                    <div class="contact">
+           <ul><li> <span class="icon">
+            <i class="fas fa-user-circle" style="font-size:21px;margin-right: 35px;"></i>
+        </span></li></ul>
+                    </div>
+                    
+        
         </nav>
-    </ul>
 
     <div class="section">
         <div class="container">
