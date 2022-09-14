@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Webpage</title>
+</head>
+<style>
+    .navbar {
+        background-color: black;
+        color: white;
+        height: 87px;
+    }
+
+    .games {
+        margin-left: 380px;
+        margin-top: 27px;
+        color: grey;
+        font-weight: bold;
+    }
+
+    .games:hover {
+        margin-left: 380px;
+        margin-top: 27px;
+        color: white;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    .pricing {
+        margin-left: 45px;
+        margin-top: 27px;
+        color: grey;
+        font-weight: bold;
+    }
+
+    .pricing:hover {
+        margin-left: 45px;
+        margin-top: 27px;
+        color: white;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    .pingtest {
+        margin-left: 45px;
+        margin-top: 27px;
+        color: grey;
+        font-weight: bold;
+    }
+
+    .pingtest:hover {
+        margin-left: 45px;
+        margin-top: 27px;
+        color: white;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    .faq {
+        margin-left: 45px;
+        margin-top: 27px;
+        color: grey;
+        font-weight: bold;
+    }
+
+    .faq:hover {
+        margin-left: 45px;
+        margin-top: 27px;
+        color: white;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    .support {
+        margin-left: 45px;
+        margin-top: 27px;
+        color: grey;
+        font-weight: bold;
+    }
+
+    .support:hover {
+        margin-left: 45px;
+        margin-top: 27px;
+        color: white;
+        text-decoration: underline;
+        font-weight: bold;
+
+    }
+
+    .download {
+        margin-left: 45px;
+        margin-top: 27px;
+        color: grey;
+        font-weight: bold;
+    }
+
+    .download:hover {
+        margin-left: 45px;
+        margin-top: 27px;
+        color: white;
+        text-decoration: underline;
+        font-weight: bold;
+    }
+
+    .signin {
+        margin-left:180px;
+        margin-top: 27px;
+        background-color: black;
+        color: white;
+        border: 2px solid #ba55d3;
+        height: 45px;
+        width: 115px;
+        border-radius: 9px;
+    }
+
+    .signin:hover {
+        margin-left: 225px;
+        margin-top: 27px;
+        background-color: black;
+        color: white;
+        border: 2px solid #ba55d3;
+        height: 45px;
+        width: 115px;
+        border-radius: 9px;
+    }
+
+    .Games {
+        background-color: black;
+        height: 440px;
+        
+        /* margin-top:-30px; */
+    }
+
+    .gamess {
+        color: #ba55d3;
+        margin-left: 200px;
+        font-weight: bold;
+        margin-top: -24px;
+    }
+
+    .check {
+        color: gray;
+        margin-left: 100px;
+        margin-top: -22px;
+        font-weight: bold;
+    }
+
+    .ride {
+        height: 100px;
+        width: 360px;
+    }
+
+    .now {
+        margin-top: 27px;
+        color: white;
+    }
+
+    .pc {
+        margin-top: 210px;
+        margin-left: 200px
+    }
+
+    .run {
+        color: #ba55d3;
+        line-height: 1.2;
+        margin-top: 80px;
+    }
+
+    .specs {
+        color: grey;
+        font-weight: bold;
+        margin-top: 20px;
+
+    }
+
+    .sections {
+        background-color: #202020;
+        margin-top: -23px;
+    }
+
+    .systemmm {
+        color: #ba55d3;
+        text-decoration: underline;
+        margin-left: 85px;
+        margin-top: -75px;
+    }
+
+    .ram {
+        color: #ba55d3;
+        margin-left: 85px;
+        margin-top: -67px;
+    }
+
+    .broadband {
+        color: #ba55d3;
+        margin-left: 85px;
+        margin-top: -67px;
+    }
+
+    .name {
+        background-color: black;
+        height: 420px;
+    }
+
+    .work {
+        color: #ba55d3;
+        margin-top: -15px;
+        margin-left: 150px;
+    }
+
+    .stream {
+        color: grey;
+        margin-left: 100px;
+        font-weight: bold;
+        margin-top: -43px;
+    }
+
+    .server {
+        color: #ba55d3;
+        margin-left: 85px;
+        margin-top: -67px;
+    }
+
+    .map {
+        color: #ba55d3;
+        margin-left: 85px;
+        margin-top: -67px;
+    }
+
+    .control {
+        color: #ba55d3;
+        margin-left: 85px;
+        margin-top: -67px;
+    }
+
+    .servers {
+        margin-top: 15px;
+
+    }
+
+    .maps {
+        margin-left: -6px;
+    }
+
+    .mapss{
+        margin-top: -90px;
+        margin-left: 37px;
+    }
+
+    .about{
+        margin-top: -24px;
+    }
+
+    .colorss{
+        background-color:#202020;
+        width:820px;
+        height: 358px;
+        margin-top:-12px;
+        margin-left: -12px;
+    }
+
+    .abouts{
+        color: #ba55d3;
+        margin-left: 18px;
+        margin-top: 25px;
+    }
+
+    .ended{
+        color: grey;
+        margin-left: 28px;
+        font-weight: bold;
+    }
+
+    .ask{
+        font-weight: bold;
+        color: #ba55d3;
+        margin-left: 28px;
+        margin-top: 26px;
+        text-decoration: 2px grey underline;
+    }
+
+    .capture{
+        margin-top: 15px;
+        margin-left: 28px;
+    }
+
+    .today{
+        background-color:#682860;
+        margin-top: -24px;
+        height: 220px;
+    }
+
+    .playing{
+        margin-left: 150px;
+        color: white; 
+         margin-top: 15px; 
+    }
+
+    .future{
+        color: white;
+        margin-left: 150px;
+    }
+    
+    .signup{
+        background-color:#ff1493;
+        margin-top: -120px;
+        margin-left: 970px;
+        border: #ff1493;
+        color: white;
+    }
+
+    .footer{
+        background-color:#202020;
+        height: 470px;
+        margin-top: -24px;
+    }
+
+    .company{
+        margin-left:50px;
+        color: white;
+
+    }
+
+    .plans{
+        margin-left: 50px;
+        color: grey;
+        margin-top:10px
+
+    }
+
+    .gethelp{
+        margin-left:90px;
+        color: white;
+    }
+
+    .profile{
+
+        color: grey;
+        margin-top:10px;
+        margin-left:90px;
+    }
+
+    .stuff{
+        margin-left:90px;
+        color: white;
+    }
+
+    .Privacy{
+        color: grey;
+        margin-top:10px;
+        margin-left:90px;
+    }
+
+    .updates{
+        margin-left:100px;
+        color: white;
+    }
+
+    .small{
+        width:130px;
+        height: 35px;
+        margin-left:100px;
+        background-color:grey;
+        border: grey;
+ }
+
+ .ok{
+    margin-left: 15px;
+    width:60px;
+    height: 35px;
+    background-color:grey;
+    border: grey;
+ }
+
+ .okay{
+    margin-left:90px;
+    margin-top: 15px;
+ }
+
+ .ltd{
+    color: white;
+    margin-left: 50px;
+    margin-top: 15px;
+    font-size: x-small;
+ }
+    
+    .steam{
+        color: white;
+    margin-left: 50px;
+    margin-top: 15px;
+    font-size: x-small;
+    line-height: 2;
+    }
+</style>
+
+
+
+
+<body>
+
+
+
+    <nav class="navbar">
+
+        <!-- <figure class="image" style="height: 300px;width:300px">
+        <img src="gaming.PNG">
+      </figure> -->
+        <a class="games" href="#">GAMES</a>
+        <a class="pricing" href="#">PRICING</a>
+        <a class="pingtest" href="#">PING TEST</a>
+        <a class="faq" href="#">FAQ</a>
+        <a class="support" href="#">SUPPORT</a>
+        <a class="download" href="#">DOWNLOAD</a>
+
+
+
+        <a class="button  signin">
+            <span>Sign In</span>
+            <span class="icon">
+                <i class="fa fa-sign-in" style="font-size:20px"></i>
+            </span>
+        </a>
+    </nav>
+    <hr style="height:4px;color:gray;background-color:gray;margin-top:-1.9px;" />
+
+
+
+
+    <figure class="device">
+        <img src="device.PNG" style="height:550px;width:2490px;margin-top: -25px;">
+    </figure>
+
+
+    <hr style="height:2px;color:gray;background-color:#ba55d3;margin-top: -6px;" />
+
+    <div class="Games">
+        <div class="gamess">
+            <h3 class="is-size-3">Play Your Favourite Games, Anytime, Anywhere.</h3>
+        </div>
+
+        <div class="section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-6   check">
+
+                        <p> Check out out amazing library of games including Ride 4, Devil's Hunt, Those Who Remain &
+                            Much more (P.S.We're adding more soon!)</p>
+
+                        <div class="now">
+                            <p><b>GET STARTED NOW ></b></p>
+                        </div>
+                    </div>
+
+                    <div class="column is-6">
+                        <figure class="ride">
+                            <img src="ride.webp">
+                        </figure>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr style="height:2px;color:gray;background-color:#ba55d3;margin-top: -50px;" />
+
+
+    <!-- <div class="section"> -->
+    <div class="sections">
+        <!-- <div class="container"> -->
+        <div class="columns">
+            <div class="column is-6">
+                <figure class="pc">
+                    <img src="pc.png">
+                </figure>
+            </div>
+
+
+            <div class="column is-6 ">
+                <div class="run">
+                    <h3 class="is-size-3">New Or Not, Your<br>PC/Mobile Can Run It!</h3>
+                </div>
+                <div class="specs">
+                    <p>Our cloud gaming service will run your Favouritegames on<br> almost any system.It just needs to
+                        have the following basic<br> specs:-</p>
+                </div>
+
+                <figure class="system">
+                    <img src="systemmm.png">
+                </figure>
+
+                <h5 class="is-size-5 systemmm"> Click here for system specs per device</h5><br><br>
+
+                <figure class="rams">
+                    <img src="ram.PNG">
+                </figure>
+
+                <h5 class="is-size-5   ram"> 4 GB or more RAM</h5><br><br>
+
+                <figure class="broadbands">
+                    <img src="broadband.PNG">
+                </figure>
+
+                <h5 class="is-size-5 broadband"> A broadband connection of 10 Mbps or more</h5>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="section    name">
+
+        <div class="work">
+            <h3 class="is-size-3">How Does It Work?</h3>
+        </div>
+        <div class="section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="stream">
+                            <p>We run the game & you stream it.Our datacentres are here:</p>
+
+                            <figure class="servers">
+                                <img src="server.PNG">
+                            </figure>
+
+                            <h5 class="is-size-5 server">The games are installed on our servers</h5><br><br>
+
+                            <figure class="maps">
+                                <img src="map.PNG">
+                            </figure>
+
+                            <h5 class="is-size-5 map">We stream the video to your system</h5><br><br>
+
+                            <figure class="controls">
+                                <img src="control.PNG">
+                            </figure>
+
+                            <h5 class="is-size-5 control"> You control the game via our service</h5>
+                        </div>
+                    </div>
+
+                    <div class="column is-6">
+                        <figure class="mapss">
+                            <img src="maps.png">
+                        </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+    <hr style="height:3px;color:gray;background-color:#ba55d3;margin-top:-1px;" />
+    
+
+    <div class="columns">
+        <div class="column is-6">
+            <figure class="about">
+                <img src="about.PNG">
+            </figure>
+        </div>
+
+        <div class="colorss">
+        <div class="column is-6">
+            <h3 class="is-size-3 abouts">About</h3>
+            </div>
+        
+            <div class="ended">
+                <p>The Gaming Project is a cloud gaming service which started when two friends<br>wanted to play a game together, but couldnt as they did not have a good enough<br> PC, and from started a quest which ended up where we are now.. </p>
+            </div>
+
+            <div class="ask">
+                <p>HAVE ANY QUESTIONS? ASK US!</p>
+            </div>
+
+            <figure class="capture">
+                <img src="Capture.PNG">
+            </figure>
+        </div>
+    </div>
+    
+    <hr style="height:3px;color:gray;background-color:#ba55d3;margin-top:-30px" />
+
+
+ <div class="today">
+ <section class="hero">
+    <div class="hero-body">
+        <h3 class="is-size-3   playing">Start Playing Your Favourite Games Today!</h3>
+        <h5 class="is-size-5  future">Get the desktop of the future!</h5>
+
+    </div>
+  </section>
+ </div>
+ 
+
+ <button class="button signup">SIGN UP NOW  ></button>
+
+ <footer class="footer">
+    <div class="section">
+        <div class="container">
+
+            <div class="columns">
+                
+
+                <div class="column is-2">
+                    <h6 class="is-size-6  company">COMPANY</h6>
+
+                    <h6   class="is-size-6  plans">
+                        Home<br>
+                        About us<br>
+                        Roadmap<br>
+                        jobs<br>
+                        Plans & Pricing<br>
+                        Blog<br>
+                    </h6>
+                </div>
+
+                <div class="column is-2">
+                    <h6 class="is-size-6  gethelp">GET HELP</h6>
+
+                        <h6   class="is-size-6   profile">
+                            Your profile<br>
+                            FAQs<br>
+                            support<br>
+                            Contact us<br>
+                            Suggestions<br>
+                        </h6>
+                </div>
+
+
+                <div class="column is-3">
+                    <h6 class="is-size-6  stuff">BORING STUFF</h6>
+
+                    <h6   class="is-size-6 Privacy">
+                        Privacy Policy<br>
+                        Terms & Conditions<br>
+                        Cancellation policy<br>
+                        Disclaimer<br>
+                    </h6>
+
+                </div>
+
+
+                <div class="column is-4">
+                    <h7 class="is-size-7  updates">Subscribe for further updates here: </h7>
+                    <input class="input is-small   small"  placeholder="Your email">
+                    <button  class="button  is-small   ok">OK</button>
+
+                    <figure class="okay">
+                        <img src="ok.PNG">
+                    </figure>
+                </div>
+            </div>
+
+        <div class="ltd">
+           <p>The Gaming  Project by  Cloudquest Pvt Ltd.</p>
+        </div>
+
+        <div class="steam">
+            <p>Disclaimer:Steam, valve & Steam  software are all Property of the Valve Corporation.Steam & Steam logo are trademarks and/or registered trademarks of Valve Corporation.Origin,Origin software are all the<br> property of Electronic Arts Inc.Ubisoft ,Ubisoft  connect software are all property of Ubisoft Entertainment SA. All trademarks are property of their respective owners in the US and othwr countries. We are <br>not related to Free Fire nor do we sell any in game currency  for any game.</p>
+        </div>
+        </div>
+    </div>
+ </footer>
+</body>
+</html>
+ <hr style="height:3px;color:gray;background-color:#ba55d3;margin-top:-1px;" />
+
+
+ 
