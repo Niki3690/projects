@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
@@ -12,69 +13,72 @@
 
 
 <style>
-    .body .head{
+    .web{
+        height: 82px;
+    }
+    .body .head {
         background-color: white;
         height: 65px;
-       }
-   
-       .image .logs {
-           margin-top: 20px;
-           margin-left: 20px;
-       }
+    }
 
-       .toools{
+    .image .logs {
+        margin-top: 20px;
+        margin-left: 20px;
+    }
+
+    .toools {
         margin-top: -80px;
-       }
-   
-       .input {
-   
-           
-           margin-top: 20px;
-            display: block;
-           padding: 9px 4px 9px 40px;
-           background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
-       }
-   
-   
-   
-       .favs {
-           /* margin-left:10px; */
-           margin-top: 10px;
-           font-size: 1.2rem;
-   
-       }
-   
-       .extensions {
-           /* margin-left: 10px; */
-           margin-top: 10px;
-           font-size: 1.2rem;
-           padding-left: 7px;
-       }
-   
-       .about {
-           margin-left:45px;
-           margin-top: 14px;
-           font-size: 1.2rem;
-           color: black;
-       }
-   
-   
-        .contact{
-           margin-left:20px;
-           margin-top: 14px;
-           font-size: 1.2rem;
-           color: black;
-           
-       }
-   
-        .twitter {
-           margin-left: 13px;
-           margin-top: 14px;
-       }
+    }
+
+    .input {
+
+
+        margin-top: 20px;
+        display: block;
+        padding: 9px 4px 9px 40px;
+        background: transparent url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' class='bi bi-search' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z'%3E%3C/path%3E%3C/svg%3E") no-repeat 13px center;
+    }
 
 
 
-       .onebox {
+    .favs {
+        /* margin-left:10px; */
+        margin-top: 10px;
+        font-size: 1.2rem;
+
+    }
+
+    .extensions {
+        /* margin-left: 10px; */
+        margin-top: 10px;
+        font-size: 1.2rem;
+        padding-left: 7px;
+    }
+
+    .about {
+        margin-left: 45px;
+        margin-top: 14px;
+        font-size: 1.2rem;
+        color: black;
+    }
+
+
+    .contact {
+        margin-left: 20px;
+        margin-top: 14px;
+        font-size: 1.2rem;
+        color: black;
+
+    }
+
+    .twitter {
+        margin-left: 13px;
+        margin-top: 14px;
+    }
+
+
+
+    .onebox {
         font-size: 30px;
         margin-top: 50px;
         font-weight: bolder;
@@ -174,322 +178,1806 @@
 
 
 
-    .footer{
-        height:10px;
+    .footer {
+        height: 10px;
         width: 100%;
-       
+
     }
 
-    .texttools{
+    .texttools {
         margin-top: -120.50px;
     }
 
-    .card{
+    .card {
         height: 257px;
         border-radius: 10px;
-       
+
     }
-   
-   
-   </style>
-   
-   <body class="body">
-   
-      <head>
-   <div class="columns">
-   <div class="column is-4">
-       <figure class="image" style="height: 14px;width: 125px;">
-           <img class="logs" src="logo-on-light.svg">
-       </figure>
-   </div>
-   
-   <div class="column is-3">
-       <input class="input  lighter" type="text" placeholder="Search Tools"style="background-color: #E6E6FA">
-   </div>
-   
-   
-       <div class="column is-1">
-   <div class="dropdown is-hoverable">
-       <div class="dropdown-trigger">
-         <button class="button is-white    favs" aria-haspopup="true" aria-controls="dropdown-menu">
-           <span>Favs</span>
-           <span class="icon is-small">
-             <i class="fas fa-angle-down" aria-hidden="true"></i>
-           </span>
-         </button>
-       </div>
-       <div class="dropdown-menu" id="dropdown-menu" role="menu">
-         <div class="dropdown-content">
-           <div class="dropdown-item">
-                       <p>There is no tool in your favourite list yet. Start adding your favorite tools to list and access them with just one click.</p>
-   
-   
-           
-   
-               <!-- <p>There is no tool in your favourite list yet. Start adding your favorite tools to list and access them with just one click.</p> -->
-   
-           </div>
-         </div>
-       </div>
-   </div>
-       </div>
-   
-       <div class="column is-1">
-   
-           <div class="dropdown is-hoverable">
-               <div class="dropdown-trigger">
-                 <button class="button is-white    extensions" aria-haspopup="true" aria-controls="dropdown-menu">
-                   <span>Extension</span>
-                   <span class="icon is-small">
-                     <i class="fas fa-angle-down" aria-hidden="true"></i>
-                   </span>
-                 </button>
-               </div>
-               <div class="dropdown-menu" id="dropdown-menu" role="menu">
-                 <div class="dropdown-content">
-                   <div class="dropdown-item">
-                       <span class="icon">
-                           <i class="fa-brands fa-chrome"></i>
-                         </span>
-                      <a href="#">Add to Chrome</a><hr>
-                      <span class="icon">
-                       <i class="fa-brands fa-firefox"></i>
-                     </span>
-                      <a href="#">Add to Firebox</a>
-           
-                   </div>
-                 </div>
-               </div>
-           </div>
-   </div>
-   
-   
-   <div class="column is-1" style="margin-top:13px">
-    <button class="button is-small is-white">
-         <a class="about" href="#">About</a>
-    </button>
-   </div>
-   
-   <div class="column is-1" style="margin-top: 13px;margin-left: 15px;">
-    <button class="button is-small is-white">
-    <a class="contact" href="#">Contact</a>
-    </button>
-   </div>
-   
-   <div class="column is-1">
-       <div class="twitter">
-           <i class="fa-brands fa-twitter ml-4   twitter" style="width: 24px;height: 24px;"></i>
-       </div>
-   </div>
-   </div>
-  
+</style>
+
+<body class="body">
+
+    <head>
+        <div class="web">
+        <div class="columns">
+            <div class="column is-4">
+                <figure class="image" style="height: 14px;width: 125px;">
+                    <img class="logs" src="logo-on-light.svg">
+                </figure>
+            </div>
+
+            <div class="column is-3">
+                <input class="input  lighter" type="text" placeholder="Search Tools" style="background-color: #F1F2FB">
+            </div>
 
 
-
-
-
-
-
-
-
-   <div class="section"style="background-color: #E6E6FA">
-
-    <!-- <div class="section has-background-info-light"> -->
-        <div class="container">
-            <div class="columns">
-                <div class="column is-6">
-
-                    <div class="onebox">
-                        <h2 class="is-size-2">
-
-                            <b> All Online Tools in “One Box"</b>
-                        </h2>
-                        <figure class="image" style="height: 10px;width:210px;margin-left: 60px; margin-top: -10px;">
-                            <img src="https://10015.io/assets/pages/home/highlight.svg">
-                          </figure>
-                    </div>
-
-
-
-                    <div class="tools">
-                        No need to bookmark the tools you like separately.
-                    </div>
-
-
-                    <div class="bookmark">
-                        10015.io is a <b>“free all-in-one toolbox”</b> solution created to
-
-                        <div class="mess">
-                            ease your life by preventing bookmark mess.
-                        </div>
-
-                        <button class="button is-link is-rounded   button1"><b>Explore Tools</b>
-                            <i class="fa-solid fa-arrow-right ml-2 mt-3 " style="width: 24px;height: 24px;"></i>
+            <div class="column is-1">
+                <div class="dropdown is-hoverable">
+                    <div class="dropdown-trigger">
+                        <button class="button is-white    favs" aria-haspopup="true" aria-controls="dropdown-menu">
+                            <span>Favs</span>
+                            <span class="icon is-small">
+                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
                         </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                        <div class="dropdown-content">
+                            <div class="dropdown-item">
+                                <p>There is no tool in your favourite list yet. Start adding your favorite tools to list
+                                    and access them with just one click.</p>
 
-                        <div class="click">
-                            <h7 class="is-size-7"> Get the extension and access all tools with just one click</h6>
+
+
+
+                                <!-- <p>There is no tool in your favourite list yet. Start adding your favorite tools to list and access them with just one click.</p> -->
+
+                            </div>
                         </div>
-
-
-
-
-
-
-                        <a class="button is-rounded is-link is-outlined has-background-white"
-                            style="margin-top: 10px;height:35px;width:140px">
-                            <span class="icon">
-                                <i class="fa-brands fa-chrome"></i>
-                            </span>
-                            <span>
-                                <h7 class="is-size-7"><b>Add to Chrome</b></h7>
-                            </span>
-                        </a>
-
-                        <a class="button is-rounded is-link is-outlined has-background-white"
-                            style="margin-top: 10px;height:35px;margin-left:10px;width:140px">
-                            <span class="icon">
-                                <i class="fa-brands fa-firefox"></i>
-                            </span>
-                            <span>
-                                <h7 class="is-size-7"><b>Add to Firebox</b></h7>
-                            </span>
-                        </a>
-
-
-
                     </div>
                 </div>
-                <div class="column is-6">
-                    <figure class="image" style="height:100px;width:450px;margin-top: 30px;">
-                        <img src="firsttt.png">
-                    </figure>
+            </div>
+
+            <div class="column is-1">
+
+                <div class="dropdown is-hoverable">
+                    <div class="dropdown-trigger">
+                        <button class="button is-white    extensions" aria-haspopup="true"
+                            aria-controls="dropdown-menu">
+                            <span>Extension</span>
+                            <span class="icon is-small">
+                                <i class="fas fa-angle-down" aria-hidden="true"></i>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="dropdown-menu" id="dropdown-menu" role="menu">
+                        <div class="dropdown-content">
+                            <div class="dropdown-item">
+                                <span class="icon">
+                                    <i class="fa-brands fa-chrome"></i>
+                                </span>
+                                <a href="#">Add to Chrome</a>
+                                <hr>
+                                <span class="icon">
+                                    <i class="fa-brands fa-firefox"></i>
+                                </span>
+                                <a href="#">Add to Firebox</a>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="column is-1" style="margin-top:13px">
+                <button class="button is-small is-white">
+                    <a class="about" href="#">About</a>
+                </button>
+            </div>
+
+            <div class="column is-1" style="margin-top: 13px;margin-left: 15px;">
+                <button class="button is-small is-white">
+                    <a class="contact" href="#">Contact</a>
+                </button>
+            </div>
+
+            <div class="column is-1">
+                <div class="twitter">
+                    <i class="fa-brands fa-twitter ml-4   twitter" style="width: 24px;height: 24px;"></i>
                 </div>
             </div>
         </div>
-    </div>
+        </div>
 
 
 
 
 
-    <div class="section"style="background-color:#F5F5F5">
-        <div class="container">
-            <div class="section">
-                <div class="container">
-                    <h4 class="is-size-4   Featured">
-                        <i class="fa-solid fa-fire" style="color:blue"></i>
-                        <b>Featured Tools</b>
-                        <i class="fa-solid fa-fire" style="color:blue"></i>
-                    </h4>
+
+
+
+
+
+        <div class="section" style="background-color: #F1F2FB">
+
+            <!-- <div class="section has-background-info-light"> -->
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-6">
+
+                        <div class="onebox">
+                            <h2 class="is-size-2">
+
+                                <b> All Online Tools in “One Box"</b>
+                            </h2>
+                            <figure class="image"
+                                style="height: 10px;width:210px;margin-left: 60px; margin-top: -10px;">
+                                <img src="https://10015.io/assets/pages/home/highlight.svg">
+                            </figure>
+                        </div>
+
+
+
+                        <div class="tools">
+                            No need to bookmark the tools you like separately.
+                        </div>
+
+
+                        <div class="bookmark">
+                            10015.io is a <b>“free all-in-one toolbox”</b> solution created to
+
+                            <div class="mess">
+                                ease your life by preventing bookmark mess.
+                            </div>
+
+                            <button class="button is-link is-rounded   button1"><b>Explore Tools</b>
+                                <i class="fa-solid fa-arrow-right ml-2 mt-3 " style="width: 24px;height: 24px;"></i>
+                            </button>
+
+                            <div class="click">
+                                <h7 class="is-size-7"> Get the extension and access all tools with just one click</h6>
+                            </div>
+
+
+
+
+
+
+                            <a class="button is-rounded is-link is-outlined has-background-white"
+                                style="margin-top: 10px;height:35px;width:140px">
+                                <span class="icon">
+                                    <i class="fa-brands fa-chrome"></i>
+                                </span>
+                                <span>
+                                    <h7 class="is-size-7"><b>Add to Chrome</b></h7>
+                                </span>
+                            </a>
+
+                            <a class="button is-rounded is-link is-outlined has-background-white"
+                                style="margin-top: 10px;height:35px;margin-left:10px;width:140px">
+                                <span class="icon">
+                                    <i class="fa-brands fa-firefox"></i>
+                                </span>
+                                <span>
+                                    <h7 class="is-size-7"><b>Add to Firebox</b></h7>
+                                </span>
+                            </a>
+
+
+
+                        </div>
+                    </div>
+                    <div class="column is-6">
+                        <figure class="image" style="height:100px;width:450px;margin-top: 30px;">
+                            <img src="firsttt.png">
+                        </figure>
+                    </div>
                 </div>
             </div>
+        </div>
 
 
-            <div class="columns">
-                <div class="column is-4">
-                    <div class="box" style="height: 85px;margin-top:-25px;">
-                        <ul>
-                            <li>
-                                <figure class="image" style="height:10px;width:25px;margin-top: 10px;">
-                                    <img src="svg-pattern-generator.svg" style="margin-bottom:10px;margin-left: 30px;">
-                                </figure>
-                            </li>
-                            <li>
-                                <h6 class="is-size-6" style="margin-left:80px;margin-top:-10px;">SVG IMAGE GENERATOR</h6>
-                               
-                            </li>
-                        </ul>
+
+
+
+        <div class="section" style="background-color:#F8F9FB">
+            <div class="container">
+                <div class="section">
+                    <div class="container">
+                        <h4 class="is-size-4   Featured">
+                            <i class="fa-solid fa-fire" style="color:blue"></i>
+                            <b>Featured Tools</b>
+                            <i class="fa-solid fa-fire" style="color:blue"></i>
+                        </h4>
                     </div>
                 </div>
 
 
-                <div class="column is-4">
-                    <div class="box" style="height: 85px;margin-top:-25px;">
-                        <ul>
-                            <li>
-                                <figure class="image" style="height:10px;width:25px;margin-top: 10px;">
-                                    <img src="insta.png" style="margin-bottom:10px;margin-left: 20px;">
-                                </figure>
-                            </li>
-                            <li>
-                                <h6 class="is-size-6" style="margin-left:70px;margin-top: -10px">INSTAGRAM PHOTO DOWNLODER</h6>
-                            </li>
-                        </ul>
+                <div class="columns">
+                    <div class="column is-4">
+                        <div class="box" style="height: 85px;margin-top:-25px;">
+                            <ul>
+                                <li>
+                                    <figure class="image" style="height:10px;width:25px;margin-top: 10px;">
+                                        <img src="svg-pattern-generator.svg"
+                                            style="margin-bottom:10px;margin-left: 30px;">
+                                    </figure>
+                                </li>
+                                <li>
+                                    <h6 class="is-size-6" style="margin-left:80px;margin-top:-10px;">SVG IMAGE GENERATOR
+                                    </h6>
+
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="column is-4">
+                        <div class="box" style="height: 85px;margin-top:-25px;">
+                            <ul>
+                                <li>
+                                    <figure class="image" style="height:10px;width:25px;margin-top: 10px;">
+                                        <img src="insta.png" style="margin-bottom:10px;margin-left: 20px;">
+                                    </figure>
+                                </li>
+                                <li>
+                                    <h6 class="is-size-6" style="margin-left:70px;margin-top: -10px">INSTAGRAM PHOTO
+                                        DOWNLODER</h6>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="column is-4">
+                        <div class="box" style="height: 85px;margin-top:-25px;">
+                            <ul>
+                                <li>
+                                    <figure class="image" style="height:10px;width:25px;margin-top: 10px;">
+                                        <img src="instagram-post-generator.svg"
+                                            style="margin-bottom:10px;margin-left: 30px;">
+                                    </figure>
+                                </li>
+                                <li>
+                                    <h6 class="is-size-6" style="margin-left:80px;margin-top: -10px">INSTAGRAM POST
+                                        GENERATOR</h6>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
 
-                <div class="column is-4">
-                    <div class="box"  style="height: 85px;margin-top:-25px;"> 
-                        <ul>
-                            <li>
-                                <figure class="image" style="height:10px;width:25px;margin-top: 10px;">
-                                    <img src="instagram-post-generator.svg" style="margin-bottom:10px;margin-left: 30px;">
-                                </figure>
-                            </li>
-                            <li>
-                                <h6 class="is-size-6" style="margin-left:80px;margin-top: -10px">INSTAGRAM POST GENERATOR</h6>
-                            </li>
-                        </ul>
+                <h4 class="is-size-4    Categories" style="margin-top:55px">
+                    <b>Tool Categories</b>
+                </h4>
+
+                <div class="section">
+                    <div class="container">
+                        <div class="section">
+                            <div class="container toools">
+
+                                <div class="columns">
+                                    <div class="column is-4">
+                                        <div class="box" style="height:80px">
+                                            <b>
+                                                <h5 class="is-size-5 has-text-centered" style="margin-top:6px">Text
+                                                    Tools
+                                            </b></h5>
+                                        </div>
+                                        <div class="box" style="height:80px">
+                                            <b>
+                                                <h5 class="is-size-5 has-text-centered" style="margin-top:6px">Coding
+                                                    Tools
+                                            </b></h5>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="column is-4">
+                                        <div class="box" style="height:80px">
+                                            <b>
+                                                <h5 class="is-size-5 has-text-centered" style="margin-top:6px">Image
+                                                    Tools
+                                            </b></h5>
+                                        </div>
+                                        <div class="box" style="height:80px">
+                                            <b>
+                                                <h5 class="is-size-5 has-text-centered" style="margin-top:6px">Color
+                                                    Tools
+                                            </b></h5>
+                                        </div>
+                                        <div class="box" style="height:80px">
+                                            <b>
+                                                <h5 class="is-size-5 has-text-centered" style="margin-top:6px">
+                                                    Miscellaneous Tools
+                                            </b></h5>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="column is-4">
+                                        <div class="box" style="height:80px">
+                                            <b>
+                                                <h5 class="is-size-5 has-text-centered" style="margin-top:6px">CSS Tools
+                                            </b></h5>
+                                        </div>
+                                        <div class="box" style="height:80px">
+                                            <b>
+                                                <h5 class="is-size-5 has-text-centered" style="margin-top:6px">Social
+                                                    Media Tools
+                                            </b></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
 
 
-            <h4 class="is-size-4    Categories" style="margin-top:55px">
-                <b>Tool Categories</b>
-            </h4>
 
-            <div class="section">
-                <div class="container">
-                    <div class="section">
-                        <div class="container toools">
-
+        <div class="section" style="background-color:#F8F9FB">
+            <div class="container">
+                <div class="section">
+                    <div class="container">
+                        <div class="texttools">
+                            <h4 class="is-size-4"><span style="color: blue;"><b>#</b></span><span
+                                    style="margin-left: 10px"><b>Text Tools</b></span>
+                            </h4><br>
                             <div class="columns">
                                 <div class="column is-4">
-                                    <div class="box" style="height:80px">
-                                        <b>
-                                            <h5 class="is-size-5 has-text-centered" style="margin-top:6px">Text Tools
-                                        </b></h5>
-                                    </div>
-                                    <div class="box"style="height:80px">
-                                        <b>
-                                            <h5 class="is-size-5 has-text-centered"style="margin-top:6px">Coding Tools
-                                        </b></h5>
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="case-converter.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Case Converter</b>
+
+
+                                            <div class="convert">
+                                                <p>Convert your text or string to<br> uppercase, lowercase, title case
+                                                    &<br>
+                                                    sentence case</p>
+                                            </div><br>
+
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey" ;></i>
+                                        </div>
+
+                                    </div><br>
+
+
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="text-to-handwriting-converter.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Text to Handwriting Converter</b>
+
+                                            <div class="convert">
+                                                <p>Convert your text into handwriting<br> with desired paper type and
+                                                    ink<br> color and download as PDF</p>
+                                            </div><br>
+
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="bionic-reading-converter.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Bionic Reading Converter</b>
+
+                                            <div class="convert">
+                                                <p>Convert your texts into Bionic<br> Reading mode to read them
+                                                    faster<br>
+                                                    than before</p>
+                                            </div><br>
+
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
                                     </div>
 
+
+
+
+
                                 </div>
+
+
+
 
                                 <div class="column is-4">
-                                    <div class="box" style="height:80px">
-                                        <b>
-                                            <h5 class="is-size-5 has-text-centered" style="margin-top:6px">Image Tools
-                                        </b></h5>
-                                    </div>
-                                    <div class="box" style="height:80px">
-                                        <b>
-                                            <h5 class="is-size-5 has-text-centered" style="margin-top:6px">Color Tools
-                                        </b></h5>
-                                    </div>
-                                    <div class="box" style="height:80px">
-                                        <b>
-                                            <h5 class="is-size-5 has-text-centered" style="margin-top:6px">Miscellaneous Tools
-                                        </b></h5>
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="lorem-ipsum-generator.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Lorem Ipsum Generator</b>
+
+                                            <div class="convert">
+                                                <p>Create your placeholder texts with<br> desired number of paragraphs
+                                                    and<br> properties</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+
+
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="multiple-whitespace-remover.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Multiple Whitespace Remover</b>
+
+                                            <div class="convert">
+                                                <p>Remove multiple whitespaces and<br> line breaks in a text and
+                                                    clear<br>
+                                                    unwanted characters</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
                                     </div>
 
                                 </div>
+
+
+
+
 
                                 <div class="column is-4">
-                                    <div class="box" style="height:80px">
-                                        <b>
-                                            <h5 class="is-size-5 has-text-centered" style="margin-top:6px">CSS Tools
-                                        </b></h5>
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="letter-counter.svg" ; style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Letter Counter</b>
+
+                                            <div class="convert">
+                                                <p>Count letters, words and sentences<br> in a text and analyze this
+                                                    numbers<br> with common limits</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="google-fonts-pair-finder.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Google Fonts Pair Finder</b>
+
+                                            <div class="convert">
+                                                <p>Find font pairs which looks cool<br> together on your designs, pages
+                                                    or<br> apps as heading and body font</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
                                     </div>
-                                    <div class="box" style="height:80px">
-                                        <b>
-                                            <h5 class="is-size-5 has-text-centered" style="margin-top:6px">Social Media Tools
-                                        </b></h5>
+                                </div>
+                            </div><br><br><br>
+
+
+
+
+                            <h4 class="is-size-4"><span style="color: blue;"><b>#</b></span><span
+                                    style="margin-left: 10px"><b>Image Tools</b></span>
+                            </h4><br>
+                            <div class="columns">
+                                <div class="column is-4">
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="image-cropper.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Image Cropper</b>
+
+                                            <div class="convert">
+                                                <p>Crop unwanted parts of images and<br> download desired part of the
+                                                    image<br> as a new file</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="image-average-color-finder.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Image Average Color Finder</b>
+
+                                            <div class="convert">
+                                                <p>Calculate average and dominant<br> color of an image by ignoring<br>
+                                                    transparency</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="svg-blob-generator.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>SVG Blob Generator</b>
+
+                                            <div class="convert">
+                                                <p>Generate random SVG blobs with<br> desired complexity and get SVG
+                                                    as<br>
+                                                    code or file</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="svg-to-png-converter.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>SVG to PNG Converter</b>
+
+                                            <div class="convert">
+                                                <p>Convert any SVG file into PNG<br> format image and scale it to
+                                                    desired<br> size by preserving aspect ratio</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+
+
+                                <div class="column is-4">
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="image-filters.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Image Filters</b>
+
+                                            <div class="convert">
+                                                <p>Apply different filters to images and<br> change color balance
+                                                    and<br>
+                                                    distribution of the it</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="image-color-extractor.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Image Color Extractor</b>
+
+                                            <div class="convert">
+                                                <p>Extract all colors from an image and<br> get color codes and details
+                                                    of
+                                                    this<br> colors as a list</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="svg-pattern-generator.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>SVG Pattern Generator</b>
+
+                                            <div class="convert">
+                                                <p>Generate SVG patterns with<br> different shapes and download it
+                                                    as<br>
+                                                    SVG or an image file</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="image-to-base64-converter.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Image to Base64 Converter</b>
+
+                                            <div class="convert">
+                                                <p>Convert images into Base64 string<br> for different image formats
+                                                    like
+                                                    PNG,<br> JPEG, GIF, SVG</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="column is-4">
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="image-resizer.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Image Resizer</b>
+
+                                            <div class="convert">
+                                                <p>Resize any image to desired width<br> and height either by
+                                                    protecting<br>
+                                                    aspect ratio or not</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="image-color-picker.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Image Color Picker</b>
+
+                                            <div class="convert">
+                                                <p>Pick any color from an image with<br> an eyedropper and get detailed
+                                                    info<br> about the color you picked</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+                                    </div><br>
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="photo-censor.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Photo Censor</b>
+
+                                            <div class="convert">
+                                                <p>Censor photos and hide faces by<br> pixellating/blurring them or
+                                                    by<br>
+                                                    putting a black bar</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><br><br><br>
+
+
+
+
+
+
+                            <h4 class="is-size-4"><span style="color: blue;"><b>#</b></span><span
+                                    style="margin-left: 10px"><b>CSS Tools</b></span>
+                            </h4><br>
+                            <div class="columns">
+                                <div class="column is-4">
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="css-clip-path-generator.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>CSS Clip Path Generator</b>
+
+                                            <div class="convert">
+                                                <p>Generate CSS clip path with<br> different patterns and use
+                                                    clip-path<br>
+                                                    property in your projects</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="css-cubic-bezier-generator.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>CSS Cubic Bezier Generator</b>
+
+                                            <div class="convert">
+                                                <p>Generate CSS cubic Bezier easing<br> functions by previewing
+                                                    animation<br> and time-progress graph</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="css-triangle-generator.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>CSS Triangle Generator</b>
+
+                                            <div class="convert">
+                                                <p>Generate CSS code for triangular<br> shapes with desired width,
+                                                    height,<br> angle and color</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+                                <div class="column is-4">
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="css-loader-generator.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>CSS Loader Generator</b>
+
+                                            <div class="convert">
+                                                <p>Generate fancy CSS loaders by<br> specifying the type, color and size
+                                                    of<br> the loading indicator</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="css-glassmorphism-generator.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>CSS Glassmorphism Generator</b>
+
+                                            <div class="convert">
+                                                <p>Generate CSS for applying frosted<br>-glass effect on your HTML
+                                                    elements<br> by using background blur</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="css-box-shadow-generator.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>CSS Box Shadow Generator</b>
+
+                                            <div class="convert">
+                                                <p>Generate CSS code for box shadows<br> while previewing it for box,
+                                                    circle
+                                                    or<br> header design</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+                                <div class="column is-4">
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="css-background-pattern-generator.svg"
+                                                    style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>CSS Background Pattern Generator</b>
+
+                                            <div class="convert">
+                                                <p>Generate beautiful CSS-only<br> background patterns and use it in<br>
+                                                    your projects right away</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="css-gradient-generator.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>CSS Gradient Generator</b>
+
+                                            <div class="convert">
+                                                <p>Generate beautiful CSS gradients<br> either by using presets or<br>
+                                                    customizing on your own</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="css-border-radius-generator.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>CSS Border Radius Generator</b>
+
+                                            <div class="convert">
+                                                <p>Generate advanced CSS border<br> radius to shape your HTML
+                                                    elements<br>
+                                                    corners individually</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div><br><br><br>
+
+
+
+
+
+                            <h4 class="is-size-4"><span style="color: blue;"><b>#</b></span><span
+                                    style="margin-left: 10px"><b>Coding Tools</b></span>
+                            </h4><br>
+                            <div class="columns">
+                                <div class="column is-4">
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="code-to-image-converter.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Code to Image Converter</b>
+
+                                            <div class="convert">
+                                                <p>Convert your codes to fancy images<br> and share with your friends
+                                                    or<br>
+                                                    colleagues</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="base64-encoder-decoder.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Base64 Encoder/Decoder</b>
+
+                                            <div class="convert">
+                                                <p>Encode your strings to Base64 or<br> decode strings encoded with<br>
+                                                    Base64</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="html-minifier.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>HTML Minifier</b>
+
+                                            <div class="convert">
+                                                <p>Minify your HTML code and copy the<br> minified code to your
+                                                    clipboard
+                                                    or<br> download as .html file</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="html-formatter.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>HTML Formatter</b>
+
+                                            <div class="convert">
+                                                <p>Format your HTML code with HTML<br> beautifier and either copy
+                                                    the<br>
+                                                    formatted HTML or download it</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="md5-encrypt-decrypt.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>MD5 Encrypt/Decrypt</b>
+
+                                            <div class="convert">
+                                                <p>Encrypt strings to MD5 hashes or<br> decrypt MD5 hashes to strings
+                                                    by<br>
+                                                    iterating combinations</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="sha256-encrypt-decrypt.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>SHA256 Encrypt/Decrypt</b>
+
+                                            <div class="convert">
+                                                <p>Encrypt strings to SHA256 hashes or <br>decrypt SHA256 hashes to
+                                                    strings
+                                                    by<br> iterating combinations</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="jwt-encoder-decoder.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>JWT Encoder/Decoder</b>
+
+                                            <div class="convert">
+                                                <p>Encode, decode, verify or debug<br> JWT (JSON Web Token) for
+                                                    HSxxx,<br>
+                                                    RSxxx & ESxxx algorithms</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+
+
+                                <div class="column is-4">
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="url-slug-generator.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>URL Slug Generator</b>
+
+                                            <div class="convert">
+                                                <p>Generate SEO-friendly slugs from<br> titles or any other strings for
+                                                    your<br> webpages or blog posts</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="html-encoder-decoder.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>HTML Encoder/Decoder</b>
+
+                                            <div class="convert">
+                                                <p>Encode or decode your HTML by<br> replacing special characters
+                                                    into<br>
+                                                    equivalent escape forms</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="css-minifier.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>CSS Minifier</b>
+
+                                            <div class="convert">
+                                                <p>Minify your CSS code and copy the<br> minified code to your clipboard
+                                                    or<br> download as style.min.css file</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="css-formatter.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>CSS Formatter</b>
+
+                                            <div class="convert">
+                                                <p>Format your CSS code and copy the <br>beautified code to your
+                                                    clipboard
+                                                    or<br> download as style.css file</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="sha1-encrypt-decrypt.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>SHA1 Encrypt/Decrypt</b>
+
+                                            <div class="convert">
+                                                <p>Encrypt strings to SHA1 hashes or<br> decrypt SHA1 hashes to strings
+                                                    by<br> iterating combinations</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="sha384-encrypt-decrypt.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>SHA384 Encrypt/Decrypt</b>
+
+                                            <div class="convert">
+                                                <p>Encrypt strings to SHA384 hashes or<br> decrypt SHA384 hashes to
+                                                    strings<br> by iterating combinations</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="json-tree-viewer.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>JSON Tree Viewer</b>
+
+                                            <div class="convert">
+                                                <p>View your JSON data in tree view,<br> walk through all branches
+                                                    and<br>
+                                                    update nodes if you need to</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="column is-4">
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="react-native-shadow-generator.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>React Native Shadow Generator</b>
+
+                                            <div class="convert">
+                                                <p>Generate fancy box shadows in<br> React Native both for iOS and
+                                                    <br>Android
+                                                </p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="url-encoder-decoder.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>URL Encoder/Decoder</b>
+
+                                            <div class="convert">
+                                                <p>Encode your URL by escaping<br> characters that may break your
+                                                    <br>navigation and decode it
+                                                </p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="javascript-minifier.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>JavaScript Minifier</b>
+
+                                            <div class="convert">
+                                                <p>Minify your JavaScript code and<br> copy the minified code to your
+                                                    <br>clipboard or download as .min.js file
+                                                </p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="javascript-formatter.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>JavaScript Formatter</b>
+
+                                            <div class="convert">
+                                                <p>Format/beautify your JavaScript code and copy the formatted code to
+                                                    your
+                                                    clipboard or download as a file</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="sha224-encrypt-decrypt.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>SHA224 Encrypt/Decrypt</b>
+
+                                            <div class="convert">
+                                                <p>Encrypt strings to SHA224 hashes or<br> decrypt SHA224 hashes to
+                                                    strings
+                                                    by<br> iterating combinations</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="sha512-encrypt-decrypt.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>SHA512 Encrypt/Decrypt</b>
+
+                                            <div class="convert">
+                                                <p>Encrypt strings to SHA512 hashes or<br> decrypt SHA512 hashes to
+                                                    strings
+                                                    by<br> iterating combinations</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div><br><br><br>
+
+
+
+
+
+                            <h4 class="is-size-4"><span style="color: blue;"><b>#</b></span><span
+                                    style="margin-left: 10px"><b>Color Tools</b></span>
+                            </h4><br>
+                            <div class="columns">
+                                <div class="column is-4">
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="hex-to-rgba-converter.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>HEX to RGBA Converter</b>
+
+                                            <div class="convert">
+                                                <p>Convert HEX color codes to RGBA<br> equivalents and see all details
+                                                    of a
+                                                    <br>color
+                                                </p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="color-mixer.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Color Mixer</b>
+
+                                            <div class="convert">
+                                                <p>Mix 2 colors and get color codes for<br> intermediate colors from 2
+                                                    to
+                                                    10<br> steps</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+                                <div class="column is-4">
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="rgba-to-hex-converter.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>RGBA to HEX Converter</b>
+
+                                            <div class="convert">
+                                                <p>Convert RGBA color codes to alpha<br> supported 6 or 8 digit HEX
+                                                    <br>equivalents
+                                                </p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+                                <div class="column is-4">
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="color-shades-generator.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Color Shades Generator</b>
+
+                                            <div class="convert">
+                                                <p>Get all shades of a color by setting<br> up steps for darken,
+                                                    lighten,<br> saturation and desaturation</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div><br><br><br>
+
+
+
+
+
+                            <h4 class="is-size-4"><span style="color: blue;"><b>#</b></span><span
+                                    style="margin-left: 10px"><b>Social Media Tools</b></span>
+                            </h4><br>
+                            <div class="columns">
+                                <div class="column is-4">
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="instagram-filters.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Instagram Filters</b>
+
+                                            <div class="convert">
+                                                <p>Apply Instagram filters to you<br> photos either by uploading local
+                                                    file<br> or uploading image from a URL</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="tweet-generator.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Tweet Generator</b>
+
+                                            <div class="convert">
+                                                <p>Create tweets as if they were real,<br> download them as an image
+                                                    and<br>
+                                                    make jokes to your friends</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="vimeo-thumbnail-grabber.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Vimeo Thumbnail Grabber</b>
+
+                                            <div class="convert">
+                                                <p>Get all available thumbnail images<br> of a Vimeo videos just by
+                                                    entering
+                                                    <br>the URL
+                                                </p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="column is-4">
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="instagram-post-generator (1).svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Instagram Post Generator</b>
+
+                                            <div class="convert">
+                                                <p>Create Instagram posts as if they were real, download them as an
+                                                    image
+                                                    and make jokes to your friends</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="tweet-to-image-converter.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Tweet to Image Converter</b>
+
+                                            <div class="convert">
+                                                <p>Convert tweets to images by adding<br> fancy backgrounds, download
+                                                    and<br> share them on any social platform</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="open-graph-meta-generator.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Open Graph Meta Generator</b>
+
+                                            <div class="convert">
+                                                <p>Generate open graph meta code for<br> your web page and add it to
+                                                    your<br> site's head section</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+
+                                <div class="column is-4">
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="instagram-photo-downloader.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Instagram Photo Downloader</b>
+
+                                            <div class="convert">
+                                                <p>Download photos from public<br> Instagram posts and save them to<br>
+                                                    your
+                                                    local device</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="youtube-thumbnail-grabber.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>YouTube Thumbnail Grabber</b>
+
+                                            <div class="convert">
+                                                <p>Get all available thumbnail images<br> of a YouTube videos just by
+                                                    entering<br>the URL</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div>
+                                </div>
+                            </div><br><br><br>
+
+
+
+
+
+                            <h4 class="is-size-4"><span style="color: blue;"><b>#</b></span><span
+                                    style="margin-left: 10px"><b>Miscellaneous Tools</b></span>
+                            </h4><br>
+                            <div class="columns">
+                                <div class="column is-4">
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="strong-random-password-generator.svg"
+                                                    style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Strong Random Password Generator</b>
+
+                                            <div class="convert">
+                                                <p>Generate strong random passwords<br> and check its stregth with
+                                                    password
+                                                    <br>strength meter
+                                                </p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div><br>
+
+
+
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="barcode-generator.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>Barcode Generator</b>
+
+                                            <div class="convert">
+                                                <p>Generate barcodes for different<br> internatinal standardizations
+                                                    with<br> desired sizes</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+                                <div class="column is-4">
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="list-randomizer.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>List Randomizer</b>
+
+                                            <div class="convert">
+                                                <p>Randomize your lists, make lotteries,<br> draw campigns or select
+                                                    random
+                                                    <br> people from a group
+                                                </p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
+                                    </div>
+                                </div>
+
+
+
+                                <div class="column is-4">
+                                    <div class="card">
+                                        <div class="card-content">
+
+                                            <figure class="image" style="width:40px">
+                                                <img src="qr-code-generator.svg" style="margin-bottom:20px">
+                                            </figure>
+
+                                            <b>QR Code Generator</b>
+
+                                            <div class="convert">
+                                                <p>Generate QR code for your links or<br> texts easily and download them
+                                                    as<br> an image file</p>
+                                            </div><br>
+                                            <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
+                                            <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
+                                        </div>
+
                                     </div>
                                 </div>
                             </div>
@@ -498,1513 +1986,78 @@
                 </div>
             </div>
         </div>
-    </div>
 
 
 
-    <div class="section" style="background-color:#F5F5F5">
-        <div class="container">
-            <div class="section">
-                <div class="container">
-                    <div class="texttools">
-                    <h4 class="is-size-4"><span style="color: blue;"><b>#</b></span><span
-                            style="margin-left: 10px"><b>Text Tools</b></span>
-                    </h4><br>
-                    <div class="columns">
-                        <div class="column is-4">
-                            <div class="card">
-                                <div class="card-content">
 
-                                    <figure class="image" style="width:40px">
-                                        <img src="case-converter.svg" style="margin-bottom:20px">
-                                    </figure>
+        <div class="section has-background-link-light" style="height:550px">
+            <div class="container">
+                <div class="columns">
+                    <div class="column is-6">
+                        <div class="section">
+                            <div class="container">
 
-                                    <b>Case Converter</b>
-
-
-                                    <div class="convert">
-                                        <p>Convert your text or string to<br> uppercase, lowercase, title case &<br>
-                                            sentence case</p>
-                                    </div><br>
-
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart'  style="margin-left: 200px;color:grey";></i>
-                                </div>
-
-                            </div><br>
-
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="text-to-handwriting-converter.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Text to Handwriting Converter</b>
-
-                                    <div class="convert">
-                                        <p>Convert your text into handwriting<br> with desired paper type and
-                                            ink<br> color and download as PDF</p>
-                                    </div><br>
-
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="bionic-reading-converter.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Bionic Reading Converter</b>
-
-                                    <div class="convert">
-                                        <p>Convert your texts into Bionic<br> Reading mode to read them faster<br>
-                                            than before</p>
-                                    </div><br>
-
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div>
-
-
-
-
-
-                        </div>
-
-
-
-
-                        <div class="column is-4">
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="lorem-ipsum-generator.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Lorem Ipsum Generator</b>
-
-                                    <div class="convert">
-                                        <p>Create your placeholder texts with<br> desired number of paragraphs
-                                            and<br> properties</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="multiple-whitespace-remover.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Multiple Whitespace Remover</b>
-
-                                    <div class="convert">
-                                        <p>Remove multiple whitespaces and<br> line breaks in a text and clear<br>
-                                            unwanted characters</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-                            </div>
-
-                        </div>
-
-
-
-
-
-                        <div class="column is-4">
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="letter-counter.svg" ; style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Letter Counter</b>
-
-                                    <div class="convert">
-                                        <p>Count letters, words and sentences<br> in a text and analyze this
-                                            numbers<br> with common limits</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="google-fonts-pair-finder.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Google Fonts Pair Finder</b>
-
-                                    <div class="convert">
-                                        <p>Find font pairs which looks cool<br> together on your designs, pages
-                                            or<br> apps as heading and body font</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div><br><br><br>
-
-
-
-
-                    <h4 class="is-size-4"><span style="color: blue;"><b>#</b></span><span
-                            style="margin-left: 10px"><b>Image Tools</b></span>
-                    </h4><br>
-                    <div class="columns">
-                        <div class="column is-4">
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="image-cropper.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Image Cropper</b>
-
-                                    <div class="convert">
-                                        <p>Crop unwanted parts of images and<br> download desired part of the
-                                            image<br> as a new file</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="image-average-color-finder.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Image Average Color Finder</b>
-
-                                    <div class="convert">
-                                        <p>Calculate average and dominant<br> color of an image by ignoring<br>
-                                            transparency</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="svg-blob-generator.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>SVG Blob Generator</b>
-
-                                    <div class="convert">
-                                        <p>Generate random SVG blobs with<br> desired complexity and get SVG as<br>
-                                            code or file</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="svg-to-png-converter.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>SVG to PNG Converter</b>
-
-                                    <div class="convert">
-                                        <p>Convert any SVG file into PNG<br> format image and scale it to
-                                            desired<br> size by preserving aspect ratio</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-
-
-
-                        <div class="column is-4">
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="image-filters.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Image Filters</b>
-
-                                    <div class="convert">
-                                        <p>Apply different filters to images and<br> change color balance and<br>
-                                            distribution of the it</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="image-color-extractor.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Image Color Extractor</b>
-
-                                    <div class="convert">
-                                        <p>Extract all colors from an image and<br> get color codes and details of
-                                            this<br> colors as a list</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="svg-pattern-generator.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>SVG Pattern Generator</b>
-
-                                    <div class="convert">
-                                        <p>Generate SVG patterns with<br> different shapes and download it as<br>
-                                            SVG or an image file</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="image-to-base64-converter.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Image to Base64 Converter</b>
-
-                                    <div class="convert">
-                                        <p>Convert images into Base64 string<br> for different image formats like
-                                            PNG,<br> JPEG, GIF, SVG</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                        <div class="column is-4">
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="image-resizer.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Image Resizer</b>
-
-                                    <div class="convert">
-                                        <p>Resize any image to desired width<br> and height either by protecting<br>
-                                            aspect ratio or not</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="image-color-picker.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Image Color Picker</b>
-
-                                    <div class="convert">
-                                        <p>Pick any color from an image with<br> an eyedropper and get detailed
-                                            info<br> about the color you picked</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-                            </div><br>
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="photo-censor.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Photo Censor</b>
-
-                                    <div class="convert">
-                                        <p>Censor photos and hide faces by<br> pixellating/blurring them or by<br>
-                                            putting a black bar</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div><br><br><br>
-
-
-
-
-
-
-                    <h4 class="is-size-4"><span style="color: blue;"><b>#</b></span><span
-                            style="margin-left: 10px"><b>CSS Tools</b></span>
-                    </h4><br>
-                    <div class="columns">
-                        <div class="column is-4">
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="css-clip-path-generator.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>CSS Clip Path Generator</b>
-
-                                    <div class="convert">
-                                        <p>Generate CSS clip path with<br> different patterns and use clip-path<br>
-                                            property in your projects</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="css-cubic-bezier-generator.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>CSS Cubic Bezier Generator</b>
-
-                                    <div class="convert">
-                                        <p>Generate CSS cubic Bezier easing<br> functions by previewing
-                                            animation<br> and time-progress graph</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="css-triangle-generator.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>CSS Triangle Generator</b>
-
-                                    <div class="convert">
-                                        <p>Generate CSS code for triangular<br> shapes with desired width,
-                                            height,<br> angle and color</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-
-                        <div class="column is-4">
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="css-loader-generator.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>CSS Loader Generator</b>
-
-                                    <div class="convert">
-                                        <p>Generate fancy CSS loaders by<br> specifying the type, color and size
-                                            of<br> the loading indicator</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="css-glassmorphism-generator.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>CSS Glassmorphism Generator</b>
-
-                                    <div class="convert">
-                                        <p>Generate CSS for applying frosted<br>-glass effect on your HTML
-                                            elements<br> by using background blur</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="css-box-shadow-generator.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>CSS Box Shadow Generator</b>
-
-                                    <div class="convert">
-                                        <p>Generate CSS code for box shadows<br> while previewing it for box, circle
-                                            or<br> header design</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-
-                        <div class="column is-4">
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="css-background-pattern-generator.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>CSS Background Pattern Generator</b>
-
-                                    <div class="convert">
-                                        <p>Generate beautiful CSS-only<br> background patterns and use it in<br>
-                                            your projects right away</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="css-gradient-generator.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>CSS Gradient Generator</b>
-
-                                    <div class="convert">
-                                        <p>Generate beautiful CSS gradients<br> either by using presets or<br>
-                                            customizing on your own</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="css-border-radius-generator.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>CSS Border Radius Generator</b>
-
-                                    <div class="convert">
-                                        <p>Generate advanced CSS border<br> radius to shape your HTML elements<br>
-                                            corners individually</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div><br><br><br>
-
-
-
-
-
-                    <h4 class="is-size-4"><span style="color: blue;"><b>#</b></span><span
-                            style="margin-left: 10px"><b>Coding Tools</b></span>
-                    </h4><br>
-                    <div class="columns">
-                        <div class="column is-4">
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="code-to-image-converter.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Code to Image Converter</b>
-
-                                    <div class="convert">
-                                        <p>Convert your codes to fancy images<br> and share with your friends or<br>
-                                            colleagues</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="base64-encoder-decoder.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Base64 Encoder/Decoder</b>
-
-                                    <div class="convert">
-                                        <p>Encode your strings to Base64 or<br> decode strings encoded with<br>
-                                            Base64</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="html-minifier.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>HTML Minifier</b>
-
-                                    <div class="convert">
-                                        <p>Minify your HTML code and copy the<br> minified code to your clipboard
-                                            or<br> download as .html file</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="html-formatter.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>HTML Formatter</b>
-
-                                    <div class="convert">
-                                        <p>Format your HTML code with HTML<br> beautifier and either copy the<br>
-                                            formatted HTML or download it</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="md5-encrypt-decrypt.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>MD5 Encrypt/Decrypt</b>
-
-                                    <div class="convert">
-                                        <p>Encrypt strings to MD5 hashes or<br> decrypt MD5 hashes to strings by<br>
-                                            iterating combinations</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="sha256-encrypt-decrypt.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>SHA256 Encrypt/Decrypt</b>
-
-                                    <div class="convert">
-                                        <p>Encrypt strings to SHA256 hashes or <br>decrypt SHA256 hashes to strings
-                                            by<br> iterating combinations</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="jwt-encoder-decoder.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>JWT Encoder/Decoder</b>
-
-                                    <div class="convert">
-                                        <p>Encode, decode, verify or debug<br> JWT (JSON Web Token) for HSxxx,<br>
-                                            RSxxx & ESxxx algorithms</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-
-
-
-                        <div class="column is-4">
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="url-slug-generator.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>URL Slug Generator</b>
-
-                                    <div class="convert">
-                                        <p>Generate SEO-friendly slugs from<br> titles or any other strings for
-                                            your<br> webpages or blog posts</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart'style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="html-encoder-decoder.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>HTML Encoder/Decoder</b>
-
-                                    <div class="convert">
-                                        <p>Encode or decode your HTML by<br> replacing special characters into<br>
-                                            equivalent escape forms</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="css-minifier.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>CSS Minifier</b>
-
-                                    <div class="convert">
-                                        <p>Minify your CSS code and copy the<br> minified code to your clipboard
-                                            or<br> download as style.min.css file</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="css-formatter.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>CSS Formatter</b>
-
-                                    <div class="convert">
-                                        <p>Format your CSS code and copy the <br>beautified code to your clipboard
-                                            or<br> download as style.css file</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="sha1-encrypt-decrypt.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>SHA1 Encrypt/Decrypt</b>
-
-                                    <div class="convert">
-                                        <p>Encrypt strings to SHA1 hashes or<br> decrypt SHA1 hashes to strings
-                                            by<br> iterating combinations</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="sha384-encrypt-decrypt.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>SHA384 Encrypt/Decrypt</b>
-
-                                    <div class="convert">
-                                        <p>Encrypt strings to SHA384 hashes or<br> decrypt SHA384 hashes to
-                                            strings<br> by iterating combinations</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="json-tree-viewer.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>JSON Tree Viewer</b>
-
-                                    <div class="convert">
-                                        <p>View your JSON data in tree view,<br> walk through all branches and<br>
-                                            update nodes if you need to</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-
-
-                        <div class="column is-4">
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="react-native-shadow-generator.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>React Native Shadow Generator</b>
-
-                                    <div class="convert">
-                                        <p>Generate fancy box shadows in<br> React Native both for iOS and
-                                            <br>Android
-                                        </p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="url-encoder-decoder.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>URL Encoder/Decoder</b>
-
-                                    <div class="convert">
-                                        <p>Encode your URL by escaping<br> characters that may break your
-                                            <br>navigation and decode it
-                                        </p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="javascript-minifier.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>JavaScript Minifier</b>
-
-                                    <div class="convert">
-                                        <p>Minify your JavaScript code and<br> copy the minified code to your
-                                            <br>clipboard or download as .min.js file
-                                        </p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart'style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="javascript-formatter.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>JavaScript Formatter</b>
-
-                                    <div class="convert">
-                                        <p>Format/beautify your JavaScript code and copy the formatted code to your
-                                            clipboard or download as a file</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="sha224-encrypt-decrypt.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>SHA224 Encrypt/Decrypt</b>
-
-                                    <div class="convert">
-                                        <p>Encrypt strings to SHA224 hashes or<br> decrypt SHA224 hashes to strings
-                                            by<br> iterating combinations</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="sha512-encrypt-decrypt.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>SHA512 Encrypt/Decrypt</b>
-
-                                    <div class="convert">
-                                        <p>Encrypt strings to SHA512 hashes or<br> decrypt SHA512 hashes to strings
-                                            by<br> iterating combinations</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div><br><br><br>
-
-
-
-
-
-                    <h4 class="is-size-4"><span style="color: blue;"><b>#</b></span><span
-                            style="margin-left: 10px"><b>Color Tools</b></span>
-                    </h4><br>
-                    <div class="columns">
-                        <div class="column is-4">
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="hex-to-rgba-converter.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>HEX to RGBA Converter</b>
-
-                                    <div class="convert">
-                                        <p>Convert HEX color codes to RGBA<br> equivalents and see all details of a
-                                            <br>color
-                                        </p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="color-mixer.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Color Mixer</b>
-
-                                    <div class="convert">
-                                        <p>Mix 2 colors and get color codes for<br> intermediate colors from 2 to
-                                            10<br> steps</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-                        <div class="column is-4">
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="rgba-to-hex-converter.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>RGBA to HEX Converter</b>
-
-                                    <div class="convert">
-                                        <p>Convert RGBA color codes to alpha<br> supported 6 or 8 digit HEX
-                                            <br>equivalents
-                                        </p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <div class="column is-4">
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="color-shades-generator.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Color Shades Generator</b>
-
-                                    <div class="convert">
-                                        <p>Get all shades of a color by setting<br> up steps for darken,
-                                            lighten,<br> saturation and desaturation</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-                            </div>
-                        </div>
-                    </div><br><br><br>
-
-
-
-
-
-                    <h4 class="is-size-4"><span style="color: blue;"><b>#</b></span><span
-                            style="margin-left: 10px"><b>Social Media Tools</b></span>
-                    </h4><br>
-                    <div class="columns">
-                        <div class="column is-4">
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="instagram-filters.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Instagram Filters</b>
-
-                                    <div class="convert">
-                                        <p>Apply Instagram filters to you<br> photos either by uploading local
-                                            file<br> or uploading image from a URL</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="tweet-generator.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Tweet Generator</b>
-
-                                    <div class="convert">
-                                        <p>Create tweets as if they were real,<br> download them as an image and<br>
-                                            make jokes to your friends</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="vimeo-thumbnail-grabber.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Vimeo Thumbnail Grabber</b>
-
-                                    <div class="convert">
-                                        <p>Get all available thumbnail images<br> of a Vimeo videos just by entering
-                                            <br>the URL
-                                        </p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart'style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-
-
-                        <div class="column is-4">
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="instagram-post-generator (1).svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Instagram Post Generator</b>
-
-                                    <div class="convert">
-                                        <p>Create Instagram posts as if they were real, download them as an image
-                                            and make jokes to your friends</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="tweet-to-image-converter.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Tweet to Image Converter</b>
-
-                                    <div class="convert">
-                                        <p>Convert tweets to images by adding<br> fancy backgrounds, download
-                                            and<br> share them on any social platform</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="open-graph-meta-generator.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Open Graph Meta Generator</b>
-
-                                    <div class="convert">
-                                        <p>Generate open graph meta code for<br> your web page and add it to
-                                            your<br> site's head section</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-
-
-                        <div class="column is-4">
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="instagram-photo-downloader.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Instagram Photo Downloader</b>
-
-                                    <div class="convert">
-                                        <p>Download photos from public<br> Instagram posts and save them to<br> your
-                                            local device</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="youtube-thumbnail-grabber.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>YouTube Thumbnail Grabber</b>
-
-                                    <div class="convert">
-                                        <p>Get all available thumbnail images<br> of a YouTube videos just by
-                                            entering<br>the URL</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div><br><br><br>
-
-
-
-
-
-                    <h4 class="is-size-4"><span style="color: blue;"><b>#</b></span><span
-                            style="margin-left: 10px"><b>Miscellaneous Tools</b></span>
-                    </h4><br>
-                    <div class="columns">
-                        <div class="column is-4">
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="strong-random-password-generator.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Strong Random Password Generator</b>
-
-                                    <div class="convert">
-                                        <p>Generate strong random passwords<br> and check its stregth with password
-                                            <br>strength meter
-                                        </p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div><br>
-
-
-
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="barcode-generator.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>Barcode Generator</b>
-
-                                    <div class="convert">
-                                        <p>Generate barcodes for different<br> internatinal standardizations
-                                            with<br> desired sizes</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-
-                        <div class="column is-4">
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="list-randomizer.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>List Randomizer</b>
-
-                                    <div class="convert">
-                                        <p>Randomize your lists, make lotteries,<br> draw campigns or select random
-                                            <br> people from a group
-                                        </p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart' style="margin-left: 200px;color:grey"></i>
-                                </div>
-
-                            </div>
-                        </div>
-
-
-
-                        <div class="column is-4">
-                            <div class="card">
-                                <div class="card-content">
-
-                                    <figure class="image" style="width:40px">
-                                        <img src="qr-code-generator.svg" style="margin-bottom:20px">
-                                    </figure>
-
-                                    <b>QR Code Generator</b>
-
-                                    <div class="convert">
-                                        <p>Generate QR code for your links or<br> texts easily and download them
-                                            as<br> an image file</p>
-                                    </div><br>
-                                    <h7 class="is-size-7"><a href="#"><b>Open ></b></a></h7>
-                                    <i class='far fa-heart'style="margin-left: 200px;color:grey"></i>
-                                </div>
+                                <figure class="image" style="height: 300px;width:420px;margin-bottom: 115px;">
+                                    <img src="online.PNG">
+                                </figure>
 
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            </div>
-        </div>
-    </div>
 
 
 
+                    <div class="column is-6">
+                        <h4 class="is-size-4     toolbox"><b>Best Online All-In-One Toolbox</b>
+                        </h4>
 
-    <div class="section has-background-link-light" style="height:550px">
-        <div class="container">
-            <div class="columns">
-                <div class="column is-6">
-                    <div class="section">
-                        <div class="container">
 
-                            <figure class="image" style="height: 300px;width:420px;margin-bottom: 115px;">
-                                <img src="online.PNG">
-                            </figure>
+                        <h5 class="is-size-5  single">10015.io brings all online tools together. If you got tired of<br>
+                            bookmarking a single website for each online tool, you<br> are in right place.</h5>
 
-                        </div>
+
+                        <h5 class="is-size-5  perform"> 10015.io has designed as simple as possible to make it<br>
+                            easier to focus on functionality of the tool. Main aim of<br> the tools is to perform the
+                            operation in minimum steps<br> with a clear UI/UX.</h5>
+
+
+
+                        <h5 class="is-size-5  perform"> Start to use 10015.io and forget all other tools you use<br>
+                            forever.</h5>
                     </div>
                 </div>
 
-
-
-                <div class="column is-6">
-                    <h4 class="is-size-4     toolbox"><b>Best Online All-In-One Toolbox</b>
-                    </h4>
-
-
-                    <h5 class="is-size-5  single">10015.io brings all online tools together. If you got tired of<br>
-                        bookmarking a single website for each online tool, you<br> are in right place.</h5>
-
-
-                    <h5 class="is-size-5  perform"> 10015.io has designed as simple as possible to make it<br>
-                        easier to focus on functionality of the tool. Main aim of<br> the tools is to perform the
-                        operation in minimum steps<br> with a clear UI/UX.</h5>
-
-
-
-                    <h5 class="is-size-5  perform"> Start to use 10015.io and forget all other tools you use<br>
-                        forever.</h5>
-                </div>
             </div>
-
         </div>
-    </div>
 
 
-    <footer class="footer    footer"style="background-color:#F5F5F5";>
-        <figure class="image" style="height: 10px;width: 80px;margin-left: 25px;">
-            <img class="logss" src="logo-on-light.svg" style="margin-top:10px">
-        </figure>
+        <footer class="footer    footer" style="background-color:#F8F9FB" ;>
+            <figure class="image" style="height: 10px;width: 80px;margin-left: 25px;">
+                <img class="logss" src="logo-on-light.svg" style="margin-top:10px">
+            </figure>
 
-        <a class="aboutt" href="#">
-            <h7 class="is-size-7"><b>About</b></h7>
-        </a>
-        <a class="usee" href="#">
-            <h7 class="is-size-7"><b>Terms of Use</b></h7>
-        </a>
-        <a class="policy" href="#">
-            <h7 class="is-size-7"><b>Privacy Policy</b></h7>
-        </a>
-        <a class="contactt" href="#">
-            <h7 class="is-size-7"><b>Contact</b></h7>
-        </a>
-        <a class="made" href="#">
-            <h7 class="is-size-7"><b>Made with <i class='far fa-heart   earth'></i> in Earth</b></h7>
-        </a>
+            <a class="aboutt" href="#">
+                <h7 class="is-size-7"><b>About</b></h7>
+            </a>
+            <a class="usee" href="#">
+                <h7 class="is-size-7"><b>Terms of Use</b></h7>
+            </a>
+            <a class="policy" href="#">
+                <h7 class="is-size-7"><b>Privacy Policy</b></h7>
+            </a>
+            <a class="contactt" href="#">
+                <h7 class="is-size-7"><b>Contact</b></h7>
+            </a>
+            <a class="made" href="#">
+                <h7 class="is-size-7"><b>Made with <i class='far fa-heart   earth'></i> in Earth</b></h7>
+            </a>
 
 
-        </div>
-        </div>
-        </div>
-    </footer>
+            </div>
+            </div>
+            </div>
+        </footer>
 </body>
 </body>
 
 </html>
-   
