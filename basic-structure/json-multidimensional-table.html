@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+<body>
+
+    <div id="dems"></div>
+    <script>
+        let data='{"Name":"Mona","Email":"mona@123gmail.com","Gender":"Female","Colors":["Red","Green","Blue"],"pet":{"Name":"niks","Species":"familiaris"}}';
+        data=JSON.parse(data);
+        console.table(data);
+
+        let table=document.createElement("table"),row,cell1,cell2;
+        document.getElementById("dems").appendChild(table);
+
+        for(let key in data){
+            row=table.insertRow();
+            cell1=row.insertCell();
+            cell2=row.insertCell();
+            cell1.innerHTML=key;
+            if(key=="Colors"){
+                cell2.innerHTML=data[key].join(",");
+
+            }
+            else if(key=="pet"){
+                cell2.innerHTML=`<div>Name: ${data[key]["Name"]}</div><div>Species:${data[key]["Species"]}</div>`;
+            }
+            else{
+                cell2.innerHTML=data[key];
+            }
+        }
+
+    </script>
+</body>
+</html>
+

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+<body>
+
+    <div id="dems"></div>
+    
+    <script>
+        let data='{"Name":"Mona","Email":"mona@123gmail.com","Gender":"Female","Status":"job"}';
+        data=JSON.parse(data);
+        console.table(data);
+
+        let table="<table>";
+            for(let key in data){
+                table +=`<tr><td>${key}</td><td>${data[key]}</td></tr>`;
+
+            }
+
+            table+="</table>";
+            document.getElementById("dems").innerHTML=table;
+     
+    </script>

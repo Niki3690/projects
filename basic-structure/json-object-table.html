@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+<body>
+
+    <div id="dems"></div>
+   
+
+    <script>
+        let data='{"Name":"Mona","Email":"mona@123gmail.com","Gender":"Female","Status":"job"}';
+        data=JSON.parse(data);
+        console.table(data);
+
+        let table=document.createElement("table"),row,cell1,cell2;
+        document.getElementById("dems").appendChild(table);
+
+        for(let key in data){
+            row=table.insertRow();
+            cell1=row.insertCell();
+            cell2=row.insertCell();
+            cell1.innerHTML=key;
+            cell2.innerHTML=data[key];
+        }
+    </script>
+</body>
+</html>

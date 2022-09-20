@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+    <p id="JSON"></p>
+
+<script>
+let text = '{"person":[' +
+'{"firstName":"John","lastName":"Doe" },' +
+'{"firstName":"Anna","lastName":"Smith" },' +
+'{"firstName":"Peter","lastName":"Jones" }]}';
+
+const obj = JSON.parse(text);
+document.getElementById("JSON").innerHTML =
+obj.person[0].firstName + " " + obj.person[2].lastName;
+</script>
+
+</body>
+</html>
