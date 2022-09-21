@@ -9,14 +9,6 @@
     <title>Randome color generator</title>
 </head>
 
-<style>
-  .citySectionArea{
-    box-sizing: border-box;
-    height: 150px;
-    width: 120px;
-  }
-</style>
-
 <div class="container is-fluid m-2 p-2">
     <div class="columns is-centered mt-5">
         <div class="column is-12">
@@ -25,14 +17,10 @@
 
                     <h3 class="is-size-3"><b>City generator</b></h3><br>
                     
-                    <div class="columns is-multiline is-centered" id="citySectionArea">
-                      <div class="column is-narrow">
-                      <!-- <div class="column is-narrow"><div class="card has-background-light has-text-centered customize-card"><div class="card-content"><span class="city-text">New York</span></div><footer class="card-footer"><p class="card-footer-item title is-size-6" title="State of the Rock Island City">New York (NY)</p></footer><footer class="card-footer"><p class="card-footer-item title is-size-6 has-text-grey" title="Population of the Rock Island City">8405837</p></footer></div></div> -->
-                      
-                      
-                      
-                        </div>
-
+                    <div class="columns is-multiline is-centered" id="cityArea">
+                     
+                         
+                        
                     </div>
                 </div>
             </div>
@@ -41,6 +29,20 @@
 </div>
 
 <script>
+// let txt = '{"city": "New York","growth_from_2000_to_2013": "4.8%","latitude": 40.7127837,"longitude": -74.0059413,"population": "8405837", "rank": "1","state": "New York (NY)"}'
+
+// let obj = JSON.parse(txt);
+
+// document.getElementById("demo").innerHTML = obj.city  +'<br>' + " " + obj.state + '<br>'  + obj.population ;
+
+
+// let array='{"city": "Los Angeles","growth_from_2000_to_2013": "4.8%","latitude": 34.0522342,"longitude": -118.2436849,"population": "3884307","rank": "2","state":"California (CA)"}'
+
+// let arr = JSON.parse(array);
+
+// document.getElementById("demo").innerHTML = obj.city  +'<br>' + " " + obj.state + '<br>'  + obj.population ;
+
+
 
 let array=[
 
@@ -146,16 +148,11 @@ let array=[
 ]
 
 function display(newArray){
-  let sortedCode = "";
-    const output = document.getElementById("citySectionArea");
+    const output = document.getElementById("cityArea");
     // console.log(output);
-   
     newArray.forEach(element => {
         let xyz =`<h1> ${element.city} <br>  ${element.state} <br>  ${element.population} <br> <br> </h1>`;
-      
-
-    output.innerHTML +=  xyz +`<div class="card has-background-link has-text-centered customize-card" <div class="has-text-right"><a class="card-title-link" <svg width="27" height="27"><use xlink:href="#copy"></use></svg></a></div><div class="card-content" <p class="card-footer-item title is-size-6 has-text-grey-light">`;
-   
+    output.innerHTML += xyz;
             });
 };
     display(array);
