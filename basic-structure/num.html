@@ -21,7 +21,7 @@
 .customize-card {
     width: 300px;
     margin: 0 auto;
-    height: 190px;
+    height:330px;
 }
 
 .has-text-centered {
@@ -49,21 +49,16 @@
     justify-content: center;
     padding: 0.75rem;
 }
+.figure .image{
+  height: 110px;
+  width:180px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  
+}
 
-/* .title {
-    color: #363636;
-    font-size: 2rem;
-    font-weight: 600;
-    line-height: 1.125;
-} */
 
-/* p {
-    display: block;
-    margin-block-start: 1em;
-    margin-block-end: 1em;
-    margin-inline-start: 0px;
-    margin-inline-end: 0px;
-} */
 </style>
 
 <div class="container is-fluid m-2 p-2">
@@ -90,7 +85,7 @@
                         </div> -->
                     </div>
 
-
+  
 
                     
                 </div>
@@ -111,7 +106,8 @@ let array=[
   "longitude": -74.0059413,
   "population": "8405837",
   "rank": "1",
-  "state": "New York (NY)"
+  "state": "New York (NY)",
+  "image":"newyork.jpg",
 },
 {
   "city": "Los Angeles",
@@ -120,7 +116,8 @@ let array=[
   "longitude": -118.2436849,
   "population": "3884307",
   "rank": "2",
-  "state": "California (CA)"
+  "state": "California (CA)",
+  "image":"losangles.jpg",
 },
 {
   "city": "Chicago",
@@ -129,7 +126,8 @@ let array=[
   "longitude": -87.6297982,
   "population": "2718782",
   "rank": "3",
-  "state": "Illinois (IL)"
+  "state": "Illinois (IL)",
+  "image":"chicago.jpg",
 },
 {
   "city": "Houston",
@@ -138,7 +136,8 @@ let array=[
   "longitude": -95.3698028,
   "population": "2195914",
   "rank": "4",
-  "state": "Texas (TX)"
+  "state": "Texas (TX)",
+  "image":"housten.jpg",
 },
 {
   "city": "Philadelphia",
@@ -147,7 +146,8 @@ let array=[
   "longitude": -75.1652215,
   "population": "1553165",
   "rank": "5",
-  "state": "Pennsylvania (PA)"
+  "state": "Pennsylvania (PA)",
+  "image":"philopghia.jpg",
 },
 {
   "city": "Phoenix",
@@ -156,7 +156,8 @@ let array=[
   "longitude": -112.0740373,
   "population": "1513367",
   "rank": "6",
-  "state": "Arizona (AZ)"
+  "state": "Arizona (AZ)",
+  "image":"phonix.jpg",
 },
 {
   "city": "San Antonio",
@@ -165,7 +166,8 @@ let array=[
   "longitude": -98.49362819999999,
   "population": "1409019",
   "rank": "7",
-  "state": "Texas (TX)"
+  "state": "Texas (TX)",
+  "image":"sananoti.jpg",
 },
 {
   "city": "San Diego",
@@ -174,7 +176,8 @@ let array=[
   "longitude": -117.1610838,
   "population": "1355896",
   "rank": "8",
-  "state": "California (CA)"
+  "state": "California (CA)",
+  "image":"sandingo.jpg",
 },
 {
   "city": "Dallas",
@@ -183,7 +186,8 @@ let array=[
   "longitude": -96.79698789999999,
   "population": "1257676",
   "rank": "9",
-  "state": "Texas (TX)"
+  "state": "Texas (TX)",
+  "image":"dallas.jpg",
 },
 {
   "city": "San Jose",
@@ -192,7 +196,8 @@ let array=[
   "longitude": -121.8863286,
   "population": "998537",
   "rank": "10",
-  "state": "California (CA)"
+  "state": "California (CA)",
+  "image":"sanjose.jpg",
 },
 {
   "city": "Austin",
@@ -201,7 +206,8 @@ let array=[
   "longitude": -97.7430608,
   "population": "885400",
   "rank": "11",
-  "state": "Texas (TX)"
+  "state": "Texas (TX)",
+  "image":"austin.jpg",
 }
 ]
 
@@ -213,15 +219,9 @@ function display(newArray){
    
     newArray.forEach(element => {
         let xyz =[];
-        // let xyz =`<h1> ${element.city} <br>  ${element.state} <br>  ${element.population} <br> <br> </h1>`;
-      
        
-//     output.innerHTML +=  xyz + `<div class="column is-narrow">
-//                            <div class="card has-background-light has-text-centered customize-card"><div class="card-content"><footer class="card-footer"><p class="card-footer-item title is-size-6 has-text-grey-light"> ${element.city}`
-//  ;
-    
 
-output.innerHTML +=  xyz + `<div class="column is-narrow"> <div class="card has-background-light has-text-centered customize-card "><div class="card-content"><div class="card-content"><span class="city-text " id="city">${element.city}</span></div><footer class="card-footer"><p class="card-footer-item title is-size-6" title="State of the Philadelphia City" id="state">${element.state}</p></footer><footer class="card-footer"><p class="card-footer-item title is-size-6 has-text-grey" title="Population of the Philadelphia City" id="population">${element.population}</p></footer></div></div></div></div>`
+output.innerHTML +=  xyz + `<div class="column is-narrow"> <div class="card has-background-light has-text-centered customize-card "><div class="card-content"><div class="card-content"><figure class="image"><img src="${element.image}"></figure><span class="city-text " id="city">${element.city}</span></div><footer class="card-footer"><p class="card-footer-item title is-size-6" title="State of the Philadelphia City" id="state">${element.state}</p></footer><footer class="card-footer"><p class="card-footer-item title is-size-6 has-text-grey" title="Population of the Philadelphia City" id="population">${element.population}</p></footer></div></div></div></div>`
             });
 };
     display(array);
