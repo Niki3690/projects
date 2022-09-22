@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-
+<html>
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -19,7 +19,7 @@
         text-align: center;
     }
 
-  .column .dates .p{
+    .column .dates .p {
         text-align: center;
         font-weight: bolder;
     }
@@ -59,7 +59,7 @@
                         <div id="result"></div>
 
 
-                        <div class="columns">
+                        <!-- <div class="columns">
                             <div class="column is-6">
                                 <div class="card">
                                     <div class="dates">
@@ -126,24 +126,49 @@
                                     </div>
                                 </div>
                             </div>
-                        </div>
+                        </div> -->
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</body>
-
-</html>
 
 
-<!-- <script>
+<script>
     function submit() {
-        const emptyDate = new Date();
-const randomDate = new Date();
-const formattedRandomDate =(randomDate.getDate() - Math.floor(Math.random()*1000));
-console.log(emptyDate)
-    }
 
-       
-</script> -->
+        // let dateEle = document.getElementById("date");
+        // let resultEle = document.getElementById("result");
+        // result.innerHTML = '';
+        // let value = parseInt(document.getElementById("date").value);
+        // var today = new Date();
+        // // let result ='';
+        // for (let i = 0; i < value; i++) {
+        //     var birthDate = new Date(new Date() - Math.random() * (1e+12));
+        //     console.log(birthDate);
+        //     var age = today.getFullYear() - birthDate.getFullYear();
+        //     console.log(age);
+        //     var m = today.getMonth() - birthDate.getMonth();
+        //     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+        //         age++;
+        //     }
+        //     document.getElementById("result").innerHTML += `<div class="columns"><div class="column is-6"><div class="card"><div class="card-content"><b>${birthDate} </b><br> Current Age: ${age}</div></div></div></div>`;
+
+
+      
+    const maxDate = Date.now();
+    const ni = Math.floor(Math.random() * maxDate);
+    return new Date(ni);
+}
+
+console.log(submit());
+        
+   
+
+
+    
+           
+    
+</script>
+</body>
+</html>
