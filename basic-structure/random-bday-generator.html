@@ -201,7 +201,7 @@
 
 <script src="https://unpkg.com/dayjs"></script>
 <script>
-    function submit(dateString) {
+    function submit(){
         let dateEle = document.getElementById("date");
         let resultEle = document.getElementById("result");
         result.innerHTML = '';
@@ -212,48 +212,31 @@
 
         for (let i = 0; i < value; i++) {
             const result = dayjs(new Date() - Math.random() * (1e+12)).format("dddd D MMMM YYYY")
-            console.log(result);
-            var now = dayjs().format("dddd D MMMM YYYY");;
-            console.log(now);
+            console.log("result:->"+result);
+            var birthDateObject = dayjs(result, "dddd D MMMM YYYY");
+            console.log("birthDateObject:->"+birthDateObject);
 
-    //         let age=now.getFullYear()-result.getFullYear();
-    //         let m=now.getMonth()-result.getMonth();
-    //         id(m < 0 || (m === 0 && now.getDate() < result.getDate()));{
-    //             age++;
-    //         }
-    //         return age;
-    //     }
-    //         console.log(age);
-    // }
-
-            
-    
-
-
+          var age = getAge(birthDateObject);
+           console.log ("data from getAge:->"+age);
            
-
-
-            // var now = dayjs();
-            // var result = dayjs(dateString);
-            // var age = now .getFullYear() - result .getFullYear();
-            // var m = now .getMonth() - result .getMonth();
-            // if (m < 0 || (m === 0 && now .getDate() < result .getDate())) 
-            // {
-            //     age--;
-            // }
-            // return age;
-            // console.log(age)
-
-
-
-
-
-
-            document.getElementById("result").innerHTML += `<div class="columns"><div class="column is-6"><div class="card"><div class="card-content"><b>${result} </b> </div></div></div></div> `;
+            document.getElementById("result").innerHTML += `<div class="columns"><div class="column is-6"><div class="card"><div class="card-content"><b>${result} <br> Current Age: ${age}</b> </div></div></div></div>`;
 
 
             }
         }
+
+        function getAge(dateString) 
+{
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) 
+    {
+        age--;
+    }
+    return age;
+}
                 
 
         

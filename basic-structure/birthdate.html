@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>birthdate generator</title>
+</head>
+
+<input type="hidden" id="type" value="<?php echo $md['type'];?>">
+<style>
+   .customize-card{
+      width: 300px;
+      margin: 0 auto;
+   }
+   .city-text{
+      font-size: 1.7em;
+   }
+</style>
+
+<!-- SVG Icons -->
+<svg xmlns="http://www.w3.org/2000/svg" class="is-hidden">
+   <symbol id="download-icon" viewBox="0 0 24 24">
+      <g><rect fill="none" height="24" width="24"/></g><g><path fill="currentColor" d="M18,15v3H6v-3H4v3c0,1.1,0.9,2,2,2h12c1.1,0,2-0.9,2-2v-3H18z M17,11l-1.41-1.41L13,12.17V4h-2v8.17L8.41,9.59L7,11l5,5 L17,11z"/></g>
+   </symbol>
+</svg>
+
+<section class="container section pt-5 is-fluid">
+   <!-- Header And Add to Fav button -->
+   <div class="columns">
+         <div class="column is-3"></div>
+         <div class="column">
+            <h1 class="title has-text-centered" id="mainTitle">Random Birthdate Generator</h1>
+         </div>
+         <div class="column is-3">
+            <div class="has-text-right has-text-centered-mobile">
+               <button class="button" onclick="makeFav()" title="Add this tool to Favorites">
+                  <span class="icon"><svg class="svgicon"><use id="favIcon" xlink:href="#heart-no-fill"></use></svg></span>
+                  <span id="favText">Add to Fav</span>
+               </button>
+               <button id="new" type="button" class="button is-info" onclick="loadNewView()">New</button>
+            </div>
+         </div>
+   </div>
+
+   <!-- Navbar Buttons & Inputs  -->
+   <div class="columns is-centered">
+      <div class="column is-6" style="width: auto;">
+         <div class="buttons is-centered">
+               <div class="button is-medium is-primary" onclick="getCities(5);">5 Cities</div>
+               <div class="button is-medium is-info" onclick="getCities(10);">10 Cities</div>
+               <div class="button is-medium is-success" onclick="getCities(15);">15 Cities</div>
+               <div class="button is-medium is-link is-outlined" onclick="getCities('random');">Random</div>
+            </div>
+      </div>
+      <div class="column is-3">
+         <div class="field has-addons">
+            <div class="control is-expanded">
+               <input type="number" class="input is-medium" id="randomNumber" placeholder="Enter Number">
+            </div>
+            <div class="control">
+                <button class="button is-primary is-medium" type="button" onclick="randomeButton()">Generate</button>
+            </div>
+         </div>
+      </div>
+      <div class="column is-2 has-text-centered" style="width: auto;">
+         <div class="button is-medium is-dark is-outlined" onclick="getCities('all');">Show All</div>
+         <button class="button is-medium is-link is-outlined" onclick="createTxtFile();" title="Download TXT File Of City Names"><svg width="27" height="27"><use xlink:href="#download-icon"></use></svg>Download</button>
+      </div>
+   </div>
+
+   <!-- CheckBoxe For Show/Hide City Name -->
+   <!-- <div class="field has-text-centered">
+      <label class="checkbox mb-2 mr-2" id="sortPoupulationCheckbox">
+         <input type="checkbox" id="isSortPopulation" onchange="sortPopulation();"> Display Most Populous City First
+      </label>
+   </div> -->
+
+   <div class="result" id="result"></div>
+
+   <!-- Generating Names Area -->
+   <!-- <div class="columns is-multiline is-centered" id="citySectionArea">
+      <div class="column is-narrow">
+         <div class="card has-background-light has-text-centered customize-card">
+            <div class="card-content">
+               <span class="city-text">Philadelphia</span>
+            </div>
+            <footer class="card-footer">
+               <p class="card-footer-item title is-size-6" title="State of the Philadelphia City">Pennsylvania (PA)</p>
+            </footer>
+            <footer class="card-footer">
+               <p class="card-footer-item title is-size-6 has-text-grey" title="Population of the Philadelphia City">1,553,165</p>
+            </footer>
+         </div>
+      </div>
+      <div class="column is-narrow">
+         <div class="card has-background-light has-text-centered customize-card">
+            <div class="card-content">
+               <span class="city-text">Memphis</span>
+            </div>
+            <footer class="card-footer">
+               <p class="card-footer-item title is-size-6" title="State of the Memphis City">Tennessee (TN)</p>
+            </footer>
+            <footer class="card-footer">
+               <p class="card-footer-item title is-size-6 has-text-grey" title="Population of the Memphis City">653,450</p>
+            </footer>
+         </div>
+      </div>
+      <div class="column is-narrow">
+         <div class="card has-background-light has-text-centered customize-card">
+            <div class="card-content">
+               <span class="city-text">Kansas City</span>
+            </div>
+            <footer class="card-footer">
+               <p class="card-footer-item title is-size-6" title="State of the Kansas City">Missouri (MO)</p>
+            </footer>
+            <footer class="card-footer">
+               <p class="card-footer-item title is-size-6 has-text-grey" title="Population of the Kansas City">467,007</p>
+            </footer>
+         </div>
+      </div>
+      <div class="column is-narrow">
+         <div class="card has-background-light has-text-centered customize-card">
+            <div class="card-content">
+               <span class="city-text">Paramount</span>
+            </div>
+            <footer class="card-footer">
+               <p class="card-footer-item title is-size-6" title="State of the Paramount City">California (CA)</p>
+            </footer>
+            <footer class="card-footer">
+               <p class="card-footer-item title is-size-6 has-text-grey" title="Population of the Paramount City">54,980</p>
+            </footer>
+         </div>
+      </div>
+      <div class="column is-narrow">
+         <div class="card has-background-light has-text-centered customize-card">
+            <div class="card-content">
+               <span class="city-text">Elizabeth</span>
+            </div>
+            <footer class="card-footer">
+               <p class="card-footer-item title is-size-6" title="State of the Elizabeth City">New Jersey (NJ)</p>
+            </footer>
+            <footer class="card-footer">
+               <p class="card-footer-item title is-size-6 has-text-grey" title="Population of the Elizabeth City">127,558</p>
+            </footer>
+         </div>
+      </div>
+      <div class="column is-narrow">
+         <div class="card has-background-light has-text-centered customize-card">
+            <div class="card-content">
+               <span class="city-text">New York</span>
+            </div>
+            <footer class="card-footer">
+               <p class="card-footer-item title is-size-6" title="State of the New York City">New York (NY)</p>
+            </footer>
+            <footer class="card-footer">
+               <p class="card-footer-item title is-size-6 has-text-grey" title="Population of the New York City">8,405,837</p>
+            </footer>
+         </div>
+      </div>
+      <div class="column is-narrow">
+         <div class="card has-background-light has-text-centered customize-card">
+            <div class="card-content">
+               <span class="city-text">San Francisco</span>
+            </div>
+            <footer class="card-footer">
+               <p class="card-footer-item title is-size-6" title="State of the San Francisco City">California (CA)</p>
+            </footer>
+            <footer class="card-footer">
+               <p class="card-footer-item title is-size-6 has-text-grey" title="Population of the City">837,442</p>
+            </footer>
+         </div>
+      </div>
+      <div class="column is-narrow">
+         <div class="card has-background-light has-text-centered customize-card">
+            <div class="card-content">
+               <span class="city-text">Greenville</span>
+            </div>
+            <footer class="card-footer">
+               <p class="card-footer-item title is-size-6" title="State of the Greenville City">North Carolina (NC)</p>
+            </footer>
+            <footer class="card-footer">
+               <p class="card-footer-item title is-size-6 has-text-grey" title="Population of the Greenville City">89,130</p>
+            </footer>
+         </div>
+      </div>   
+      <div class="column is-narrow">
+         <div class="card has-background-light has-text-centered customize-card">
+            <div class="card-content">
+               <span class="city-text">Washington</span>
+            </div>
+            <footer class="card-footer">
+               <p class="card-footer-item title is-size-6" title="State of the Washington City">District of Columbia</p>
+            </footer>
+            <footer class="card-footer">
+               <p class="card-footer-item title is-size-6 has-text-grey" title="Population of the Washington City">646,449</p>
+            </footer>
+         </div>
+      </div>
+      <div class="column is-narrow">
+         <div class="card has-background-light has-text-centered customize-card">
+            <div class="card-content">
+               <span class="city-text">Vancouver</span>
+            </div>
+            <footer class="card-footer">
+               <p class="card-footer-item title is-size-6" title="State of the Vancouver City">Washington (WA)</p>
+            </footer>
+            <footer class="card-footer">
+               <p class="card-footer-item title is-size-6 has-text-grey" title="Population of the Vancouver City">167,405</p>
+            </footer>
+         </div>
+      </div>
+   </div>
+
+   <!-- Available Cities Section -->
+   <!-- <div class="notification is-link is-light title is-3 has-text-centered mt-5">
+      <span>Showing</span>
+      <span id="generatedCities">10</span>
+      <span>Cities</span>
+   </div>
+</section>
+</html>
+ --> 
+
+
+
+<script>
+   function randomeButton(){
+    let randomNumberEle = document.getElementById("randomNumber");
+        let resultEle = document.getElementById("result");
+        result.innerHTML = '';
+        let value = parseInt(document.getElementById("randomNumber").value);
+
+
+
+
+        for (let i = 0; i < value; i++) {
+            const result = dayjs(new Date() - Math.random() * (1e+12)).format("dddd D MMMM YYYY")
+            console.log("result:->"+result);
+            var birthDateObject = dayjs(result, "dddd D MMMM YYYY");
+            console.log("birthDateObject:->"+birthDateObject);
+
+          var age = getAge(birthDateObject);
+           console.log ("data from getAge:->"+age);
+           
+            document.getElementById("result").innerHTML += `<div class="columns"><div class="column is-6"><div class="card"><div class="card-content"><b>${result} <br> Current Age: ${age}</b> </div></div></div></div>`;
+
+
+            }
+        }
+
+        function getAge(dateString) 
+{
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) 
+    {
+        age--;
+    }
+    return age;
+}
+               </script>
+
