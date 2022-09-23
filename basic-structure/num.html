@@ -10,22 +10,9 @@
     <title>Randome city generator</title>
 </head>
 <style>
-    .dates {
-
-        width: 300px;
-        margin: 20px;
-        height: 110px;
-        padding: 20px;
-        ;
+     .columns {
         text-align: center;
     }
-
-    .columns {
-        text-align: center;
-    }
-
-
-
     .card-deck {
         -ms-flex-flow: row wrap;
         flex-flow: row wrap;
@@ -87,127 +74,57 @@
         margin-inline-end: 0px;
     }
 </style>
+    <body>
 
-<body>
-
-    <div class="container is-fluid m-2 p-2">
-        <div class="columns is-centered mt-5">
-            <div class="column is-9">
-                <div class="card card-body text-center mt-7">
-                    <div class="text has-text-centered">
-
-                        <h3 class="is-size-3"><b>Random Birthday Generator</b></h3><br>
-
-
-                        <div class="columns">
-                            <div class="column is-5">
-                                <button class="button has-background-link"
-                                onclick="primary()">primary</button>
-                                <div class="has-text-left">
-                                    <label class="label">Number of Results</label>
-                                    <div class="field has-addons">
-                                        <div class="control is-expanded">
-                                            <input class="input" type="number" id="date" value="6">
-                                        </div>
-                                        <div class="control">
-                                            <button class="button has-background-link"
-                                                onclick="submit()">Submit</button>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <br>
-                        </div>
+<div class="section">
+    <div class="container">
+        <div class="text has-text-centered">
+            <h3 class="is-size-3">
+                Random Phone Number
+            </h3>
+        </div>
 
 
-                        <h4 class="is-size-4"><b>Result</b></h4><br>
-                        <div id="result"></div>
+        <div class="buttons mt-6">
+            <button class="button is-medium is-primary" id="primary" onclick="primary()">5 Numbers</button>
+            <button class="button  is-medium is-link" id="link" onclick="link()">10 Numbers</button>
+            <button class="button  is-medium is-success" id="success" onclick="success()">15 Numbers</button>
+            <button class="button  is-medium is-link is-outlined" id="Outlined" onclick="Outlined()">Random</button>
 
-
-                        <!-- <div class="columns">
-                            <div class="column is-6">
-                                <div class="card">
-                                    <div class="dates">
-                                        Friday 30th April 1999<br>
-                                        Current Age: 23
-                                    </div>
-                                </div>
-                            </div>
-
-
-
-                            <div class="column is-6">
-                                <div class="card">
-                                    <div class="dates">
-                                        Monday 22nd November 1965<br>
-                                        Current Age: 56
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-
-                        <div class="columns">
-                            <div class="column is-6">
-                                <div class="card">
-                                    <div class="dates">
-                                        Wednesday 11th October 1961<br>
-                                        Current Age: 60
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="column  is-6">
-                                <div class="card">
-                                    <div class="dates">
-                                        Saturday 20th September 1947<br>
-                                        Current Age: 74
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-
-                        <div class="columns">
-                            <div class="column is-6">
-                                <div class="card">
-                                    <div class="dates">
-                                        Friday 6th January 1939<br>
-                                        Current Age: 83
-                                    </div>
-                                </div>
-                            </div>
-
-
-                            <div class="column  is-6">
-                                <div class="card">
-                                    <div class="dates">
-                                        Friday 6th January 1939<br>
-                                        Current Age: 83
-                                    </div>
-                                </div>
-                            </div>
-                        </div> -->
-                    </div>
+            <div class="column is-3">
+            <div class="field has-addons ml-5">
+                <div class="control is-expanded">
+                    <input type="number" class="input is-medium" value=4 id="randomNumber" placeholder="Enter Number">
+                </div>
+                <div class="control">
+                    <button class="button is-primary is-medium" type="button" onclick="randomeButton()">Generate</button>
                 </div>
             </div>
+            </div>
+
+            <div class="column is-2 has-text-centered">
+            <button class="button is-medium is-link is-outlined ml-5" name="button" id="text" value="Download"><i class="fa fa-download"></i>Download </button>
         </div>
+        </div>
+	
+
     </div>
-</body>
+	<div class="columns is-multiline is-centered" id="phoneNumbersArea">
+	<div class="column is-narrow">
 
-</html>
-
+    <div id="result">
+    </div>
+    </div>
+    </div>
+</div>
 <script src="https://unpkg.com/dayjs"></script>
+
 <script>
-    function submit(){
-        let dateEle = document.getElementById("date");
+   function randomeButton(){
+    let randomNumberEle = document.getElementById("randomNumber");
         let resultEle = document.getElementById("result");
         result.innerHTML = '';
-        let value = parseInt(document.getElementById("date").value);
+        let value = parseInt(document.getElementById("randomNumber").value);
 
 
 
@@ -243,14 +160,13 @@
 
 
 
-
 function primary(){
-    let dateEle = document.getElementById("date");
+    let randomNumberEle = document.getElementById("randomNumber");
         let resultEle = document.getElementById("result");
         result.innerHTML = '';
-    
-    while (result.length < 5) {
-            const result = dayjs(new Date() - Math.random() * (1e+12).length).format("dddd D MMMM YYYY")
+        
+        for (let i = 0; i < 5; i++) {
+            const result = dayjs(new Date() - Math.random() * (1e+12)).format("dddd D MMMM YYYY")
             console.log("result:->"+result);
             var birthDateObject = dayjs(result, "dddd D MMMM YYYY");
             console.log("birthDateObject:->"+birthDateObject);
@@ -259,6 +175,7 @@ function primary(){
            console.log ("data from getAge:->"+age);
            
             document.getElementById("result").innerHTML += `<div class="columns"><div class="column is-6"><div class="card"><div class="card-content"><b>${result} <br> Current Age: ${age}</b> </div></div></div></div>`;
+
 
             }
         }
@@ -276,7 +193,117 @@ function primary(){
     return age;
 }
 
+               
+
+function link(){
+    let randomNumberEle = document.getElementById("randomNumber");
+        let resultEle = document.getElementById("result");
+        result.innerHTML = '';
         
+        for (let i = 0; i < 10; i++) {
+            const result = dayjs(new Date() - Math.random() * (1e+12)).format("dddd D MMMM YYYY")
+            console.log("result:->"+result);
+            var birthDateObject = dayjs(result, "dddd D MMMM YYYY");
+            console.log("birthDateObject:->"+birthDateObject);
+
+          var age = getAge(birthDateObject);
+           console.log ("data from getAge:->"+age);
+           
+            document.getElementById("result").innerHTML += `<div class="columns"><div class="column is-6"><div class="card"><div class="card-content"><b>${result} <br> Current Age: ${age}</b> </div></div></div></div>`;
+
+
+            }
+        }
+
+        function getAge(dateString) 
+{
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) 
+    {
+        age--;
+    }
+    return age;
+}
+            
+
+
+
+function success(){
+    let randomNumberEle = document.getElementById("randomNumber");
+        let resultEle = document.getElementById("result");
+        result.innerHTML = '';
+        
+        for (let i = 0; i < 15; i++) {
+            const result = dayjs(new Date() - Math.random() * (1e+12)).format("dddd D MMMM YYYY")
+            console.log("result:->"+result);
+            var birthDateObject = dayjs(result, "dddd D MMMM YYYY");
+            console.log("birthDateObject:->"+birthDateObject);
+
+          var age = getAge(birthDateObject);
+           console.log ("data from getAge:->"+age);
+           
+            document.getElementById("result").innerHTML += `<div class="columns"><div class="column is-6"><div class="card"><div class="card-content"><b>${result} <br> Current Age: ${age}</b> </div></div></div></div>`;
+
+
+            }
+        }
+
+        function getAge(dateString) 
+{
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) 
+    {
+        age--;
+    }
+    return age;
+}
+            
+
+function Outlined(){
+
+    x = Math.floor((Math.random() * 100) + 1);
+    let randomNumberEle = document.getElementById("randomNumber");
+        let resultEle = document.getElementById("result");
+        result.innerHTML = '';
+        
+        for (let i = 0; i < x+1; i++) {
+            const result = dayjs(new Date() - Math.random() * (1e+12)).format("dddd D MMMM YYYY")
+            console.log("result:->"+result);
+            var birthDateObject = dayjs(result, "dddd D MMMM YYYY");
+            console.log("birthDateObject:->"+birthDateObject);
+
+          var age = getAge(birthDateObject);
+           console.log ("data from getAge:->"+age);
+           
+            document.getElementById("result").innerHTML += `<div class="columns"><div class="column is-6"><div class="card"><div class="card-content"><b>${result} <br> Current Age: ${age}</b> </div></div></div></div>`;
+            document.getElementById("randomNumber").value = x;
+
+
+            }
+        }
+
+        function getAge(dateString) 
+{
+    var today = new Date();
+    var birthDate = new Date(dateString);
+    var age = today.getFullYear() - birthDate.getFullYear();
+    var m = today.getMonth() - birthDate.getMonth();
+    if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) 
+    {
+        age--;
+    }
+    return age;
+}
+            
+    
+
+
 
 
 </script>
