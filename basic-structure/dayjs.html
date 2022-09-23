@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://unpkg.com/dayjs@1.8.21/dayjs.min.js"></script>
+    <title>Randome city generator</title>
+</head>
+
+<style>
+
+    .section{
+        background-color:lightsteelblue;
+        height: 656px;
+    }
+    .card{
+        height:140px;
+        text-align: center;
+        width: 250px;
+        margin-left: 450px;
+        margin-top:20px;
+        background-color:palevioletred;
+        color: black;
+        font-weight: bolder;
+        font-size: x-large;
+    }
+</style>
+
+<body>
+
+    <div class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-6">
+                    <center>
+             
+    <div class="event" data-date="2020-03-26T13:30:00">
+        <div class="card">
+            <div class="card-content">
+        <h2><b>Music</b></h2>
+        <div class="date">
+    </div>
+    </div>
+        </div>
+    </div><br><br>
+
+    <div class="event" data-date="2020-07-10T19:30:00">
+        <div class="card">
+            <div class="card-content">
+        <h2><b>Popsong</b></h2>
+        <div class="date">
+        </div>
+            </div>
+        </div>
+    </div><br><br>
+
+    <div class="event" data-date="2020-12-20T15:00:00">
+        <div class="card">
+            <div class="card-content">
+        <h2><b>concert</b></h2>
+        <div class="date">
+
+        </div>
+    </div>
+        </div>
+    </div>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/dayjs"></script>
+    <script>
+     const events = document.querySelectorAll('.event')
+     
+     events.forEach(event => {
+      const date  = dayjs(event.dataset.date).format("dddd d MMMM YYYY")
+      const dateElement = event.querySelector('.date')
+      dateElement.innerText=date
+     })
+
+    </script>
+
+   
+</body>
+</html>
+    
+

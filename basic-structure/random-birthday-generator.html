@@ -201,14 +201,16 @@ p {
 
 
 <script>
-    function submit(dateString) {
+    function submit() {
         let dateEle = document.getElementById("date");
         let resultEle = document.getElementById("result");
         result.innerHTML = '';
         let value = parseInt(document.getElementById("date").value);
         var today = new Date();
-        // let text = today.toDateString();
-        // console.log(text)
+        //  let text = today.toDateString();
+        //  console.log(text)
+
+
         for (let i = 0; i < value; i++) {
             var birthDate = new Date(new Date() - Math.random() * (1e+12));
             console.log(birthDate);
@@ -218,12 +220,13 @@ p {
             if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
                 age++;
             }
+            
              document.getElementById("result").innerHTML += `<div class="columns"><div class="column is-6"><div class="card"><div class="card-content"><b>${birthDate} </b><br> Current Age: ${age}</div></div></div> <div class="column is-6"></div></div>`;
 
             // document.getElementById("result").innerHTML += `<div class="row"><div class="col-md-12 mt-5"><div class="card-deck"><div class="card text center"><div class="card-body"><h5 class-"card-title">${birthDate}</h5><p>Current Age: ${age}</p></div></div></div></div></div><br>`;
-
-
+           
 
         }
     }
+   
 </script>
