@@ -1,11 +1,15 @@
-<html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
    <meta charset="UTF-8">
    <meta http-equiv="X-UA-Compatible" content="IE=edge">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
    <title>birthdate generator</title>
+</head>
 <style>
    .customize-card {
       width: 300px;
@@ -16,12 +20,10 @@
       font-size: 1.7em;
    }
 </style>
-</head>
 
 
 
-
-<body><section class="container section pt-5 is-fluid">
+<section class="container section pt-5 is-fluid">
    <!-- Header And Add to Fav button -->
    <div class="columns">
       <div class="column is-3"></div>
@@ -55,9 +57,9 @@
       </div>
 
       <div class="column is-2 has-text-centered" style="width: auto;">
-         <div class="button is-medium is-dark is-outlined" id="showAll" onclick="getCities()">Show All</div>
+         <div class="button is-medium is-dark is-outlined" onclick="getCities();">Show All</div>
          
-           <button class="button is-medium is-link is-outlined" id="btn">
+           <button class="button is-medium is-link is-outlined" id="btn" onclick="download()">
             <span class="icon">
                <i class="fa fa-download"></i>
            </span>
@@ -65,29 +67,23 @@
          
       </div>
    </div>
-   
-<div id="result" class="columns is-multiline is-centered">
-
-</div>
-   <footer class="footer">
+   <!-- <footer class="footer">
    <div class="notification is-link is-light title is-3 has-text-centered mt-5">
       <span>Showing</span>
       <span id="generatedCities"></span>
       <span>Cities</span>
    </div>
-</footer>
+</footer> -->
+
 
 </section>
 
 
 
+<div id="result"></div>
 
 <script src="https://unpkg.com/dayjs"></script>
 <script>
-
-var dateArray = [];
-var ageArray = [];
-
    function randomeButton() {
       let randomNumberEle = document.getElementById("randomNumber");
       let resultEle = document.getElementById("result");
@@ -107,40 +103,14 @@ var ageArray = [];
          console.log("data from getAge:->" + age);
 
 
-         document.getElementById("result").innerHTML += `<div class="col-4 is-multiline is-centered"><div class="column is-narrow">
+         document.getElementById("result").innerHTML += `<div class="columns is-multiline is-centered"><div class="column is-narrow">
          <div class="card has-background-light has-text-centered customize-card">
-<div class="card-content"><span id = "date" class="city-text">${result}</span></div><footer class="card-footer"><p class="card-footer-item title is-size-6" id = "age"title="State of the Philadelphia City"><br> Current Age:${age}</p></div></div><div class="column is-narrow"></div>`
+<div class="card-content"><span class="city-text">${result}</span></div><footer class="card-footer"><p class="card-footer-item title is-size-6" title="State of the Philadelphia City"><br> Current Age:${age}</p></div></div><div class="column is-narrow"></div>`
 
  
             };
 
       }
-      
-      function getCities() {
-      let randomNumberEle = document.getElementById("showAll");
-      let resultEle = document.getElementById("result");
-      result.innerHTML = '';
-      let value = 1000;
-      
-      for (let i = 0; i < value; i++) {
-         const result = dayjs(new Date() - Math.random() * (1e+12)).format("dddd D MMMM YYYY")
-         console.log("result:->" + result);
-         var birthDateObject = dayjs(result, "dddd D MMMM YYYY");
-         console.log("birthDateObject:->" + birthDateObject);
-
-         var age = getAge(birthDateObject);
-         console.log("data from getAge:->" + age);
-
-
-         document.getElementById("result").innerHTML += `<div class="columns is-multiline is-centered"><div class="column is-narrow">
-         <div class="card has-background-light has-text-centered customize-card">
-<div class="card-content"><span id = "date" class="city-text">${result}</span></div><footer class="card-footer"><p class="card-footer-item title is-size-6" id = "age" title="State of the Philadelphia City"><br> Current Age:${age}</p></div></div><div class="column is-narrow"></div>`
-
-        
-            };
-            document.getElementById("randomNumber").value = value;
-            document.getElementById("generatedCities").innerHTML = value;
-}
    
 
    function getAge(dateString) {
@@ -175,9 +145,8 @@ var ageArray = [];
 
          document.getElementById("result").innerHTML += `<div class="columns is-multiline is-centered"><div class="column is-narrow">
          <div class="card has-background-light has-text-centered customize-card">
-<div class="card-content"><span id = "date" class="city-text">${result}</span></div><footer class="card-footer"><p class="card-footer-item title is-size-6" id = "age" title="State of the Philadelphia City"><br> Current Age:${age}</p></div></div><div class="column is-narrow"></div>`
+<div class="card-content"><span class="city-text">${result}</span></div><footer class="card-footer"><p class="card-footer-item title is-size-6" title="State of the Philadelphia City"><br> Current Age:${age}</p></div></div><div class="column is-narrow"></div>`
 
-            document.getElementById("generatedCities").innerHTML = value;
       }
    }
 
@@ -198,7 +167,7 @@ var ageArray = [];
       let randomNumberEle = document.getElementById("randomNumber");
       let resultEle = document.getElementById("result");
       result.innerHTML = '';
-        
+
       for (let i = 0; i < 5; i++) {
          const result = dayjs(new Date() - Math.random() * (1e+12)).format("dddd D MMMM YYYY")
          console.log("result:->" + result);
@@ -207,14 +176,11 @@ var ageArray = [];
 
          var age = getAge(birthDateObject);
          console.log("data from getAge:->" + age);
-        ageArray.push(age);
-        dateArray.push(result);
-        document.getElementById("result").innerHTML += `<div class="col-4 is-multiline is-centered"><div class="column is-narrow">
-         <div class="card has-background-light has-text-centered customize-card">
-<div class="card-content"><span id = "date" class="city-text">${result}</span></div><footer class="card-footer"><p class="card-footer-item title is-size-6" id = "age"title="State of the Philadelphia City"><br> Current Age:${age}</p></div></div><div class="column is-narrow"></div>`
 
-            document.getElementById("generatedCities").innerHTML = 5;     
-     }
+         document.getElementById("result").innerHTML += `<div class="columns is-multiline is-centered"><div class="column is-narrow">
+         <div class="card has-background-light has-text-centered customize-card">
+<div class="card-content"><span class="city-text">${result}</span></div><footer class="card-footer"><p class="card-footer-item title is-size-6" title="State of the Philadelphia City"><br> Current Age:${age}</p></div></div></div>`
+      }
    }
 
    function getAge(dateString) {
@@ -245,11 +211,9 @@ var ageArray = [];
 
          var age = getAge(birthDateObject);
          console.log("data from getAge:->" + age);
-         document.getElementById("result").innerHTML += `<div class=""><div class="column is-narrow">
+         document.getElementById("result").innerHTML += `<div class="columns is-multiline is-centered"><div class="column is-narrow">
          <div class="card has-background-light has-text-centered customize-card">
-<div class="card-content"><span id = "date" class="city-text">${result}</span></div><footer class="card-footer"><p class="card-footer-item title is-size-6" title="State of the Philadelphia City" id = "age"><br> Current Age:${age}</p></div></div></div>`
-      
-            document.getElementById("generatedCities").innerHTML = 10;
+<div class="card-content"><span class="city-text">${result}</span></div><footer class="card-footer"><p class="card-footer-item title is-size-6" title="State of the Philadelphia City"><br> Current Age:${age}</p></div></div></div>`
       }
    }
 
@@ -283,11 +247,9 @@ var ageArray = [];
          var age = getAge(birthDateObject);
          console.log("data from getAge:->" + age);
 
-         document.getElementById("result").innerHTML += `<div class=""><div class="column is-narrow">
+         document.getElementById("result").innerHTML += `<div class="columns is-multiline is-centered"><div class="column is-narrow">
          <div class="card has-background-light has-text-centered customize-card">
-<div class="card-content"><span id = "date" class="city-text">${result}</span></div><footer class="card-footer"><p class="card-footer-item title is-size-6" title="State of the Philadelphia City" id = "age"><br> Current Age:${age}</p></div></div></div>`
-      
-            document.getElementById("generatedCities").innerHTML = 15;
+<div class="card-content"><span class="city-text">${result}</span></div><footer class="card-footer"><p class="card-footer-item title is-size-6" title="State of the Philadelphia City"><br> Current Age:${age}</p></div></div></div>`
       }
    }
 
@@ -306,46 +268,80 @@ var ageArray = [];
 
 
    function outlined() {
+      x = Math.floor((Math.random() * 100) + 1);
+      let randomNumberEle = document.getElementById("randomNumber");
+      let resultEle = document.getElementById("result");
+      result.innerHTML = '';
 
+      for (let i = 0; i < x + 1; i++) {
+         const result = dayjs(new Date() - Math.random() * (1e+12)).format("dddd D MMMM YYYY")
+         console.log("result:->" + result);
+         var birthDateObject = dayjs(result, "dddd D MMMM YYYY");
+         console.log("birthDateObject:->" + birthDateObject);
 
-x = Math.floor((Math.random() * 100) + 1);
-     let randomNumberEle = document.getElementById("randomNumber");
-     let resultEle = document.getElementById("result");
-     result.innerHTML = '';
+         var age = getAge(birthDateObject);
+         console.log("data from getAge:->" + age);
 
-     for (let i = 0; i < x + 1; i++) {
-        const result = dayjs(new Date() - Math.random() * (1e+12)).format("dddd D MMMM YYYY")
-        console.log("result:->" + result);
-        var birthDateObject = dayjs(result, "dddd D MMMM YYYY");
-        console.log("birthDateObject:->" + birthDateObject);
-
-        var age = getAge(birthDateObject);
-        console.log("data from getAge:->" + age);
-
-        document.getElementById("result").innerHTML += `<div class=""><div class="column is-narrow">
+         document.getElementById("result").innerHTML += `<div class="columns is-multiline is-centered"><div class="column is-narrow">
          <div class="card has-background-light has-text-centered customize-card">
-<div class="card-content"><span id = "date" class="city-text">${result}</span></div><footer class="card-footer"><p class="card-footer-item title is-size-6" title="State of the Philadelphia City" id = "age"><br> Current Age:${age}</p></div></div></div>`
-      
-        document.getElementById("randomNumber").value = x;
-       //  document.getElementById("generatedCities").innerHTML = value;   
+<div class="card-content"><span class="city-text">${result}</span></div><footer class="card-footer"><p class="card-footer-item title is-size-6" title="State of the Philadelphia City"><br> Current Age:${age}</p></div></div></div>`
 
-       
-     }
-  }
+         document.getElementById("randomNumber").value = x;
+      }
+   }
 
-  function getAge(dateString) {
-     var today = new Date();
-     var birthDate = new Date(dateString);
-     var age = today.getFullYear() - birthDate.getFullYear();
-     var m = today.getMonth() - birthDate.getMonth();
-     if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
-        age--;
-     }
-     return age;
-  }
+   function getAge(dateString) {
+      var today = new Date();
+      var birthDate = new Date(dateString);
+      var age = today.getFullYear() - birthDate.getFullYear();
+      var m = today.getMonth() - birthDate.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+         age--;
+      }
+      return age;
+   }
 
 
-function download(filename, result){
+   function getCities() {
+      x = Math.floor((Math.random() * 100) + 1);
+      let randomNumberEle = document.getElementById("randomNumber");
+      let resultEle = document.getElementById("result");
+      result.innerHTML = '';
+      let value =1000
+
+
+
+      for (let i = 0; i < value + 1; i++) {
+         const result = dayjs(new Date() - Math.random() * (1e+12)).format("dddd D MMMM YYYY")
+         console.log("result:->" + result);
+         var birthDateObject = dayjs(result, "dddd D MMMM YYYY");
+         console.log("birthDateObject:->" + birthDateObject);
+
+         var age = getAge(birthDateObject);
+         console.log("data from getAge:->" + age);
+
+         document.getElementById("result").innerHTML += `<div class="columns is-multiline is-centered"><div class="column is-narrow">
+         <div class="card has-background-light has-text-centered customize-card">
+<div class="card-content"><span class="city-text">${result}</span></div><footer class="card-footer"><p class="card-footer-item title is-size-6" title="State of the Philadelphia City"><br> Current Age:${age}</p></div></div></div>`
+
+         document.getElementById("randomNumber").value = value;
+      }
+   }
+
+   function getAge(dateString) {
+      var today = new Date();
+      var birthDate = new Date(dateString);
+      var age = today.getFullYear() - birthDate.getFullYear();
+      var m = today.getMonth() - birthDate.getMonth();
+      if (m < 0 || (m === 0 && today.getDate() < birthDate.getDate())) {
+         age--;
+      }
+      return age;
+   }
+
+
+
+   function download(filename, result){
 
 var element = document.createElement('a');
 element.setAttribute('href','data:text/plain;charset=utf-8, ' + encodeURIComponent(result));
@@ -356,16 +352,14 @@ element.click();
 }
 document.getElementById("btn")
 .addEventListener("click", function () {
-     var result = document.getElementById("result").value;
-     var filename = "output.txt";
-     download(filename, result);
+      var result = document.getElementById("result").value;
+      var filename = "output.txt";
+      download(filename, result);
 }, false);
-  
-  
+   
+   
 
 
 
 
-
-
-</script></body></html>
+</script>
