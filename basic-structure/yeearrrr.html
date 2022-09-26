@@ -1,0 +1,101 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <title> Random Year Generator</title>
+
+
+
+    <body>
+
+        <div class="column is-3">
+            <div class="field has-addons">
+                <div class="control is-expanded">
+                    <input type="number" class="input is-medium" id="randomNumber" 
+                        placeholder="Enter Number">
+                </div>
+                <div class="control">
+                    <button class="button is-primary is-medium" type="button"
+                        onclick="randomeButton()">Generate</button>
+                </div>
+            </div>
+        </div>
+
+            <div class="columns">
+            <div class="column">
+                <div class="field has-addons" id="to" style="margin-left:370px">
+                    <div class="control">
+                        <a class="input has-background-light" >To</a>
+                    </div>
+                    <div class="control">
+                        <input class="input" type="number" id="min"  style="width:175px">
+                    </div>
+                </div>
+            </div>
+
+
+        <div class="column">
+                <div class="field has-addons" id="from" style="margin-left:-30px">
+                    <div class="control">
+                        <a class="input has-background-light">From</a>
+                    </div>
+                    <div class="control">
+                        <input class="input" type="number" id="max" style="width:175px">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div id="result" class="columns is-multiline is-centered">
+
+        </div>
+    </body>
+</head>
+
+
+<script src="https://unpkg.com/dayjs"></script>
+<script>
+//  function randomeButton(){
+//     let randomNumberEle = document.getElementById("randomNumber");
+//          let resultEle = document.getElementById("result");
+//          result.innerHTML = '';
+//          let value=document.getElementById("randomNumber").value
+        
+//     const to = dayjs(new Date() - Math.random() * (1e+12)).format("YYYY")
+//     console.log("to  :->" + to);
+        
+//     const from = dayjs(new Date() - Math.random() * (1e+12)).format("YYYY")
+//     console.log("from :->" + from);
+// }
+function randomeButton(min,max){ 
+    let value=document.getElementById("randomNumber").value
+    console.log("value :->" + value)
+   
+    for (let i = 0; i <= value; i++) {
+    let min=document.getElementById("min").value;
+    let max=document.getElementById("max").value;
+
+    let a=Math.floor(Math.random() * (max-min+1)) + min;
+        // let a= Math.floor(Math.random() * (max-min+1) +min);
+        console.log("a :->" + a);
+}
+
+        let randomNumber=randomeButton(2015,2018);
+        console.log("randomNumber:->" + randomNumber);
+
+        // document.getElementById("result").innerHTML=result;
+        
+}
+       
+
+
+
+</script>

@@ -35,7 +35,7 @@
                 <div class="buttons is-centered">
                     <div class="button is-medium is-primary" onclick="primary()">5 Years</div>
                     <div class="button is-medium is-info" onclick="info()">10 Years</div>
-                    <div class="button is-medium is-success" onclick="sucess()">15 Years</div>
+                    <div class="button is-medium is-success" onclick="success()">15 Years</div>
                     <div class="button is-medium is-link is-outlined" onclick="outlined()">Random</div>
                 </div>
             </div>
@@ -47,13 +47,13 @@
                     </div>
                     <div class="control">
                         <button class="button is-primary is-medium" type="button"
-                            onclick="randomeButton()">Generate</button>
+                            onclick="generateButton()">Generate</button>
                     </div>
                 </div>
             </div>
 
             <div class="column is-2 has-text-centered" style="width: auto;">
-                <div class="button is-medium is-dark is-outlined" id="showAll" onclick="getCities()">Show All</div>
+                <div class="button is-medium is-dark is-outlined" id="showAll" onclick="showAll()">Show All</div>
 
                 <button class="button is-medium is-link is-outlined" id="btn">
                     <span class="icon">
@@ -71,7 +71,7 @@
                         <a class="input has-background-light" >To</a>
                     </div>
                     <div class="control">
-                        <input class="input" type="number" max="4" style="width:175px">
+                        <input class="input" type="number" id="min" style="width:175px">
                     </div>
                 </div>
             </div>
@@ -83,7 +83,7 @@
                         <a class="input has-background-light">From</a>
                     </div>
                     <div class="control">
-                        <input class="input" type="number" max="4" style="width:175px">
+                        <input class="input" type="number" id="max" style="width:175px">
                     </div>
                 </div>
             </div>
@@ -101,3 +101,45 @@
             <span id="generatedCities"></span>
             <span>Years</span>
         </div>
+    </section>
+    
+
+
+
+
+
+    <script>
+        function generateButton(){
+            alert("generateButton")
+
+        }
+
+        function  primary(){
+            alert("primary")
+
+        }
+
+        function info(){
+            alert("info")
+
+        }
+
+        function success(){
+            alert("success")
+
+        }
+
+        function outlined(){
+            alert("outlined")
+
+        }
+
+        function showAll(){
+            alert("showAll")
+
+        }
+            
+        
+
+
+    </script>
