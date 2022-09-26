@@ -191,22 +191,7 @@
             </div>
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        <div id="result" class="columns is-multiline is-centered">
+  <div id="result" class="columns is-multiline is-centered">
 
         </div>
 
@@ -217,13 +202,7 @@
         </div>
     </section>
 
-
-
-
-
-
-
-    <script>
+<script>
         function generateButton() {
             let value = document.getElementById("randomNumber").value
             let resultEle = document.getElementById("result");
@@ -232,7 +211,7 @@
             var min = document.getElementById("min").value;
             var max = document.getElementById("max").value;
 
-            for (let i = 0; i <= value; i++) {
+            for (let i = 1; i <= value; i++) {
                 var randomNum = generateRandomNumber(parseInt(min), parseInt(max));
                 console.log("randomNum :->" + randomNum);
 
@@ -363,13 +342,12 @@
             let resultEle = document.getElementById("result");
             result.innerHTML = '';
 
-            for (let i = 1; i < value; i++) {
+            for (let i = 0; i < value; i++) {
                 var randomNum = generateRandomNumber(parseInt(min), parseInt(max));
                 console.log(randomNum);
                 document.getElementById("randomNumber").value = value;
                 document.getElementById("result").innerHTML += `<div class="column is-narrow"><div class="card has-background-light has-text-centered customize-card"><div class="card-content"><span class="city-text">${randomNum}</span></div>`
                 document.getElementById("generatedCities").innerHTML = value;
-                document.getElementById("citySectionArea").innerHTML = "";
 
             }
         }
