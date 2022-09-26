@@ -226,13 +226,13 @@
       <div id="result" class="columns is-multiline is-centered">
 
       </div>
-
+     
       <div class="notification is-link is-light title is-3 has-text-centered mt-5">
          <span>Showing</span>
          <span id="generatedCities"></span>
          <span>Birthdate</span>
       </div>
-
+      
       </div>
 
    </section>
@@ -288,7 +288,7 @@
          let randomNumberEle = document.getElementById("randomNumber");
          let resultEle = document.getElementById("result");
          result.innerHTML = '';
-         for (let i = 0; i < value; i++) {
+         let value = parseInt(document.getElementById("randomNumber").value);
 
          for (let i = 0; i < value; i++) {
             const result = dayjs(new Date() - Math.random() * (1e+12)).format(" D MMMM YYYY")
@@ -304,7 +304,7 @@
 
             document.getElementById("result").innerHTML += `<div class="column is-narrow"><div class="card has-background-light has-text-centered customize-card"><div class="card-content"><span class="city-text">${result}</span></div><footer class="card-footer"><p class="card-footer-item title is-size-6" title="State of the Philadelphia City">${result1}</p></footer><footer class="card-footer"><p class="card-footer-item title is-size-6 has-text-grey" title="Population of the Philadelphia City">Current Age : ${age}</p></footer></div></div>`
 
-            document.getElementById("citySectionArea").innerHTML = "";
+            document.getElementById("citySectionArea").innerHTML ="";
             document.getElementById("generatedCities").innerHTML = value;
 
          }
@@ -462,7 +462,7 @@
             document.getElementById("result").innerHTML += `<div class="column is-narrow"><div class="card has-background-light has-text-centered customize-card"><div class="card-content"><span class="city-text">${result}</span></div><footer class="card-footer"><p class="card-footer-item title is-size-6" title="State of the Philadelphia City">${result1}</p></footer><footer class="card-footer"><p class="card-footer-item title is-size-6 has-text-grey" title="Population of the Philadelphia City">Current Age : ${age}</p></footer></div></div>`
             document.getElementById("citySectionArea").innerHTML = "";
             document.getElementById("randomNumber").value = x;
-            document.getElementById("generatedCities").innerHTML = x;
+             document.getElementById("generatedCities").innerHTML = x;  
 
          }
       }

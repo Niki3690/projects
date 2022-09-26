@@ -1,24 +1,383 @@
-<html lang="en"><head>
+<html lang="en">
+
+<head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
-    <title>Login Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <title> Random Year Generator</title>
+    <style>
+        /* .to{
+            margin-left: 220px;
+        } */
+    </style>
+
 </head>
-<body cz-shortcut-listen="true">
+
+<body>
+    <section class="container section pt-5 is-fluid">
+        <div class="columns">
+            <div class="column is-3"></div>
+            <div class="column">
+                <h1 class="title has-text-centered" id="mainTitle">Random Year Generator</h1>
+            </div>
+            <div class="column is-3">
+                <div class="has-text-right has-text-centered-mobile">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="columns is-centered">
+            <div class="column is-6" style="width: auto;">
+                <div class="buttons is-centered">
+                    <div class="button is-medium is-primary" onclick="primary()">5 Years</div>
+                    <div class="button is-medium is-info" onclick="info()">10 Years</div>
+                    <div class="button is-medium is-success" onclick="success()">15 Years</div>
+                    <div class="button is-medium is-link is-outlined" onclick="outlined()">Random</div>
+                </div>
+            </div>
+            <div class="column is-3">
+                <div class="field has-addons">
+                    <div class="control is-expanded">
+                        <input type="number" class="input is-medium" id="randomNumber" value="10"
+                            placeholder="Enter Number">
+                    </div>
+                    <div class="control">
+                        <button class="button is-primary is-medium" type="button"
+                            onclick="generateButton()">Generate</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-2 has-text-centered" style="width: auto;">
+                <div class="button is-medium is-dark is-outlined" id="showAll" onclick="showAll()">Show All</div>
+
+                <button class="button is-medium is-link is-outlined" id="btn">
+                    <span class="icon">
+                        <i class="fa fa-download"></i>
+                    </span>
+                    <span>Download</span></button>
+
+            </div>
+        </div>
+
+
+
+
+
+        <div class="columns is-multiline is-centered" id="citySectionArea">
+            <div class="column is-narrow">
+               <div class="card has-background-light has-text-centered customize-card">
+                  <div class="card-content">
+                     <span class="city-text">2013</span>
+                  </div>
+                  </div>
+            </div>
+
+            
+            <div class="column is-narrow">
+               <div class="card has-background-light has-text-centered customize-card">
+                  <div class="card-content">
+                     <span class="city-text">2000</span>
+                  </div>
+                  </div>
+            </div>
+
+            
+            <div class="column is-narrow">
+               <div class="card has-background-light has-text-centered customize-card">
+                  <div class="card-content">
+                     <span class="city-text">2020</span>
+                  </div>
+                  </div>
+            </div>
+
+            <div class="column is-narrow">
+                <div class="card has-background-light has-text-centered customize-card">
+                   <div class="card-content">
+                      <span class="city-text">2004</span>
+                   </div>
+                   </div>
+             </div>
+
+             <div class="column is-narrow">
+                <div class="card has-background-light has-text-centered customize-card">
+                   <div class="card-content">
+                      <span class="city-text">2006</span>
+                   </div>
+                   </div>
+             </div>
+
+             <div class="column is-narrow">
+                <div class="card has-background-light has-text-centered customize-card">
+                   <div class="card-content">
+                      <span class="city-text">2010</span>
+                   </div>
+                   </div>
+             </div>
+
+             <div class="column is-narrow">
+                <div class="card has-background-light has-text-centered customize-card">
+                   <div class="card-content">
+                      <span class="city-text">2002</span>
+                   </div>
+                   </div>
+             </div>
+
+             <div class="column is-narrow">
+                <div class="card has-background-light has-text-centered customize-card">
+                   <div class="card-content">
+                      <span class="city-text">2003</span>
+                   </div>
+                   </div>
+             </div>
+
+             <div class="column is-narrow">
+                <div class="card has-background-light has-text-centered customize-card">
+                   <div class="card-content">
+                      <span class="city-text">2021</span>
+                   </div>
+                   </div>
+             </div>
+
+             <div class="column is-narrow">
+                <div class="card has-background-light has-text-centered customize-card">
+                   <div class="card-content">
+                      <span class="city-text">2005</span>
+                   </div>
+                   </div>
+             </div>
+        </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        <div class="columns">
+            <div class="column">
+                <div class="field has-addons" id="to" style="margin-left:370px">
+                    <div class="control">
+                        <a class="input has-background-light">To</a>
+                    </div>
+                    <div class="control">
+                        <input class="input" type="number" value="1999" id="min" style="width:175px">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="column">
+                <div class="field has-addons" id="from" style="margin-left:-30px">
+                    <div class="control">
+                        <a class="input has-background-light">From</a>
+                    </div>
+                    <div class="control">
+                        <input class="input" type="number" value="2022" id="max" style="width:175px">
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <div id="result" class="columns is-multiline is-centered">
+
+        </div>
+
+        <div class="notification is-link is-light title is-3 has-text-centered mt-5">
+            <span>Showing</span>
+            <span id="generatedCities"></span>
+            <span>Years</span>
+        </div>
+    </section>
+
+
+
+
+
+
 
     <script>
+        function generateButton() {
+            let value = document.getElementById("randomNumber").value
+            let resultEle = document.getElementById("result");
+            result.innerHTML = '';
 
-        const min=parseInt(prompt("Enter a min value:"));
-        const max=parseInt(prompt("Enter a max value:"));
+            var min = document.getElementById("min").value;
+            var max = document.getElementById("max").value;
+
+            for (let i = 1; i <= value; i++) {
+                var randomNum = generateRandomNumber(parseInt(min), parseInt(max));
+                console.log("randomNum :->" + randomNum);
+                // document.getElementById("result").innerHTML += `${randomNum}`
+                 document.getElementById("result").innerHTML +=  `<div class="column is-narrow"><div class="card has-background-light has-text-centered customize-card"><div class="card-content"><span class="city-text">${randomNum}</span></div>`
+
+                document.getElementById("generatedCities").innerHTML = value;
+
+            }
+        }
+
+        function generateRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+            console.log("generateRandomNumber :->" + generateRandomNumber)
+        }
+        // document.getElementById("result").innerHTML=`${randomNum}`
 
 
-        const a=Math.floor(Math.random() * (max-min+1)) + min;
-
-        console.log(`Random value between ${min} and ${max} is ${a}`);
 
 
 
+        function primary() {
+            let value = document.getElementById("randomNumber").value
+            let resultEle = document.getElementById("result");
+            result.innerHTML = '';
+
+            var min = document.getElementById("min").value;
+            var max = document.getElementById("max").value;
+
+            for (let i = 1; i <= 5; i++) {
+                var randomNum = generateRandomNumber(parseInt(min), parseInt(max));
+                console.log("randomNum :->" + randomNum);
+                document.getElementById("result").innerHTML +=  `<div class="column is-narrow"><div class="card has-background-light has-text-centered customize-card"><div class="card-content"><span class="city-text">${randomNum}</span></div>`
+
+                document.getElementById("generatedCities").innerHTML = 5;
+            }
+        }
+
+        function generateRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+            console.log(generateRandomNumber)
+        }
 
 
-    </script></body></html>
+
+
+        function info() {
+            let value = document.getElementById("randomNumber").value
+            let resultEle = document.getElementById("result");
+            result.innerHTML = '';
+
+            var min = document.getElementById("min").value;
+            var max = document.getElementById("max").value;
+
+            for (let i = 1; i <= 10; i++) {
+                var randomNum = generateRandomNumber(parseInt(min), parseInt(max));
+                console.log("randomNum :->" + randomNum);
+                  document.getElementById("result").innerHTML +=  `<div class="column is-narrow"><div class="card has-background-light has-text-centered customize-card"><div class="card-content"><span class="city-text">${randomNum}</span></div>`
+
+                document.getElementById("generatedCities").innerHTML = 10;
+            }
+        }
+
+        function generateRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+            console.log(generateRandomNumber)
+        }
+
+
+
+        function success() {
+            let value = document.getElementById("randomNumber").value
+            let resultEle = document.getElementById("result");
+            result.innerHTML = '';
+
+            var min = document.getElementById("min").value;
+            var max = document.getElementById("max").value;
+
+            for (let i = 1; i <= 15; i++) {
+                var randomNum = generateRandomNumber(parseInt(min), parseInt(max));
+                console.log("randomNum :->" + randomNum);
+                  document.getElementById("result").innerHTML +=  `<div class="column is-narrow"><div class="card has-background-light has-text-centered customize-card"><div class="card-content"><span class="city-text">${randomNum}</span></div>`
+
+                document.getElementById("generatedCities").innerHTML = 15;
+            }
+        }
+
+        function generateRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+            console.log(generateRandomNumber)
+        }
+
+
+
+
+        function outlined() {
+            let x = Math.floor((Math.random() * 100) + 1);
+            var min = document.getElementById("min").value;
+            var max = document.getElementById("max").value;
+            let resultEle = document.getElementById("result");
+            result.innerHTML = '';
+
+            for (let i = 1; i < x; i++) {
+                var randomNum = generateRandomNumber(parseInt(min), parseInt(max));
+                console.log("randomNum :->" + randomNum);
+                document.getElementById("randomNumber").value = x;
+                  document.getElementById("result").innerHTML +=  `<div class="column is-narrow"><div class="card has-background-light has-text-centered customize-card"><div class="card-content"><span class="city-text">${randomNum}</span></div>`
+                  
+                document.getElementById("generatedCities").innerHTML = x;
+            }
+        }
+
+        function generateRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+            console.log(generateRandomNumber)
+        }
+
+
+
+
+        function showAll() {
+            let value = 100;
+
+            var min = document.getElementById("min").value;
+            var max = document.getElementById("max").value;
+            let resultEle = document.getElementById("result");
+            result.innerHTML = '';
+
+            for (let i = 0; i < value; i++) {
+                var randomNum = generateRandomNumber(parseInt(min), parseInt(max));
+                console.log(randomNum);
+                document.getElementById("randomNumber").value = value;
+                document.getElementById("result").innerHTML +=  `<div class="column is-narrow"><div class="card has-background-light has-text-centered customize-card"><div class="card-content"><span class="city-text">${randomNum}</span></div>`
+                document.getElementById("generatedCities").innerHTML = value;
+
+            }
+        }
+
+
+        function generateRandomNumber(min, max) {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+            console.log(generateRandomNumber)
+        }
+
+
+
+
+
+
+    </script>
+
+
+</body>
+
+</html>
