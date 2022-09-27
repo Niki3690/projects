@@ -9,6 +9,34 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <title>Random Dinosaur Generator</title>
 
+    <style>
+        .customize-card {
+            width: auto;
+            margin: 0 auto;
+        }
+
+        .card-content {
+            background-color: transparent;
+            padding: 1.5rem;
+        }
+
+        .image {
+            width: 100%;
+            height: 220px;
+            background-size: cover;
+        }
+       p{
+        text-align: center;
+       }
+       
+        /* .card-footer {
+            background-color: transparent;
+            border-top: 1px solid #ededed;
+            align-items: stretch;
+            display: flex;
+        } */
+    </style>
+
 
 </head>
 
@@ -38,7 +66,7 @@
             <div class="column is-3">
                 <div class="field has-addons">
                     <div class="control is-expanded">
-                        <input type="number" class="input is-medium" id="randomNumber" value="10"
+                        <input type="number" class="input is-medium" id="randomNumber" value="5"
                             placeholder="Enter Number">
                     </div>
                     <div class="control">
@@ -60,6 +88,57 @@
             </div>
         </div>
 
+
+        <div class="columns is-multiline is-centered" id="citySectionArea">
+            <div class="column is-narrow">
+                <div class="card has-background-light customize-card">
+                    <div class="card-content"> <img class="tarot-card-image" src="Dilophosaurus.webp"> </div>
+                    <footer class="card-footer">
+                        <p class="card-footer-item title is-size-4">Dilophosaurus</p>
+                    </footer>
+                </div>
+            </div>
+
+
+            <div class="column is-narrow">
+                <div class="card has-background-light customize-card">
+                    <div class="card-content"> <img class="tarot-card-image" src="Stegosaurus.webp"> </div>
+                    <footer class="card-footer">
+                        <p class="card-footer-item title is-size-4">Stegosaurus</p>
+                    </footer>
+                </div>
+            </div>
+
+
+            <div class="column is-narrow">
+                <div class="card has-background-light customize-card">
+                    <div class="card-content"> <img class="tarot-card-image" src="Iguanodon.webp"> </div>
+                    <footer class="card-footer">
+                        <p class="card-footer-item title is-size-4">Iguanodon</p>
+                    </footer>
+                </div>
+            </div>
+
+            <div class="column is-narrow">
+                <div class="card has-background-light customize-card">
+                    <div class="card-content"> <img class="tarot-card-image" src="Brachiosaurus (1).webp"> </div>
+                    <footer class="card-footer">
+                        <p class="card-footer-item title is-size-4">Brachiosaurus</p>
+                    </footer>
+                </div>
+            </div>
+
+
+            <div class="column is-narrow">
+                <div class="card has-background-light customize-card">
+                    <div class="card-content"> <img class="tarot-card-image" src="Apatosaurus.webp"> </div>
+                    <footer class="card-footer">
+                        <p class="card-footer-item title is-size-4">Apatosaurus</p>
+                    </footer>
+                </div>
+            </div>
+        </div>
+
         <div id="result" class="columns is-multiline is-centered">
 
         </div>
@@ -72,168 +151,329 @@
     </section>
 
 
-    <figure class="image" >
-        <img src="Dimorphodon.jpg">
-      </figure>
-      
-
-
 
     <script>
-        var txtFileData=[
+        var txtFileData = [
             {
                 "name": "Brachiosaurus",
-                "image":"Brachiosaurus.jpg",
-                "link":"https://en.wikipedia.org/wiki/Brachiosaurus",
+                "image": "Brachiosaurus (1).webp",
+                "link": "https://en.wikipedia.org/wiki/Brachiosaurus",
             },
             {
                 "name": "Tyrannosaurus rex",
-                "image":"Tyrannosaurus-rex (1).jpg",
-                "link":"https://en.wikipedia.org/wiki/Tyrannosaurus",
+                "image": "Tyrannosaurus-rex (1).webp",
+                "link": "https://en.wikipedia.org/wiki/Tyrannosaurus",
             },
             {
                 "name": "Stegosaurus",
-                "image":"Stegosaurus.jpg",
-                "link":"https://en.wikipedia.org/wiki/Stegosaurus",
+                "image": "Stegosaurus.webp",
+                "link": "https://en.wikipedia.org/wiki/Stegosaurus",
             },
             {
                 "name": "Triceratops",
-                "image":"Triceratops (1).jpg",
-                "link":"https://en.wikipedia.org/wiki/Triceratops",
+                "image": "Triceratops (1).webp",
+                "link": "https://en.wikipedia.org/wiki/Triceratops",
             },
             {
                 "name": "Apatosaurus",
-                "image":"Apatosaurus.jpg",
-                "link":"https://en.wikipedia.org/wiki/Apatosaurus",
+                "image": "Apatosaurus.webp",
+                "link": "https://en.wikipedia.org/wiki/Apatosaurus",
             },
             {
                 "name": "Pterodactyl",
-                "image":"Pterodactyl.jpg",
-                "link":"https://en.wikipedia.org/wiki/Pterosaur",
+                "image": "Pterodactyl.webp",
+                "link": "https://en.wikipedia.org/wiki/Pterosaur",
             },
             {
                 "name": "Velociraptor",
-                "image":"Velociraptor.jpg",
-                "link":"https://en.wikipedia.org/wiki/Velociraptor",
+                "image": "Velociraptor.webp",
+                "link": "https://en.wikipedia.org/wiki/Velociraptor",
             },
             {
                 "name": "Spinosaurus",
-                "image":"Spinosaurus.jpg",
-                "link":"https://en.wikipedia.org/wiki/Spinosaurus",
+                "image": "Spinosaurus.webp",
+                "link": "https://en.wikipedia.org/wiki/Spinosaurus",
             },
             {
                 "name": "Mosasaurus",
-                "image":"Mosasaurus.jpg",
-                "link":"https://en.wikipedia.org/wiki/Mosasaurus",
+                "image": "Mosasaurus.webp",
+                "link": "https://en.wikipedia.org/wiki/Mosasaurus",
             },
             {
                 "name": "Iguanodon",
-                "image":"Iguanodon.jpg",
-                "link":"https://en.wikipedia.org/wiki/Iguanodon",
+                "image": "Iguanodon.webp",
+                "link": "https://en.wikipedia.org/wiki/Iguanodon",
             },
             {
                 "name": "Carnotaurus",
-                "image":"Carnotaurus.jpg",
-                "link":"https://en.wikipedia.org/wiki/Carnotaurus",
+                "image": "Carnotaurus.webp",
+                "link": "https://en.wikipedia.org/wiki/Carnotaurus",
             },
             {
                 "name": "Ankylosaurus",
-                "image":"Ankylosaurus.jpg",
-                "link":"https://en.wikipedia.org/wiki/Ankylosaurus",
+                "image": "Ankylosaurus.webp",
+                "link": "https://en.wikipedia.org/wiki/Ankylosaurus",
             },
             {
                 "name": "Allosaurus",
-                "image":"Allosaurus.jpg",
-                "link":"https://en.wikipedia.org/wiki/Allosaurus",
+                "image": "Allosaurus (1).webp",
+                "link": "https://en.wikipedia.org/wiki/Allosaurus",
             },
             {
                 "name": "Plesiosaurus",
-                "image":"Plesiosaurus.jpg",
-                "link":"https://en.wikipedia.org/wiki/Plesiosaurus",
+                "image": "Plesiosaurus.webp",
+                "link": "https://en.wikipedia.org/wiki/Plesiosaurus",
             },
             {
                 "name": "Dilophosaurus",
-                "image":"Dilophosaurus.jpg",
-                "link":"https://en.wikipedia.org/wiki/Dilophosaurus",
+                "image": "Dilophosaurus.webp",
+                "link": "https://en.wikipedia.org/wiki/Dilophosaurus",
             },
             {
                 "name": "Archaeopteryx",
-                "image":"Archaeopteryx.jpg",
-                "link":"https://en.wikipedia.org/wiki/Archaeopteryx",
+                "image": "Archaeopteryx.webp",
+                "link": "https://en.wikipedia.org/wiki/Archaeopteryx",
             },
             {
                 "name": "Diplodocus",
-                "image":"Diplodocus.jpg",
-                "link":"https://en.wikipedia.org/wiki/Diplodocus",
+                "image": "Diplodocus.webp",
+                "link": "https://en.wikipedia.org/wiki/Diplodocus",
             },
             {
                 "name": "Gallimimus",
-                "image":"Gallimimus.jpg",
-                "link":"https://en.wikipedia.org/wiki/Gallimimus",
+                "image": "Gallimimus.webp",
+                "link": "https://en.wikipedia.org/wiki/Gallimimus",
             },
             {
                 "name": "Europasaurus",
-                "image":"Europasaurus.jpg",
-                "link":"https://en.wikipedia.org/wiki/Europasaurus",
+                "image": "Europasaurus.webp",
+                "link": "https://en.wikipedia.org/wiki/Europasaurus",
             },
             {
                 "name": "Parasaurolophus",
-                "image":"Parasaurolophus.jpg",
-                "link":"https://en.wikipedia.org/wiki/Parasaurolophus",
+                "image": "Parasaurolophus.webp",
+                "link": "https://en.wikipedia.org/wiki/Parasaurolophus",
             },
             {
                 "name": "Hadrosaurus",
-                "image":"Hadrosaurus.jpg",
-                "link":"https://en.wikipedia.org/wiki/Hadrosaurus", 
+                "image": "Hadrosaurus.webp",
+                "link": "https://en.wikipedia.org/wiki/Hadrosaurus",
             },
             {
                 "name": "Troodon",
-                "image":"Troodon.jpg",
-                "link":"https://en.wikipedia.org/wiki/Troodon", 
+                "image": "Troodon.webp",
+                "link": "https://en.wikipedia.org/wiki/Troodon",
             },
             {
                 "name": "Coelophysis",
-                "image":"Coelophysis.jpg",
-                "link":"https://en.wikipedia.org/wiki/Coelophysis", 
+                "image": "Coelophysis.webp",
+                "link": "https://en.wikipedia.org/wiki/Coelophysis",
             },
             {
                 "name": "Deinonychus",
-                "image":"Deinonychus.jpg",
-                "link":"https://en.wikipedia.org/wiki/Deinonychus", 
+                "image": "Deinonychus.webp",
+                "link": "https://en.wikipedia.org/wiki/Deinonychus",
             },
             {
                 "name": "Dimorphodon",
-                "image":"Dimorphodon.jpg",
-                "link":"https://en.wikipedia.org/wiki/Dimorphodon", 
+                "image": "Dimorphodon.jpg",
+                "link": "https://en.wikipedia.org/wiki/Dimorphodon",
             }
-         
+
 
 
         ]
 
-        let uniqueRandomNums = [];  
 
-function generateRandomTarotCard() {
-   let randomNo = document.getElementById("inputRandomNumber").value;
-   let code = "";
-   uniqueRandomNums = [];     // Re-initialize array of existed random numbers
-   txtFileData = [];
-   let indexData = 0;
 
-   // Generate Tarot Cards
-   for (i = 1; i <= randomNo; i++) {
-      if (i <= arrayOfDetails.length) {
-         let random = getRandomNoTarotCard(arrayOfDetails.length);    // Generate Random Number
+        function generateButton() {
+            let result = document.getElementById("result");
+            let value = document.getElementById("randomNumber").value;
+            result.innerHTML = '';
+           
 
-         // Create TXT File Of Cities
-         txtFileData[indexData++] = arrayOfDetails[random]["card"];
+            for (i = 1; i <= value; i++) {
+                let random = Math.floor(Math.random() * 25);
+                txtFileData[randomNumber]
+                console.log("random:->" + random)
 
-         code += '<div class="column is-narrow"><div class="card has-background-light customize-card"><div class="card-content"><img class="tarot-card-image" src=' + arrayOfDetails[random]["image"] + ' onerror="this.src=\'/img/random-generators-images/general-image.png\';" class="hobbyImage" loading="lazy"></div><footer class="card-footer"><p class="card-footer-item title is-size-4">' + arrayOfDetails[random]["card"] + '</p></footer></div></div>';
-         document.getElementById("generatedTarotCard").innerHTML = i;
-      }
-   }
-   document.getElementById("tarotCardSectionArea").innerHTML = code;
-}
+                let element = txtFileData[random]
+                console.log("element:->" + element)
 
-    </script>
+                document.getElementById("generatedCities").innerHTML = value;
+                document.getElementById("citySectionArea").innerHTML = "";
 
+
+               
+
+                // document.getElementById("result").innerHTML += `<div class="column is-narrow"> <div class="card has-background-light has-text-centered customize-card "><div class="card-content"><div class="card-content"><figure class="image"><img src="${element.image}"></figure></span></div><footer class="card-footer"><a href="${element.link}"><p class="card-footer-item title is-size-4">${element.name}</p></a></div></div></div></footer>`
+
+                document.getElementById("result").innerHTML += ` <div class="column is-narrow"><div class="card has-background-light customize-card">
+                <div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><footer class="card-footer"><a href="${element.link}"><p class="card-footer-item title is-size-4">${element.name}</p></a></footer></div></div>`
+
+
+
+
+            };
+        }
+
+
+
+
+
+        function primary() {
+            let result = document.getElementById("result");
+            let value = 5
+            result.innerHTML = '';
+            // var txtFileData=[]
+
+            for (i = 1; i <= value; i++) {
+                let random = Math.floor(Math.random() * 25);
+                txtFileData[randomNumber]
+                console.log("random:->" + random)
+
+                let element = txtFileData[random]
+                console.log("element:->" + element)
+
+                document.getElementById("generatedCities").innerHTML = value;
+                document.getElementById("citySectionArea").innerHTML = "";
+
+
+                document.getElementById("result").innerHTML += ` <div class="column is-narrow"><div class="card has-background-light customize-card">
+                <div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><footer class="card-footer"><a href="${element.link}"><p class="card-footer-item title is-size-4">${element.name}</p></a></footer></div></div>`
+
+
+
+            };
+        }
+
+
+
+
+
+        function info() {
+            let result = document.getElementById("result");
+            let value = 10
+            result.innerHTML = '';
+
+
+            for (i = 1; i <= value; i++) {
+                let random = Math.floor(Math.random() * 25);
+                txtFileData[randomNumber]
+                console.log("random:->" + random)
+
+                let element = txtFileData[random]
+                console.log("element:->" + element)
+
+                document.getElementById("generatedCities").innerHTML = value;
+                document.getElementById("citySectionArea").innerHTML = "";
+
+
+                document.getElementById("result").innerHTML += ` <div class="column is-narrow"><div class="card has-background-light customize-card">
+                <div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><footer class="card-footer"><a href="${element.link}"><p class="card-footer-item title is-size-4">${element.name}</p></a></footer></div></div>`
+
+
+
+            };
+        }
+
+
+
+        function success() {
+            let result = document.getElementById("result");
+            let value = 15
+            result.innerHTML = '';
+
+
+            for (i = 1; i <= value; i++) {
+                let random = Math.floor(Math.random() * 25);
+                txtFileData[randomNumber]
+                console.log("random:->" + random)
+
+                let element = txtFileData[random]
+                console.log("element:->" + element)
+
+                document.getElementById("generatedCities").innerHTML = value;
+                document.getElementById("citySectionArea").innerHTML = "";
+
+
+                document.getElementById("result").innerHTML += ` <div class="column is-narrow"><div class="card has-background-light customize-card">
+                <div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><footer class="card-footer"><a href="${element.link}"><p class="card-footer-item title is-size-4">${element.name}</p></a></footer></div></div>`
+
+
+
+            };
+        }
+
+
+
+
+
+
+        function outlined() {
+            let x = Math.floor((Math.random() * 25) + 1);
+            let result = document.getElementById("result");
+            result.innerHTML = '';
+
+
+            for (i = 1; i <= x; i++) {
+                let random = Math.floor(Math.random() * 25);
+                txtFileData[randomNumber]
+                console.log("random:->" + random)
+
+                let element = txtFileData[random]
+                console.log("element:->" + element)
+
+                document.getElementById("randomNumber").value = x;
+                document.getElementById("generatedCities").innerHTML = x;
+                document.getElementById("citySectionArea").innerHTML = "";
+
+
+
+                document.getElementById("result").innerHTML += ` <div class="column is-narrow"><div class="card has-background-light customize-card">
+                <div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><footer class="card-footer"><a href="${element.link}"><p class="card-footer-item title is-size-4">${element.name}</p></a></footer></div></div>`
+
+
+
+            };
+        }
+
+
+
+
+
+
+
+        function showAll() {
+
+            let result = document.getElementById("result");
+            let value = 25
+            result.innerHTML = '';
+
+
+            for (i = 1; i <= value; i++) {
+                let random = Math.floor(Math.random() * 25);
+                txtFileData[randomNumber]
+                console.log("random:->" + random)
+
+                let element = txtFileData[random]
+                console.log("element:->" + element)
+
+                document.getElementById("randomNumber").value = value;
+                document.getElementById("generatedCities").innerHTML = value;
+                document.getElementById("citySectionArea").innerHTML = "";
+
+
+
+                document.getElementById("result").innerHTML += ` <div class="column is-narrow"><div class="card has-background-light customize-card">
+                <div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><footer class="card-footer"><a href="${element.link}"><p class="card-footer-item title is-size-4" style>${element.name}</p></a></footer></div></div>`
+
+
+
+            };
+        }
+
+ </script>
+</body>
+
+</html>
