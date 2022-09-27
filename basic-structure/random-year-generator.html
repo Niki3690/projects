@@ -9,16 +9,15 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
     <title> Random Year Generator</title>
     <style>
- .customize-card {
+ /* .customize-card {
          width: 150px;
          margin: 0 auto;
          height: 80px;
-         /* text-align: center; */
          margin-top: auto;
          margin-left: auto;
          margin-right: auto;
          margin-bottom: auto;
-      }
+      } */
 
       .city-text {
          font-size: 1.7em;
@@ -202,6 +201,11 @@
         </div>
     </section>
 
+
+
+
+
+
 <script>
         function generateButton() {
             let value = document.getElementById("randomNumber").value
@@ -210,6 +214,7 @@
 
             var min = document.getElementById("min").value;
             var max = document.getElementById("max").value;
+           
 
             for (let i = 1; i <= value; i++) {
                 var randomNum = generateRandomNumber(parseInt(min), parseInt(max));
@@ -219,6 +224,7 @@
 
                 document.getElementById("generatedCities").innerHTML = value;
                 document.getElementById("citySectionArea").innerHTML = "";
+                
 
             }
         }
