@@ -1,0 +1,211 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+    <title>Random Dinosaur Generator</title>
+
+
+</head>
+
+<body>
+    <section class="container section pt-5 is-fluid">
+        <div class="columns">
+            <div class="column is-3"></div>
+            <div class="column">
+                <h1 class="title has-text-centered" id="mainTitle">Random Dinosaur Generator</h1>
+            </div>
+            <div class="column is-3">
+                <div class="has-text-right has-text-centered-mobile">
+
+                </div>
+            </div>
+        </div>
+
+        <div class="columns is-centered">
+            <div class="column is-6" style="width: auto;">
+                <div class="buttons is-centered">
+                    <div class="button is-medium is-primary" onclick="primary()">5 Dinosaur</div>
+                    <div class="button is-medium is-info" onclick="info()">10 Dinosaur</div>
+                    <div class="button is-medium is-success" onclick="success()">15 Dinosaur</div>
+                    <div class="button is-medium is-link is-outlined" onclick="outlined()">Random</div>
+                </div>
+            </div>
+            <div class="column is-3">
+                <div class="field has-addons">
+                    <div class="control is-expanded">
+                        <input type="number" class="input is-medium" id="randomNumber" value="10"
+                            placeholder="Enter Number">
+                    </div>
+                    <div class="control">
+                        <button class="button is-primary is-medium" type="button"
+                            onclick="generateButton()">Generate</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="column is-2 has-text-centered" style="width: auto;">
+                <div class="button is-medium is-dark is-outlined" id="showAll" onclick="showAll()">Show All</div>
+
+                <button class="button is-medium is-link is-outlined" id="btn">
+                    <span class="icon">
+                        <i class="fa fa-download"></i>
+                    </span>
+                    <span>Download</span></button>
+
+            </div>
+        </div>
+
+        <div id="result" class="columns is-multiline is-centered">
+
+        </div>
+
+        <div class="notification is-link is-light title is-3 has-text-centered mt-5">
+            <span>Showing</span>
+            <span id="generatedCities"></span>
+            <span>Dinosaur</span>
+        </div>
+    </section>
+
+
+    <!-- <figure class="image" >
+        <img src="Dimorphodon.jpg">
+      </figure>
+       -->
+
+
+
+    <script>
+        let array=[
+            {
+                "name": "Brachiosaurus",
+                "image":"Brachiosaurus.jpg",
+                "link":"https://en.wikipedia.org/wiki/Brachiosaurus",
+            },
+            {
+                "name": "Tyrannosaurus rex",
+                "image":"Tyrannosaurus-rex (1).jpg",
+                "link":"https://en.wikipedia.org/wiki/Tyrannosaurus",
+            },
+            {
+                "name": "Stegosaurus",
+                "image":"Stegosaurus.jpg",
+                "link":"https://en.wikipedia.org/wiki/Stegosaurus",
+            },
+            {
+                "name": "Triceratops",
+                "image":"Triceratops (1).jpg",
+                "link":"https://en.wikipedia.org/wiki/Triceratops",
+            },
+            {
+                "name": "Apatosaurus",
+                "image":"Apatosaurus.jpg",
+                "link":"https://en.wikipedia.org/wiki/Apatosaurus",
+            },
+            {
+                "name": "Pterodactyl",
+                "image":"Pterodactyl.jpg",
+                "link":"https://en.wikipedia.org/wiki/Pterosaur",
+            },
+            {
+                "name": "Velociraptor",
+                "image":"Velociraptor.jpg",
+                "link":"https://en.wikipedia.org/wiki/Velociraptor",
+            },
+            {
+                "name": "Spinosaurus",
+                "image":"Spinosaurus.jpg",
+                "link":"https://en.wikipedia.org/wiki/Spinosaurus",
+            },
+            {
+                "name": "Mosasaurus",
+                "image":"Mosasaurus.jpg",
+                "link":"https://en.wikipedia.org/wiki/Mosasaurus",
+            },
+            {
+                "name": "Iguanodon",
+                "image":"Iguanodon.jpg",
+                "link":"https://en.wikipedia.org/wiki/Iguanodon",
+            },
+            {
+                "name": "Carnotaurus",
+                "image":"Carnotaurus.jpg",
+                "link":"https://en.wikipedia.org/wiki/Carnotaurus",
+            },
+            {
+                "name": "Ankylosaurus",
+                "image":"Ankylosaurus.jpg",
+                "link":"https://en.wikipedia.org/wiki/Ankylosaurus",
+            },
+            {
+                "name": "Allosaurus",
+                "image":"Allosaurus.jpg",
+                "link":"https://en.wikipedia.org/wiki/Allosaurus",
+            },
+            {
+                "name": "Plesiosaurus",
+                "image":"Plesiosaurus.jpg",
+                "link":"https://en.wikipedia.org/wiki/Plesiosaurus",
+            },
+            {
+                "name": "Dilophosaurus",
+                "image":"Dilophosaurus.jpg",
+                "link":"https://en.wikipedia.org/wiki/Dilophosaurus",
+            },
+            {
+                "name": "Archaeopteryx",
+                "image":"Archaeopteryx.jpg",
+                "link":"https://en.wikipedia.org/wiki/Archaeopteryx",
+            },
+            {
+                "name": "Diplodocus",
+                "image":"Diplodocus.jpg",
+                "link":"https://en.wikipedia.org/wiki/Diplodocus",
+            },
+            {
+                "name": "Gallimimus",
+                "image":"Gallimimus.jpg",
+                "link":"https://en.wikipedia.org/wiki/Gallimimus",
+            },
+            {
+                "name": "Europasaurus",
+                "image":"Europasaurus.jpg",
+                "link":"https://en.wikipedia.org/wiki/Europasaurus",
+            },
+            {
+                "name": "Parasaurolophus",
+                "image":"Parasaurolophus.jpg",
+                "link":"https://en.wikipedia.org/wiki/Parasaurolophus",
+            },
+            {
+                "name": "Hadrosaurus",
+                "image":"Hadrosaurus.jpg",
+                "link":"https://en.wikipedia.org/wiki/Hadrosaurus", 
+            },
+            {
+                "name": "Troodon",
+                "image":"Troodon.jpg",
+                "link":"https://en.wikipedia.org/wiki/Troodon", 
+            },
+            {
+                "name": "Coelophysis",
+                "image":"Coelophysis.jpg",
+                "link":"https://en.wikipedia.org/wiki/Coelophysis", 
+            },
+            {
+                "name": "Deinonychus",
+                "image":"Deinonychus.jpg",
+                "link":"https://en.wikipedia.org/wiki/Deinonychus", 
+            },
+            {
+                "name": "Dimorphodon",
+                "image":"Dimorphodon.jpg",
+                "link":"https://en.wikipedia.org/wiki/Dimorphodon", 
+            }
+         ]
+    </script>
+
