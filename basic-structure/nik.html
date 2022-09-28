@@ -13,28 +13,41 @@
         .customize-card {
             width: auto;
             margin: 0 auto;
+            text-align: center;
+            
         }
 
         .card-content {
             background-color: transparent;
             padding: 1.5rem;
+            text-align: center;
+           
         }
 
         .image {
             width: 100%;
             height: 220px;
             background-size: cover;
+            text-align: center;
+           
         }
-       p{
-        text-align: center;
-       }
-       
-        /* .card-footer {
-            background-color: transparent;
-            border-top: 1px solid #ededed;
-            align-items: stretch;
-            display: flex;
-        } */
+       .card-footer-item {
+    align-items: center;
+    display: flex;
+    flex-basis: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
+    justify-content: center;
+    padding: .75rem;
+
+}
+
+.p{
+   
+  text-align: center;
+  
+}
+
     </style>
 
 
@@ -77,7 +90,7 @@
             </div>
 
             <div class="column is-2 has-text-centered" style="width: auto;">
-                <div class="button is-medium is-dark is-outlined" id="showAll" onclick="showAll()">Show All</div>
+                <div class="button is-medium is-dark is-outlined" id="showAll" onclick="showAll('all')">Show All</div>
 
                 <button class="button is-medium is-link is-outlined" id="btn">
                     <span class="icon">
@@ -93,9 +106,9 @@
             <div class="column is-narrow">
                 <div class="card has-background-light customize-card">
                     <div class="card-content"> <img class="tarot-card-image" src="Dilophosaurus1.jpg"> </div>
-                    <footer class="card-footer">
+                    
                         <p class="card-footer-item title is-size-4">Dilophosaurus</p>
-                    </footer>
+                  
                 </div>
             </div>
 
@@ -103,9 +116,9 @@
             <div class="column is-narrow">
                 <div class="card has-background-light customize-card">
                     <div class="card-content"> <img class="tarot-card-image" src="Stegosaurus1.jpg"> </div>
-                    <footer class="card-footer">
+                    
                         <p class="card-footer-item title is-size-4">Stegosaurus</p>
-                    </footer>
+                  
                 </div>
             </div>
 
@@ -113,18 +126,18 @@
             <div class="column is-narrow">
                 <div class="card has-background-light customize-card">
                     <div class="card-content"> <img class="tarot-card-image" src="Iguanodon1.jpg"> </div>
-                    <footer class="card-footer">
+                  
                         <p class="card-footer-item title is-size-4">Iguanodon</p>
-                    </footer>
+                 
                 </div>
             </div>
 
             <div class="column is-narrow">
                 <div class="card has-background-light customize-card">
                     <div class="card-content"> <img class="tarot-card-image" src="Brachiosaurus1.jpg"> </div>
-                    <footer class="card-footer">
+                 
                         <p class="card-footer-item title is-size-4">Brachiosaurus</p>
-                    </footer>
+                 
                 </div>
             </div>
 
@@ -132,9 +145,9 @@
             <div class="column is-narrow">
                 <div class="card has-background-light customize-card">
                     <div class="card-content"> <img class="tarot-card-image" src="Apatosaurus1.jpg"> </div>
-                    <footer class="card-footer">
+                    
                         <p class="card-footer-item title is-size-4">Apatosaurus</p>
-                    </footer>
+                    
                 </div>
             </div>
         </div>
@@ -150,10 +163,14 @@
         </div>
     </section>
 
-         
-      
+
+
+
+   
+
 
     <script>
+        let uniqueRandomNums = []; 
         var txtFileData = [
             {
                 "name": "Brachiosaurus",
@@ -280,10 +297,33 @@
                 "image": "Dimorphodon1.jpg",
                 "link": "https://en.wikipedia.org/wiki/Dimorphodon",
             }
-
-
-
         ]
+
+
+
+
+// const unique = txtFileData.filter((value,index)=>{
+//     return txtFileData.indexOf(value)===index;
+// });
+// console.log("unique :->" + unique)
+
+
+function removeDuplicates(txtFileData) {
+    debugger;
+        return txtFileData.filter((item,
+            index) => txtFileData.indexOf(item) === index);
+            debugger;
+    }
+
+    console.log("removeDuplicates(txtFileData):->" + removeDuplicates(txtFileData));
+    debugger;
+
+
+
+
+
+
+
 
 
 
@@ -291,11 +331,11 @@
             let result = document.getElementById("result");
             let value = document.getElementById("randomNumber").value;
             result.innerHTML = '';
-           
-
+         
             for (i = 1; i <= value; i++) {
                 let random = Math.floor(Math.random() * 25);
-                txtFileData[randomNumber]
+                txtFileData[random]
+                
                 console.log("random:->" + random)
 
                 let element = txtFileData[random]
@@ -304,13 +344,9 @@
                 document.getElementById("generatedCities").innerHTML = value;
                 document.getElementById("citySectionArea").innerHTML = "";
 
+                // document.getElementById("result").innerHTML += `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card has-background-light  has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><footer class="card-footer"><a href="${element.link}"><p class="card-footer-item title is-center is-size-4">${element.name}</p></a></footer></div></div></div>`
 
-               
-
-                // document.getElementById("result").innerHTML += `<div class="column is-narrow"> <div class="card has-background-light has-text-centered customize-card "><div class="card-content"><div class="card-content"><figure class="image"><img src="${element.image}"></figure></span></div><footer class="card-footer"><a href="${element.link}"><p class="card-footer-item title is-size-4">${element.name}</p></a></div></div></div></footer>`
-
-                document.getElementById("result").innerHTML += ` <div class="column is-narrow"><div class="card has-background-light customize-card">
-                <div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><footer class="card-footer"><a href="${element.link}"><p class="card-footer-item title is-size-4">${element.name}</p></a></footer></div></div>`
+                document.getElementById("result").innerHTML += `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card has-background-light  has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><a href="${element.link}"><p class="card-footer-item title is-center is-size-4">${element.name}</p></a></div></div></div>`
 
 
 
@@ -330,7 +366,7 @@
 
             for (i = 1; i <= value; i++) {
                 let random = Math.floor(Math.random() * 25);
-                txtFileData[randomNumber]
+                txtFileData[random]
                 console.log("random:->" + random)
 
                 let element = txtFileData[random]
@@ -340,8 +376,9 @@
                 document.getElementById("citySectionArea").innerHTML = "";
 
 
-                document.getElementById("result").innerHTML += ` <div class="column is-narrow"><div class="card has-background-light customize-card">
-                <div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><footer class="card-footer"><a href="${element.link}"><p class="card-footer-item title is-size-4">${element.name}</p></a></footer></div></div>`
+                document.getElementById("result").innerHTML += `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card has-background-light  has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><a href="${element.link}"><p class="card-footer-item title is-center is-size-4">${element.name}</p></a></div></div></div>`
+
+
 
 
 
@@ -360,7 +397,7 @@
 
             for (i = 1; i <= value; i++) {
                 let random = Math.floor(Math.random() * 25);
-                txtFileData[randomNumber]
+                txtFileData[random]
                 console.log("random:->" + random)
 
                 let element = txtFileData[random]
@@ -370,8 +407,7 @@
                 document.getElementById("citySectionArea").innerHTML = "";
 
 
-                document.getElementById("result").innerHTML += ` <div class="column is-narrow"><div class="card has-background-light customize-card">
-                <div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><footer class="card-footer"><a href="${element.link}"><p class="card-footer-item title is-size-4">${element.name}</p></a></footer></div></div>`
+                document.getElementById("result").innerHTML += `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card has-background-light  has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><a href="${element.link}"><p class="card-footer-item title is-center is-size-4">${element.name}</p></a></div></div></div>`
 
 
 
@@ -388,18 +424,17 @@
 
             for (i = 1; i <= value; i++) {
                 let random = Math.floor(Math.random() * 25);
-                txtFileData[randomNumber]
+                txtFileData[random]
                 console.log("random:->" + random)
 
-                let element = txtFileData[i]
+                let element = txtFileData[random]
                 console.log("element:->" + element)
 
                 document.getElementById("generatedCities").innerHTML = value;
                 document.getElementById("citySectionArea").innerHTML = "";
 
 
-                document.getElementById("result").innerHTML += ` <div class="column is-narrow"><div class="card has-background-light customize-card">
-                <div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><footer class="card-footer"><a href="${element.link}"><p class="card-footer-item title is-size-4">${element.name}</p></a></footer></div></div>`
+                document.getElementById("result").innerHTML += `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card has-background-light  has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><a href="${element.link}"><p class="card-footer-item title is-center is-size-4">${element.name}</p></a></div></div></div>`
 
 
 
@@ -419,7 +454,7 @@
 
             for (i = 1; i <= x; i++) {
                 let random = Math.floor(Math.random() * 25);
-                txtFileData[randomNumber]
+                txtFileData[random]
                 console.log("random:->" + random)
 
                 let element = txtFileData[random]
@@ -431,8 +466,7 @@
 
 
 
-                document.getElementById("result").innerHTML += ` <div class="column is-narrow"><div class="card has-background-light customize-card">
-                <div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><footer class="card-footer"><a href="${element.link}"><p class="card-footer-item title is-size-4">${element.name}</p></a></footer></div></div>`
+                document.getElementById("result").innerHTML += `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card has-background-light  has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><a href="${element.link}"><p class="card-footer-item title is-center is-size-4">${element.name}</p></a></div></div></div>`
 
 
 
@@ -443,43 +477,70 @@
 
 
 
+        
+        // function showAll(){
+        //     let result = document.getElementById("result");
+        //     let value = 25
+        //     result.innerHTML = '';
+        //     // debugger;
 
 
-        function showAll() {
+        //     for (i = 1; i <= value; i++) {
+        //         let random = Math.floor(Math.random() * 25);
+        //         txtFileData[random]
+        //         console.log("random:->" + random)
+        //         // debugger;
 
-            let result = document.getElementById("result");
-            let value = 25
-            result.innerHTML = '';
+        //         let element = txtFileData[random]
+        //         console.log("element:->" + element)
 
-
-            for (i = 1; i <= value; i++) {
-                debugger;
-                // let random = Math.floor(Math.random() * 25);
-                // txtFileData[randomNumber]
-                // console.log("random:->" + random)
-
-              
-                txtFileData[randomNumber]
-                debugger;
                 
-                let element = txtFileData[i]
-                console.log("element:->" + element)
+        //         let uniquetxtFileData = [...new Set(txtFileData)];
+        //         console.log(uniquetxtFileData)
+              
+        //         // debugger;
 
-                document.getElementById("randomNumber").value = value;
-                document.getElementById("generatedCities").innerHTML = value;
-                document.getElementById("citySectionArea").innerHTML = "";
-
-
-
-                document.getElementById("result").innerHTML += ` <div class="column is-narrow"><div class="card has-background-light customize-card">
-                <div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><footer class="card-footer"><a href="${element.link}"><p class="card-footer-item title is-size-4" style>${element.name}</p></a></footer></div></div>`
+        //         document.getElementById("randomNumber").value = value;
+        //         document.getElementById("generatedCities").innerHTML = value;
+        //         document.getElementById("citySectionArea").innerHTML = "";
 
 
 
-            };
-        }
+        //         document.getElementById("result").innerHTML += `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card has-background-light  has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><a href="${element.link}"><p class="card-footer-item title is-center is-size-4">${element.name}</p></a></div></div></div>`
 
- </script>
+
+
+
+        //     };
+        // }
+        
+
+
+        var arrayOfDetails = null;
+
+        function  showAll(number) {
+   if (arrayOfDetails == null) {
+     
+      return;
+   }
+
+   if (number == "random") {
+      number = Math.floor(Math.random() * arrayOfDetails.length);
+
+   } else if (number == "all") {
+      number = arrayOfDetails.length;
+
+   } else if (number == null || number == 0) {
+      number = document.getElementById("randomNumber").value;
+   }
+   document.getElementById("randomNumber").value = number;
+
+//    if (arrayOfDetails != null) {
+//       generateRandomCities();
+  }
+
+
+    </script>
 </body>
 
 </html>
