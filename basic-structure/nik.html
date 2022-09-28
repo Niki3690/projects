@@ -90,7 +90,7 @@
             </div>
 
             <div class="column is-2 has-text-centered" style="width: auto;">
-                <div class="button is-medium is-dark is-outlined" id="showAll" onclick="showAll('all')">Show All</div>
+                <div class="button is-medium is-dark is-outlined" id="showAll" onclick="showAll()">Show All</div>
 
                 <button class="button is-medium is-link is-outlined" id="btn">
                     <span class="icon">
@@ -170,7 +170,6 @@
 
 
     <script>
-        let uniqueRandomNums = []; 
         var txtFileData = [
             {
                 "name": "Brachiosaurus",
@@ -309,29 +308,18 @@
 
 
 function removeDuplicates(txtFileData) {
-    debugger;
         return txtFileData.filter((item,
             index) => txtFileData.indexOf(item) === index);
-            debugger;
     }
 
     console.log("removeDuplicates(txtFileData):->" + removeDuplicates(txtFileData));
-    debugger;
-
-
-
-
-
-
-
-
-
 
         function generateButton() {
             let result = document.getElementById("result");
             let value = document.getElementById("randomNumber").value;
             result.innerHTML = '';
-         
+
+
             for (i = 1; i <= value; i++) {
                 let random = Math.floor(Math.random() * 25);
                 txtFileData[random]
@@ -475,70 +463,43 @@ function removeDuplicates(txtFileData) {
 
 
 
-
-
-        
-        // function showAll(){
-        //     let result = document.getElementById("result");
-        //     let value = 25
-        //     result.innerHTML = '';
-        //     // debugger;
-
-
-        //     for (i = 1; i <= value; i++) {
-        //         let random = Math.floor(Math.random() * 25);
-        //         txtFileData[random]
-        //         console.log("random:->" + random)
-        //         // debugger;
-
-        //         let element = txtFileData[random]
-        //         console.log("element:->" + element)
-
-                
-        //         let uniquetxtFileData = [...new Set(txtFileData)];
-        //         console.log(uniquetxtFileData)
-              
-        //         // debugger;
-
-        //         document.getElementById("randomNumber").value = value;
-        //         document.getElementById("generatedCities").innerHTML = value;
-        //         document.getElementById("citySectionArea").innerHTML = "";
-
-
-
-        //         document.getElementById("result").innerHTML += `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card has-background-light  has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><a href="${element.link}"><p class="card-footer-item title is-center is-size-4">${element.name}</p></a></div></div></div>`
-
-
-
-
-        //     };
-        // }
-        
-
-
-        var arrayOfDetails = null;
-
-        function  showAll(number) {
-   if (arrayOfDetails == null) {
      
-      return;
-   }
+        
 
-   if (number == "random") {
-      number = Math.floor(Math.random() * arrayOfDetails.length);
+        function showAll() {
 
-   } else if (number == "all") {
-      number = arrayOfDetails.length;
+let result = document.getElementById("result");
+let value = 25
+result.innerHTML = '';
 
-   } else if (number == null || number == 0) {
-      number = document.getElementById("randomNumber").value;
-   }
-   document.getElementById("randomNumber").value = number;
 
-//    if (arrayOfDetails != null) {
-//       generateRandomCities();
-  }
+for (i = 1; i <= value; i++) {
 
+    let random = Math.floor(Math.random() * i);
+    // txtFileData[randomNumber]
+    console.log("random:->" + random)
+
+  
+    // txtFileData[randomNumber]
+   
+    
+    let element =txtFileData[i]
+    console.log("element:->" + element)
+   
+
+    document.getElementById("randomNumber").value = value;
+    document.getElementById("generatedCities").innerHTML = value;
+    document.getElementById("citySectionArea").innerHTML = "";
+
+
+
+    document.getElementById("result").innerHTML += ` <div class="column is-narrow"><div class="card has-background-light customize-card">
+    <div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><footer class="card-footer"><a href="${element.link}"><p class="card-footer-item title is-size-4" style>${element.name}</p></a></footer></div></div>`
+
+
+
+};
+}
 
     </script>
 </body>
