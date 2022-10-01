@@ -105,7 +105,7 @@
         <div class="columns is-multiline is-centered" id="citySectionArea">
             <div class="column is-narrow">
                 <div class="card has-background-light customize-card">
-                    <div class="card-content"> <img class="tarot-card-image" src="Dilophosaurus1.jpg"> </div>
+                    <div class="card-content"> <img class="tarot-card-image" src="dilophosaurus.webp"> </div>
 
                     <p class="card-footer-item title is-size-4">Dilophosaurus</p>
 
@@ -115,7 +115,7 @@
 
             <div class="column is-narrow">
                 <div class="card has-background-light customize-card">
-                    <div class="card-content"> <img class="tarot-card-image" src="Stegosaurus1.jpg"> </div>
+                    <div class="card-content"> <img class="tarot-card-image" src="stegosaurus.webp"> </div>
 
                     <p class="card-footer-item title is-size-4">Stegosaurus</p>
 
@@ -125,7 +125,7 @@
 
             <div class="column is-narrow">
                 <div class="card has-background-light customize-card">
-                    <div class="card-content"> <img class="tarot-card-image" src="Iguanodon1.jpg"> </div>
+                    <div class="card-content"> <img class="tarot-card-image" src="iguanodon.webp"> </div>
 
                     <p class="card-footer-item title is-size-4">Iguanodon</p>
 
@@ -134,7 +134,7 @@
 
             <div class="column is-narrow">
                 <div class="card has-background-light customize-card">
-                    <div class="card-content"> <img class="tarot-card-image" src="Brachiosaurus1.jpg"> </div>
+                    <div class="card-content"> <img class="tarot-card-image" src="brachiosaurus.webp"> </div>
 
                     <p class="card-footer-item title is-size-4">Brachiosaurus</p>
 
@@ -144,7 +144,7 @@
 
             <div class="column is-narrow">
                 <div class="card has-background-light customize-card">
-                    <div class="card-content"> <img class="tarot-card-image" src="Apatosaurus1.jpg"> </div>
+                    <div class="card-content"> <img class="tarot-card-image" src="apatosaurus.webp"> </div>
 
                     <p class="card-footer-item title is-size-4">Apatosaurus</p>
 
@@ -178,7 +178,7 @@
             },
             {
                 "name": "Tyrannosaurus rex",
-                "image": "istockphoto-182492703-612x612.webp",
+                "image": "tyrannosaurus.webp",
                 "link": "https://en.wikipedia.org/wiki/Tyrannosaurus",
             },
             {
@@ -295,12 +295,42 @@
                 "name": "Dimorphodon",
                 "image": "dimorphodon.webp",
                 "link": "https://en.wikipedia.org/wiki/Dimorphodon",
+            },
+            {
+                "name": "Anzu",
+                "image": "anzu.webp",
+                "link": "https://en.wikipedia.org/wiki/Anzu_wyliei",
+            },
+            {
+                "name": "Nanotyrannus",
+                "image": "nanotyrannus.webp",
+                "link": "https://simple.wikipedia.org/wiki/Nanotyrannus",
+            },
+            {
+                "name": "Albertosaurus",
+                "image": "albertosaurus.webp",
+                "link": "https://simple.wikipedia.org/wiki/Nanotyrannus",
+            },
+            {
+                "name": "Pentaceratops",
+                "image": "pentaceratops.webp",
+                "link": "https://en.wikipedia.org/wiki/Pentaceratops",
+            },
+            {
+                "name": "Corythosaurus",
+                "image": "corythosauruss.webp",
+                "link": "https://en.wikipedia.org/wiki/Corythosaurus",
+            },
+            {
+                "name": "Argentinosaurus",
+                "image": "argentinosaurus.webp",
+                "link": "https://en.wikipedia.org/wiki/Argentinosaurus",
             }
         ]
 
 
 
-
+      
         // const unique = txtFileData.filter((value,index)=>{
         //     return txtFileData.indexOf(value)===index;
         // });
@@ -479,7 +509,7 @@
 function showAll(all) {
         
             let result = document.getElementById("result");
-            let value = 25
+            let value = 31
             result.innerHTML = '';
 
 
@@ -487,7 +517,7 @@ function showAll(all) {
                 
 
                 // let random = Math.floor(Math.random() * 25)+1;
-                let random = Math.floor(Math.random(txtFileData) * 25)+1;
+                let random = Math.floor(Math.random(txtFileData) * 31)+1;
                 // txtFileData[randomNumber]
                 console.log("random:->" + random)
                 
