@@ -163,13 +163,14 @@
         </div>
     </section>
 
-    <script src="dinosaur.js"></script>
 
 
 
 
 
-    <!-- <script>
+
+    <script>
+        let uniqueRandomNums = []
         var txtFileData = [
             {
                 "name": "Brachiosaurus",
@@ -301,206 +302,41 @@
 
 
 
+        // const unique = txtFileData.filter((value,index)=>{
+        //     return txtFileData.indexOf(value)===index;
+        // });
+        // console.log("unique :->" + unique)
 
 
-        function generateButton() {
-            let result = document.getElementById("result");
-            let value = document.getElementById("randomNumber").value;
-            result.innerHTML = '';
+       
 
+       
 
-            for (i = 1; i <= value; i++) {
-                let random = Math.floor(Math.random() * 25);
-                txtFileData[random]
+        function generateButton(numer) {
+            let arrayOfDetails=null;
 
-                console.log("random:->" + random)
+            if (arrayOfDetails == null) {
+      getDataFromServer(number);
+      return;
+   }
 
-                let element = txtFileData[random]
-                console.log("element:->" + element)
+   if (number == "random") {
+      number = Math.floor(Math.random() * arrayOfDetails.length) + 1;
 
-                document.getElementById("generatedCities").innerHTML = value;
-                document.getElementById("citySectionArea").innerHTML = "";
+   } else if (number == "all") {
+      number = arrayOfDetails.length;
 
-                // document.getElementById("result").innerHTML += `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card has-background-light  has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><footer class="card-footer"><a href="${element.link}"><p class="card-footer-item title is-center is-size-4">${element.name}</p></a></footer></div></div></div>`
+   } else if (number == null || number == 0) {
+      number = document.getElementById("inputRandomNumber").value;
+   }
+   document.getElementById("inputRandomNumber").value = number;
 
-                document.getElementById("result").innerHTML += `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card has-background-light  has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><a href="${element.link}"><p class="card-footer-item title is-center is-size-4">${element.name}</p></a></div></div></div>`
-
-
-
-
-            };
-        }
-
-
-
-
-
-        function primary() {
-            let result = document.getElementById("result");
-            let value = 5
-            result.innerHTML = '';
-            // var txtFileData=[]
-
-            for (i = 1; i <= value; i++) {
-                let random = Math.floor(Math.random() * 25);
-                txtFileData[random]
-                console.log("random:->" + random)
-
-                let element = txtFileData[random]
-                console.log("element:->" + element)
-
-                document.getElementById("generatedCities").innerHTML = value;
-                document.getElementById("citySectionArea").innerHTML = "";
-
-
-                document.getElementById("result").innerHTML += `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card has-background-light  has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><a href="${element.link}"><p class="card-footer-item title is-center is-size-4">${element.name}</p></a></div></div></div>`
-
-
-
-
-
-            };
-        }
-
-
-
-
-
-        function info() {
-            let result = document.getElementById("result");
-            let value = 10
-            result.innerHTML = '';
-
-
-            for (i = 1; i <= value; i++) {
-                let random = Math.floor(Math.random() * 25);
-                txtFileData[random]
-                console.log("random:->" + random)
-
-                let element = txtFileData[random]
-                console.log("element:->" + element)
-
-                document.getElementById("generatedCities").innerHTML = value;
-                document.getElementById("citySectionArea").innerHTML = "";
-
-
-                document.getElementById("result").innerHTML += `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card has-background-light  has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><a href="${element.link}"><p class="card-footer-item title is-center is-size-4">${element.name}</p></a></div></div></div>`
-
-
-
-            };
-        }
-
-
-
-        function success() {
-            let result = document.getElementById("result");
-            let value = 15
-            result.innerHTML = '';
-
-
-            for (i = 1; i <= value; i++) {
-                let random = Math.floor(Math.random() * 25);
-                txtFileData[random]
-                console.log("random:->" + random)
-
-                let element = txtFileData[random]
-                console.log("element:->" + element)
-
-                document.getElementById("generatedCities").innerHTML = value;
-                document.getElementById("citySectionArea").innerHTML = "";
-
-
-                document.getElementById("result").innerHTML += `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card has-background-light  has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><a href="${element.link}"><p class="card-footer-item title is-center is-size-4">${element.name}</p></a></div></div></div>`
-
-
-
-            };
-        }
-
-
-
-
-
-
-        function outlined() {
-            let x = Math.floor((Math.random() * 25) + 1);
-            let result = document.getElementById("result");
-            result.innerHTML = '';
-
-
-            for (i = 1; i <= x; i++) {
-                let random = Math.floor(Math.random() * 25);
-                txtFileData[random]
-                console.log("random:->" + random)
-
-                let element = txtFileData[random]
-                console.log("element:->" + element)
-
-                document.getElementById("randomNumber").value = x;
-                document.getElementById("generatedCities").innerHTML = x;
-                document.getElementById("citySectionArea").innerHTML = "";
-
-
-
-                document.getElementById("result").innerHTML += `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card has-background-light  has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><a href="${element.link}"><p class="card-footer-item title is-center is-size-4">${element.name}</p></a></div></div></div>`
-
-
-
-            };
-        }
-
-
-    
-     
-            
-//             while (txtFileData.length < 25) {
-//               
-//                 var random = Math.floor(Math.random() * 25) + 1;
-//               
-//                 if (txtFileData.indexOf(random) === 1) txtFileData.push(random);
-//             }
-//           
-//             console.log("txtFileData:->" + txtFileData);
-
-
-
-
-
- function showAll(all) {
-   
+   if (arrayOfDetails != null) {
+      generateRandomTarotCard();
+   }
+}
         
-            let result = document.getElementById("result");
-            let value = 25
-            result.innerHTML = '';
-
-
-            for (i = 1; i <= value; i++) {
-                
-
-                // let random = Math.floor(Math.random() * 25)+1;
-                let random = Math.floor(Math.random(txtFileData) * 25)+1;
-                // txtFileData[randomNumber]
-                console.log("random:->" + random)
-                
-                let element = txtFileData[i];
-                console.log("element:->" + element)
-              
-
-
-                document.getElementById("randomNumber").value = value;
-                document.getElementById("generatedCities").innerHTML = value;
-                document.getElementById("citySectionArea").innerHTML = "";
-
-
-
-                document.getElementById("result").innerHTML += `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card has-background-light  has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><a href="${element.link}"><p class="card-footer-item title is-center is-size-4">${element.name}</p></a></div></div></div>`
-                
-
-
-            };
-        }
-    </script> -->
+    </script>
 </body>
 
 </html>
