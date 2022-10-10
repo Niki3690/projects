@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Notes App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+</head>
+<style>
+    .customize-card {
+            width: auto;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .card-content {
+            background-color: transparent;
+            padding: 1.5rem;
+            text-align: center;
+            width: 320px;
+            height: 200px;
+
+
+        }
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="columns">
+            <div class="column is-2" style="margin-top: 8px">
+                <h4 class="is-size-4"><b> Making Notes</b></h4>
+            </div>
+            <div class="column is-5" style="margin-top: 16px;">
+                <a class="home" href="#">HOME</a>
+            </div>
+            <div class="column is-3" style="margin-top: 16px;">
+                <!-- <div class="field has-addons">
+                    <div class="control"> -->
+                <input class="input " type="text" id="searchTxt" placeholder="Search">
+            </div>
+            <div class="column is-2" style="margin-top: 16px;">
+                <!-- </div> -->
+                <!-- <div class="control is-expanded"> -->
+                <button class="button is-dark">search</button>
+            </div>
+            <!-- </div> -->
+        </div>
+    </div>
+    </div>
+    </div><br>
+
+    <div class="container">
+        <h4 class="is-size-4" style="text-align: center;"><b>Welcome To Making Notes</b></h4><br>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="is-size-5"><b>Add a note</b></h5>
+                <div class="form-group">
+                    <textarea class="form-control" id="addTxt" rows="6" cols="30"></textarea>
+                </div>
+                <br>
+                <button class="button is-dark" id="addBtn">Add Note</button>
+            </div>
+            <br>
+        </div>
+        <hr>
+        <h4 class="is-size-4" style="text-align: center;"><b>Your Notes</b></h4>
+        <hr>
+        <div id="notes"  class="columns is-multiline is-centered"> </div>
+
+    </div>
+
+
+    <script src="making-notes.js"></script>
+</body>
+
+</html>
