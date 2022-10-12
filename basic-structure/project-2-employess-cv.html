@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <title>cv scanner</title>
+</head>
+<style>
+
+</style>
+
+<body>
+
+    <div class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-6">
+                    <h3 class="is-size-3 has-text-centered"><b>Employees Cv</b> </h3><br>
+                    <div id="image"></div>
+                    <hr>
+                    <div id="profile"></div>
+                    <hr>
+                    <button class="button is-primary" id="next">Next</button>
+
+                </div>
+                <div class="column is-3 has-text-centered">
+                    <h4 class="is-size-4 has-text-centered"><b>Total Employees Cv</b> </h3><br>
+                        <div id="result">
+                            <hr>
+                            <button class="button is-primary" onclick="add()" id="next">Add</button>
+
+
+                        </div>
+                </div>
+            </div>
+</body>
+
+</html>
+
+<script>
+    console.log("This is my index");
+    let data = [
+        {
+            Name: "Tej patel",
+            Age: "22",
+            City: "Morbi",
+            Language: "Java-script",
+            image: "https://randomuser.me/api/portraits/men/75.jpg",
+        },
+
+        {
+            Name: "palak shah",
+            Age: "29",
+            City: "Ahmedabad",
+            Language: "Python",
+            image: "https://randomuser.me/api/portraits/men/76.jpg",
+        },
+
+        {
+            Name: "Darsh patel",
+            Age: "20",
+            City: "Anand",
+            Language: "PHP",
+            image: "https://randomuser.me/api/portraits/men/77.jpg",
+        },
+
+        {
+            Name: "Zalak solanki",
+            Age: "23",
+            City: "Rajkot",
+            Language: "Larvel",
+            image: "https://randomuser.me/api/portraits/women/75.jpg",
+        },
+
+        {
+            Name: "Anee patel",
+            Age: "27",
+            City: "Jamnagar",
+            Language: "Java",
+            image: "https://randomuser.me/api/portraits/women/76.jpg",
+        },
+
+        {
+            Name: "Krishna Makvana",
+            Age: "26",
+            City: "Junaghad",
+            Language: "Java-script",
+            image: "https://randomuser.me/api/portraits/women/77.jpg",
+        },
+
+        {
+            Name: "Karan patel",
+            Age: "39",
+            City: "Vishnagar",
+            Language: "PHP",
+            image: "https://randomuser.me/api/portraits/men/78.jpg",
+        },
+
+        {
+            Name: "vani prajapati",
+            Age: "22",
+            City: "Rajkot",
+            Language: "python",
+            image: "https://randomuser.me/api/portraits/women/78.jpg",
+        },
+
+        {
+            Name: "Dhvanish bhawasar",
+            Age: "32",
+            City: "Ahmedabad",
+            Language: "C++",
+            image: "https://randomuser.me/api/portraits/men/79.jpg",
+        },
+
+        {
+            Name: "Rishabh maru",
+            Age: "28",
+            City: "Nadiad",
+            Language: "Ruby",
+            image: "https://randomuser.me/api/portraits/men/80.jpg",
+        },
+    ]
+
+
+    function cvIterator(profiles) {
+        let nextIndex = 0;
+        return {
+            next: function () {
+                return nextIndex < profiles.length ?
+                    { value: profiles[nextIndex++], done: false } :
+                    { done: true }
+            }
+        }
+    }
+
+    let user = cvIterator(data);
+    let next = document.getElementById("next");
+    next.addEventListener("click", nextCV);
+
+
+    function nextCV() {
+        let currentUser = user.next().value;
+        let image = document.getElementById("image");
+        let profile = document.getElementById("profile");
+
+        if (currentUser != undefined) {
+
+            image.innerHTML = `<img src="${currentUser.image}">`;
+            profile.innerHTML = `<table class= "table is-narrow">
+       <tr><td><b>Name:</b> ${currentUser.Name}</tr></td>
+       <tr><td><b>Age:</b> ${currentUser.Age} years old</tr></td>
+        <tr><td><b>Lives in:</b> ${currentUser.City}</tr></td>
+            <tr><td><b>Knowing language:</b> ${currentUser.Language}</tr></td>
+       </table>`
+
+
+        }
+        else {
+            alert("End of  Employees Cv");
+            window.location.reload();
+        }
+    }
+
+
+    function add(){
+        const result = document.getElementById("result");
+        console.log(result)
+
+       data.forEach(element => {
+        let xyz =[];
+        
+
+//         output.innerHTML +=  xyz +`<table class= "table is-narrow">
+//        <tr><td><b>Name:</b> ${currentUser.Name}</tr></td>
+//        <tr><td><b>Age:</b> ${currentUser.Age} years old</tr></td>
+//         <tr><td><b>Lives in:</b> ${currentUser.City}</tr></td>
+//             <tr><td><b>Knowing language:</b> ${currentUser.Language}</tr></td>
+//        </table>`
+     });
+// };
+//     display(data);
+        
+    }
+    
+</script>
