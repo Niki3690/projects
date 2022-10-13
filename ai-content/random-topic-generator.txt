@@ -1,10 +1,15 @@
 Random Topic Generator:
 -------------------------
 
+(1)Random topic generator is giving single topic as well as more number of  questions.
 
-
+(2)this tool provids different types of subject and generate  topic to  discuss them.
 
 
 
 What can you do with Random Topic Generator Tool?
 ==================================================
+
+(1)Random topic generator is use for  friends and family group to talk about topic  somebody picks the topic controls the conversation and chooses which questions to ask.
+
+(2)This tool is a great way to come up with new topics for general conversation and it is use for entertainment additionally share information with  friends and relative.
