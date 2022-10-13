@@ -1,0 +1,17 @@
+Random Charades Generator:
+--------------------------
+
+(1) A Charades generator tool to generates  different types of  words are unique and randomly generated.
+
+(2)This tool  requires little preparation, a lot of imagination, and it is great for a laugh.
+
+What is Charades ?
+==================
+(1) Charades is a gesture and acting game. which some of the players try to guess a word or phrase from the actions of another player who may not speak.
+
+
+What can you do with Random Charades Generator Tool?
+====================================================
+ (1) This tool generates and finds different charade words These words are unique and randomly generated.
+
+ (2)Random Charades Generator tool can be use for  fun and engaging game play with family and friends.
