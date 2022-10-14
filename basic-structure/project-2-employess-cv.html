@@ -9,10 +9,135 @@
     <title>cv scanner</title>
 </head>
 <style>
+    .modal {
+        display: none;
+        position: fixed;
+        z-index: 1;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgb(0, 0, 0);
+        background-color: rgba(0, 0, 0, 0.4);
+        -webkit-animation-name: fadeIn;
+        -webkit-animation-duration: 0.4s;
+        animation-name: fadeIn;
+        animation-duration: 0.4s
+    }
 
+
+    .modal-content {
+        position: fixed;
+        top: 0;
+        background-color: #fefefe;
+        width: 100%;
+        -webkit-animation-name: slideIn;
+        -webkit-animation-duration: 0.4s;
+        animation-name: slideIn;
+        animation-duration: 0.4s
+    }
+
+
+    .close {
+        color: white;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+    }
+
+    .close:hover,
+    .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+    }
+
+    .modal-header {
+        padding: 2px 16px;
+        background-color: #5cb85c;
+        color: white;
+    }
+
+    .modal-body {
+        padding: 2px 16px;
+    }
+
+    .modal-footer {
+        padding: 2px 16px;
+        background-color: #5cb85c;
+        color: white;
+    }
+
+
+    @-webkit-keyframes slideIn {
+        from {
+            bottom: -300px;
+            opacity: 0
+        }
+
+        to {
+            bottom: 0;
+            opacity: 1
+        }
+    }
+
+    @keyframes slideIn {
+        from {
+            bottom: -300px;
+            opacity: 0
+        }
+
+        to {
+            bottom: 0;
+            opacity: 1
+        }
+    }
+
+    @-webkit-keyframes fadeIn {
+        from {
+            opacity: 0
+        }
+
+        to {
+            opacity: 1
+        }
+    }
+
+    @keyframes fadeIn {
+        from {
+            opacity: 0
+        }
+
+        to {
+            opacity: 1
+        }
+    }
 </style>
 
 <body>
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <span class="close">&times;</span>
+                <h2>Employees Cv</h2>
+            </div>
+            <div class="modal-body">
+                <label class="label">Name</label>
+                <input class="input" id="name" type="text" placeholder="Name">
+                <label class="label">Age</label>
+                <input class="input" id="age" type="number" placeholder="Age">
+                <label class="label">City</label>
+                <input class="input" id="city" type="text" placeholder=" City">
+                <label class="label">Language</label>
+                <input class="input" id="language" type="text" placeholder=" Language">
+            </div>
+            <div class="modal-footer">
+                <button class="button is-primary" onclick="save()" id="save">Save</button>
+            </div>
+        </div>
+    </div>
+
 
     <div class="section">
         <div class="container">
@@ -28,161 +153,250 @@
                 </div>
                 <div class="column is-3 has-text-centered">
                     <h4 class="is-size-4 has-text-centered"><b>Total Employees Cv</b> </h3><br>
-                        <div id="result">
-                            <hr>
-                            <button class="button is-primary" onclick="add()" id="next">Add</button>
+                        <table class="table" id="output">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        Name
+                                    </th>
+                                    <th>
+                                        Age
+                                    </th>
+                                    <th>
+                                        Language
+                                    </th>
+                                    <th>
+                                        City
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="result"></tbody>
+                        </table>
+                        <hr>
+                        <button class="button is-primary" onclick="add()" id="next">Add</button>
 
 
-                        </div>
                 </div>
             </div>
+        </div>
 </body>
 
 </html>
 
 <script>
-    console.log("This is my index");
-    let data = [
-        {
-            Name: "Tej patel",
-            Age: "22",
-            City: "Morbi",
-            Language: "Java-script",
-            image: "https://randomuser.me/api/portraits/men/75.jpg",
-        },
+    document.addEventListener("DOMContentLoaded", function () {
 
-        {
-            Name: "palak shah",
-            Age: "29",
-            City: "Ahmedabad",
-            Language: "Python",
-            image: "https://randomuser.me/api/portraits/men/76.jpg",
-        },
+        data = [
+            {
+                Name: "Tej patel",
+                Age: "22",
+                City: "Morbi",
+                Language: "Java-script",
+                image: "https://randomuser.me/api/portraits/men/75.jpg",
+            },
 
-        {
-            Name: "Darsh patel",
-            Age: "20",
-            City: "Anand",
-            Language: "PHP",
-            image: "https://randomuser.me/api/portraits/men/77.jpg",
-        },
+            {
+                Name: "palak shah",
+                Age: "29",
+                City: "Ahmedabad",
+                Language: "Python",
+                image: "https://randomuser.me/api/portraits/men/76.jpg",
+            },
 
-        {
-            Name: "Zalak solanki",
-            Age: "23",
-            City: "Rajkot",
-            Language: "Larvel",
-            image: "https://randomuser.me/api/portraits/women/75.jpg",
-        },
+            {
+                Name: "Darsh patel",
+                Age: "20",
+                City: "Anand",
+                Language: "PHP",
+                image: "https://randomuser.me/api/portraits/men/77.jpg",
+            },
 
-        {
-            Name: "Anee patel",
-            Age: "27",
-            City: "Jamnagar",
-            Language: "Java",
-            image: "https://randomuser.me/api/portraits/women/76.jpg",
-        },
+            {
+                Name: "Zalak solanki",
+                Age: "23",
+                City: "Rajkot",
+                Language: "Larvel",
+                image: "https://randomuser.me/api/portraits/women/75.jpg",
+            },
 
-        {
-            Name: "Krishna Makvana",
-            Age: "26",
-            City: "Junaghad",
-            Language: "Java-script",
-            image: "https://randomuser.me/api/portraits/women/77.jpg",
-        },
+            {
+                Name: "Anee patel",
+                Age: "27",
+                City: "Jamnagar",
+                Language: "Java",
+                image: "https://randomuser.me/api/portraits/women/76.jpg",
+            },
 
-        {
-            Name: "Karan patel",
-            Age: "39",
-            City: "Vishnagar",
-            Language: "PHP",
-            image: "https://randomuser.me/api/portraits/men/78.jpg",
-        },
+            {
+                Name: "Krishna Makvana",
+                Age: "26",
+                City: "Junaghad",
+                Language: "Java-script",
+                image: "https://randomuser.me/api/portraits/women/77.jpg",
+            },
 
-        {
-            Name: "vani prajapati",
-            Age: "22",
-            City: "Rajkot",
-            Language: "python",
-            image: "https://randomuser.me/api/portraits/women/78.jpg",
-        },
+            {
+                Name: "Karan patel",
+                Age: "39",
+                City: "Vishnagar",
+                Language: "PHP",
+                image: "https://randomuser.me/api/portraits/men/78.jpg",
+            },
 
-        {
-            Name: "Dhvanish bhawasar",
-            Age: "32",
-            City: "Ahmedabad",
-            Language: "C++",
-            image: "https://randomuser.me/api/portraits/men/79.jpg",
-        },
+            {
+                Name: "vani prajapati",
+                Age: "22",
+                City: "Rajkot",
+                Language: "python",
+                image: "https://randomuser.me/api/portraits/women/78.jpg",
+            },
 
-        {
-            Name: "Rishabh maru",
-            Age: "28",
-            City: "Nadiad",
-            Language: "Ruby",
-            image: "https://randomuser.me/api/portraits/men/80.jpg",
-        },
-    ]
+            {
+                Name: "Dhvanish bhawasar",
+                Age: "32",
+                City: "Ahmedabad",
+                Language: "C++",
+                image: "https://randomuser.me/api/portraits/men/79.jpg",
+            },
+
+            {
+                Name: "Rishabh maru",
+                Age: "28",
+                City: "Nadiad",
+                Language: "Ruby",
+                image: "https://randomuser.me/api/portraits/men/80.jpg",
+            },
+        ]
+
+        var result = document.getElementById("result")
+        row = "";
+
+        data.forEach(function (element) {
+            console.log(element.Name)
+            row = row + `<tr><td> ${element.Name}</td>
+   <td> ${element.City}</td>
+    <td> ${element.Language}</td>
+        <td> ${element.Age}</td></tr>`
+        });
+
+        result.innerHTML = row;
 
 
-    function cvIterator(profiles) {
-        let nextIndex = 0;
-        return {
-            next: function () {
-                return nextIndex < profiles.length ?
-                    { value: profiles[nextIndex++], done: false } :
-                    { done: true }
+
+        function cvIterator(profiles) {
+            let nextIndex = 0;
+            return {
+                next: function () {
+                    return nextIndex < profiles.length ?
+                        { value: profiles[nextIndex++], done: false } :
+                        { done: true }
+                }
             }
         }
-    }
-
-    let user = cvIterator(data);
-    let next = document.getElementById("next");
-    next.addEventListener("click", nextCV);
 
 
-    function nextCV() {
+
+        let user = cvIterator(data);
+        let next = document.getElementById("next");
+        next.addEventListener("click", nextCV);
         let currentUser = user.next().value;
-        let image = document.getElementById("image");
         let profile = document.getElementById("profile");
+        image.innerHTML = `<img src="${currentUser.image}">`;
+        profile.innerHTML = `<table class= "table is-narrow">
+       <tr><td><b>Name:</b> ${currentUser.Name}</td></tr>
+       <tr><td><b>Age:</b> ${currentUser.Age} years old</td></tr>
+        <tr><td><b>Lives in:</b> ${currentUser.City}</td></tr>
+        <tr><td><b>Knowing language:</b> ${currentUser.Language}</td></tr>
+       </table>`
 
-        if (currentUser != undefined) {
+        function nextCV() {
+            let currentUser = user.next().value;
+            let image = document.getElementById("image");
 
-            image.innerHTML = `<img src="${currentUser.image}">`;
-            profile.innerHTML = `<table class= "table is-narrow">
-       <tr><td><b>Name:</b> ${currentUser.Name}</tr></td>
-       <tr><td><b>Age:</b> ${currentUser.Age} years old</tr></td>
-        <tr><td><b>Lives in:</b> ${currentUser.City}</tr></td>
-            <tr><td><b>Knowing language:</b> ${currentUser.Language}</tr></td>
+
+            if (currentUser != undefined) {
+
+                image.innerHTML = `<img src="${currentUser.image}">`;
+                profile.innerHTML = `<table class= "table is-narrow">
+       <tr><td><b>Name:</b> ${currentUser.Name}</td></tr>
+       <tr><td><b>Age:</b> ${currentUser.Age} years old</td></tr>
+        <tr><td><b>Lives in:</b> ${currentUser.City}</td></tr>
+        <tr><td><b>Knowing language:</b> ${currentUser.Language}</td></tr>
        </table>`
 
 
+            }
+            else {
+                alert("End of  Employees Cv");
+                window.location.reload();
+
+            }
         }
-        else {
-            alert("End of  Employees Cv");
-            window.location.reload();
-        }
+    });
+
+
+    function add() {
+        document.getElementById("name").value = "";
+        document.getElementById("city").value = "";
+        document.getElementById("age").value = "";
+        document.getElementById("language").value = "";
+        modal.style.display = "block";
+    }
+
+    var modal = document.getElementById("myModal");
+
+    var span = document.getElementsByClassName("close")[0];
+    span.onclick = function () {
+        modal.style.display = "none";
     }
 
 
-    function add(){
-        const result = document.getElementById("result");
-        console.log(result)
-
-       data.forEach(element => {
-        let xyz =[];
-        
-
-//         output.innerHTML +=  xyz +`<table class= "table is-narrow">
-//        <tr><td><b>Name:</b> ${currentUser.Name}</tr></td>
-//        <tr><td><b>Age:</b> ${currentUser.Age} years old</tr></td>
-//         <tr><td><b>Lives in:</b> ${currentUser.City}</tr></td>
-//             <tr><td><b>Knowing language:</b> ${currentUser.Language}</tr></td>
-//        </table>`
-     });
-// };
-//     display(data);
-        
+    window.onclick = function (event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
     }
-    
+    function save() {
+        var name = document.getElementById("name").value;
+        var city = document.getElementById("city").value;
+        var language = document.getElementById("language").value;
+        var age = document.getElementById("age").value;
+
+        data.push({
+            Name: name,
+            Age: age,
+            City: city,
+            Language: language,
+            image: "",
+        })
+
+        modal.style.display = "none";
+        var newrow = document.getElementById("output").insertRow();
+
+        console.log(data);
+        newrow.innerHTML = `<td> ${name}</td>
+   <td> ${city}</td>
+    <td> ${language}</td>
+        <td> ${age}</td>`
+
+    }
+
+    var result = document.getElementById("result")
+    row = "";
+
+    data.forEach(function (element) {
+        console.log(element.Name)
+        row = row + `<tr><td> ${element.Name}</td>
+   <td> ${element.City}</td>
+    <td> ${element.Language}</td>
+        <td> ${element.Age}</td></tr>`
+    });
+
+    result.innerHTML = row;
+
+
+
+
+
+
 </script>
