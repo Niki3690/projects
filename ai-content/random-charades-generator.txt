@@ -5,9 +5,13 @@ Random Charades Generator:
 
 (2)This tool  requires little preparation, a lot of imagination, and it is great for a laugh.
 
+
+
 What is Charades ?
 ==================
 (1) Charades is a gesture and acting game. which some of the players try to guess a word or phrase from the actions of another player who may not speak.
+
+(2)The word 'Charades' is derived from the French word for 'to act'.
 
 
 What can you do with Random Charades Generator Tool?

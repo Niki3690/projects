@@ -1,15 +1,15 @@
 Random U.S. City Name Generator:
 --------------------------------
 
-(1)Random City Generator is a  generate a random US Cities.
+(1)Random City Generator is a  generate a randomly US Cities.
 
 What is City?
 ==============
-(1)A city is a large human settlement.Cities are also called urban areas.
+(1)A city is a large human settlement. Cities are also called urban areas.
 
-(2) city is an area in which a large number of people live quite close jointly.
+(2) city is an area in which a large number of people live quite close jointly.New York, is the most crowded city in the United States.
 
-(3) New York, is the most crowded city in the United States.
+(3)The word “city” comes from the French word  meaning “town", city. it is  populate place of greater size, and  population.
 
 
 What can you do with Random City Generator Tool?:
@@ -18,4 +18,4 @@ What can you do with Random City Generator Tool?:
 
 (2)Random City generator helps to create random dissimilar cities  and you can share details about cities with your friends and relatives.
 
-(3)This tool can be used for enjoyable, create well known  cities of the US, and know more about feature of cities.
+(3)This tool can be used for enjoyable, create well known  cities of the US it will also provide you with the population, and know more about feature of cities.

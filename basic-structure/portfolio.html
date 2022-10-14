@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>portfolio</title>
+</head>
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    .hero {
+        height: 100vh;
+        width: 100%;
+        background-image: url(OIP.jfif);
+        background-size: cover;
+        background-position: center;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding-top: 45px;
+        padding-left: 8%;
+        padding-right: 8%;
+    }
+
+    .logo {
+        color: antiquewhite;
+        cursor: pointer;
+
+    }
+
+    span {
+        color: yellowgreen;
+    }
+
+    nav ul li {
+        list-style: none;
+        display: inline-block;
+        padding: 10px 25px;
+    }
+
+
+    nav ul li a {
+        color: antiquewhite;
+        text-decoration: none;
+        font-weight: bold;
+        text-transform: capitalize;
+    }
+
+    nav ul li a:hover {
+        color: blue;
+    }
+
+    .btn {
+        background-color: yellowgreen;
+        color: antiquewhite;
+        text-decoration: none;
+        border: 2px solid transparent;
+        font-weight: bold;
+        padding: 10px 25px;
+        border-radius: 30px;
+    }
+
+    .content {
+        position: absolute;
+        top: 50%;
+        left: 8%;
+    }
+
+    .newslatter form {
+        width: 380px;
+        max-width: 100%;
+        position: relative;
+    }
+</style>
+
+<body>
+    <div class="hero">
+        <nav>
+            <h2 class="is-size-2" id="logo">Portfo<span>lio</span></h2>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Services</a></li>
+                <li><a href="#">Skills</a></li>
+                <li><a href="#">Contact Us</a></li>
+            </ul>
+            <a href="#" class="btn">Subscribe</a>
+        </nav>
+
+        <div class="content">
+            <h4 class="is-size-4" style="color:pink;">Hello,My name is</h4>
+            <h1 class="is-size-1" style="color: white">Niki patel</h1>
+            <h4 class="is-size-4" style="color:white">I'am a Web Developer</h4>
+            <div class="newslatter">
+                <form>
+                    <input type="email" name="email" id="mail" placeholder="Enter Your Email">
+                    <input type="siubmit" name="submit" value="Lets Start">
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
