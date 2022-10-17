@@ -1,0 +1,24 @@
+Random IP Address:
+-------------------
+(1)IP address  manage the connection between devices that send and receive information between a network. 
+
+(2)it can be define lot of numbers that connect any device on a network.
+
+(3)IP addresses is communicate with over the internet as well as other networks and it is used for the identification and location of a network device.
+
+
+What is an IP address?
+=======================
+(1) Ip address defines unique string of characters that identifies each computer using the Internet Protocol to communicate between  over a network.
+
+(2) Internet protocol address is a unique combination of numbers . it is a  combination of numbers such as identity for the network device when it connects to the internet. 
+
+(3)Ip address are divided in to 2 categories such as  Private IP address and Public IP address.Private IP address device connect to the internet network to join with the IP address, including laptops, computers,and mobilephone.as well as Public IP address are define  a whole primary address that contains all the other network devices link with the network.
+
+
+What can you do with Fake IP generator?
+========================================
+(1)this tool is help you understood the IP addresses and their importance to  access the  network connection. 
+
+(2)Random IP address is helps to generate random IP address between IP start range also end range along with you can also generate number of IP address together.
+

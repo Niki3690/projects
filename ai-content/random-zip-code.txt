@@ -1,0 +1,24 @@
+Random Zip Code:
+-----------------
+(1)ZIP code used to describe the postal code system in the United States.it is a series of numbers.
+
+(2)ZIP code is a various numbers that communicates information about people within different countries.
+
+(3)people always know their city zip code number its very helpful to define any addresses.
+
+
+What is US ZIP Code?
+=====================
+(1) US ZIP Code is a 5-digit number that specifies an individual destination post office or mail delivery area.
+
+(2)ZIP codes are define the first digit shows various group of U.S. states, the second and third digits together  shows region in that group and the fourth and fifth digits  shows a group of delivery addresses within that region.
+
+(3)zip codes is benificial for indicate the destination define any address or sending parcel easily.
+
+
+What can you do with Random Zip Codes Tool?
+============================================
+(1)Random ZIP Code is generate fake zip code for  entertainment along with their knowing different types of code.
+
+(2)this tool helps to generate different zip codes with the city name and also generate their state name.
+
