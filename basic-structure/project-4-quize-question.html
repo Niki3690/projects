@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <title>Quize Question-Answer</title>
+</head>
+<style>
+    body {
+        background-color: pink;
+        height: 660px;
+    }
+
+    li {
+        margin-top: 1rem;
+    }
+
+    #showScore {
+        background-color: lightsalmon;
+        margin-top: 3rem;
+        padding: 3rem 4rem;
+        text-align: center;
+    }
+
+    .scoreArea {
+        display: none;
+    }
+
+    input[type='radio']:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: #d1d3d1;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
+
+    input[type='radio']:checked:after {
+        width: 15px;
+        height: 15px;
+        border-radius: 15px;
+        top: -2px;
+        left: -1px;
+        position: relative;
+        background-color: blue;
+        content: '';
+        display: inline-block;
+        visibility: visible;
+        border: 2px solid white;
+    }
+</style>
+
+<body>
+    <div class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-11 is-centered">
+
+                    <div class="box" style="border-radius: 1rem">
+                        <h3 class="is-size-3   question">Question is here</h3><br>
+                        <ul>
+                            <li>
+                                <div class="control">
+                                    <input type="radio" name="answer" id="answer1" class="answer" />
+                                    <label for="ans1" id="option1">Answer Option</label>
+                                </div>
+                            </li>
+                            <hr>
+
+                            <li>
+                                <div class="control">
+                                    <input type="radio" name="answer" id="answer2" class="answer" />
+                                    <label for="ans1" id="option2">Answer Option</label>
+                                </div>
+                            </li>
+                            <hr>
+
+                            <li>
+                                <div class="control">
+                                    <input type="radio" name="answer" id="answer3" class="answer" />
+                                    <label for="ans1" id="option3">Answer Option</label>
+                                </div>
+                            </li>
+                            <hr>
+
+                            <li>
+                                <div class="control ">
+                                    <input type="radio" name="answer" id="answer4" class="answer" />
+                                    <label for="ans1" id="option4">Answer Option</label>
+                                </div>
+                            </li>
+                        </ul>
+                        <br />
+                        <div class="text">
+                            <button class="button is-info is-small" id="submit" ;
+                                onclick="submit()">submit</button><br><br>
+
+
+                            <div id="showScore" class="scoreArea">
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let quize = [{
+            question: "Q1: What is the full form of HTML?",
+            a: "Hello To My Location",
+            b: "Hey Text Me Tolatter",
+            c: "Hyper Txt Makeup Language",
+            d: "Hyper Text Markup Language",
+            answer: "answer4"
+        },
+        {
+            question: "Q2: <br/> What type of tag is this?",
+            a: "Break Tag",
+            b: "Break Closing Tag",
+            c: "An Opening Tag",
+            d: "A Broken One",
+            answer: "answer2"
+        },
+        {
+            question: "Q3: Which  table tags is used to create a table row?",
+            a: "<th>",
+            b: "<td>",
+            c: "<tr>",
+            d: "<table>",
+            answer: "answer3"
+        },
+        {
+            question: "Q4: Choose the correct HTML tag to make text bold?",
+            a: "Bold",
+            b: "B",
+            c: "Bld",
+            d: "Bi",
+            answer: "answer2"
+        },
+        {
+            question: "Q5: A radio button used on a web page, would allow a person to select?",
+            a: "More than one item",
+            b: "Only one item",
+            c: "Two item",
+            d: "Infinite item",
+            answer: "answer2"
+        },
+        {
+            question: "Q6:How is document type initialized in HTML5?",
+            a: "</DOCTYPE HTML>",
+            b: "</DOCTYPE>",
+            c: "<!DOCTYPE HTML>",
+            d: "</DOCTYPE html>",
+            answer: "answer3"
+        },
+        {
+            question: "Q7:Which is the correct way of creating an hyperlink in HTML?",
+            a: "<a>www.javaScript.org <javaScript /a>",
+            b: "<a href=“www.javaScript.org” javaScript /a>",
+            c: "<a link=“www.javaScript.org” javaScript> </a>",
+            d: "<a href= “www.javaScript.org”>javaScript</a>",
+            answer: "answer4"
+        },
+        {
+            question: "Q8:What is the purpose of using div tags in HTML?",
+            a: "For creating Different styles",
+            b: "For creating different sections",
+            c: "For adding headings",
+            d: "For adding titles.",
+            answer: "answer2"
+        },
+        {
+            question: "Q9:Which is a portion of text italic in HTML?",
+            a: "<italic>",
+            b: "<style= “i”>",
+            c: "<i>",
+            d: "<style=“italic”>",
+            answer: "answer3"
+        },
+        {
+            question: "Q10:Which  is correct HTML code for making a checkbox?",
+            a: "<checkbox>",
+            b: "<input type=checkbox>",
+            c: "<check>",
+            d: "<input type=check>",
+            answer: "answer2"
+        },
+        {
+            question: "Q11:Which is add an header in HTML5 table?",
+            a: "<theader>",
+            b: "<h1>",
+            c: "<th>",
+            d: "<header>",
+            answer: "answer3"
+        },
+        {
+            question: "Q12:Which is used in HTML to create a table?",
+            a: "<table> , <tbody> , <trow>",
+            b: "<table> , <tb> , <trow>",
+            c: "<table> , <tbody> , <tr>",
+            d: "All of the above",
+            answer: "answer3"
+        },
+        {
+            question: "Q13:DOM stands for?",
+            a: "Document object model",
+            b: "Data object model",
+            c: " Data oriented model",
+            d: "Document Oriented model",
+            answer: "answer4"
+        },
+        {
+            question: "Q14:The href attribute in the link tag specifies the?",
+            a: "Destination of a link",
+            b: "Link",
+            c: "Hypertext",
+            d: "None of the above",
+            answer: "answer1"
+        },
+        {
+            question: "Q15: How can we resize the image?",
+            a: "Using resize attribute",
+            b: "Using height and width",
+            c: "Using size attribute",
+            d: "Using rs attribute",
+            answer: "answer2"
+        },
+        {
+            question: "Q16:  ASCII stands for______?",
+            a: "American Standard Code for Informal Interchange",
+            b: " American Standard Code for Interchanging Information",
+            c: "American Standard Code for Information Interchange",
+            d: "American Standard Code for Information Interval",
+            answer: "answer3"
+        },
+        {
+            question: "Q17:.HTML program is saved using _________ extension?",
+            a: ".htl",
+            b: ".html ",
+            c: ".hml",
+            d: ".htlm",
+            answer: "answer2"
+        },
+        {
+            question: "Q18: Which of the following is valid colour code ?",
+            a: " #000000",
+            b: " #0000000 ",
+            c: " #00000000",
+            d: " #000000000",
+            answer: "answer1"
+        },
+        {
+            question: "Q19: Caption Tag in HTML?",
+            a: " Is used to display the Title for table at the top",
+            b: " Is used to display the Title for table at the bottom",
+            c: "  Both ",
+            d: " None",
+            answer: "answer3"
+        },
+        {
+            question: "Q20: What is mean by DTD?",
+            a: "Document type data",
+            b: " Data type definition",
+            c: "Document type definition",
+            d: "Definition type document",
+            answer: "answer3"
+        },
+
+
+        ]
+
+
+
+
+
+        let question = document.querySelector(".question");
+        let option1 = document.querySelector("#option1");
+        let option2 = document.querySelector("#option2");
+        let option3 = document.querySelector("#option3");
+        let option4 = document.querySelector("#option4");
+        // let submit = document.querySelector("#submit");
+        let answers = document.querySelectorAll(".answer");
+        let showScore = document.querySelector("#showScore");
+
+
+        let questionCount = 0;
+        let score = 0;
+
+        let loadQuestion = () => {
+            // console.log(quize[0]);
+            let questionList = quize[questionCount];
+
+            question.innerText = questionList.question;
+
+            option1.innerText = questionList.a;
+            option2.innerText = questionList.b;
+            option3.innerText = questionList.c;
+            option4.innerText = questionList.d;
+
+        }
+        loadQuestion();
+        let getCheckAnswer = () => {
+            let answer;
+
+
+            answers.forEach((currentAnswer) => {
+                if (currentAnswer.checked) {
+                    answer = currentAnswer.id;
+                }
+            });
+            return answer;
+        };
+
+        let clearAll = () => {
+            answers.forEach((currentAnswer) => currentAnswer.checked = false);
+        }
+
+        function submit() {
+            //    submit.addEventListener('click', () => {
+            let checkedAnswer = getCheckAnswer();
+            console.log(checkedAnswer);
+
+            if (checkedAnswer == quize[questionCount].answer) {
+                score++;
+            }
+            questionCount++;
+
+            clearAll();
+
+            if (questionCount < quize.length) {
+                loadQuestion();
+            } else {
+                showScore.innerHTML = `<h4 class="is-size-3"><b>Your scored ${score} / ${quize.length}</b></h4><br>
+                <button class="button has-background-dark has-text-white" onclick="location.reload()">Play Again</ button>`
+
+                showScore.classList.remove("scoreArea");
+            }
+        };
+
+
+    </script>
+</body>
+
+</html>

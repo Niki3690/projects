@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <title>Student Grade calc</title>
+</head>
+<style>
+    span {
+        color: red;
+    }
+
+    p {
+        color: green;
+    }
+</style>
+
+<body>
+    <div class="section">
+        <div class="container">
+            <div class="box has-background-success-light">
+                <div class="columns">
+                    <div class="column" style="margin-top: auto; margin-bottom:auto;margin-left: 180px;">
+                        <h3 class="is-size-3"><b>STUDENT</b></h3>
+                        <h3 class="is-size-3"><b>GRADE</b></h3>
+                        <h3 class="is-size-3"><b>CALC</b></h3>
+                        <h3 class="is-size-3"><b>COUNT</b></h3>
+                    </div>
+
+                    <div class="column">
+                        <input class="input is-primary" type="text" id="web" placeholder="WEB PROGRAMMING"
+                            maxlength="2"><br><br>
+                        <input class="input is-primary" type="text" id="maths" placeholder="MATHS"
+                            maxlength="2"><br><br>
+                        <input class="input is-primary" type="text" id="computer" placeholder="COMPUTER"
+                            maxlength="2"><br><br>
+                        <input class="input is-primary" type="text" id="physics" placeholder="PHYSICS"
+                            maxlength="2"><br><br>
+
+                        <button class="button is-primary is-outlined" onclick="calc()" style="margin-left:150px">Display
+                            Percentage</button>
+                    </div>
+                </div>
+                <div id="showData" class="text has-text-centered"></div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let calc = () => {
+            let web = document.getElementById("web").value;
+            // document.getElementById("web").value ='';
+            let maths = document.getElementById("maths").value;
+            let computer = document.getElementById("computer").value;
+            let physics = document.getElementById("physics").value;
+            let grades = "";
+
+            let totalGrade = parseFloat(web) + parseFloat(maths) + parseFloat(computer) + parseFloat(physics);
+            alert(totalGrade);
+
+            let Percentage = parseFloat(totalGrade / 400) * 100;
+            alert(Percentage);
+            // debugger;
+
+            if (Percentage <= 100 && Percentage >= 80) {
+                grades = "A";
+            } else if (Percentage <= 79 && Percentage >= 60) {
+                grades = "B";
+            } else if (Percentage <= 59 && Percentage >= 40) {
+                grades = "C";
+            } else if (Percentage <= 39 && Percentage >= 20) {
+                grades = "D";
+            } else {
+                grades = "F";
+            }
+
+            if (Percentage >= 19) {
+                document.getElementById("showData").innerHTML = `Out of 400 marks your  Total is <b>${totalGrade}</b> and your Percentage is <b>${Percentage}%</b>. <br> <h5 class=is-size-5>Your Grade is <b>${grades}</b></h5> <br> <div class=box><h4 class=is-size-4> <p>Yehhh!! You are <b>PASSED</b></p></h4></div>`
+            }
+            else {
+                document.getElementById("showData").innerHTML = `Out of 400 marks your  Total is <b>${totalGrade}</b> and your Percentage is <b>${Percentage}%</b>. <br> <h5 class=is-size-5>Your Grade is <b>${grades}</b></h5>  <br> <div class=box><h4 class=is-size-4> <span>Oopps!! You are <b>FAILED</b></span></h4></div>`
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>
