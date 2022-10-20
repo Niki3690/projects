@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <title>Document</title>
+</head>
+<style>
+    nav {
+        background-color: black;
+        color: wheat;
+        height: 60px;
+        width: 100%;
+        text-align: center;
+        border-radius: 12px;
+        margin-bottom: 12px;
+    }
+
+    .box {
+        background-color: wheat;
+
+    }
+
+    .hidden {
+        display: none;
+    }
+
+    span {
+        color: green;
+        font-weight: bolder;
+    }
+
+    p {
+        color: red;
+        font-weight: bolder;
+    }
+</style>
+
+<body>
+    <div class="section">
+        <div class="container has-text-centered">
+            <nav>
+                <h3 class="is-size-3"><b>Guess the word</b></h3>
+            </nav>
+            <div class="box">
+                <div class="line"></div><br>
+
+                <div class="columns is-centered">
+
+                    <div class="column is-6">
+
+                        <h3 class="massage"></h3>
+
+                        <input class="input is-dark is-medium  hidden" type="text"><br><br>
+
+                        <button class="button is-dark is-outlined" onclick="start()"><b>Start here</b></button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let massage = document.querySelector(".massage");
+        let guess = document.querySelector("input");
+        let button = document.querySelector(".button");
+        let play = false;
+        let newWords = "";
+        let randomWords = "";
+
+        let words = ["java", "python", "javascript", "c++", "php", "android", "sql", "nodejs", "angular", "larvel", "go", "html", "ruby", "react", "bootstrap", "dojo"];
+
+        let createNewWords = () => {
+            // console.log(words[8])
+            let randomNumber = Math.floor(Math.random() * words.length);
+            // console.log(randomNumber);
+            let newTemporaryWords = words[randomNumber];
+            // console.log(newTemporaryWords.split(""))
+            return newTemporaryWords;
+        }
+
+
+        let scrambWords = (array) => {
+            for (let i = array.length - 1; i > 0; i--) {
+                let temp = array[i];
+                //  console.log(temp)
+                let suffle = Math.floor(Math.random() * (i + 1));
+                // console.log(i)
+                // console.log(suffle)
+                array[i] = array[suffle];
+                array[suffle] = temp;
+            }
+            return array;
+        }
+
+
+        function start() {
+            if (!play) {
+                play = true;
+                button.innerHTML = "<b>Guess word</b>";
+                guess.classList.toggle("hidden");
+                newWords = createNewWords();
+                randomWords = scrambWords(newWords.split("")).join("");
+                // console.log(randomWords);
+                massage.innerHTML = `<h4 class=is-size-4>Guess this word:-<b> ${randomWords}</b></h4><br>`;
+            }
+            else {
+                let tempWordss = guess.value;
+                if (tempWordss === newWords) {
+                    // console.log("true");
+                    play = false;
+                    massage.innerHTML = `<div class=box>
+                        <h4 class=is-size-4>
+                        <span>yehh!! it's True.<br> it's <b>${newWords}</b></span>
+                        </h4></div><br>`;
+                    button.innerHTML = "Again Start"
+                    guess.classList.toggle("hidden");
+                    guess.value = "";
+                }
+                else {
+                    // console.log("false");
+                    massage.innerHTML = `<div class=box>
+                        <h4 class=is-size-4>
+                            <p>oopss!! it's False.<br> it's <b>${randomWords}</b></p>
+                            </h4></div><br>`;
+                }
+
+            }
+        }
+    </script>
+
+</body>
+
+</html>
