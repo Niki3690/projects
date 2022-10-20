@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Website making</title>
+</head>
+
+<body>
+    <style>
+        .header {
+            min-height: 100vh;
+            width: 100%;
+            background-image: url("Desktop-HD-college-wallpapers.jpg");
+            background-position: center;
+            background-size: cover;
+            position: relative;
+        }
+
+        img {
+            height: 75px;
+            width: 150px;
+        }
+
+        nav {
+            display: flex;
+            padding: 2% 6%;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-links {
+            flex: 1;
+            text-align: center;
+        }
+
+        .nav-links ul li {
+            list-style: none;
+            display: inline-block;
+            padding: 8px 12px;
+            position: relative;
+        }
+
+        .nav-links ul li a {
+            color: black;
+            font-weight: bolder;
+        }
+
+        .nav-links ul li::after {
+            content: "";
+            width: 0%;
+            height: 2px;
+            background: #f44336;
+            display: block;
+            margin: auto;
+            transition: 0.5s;
+        }
+
+        .nav-links ul li:hover::after {
+            width: 100%;
+        }
+
+        .text-box {
+            width: 90%;
+            color: #fff;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            text-align: center;
+            transform: translate(-50%, -50%);
+        }
+
+        .hero {
+            display: inline-block;
+            text-decoration: none;
+            color: black;
+            border: 3px solid black;
+            padding: 12px 34px;
+            font-size: 13px;
+            background: transparent;
+            position: relative;
+            cursor: pointer;
+        }
+
+        .hero:hover {
+            border: 3px solid #f44336;
+            background: #f44336;
+            transition: 1s;
+        }
+
+        @media(max-width:700px) {
+            .text-box h3 {
+                font-size: 25px;
+            }
+        }
+
+        .course {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding: 100px;
+
+        }
+
+        .campus {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding: 100px;
+        }
+
+        .facilities {
+            width: 80%;
+            margin: auto;
+            text-align: center;
+            padding: 100px;
+        }
+
+        figure:hover {
+            border: 3px solid #f44336;
+            background: #f44336;
+            transition: 0s;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+
+
+        P {
+            color: black;
+            font-size: 14px;
+            font-weight: 300;
+            line-height: 22px;
+            padding: 10px;
+        }
+
+        .box:hover {
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .cta {
+            margin: 100px auto;
+            width: 60%;
+            background-image: url("OIP\ \(1\).jfif");
+            background-position: center;
+            background-size: cover;
+            border-radius: 10px;
+            text-align: center;
+            padding: 100px 0;
+
+        }
+
+        .cta:hover {
+            border: 3px solid #f44336;
+            background: #f44336;
+            transition: 0s;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+
+        }
+    </style>
+    <section class="header">
+        <nav>
+            <a href="#"><img src="logo-mockup_35913-2089.webp"></a>
+            <div class="nav-links">
+                <ul>
+                    <li><a href="#">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">COURSE</a></li>
+                    <li><a href="#">BLOG</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
+
+        <div class="text-box">
+            <h3 class="is-size-3" style="color:black
+            "><b>Biggest Company</b></h3>
+            <div class="text" style="color: black; margin-top: 12px" ;>
+                <h5 class="is-size-5"><b>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Laborum, minus!
+                        Laborum dolorem natus provident eligendi sunt corporis possimus officia quos.</b></h5><br>
+                <a href="#" class="hero">Visit here for more info</a>
+            </div>
+
+    </section>
+
+    <section class="course">
+        <h3 class="is-size-3"><b>Internship we offer</b></h3>
+        <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Saepe, cumque?</p><br>
+
+        <div class="columns">
+            <div class="column is-4">
+                <div class="box has-background-info-light">
+                    <h4 class="is-size-4"><b>Basic</b></h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores impedit quia, facere et,
+                        perspiciatis, eligendi architecto sit sed in cupiditate nam animi.</p>
+                </div>
+            </div>
+
+            <div class="column is-4">
+                <div class="box has-background-info-light">
+                    <h4 class="is-size-4"><b>Intermediate</b></h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores impedit quia, facere et,
+                        perspiciatis, eligendi architecto sit sed in cupiditate nam animi.</p>
+                </div>
+            </div>
+
+
+            <div class="column is-4">
+                <div class="box has-background-info-light">
+                    <h4 class="is-size-4"><b>Master Mind</b></h4>
+                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores impedit quia, facere et,
+                        perspiciatis, eligendi architecto sit sed in cupiditate nam animi.</p>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+    <section class="campus">
+        <h3 class="is-size-3" style="text-align:center"><b>Our global industry</b></h3>
+        <div class="text has-text-centered">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quasi officiis optio asperiores doloremque,
+                tempore sapiente.</p>
+        </div><br>
+
+
+        <div class="columns">
+            <div class="column is-4">
+                <div class="text  has-background-info-light">
+                    <figure class="image">
+                        <img src="pngtree-vector-london-png-image_2133711.jpg">
+                    </figure>
+                </div>
+            </div>
+
+            <div class="column is-4">
+                <div class="text  has-background-info-light">
+                    <figure class="image">
+                        <img src="gettyimages-1126867203.webp" style="height: 280px">
+                    </figure>
+                </div>
+            </div>
+
+
+            <div class="column is-4">
+                <div class="text  has-background-info-light">
+                    <figure class="image">
+                        <img src="pngtree-realistic-minimalist-style-new-york-city-silhouette-png-image_2891111.jpg">
+                    </figure>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="facilities" style="text-align:center">
+        <h3 class="is-size-3"><b>Our facilities</b></h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id optio eveniet minus, labore quidem iste.</p><br>
+
+
+        <div class="columns">
+            <div class="column is-4">
+                <div class="box has-background-info-light">
+                    <figure class="image">
+                        <img src="auditorium-1228670.jpg">
+                    </figure>
+                    <h4 class="is-size-4"><b>Largest Auditorium</b> </h4>
+                </div>
+            </div>
+
+
+
+            <div class="column is-4">
+                <div class="box has-background-info-light">
+                    <figure class="image">
+                        <img src="cotswoldinteriors_hartpury-0112-1-1-1440x958.webp">
+                    </figure>
+                    <h4 class="is-size-4"><b>Hygienic Canteen</b> </h4>
+                </div>
+            </div>
+
+
+            <div class="column is-4">
+                <div class="box has-background-info-light">
+                    <figure class="image">
+                        <img src="1_uvQCWIZ3amjtMWtkvDrgug.jpeg">
+                    </figure>
+                    <h4 class="is-size-4"><b>Company Library</b> </h4>
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="facilities" style="text-align:center">
+        <h3 class="is-size-3"><b>What Our Employees Says</b></h3>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Id optio eveniet minus, labore quidem iste.</p><br>
+
+        <div class="columns">
+            <div class="column is-4" style="margin-left:155px">
+                <div class="box has-background-info-light">
+                    <div class="columns">
+                        <div class="column">
+                            <figure class="image">
+                                <img src="4128176.png">
+                            </figure>
+                        </div>
+
+
+                        <div class="column">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing.
+                        </div>
+                    </div>
+                    <h6 class=is-size-6><b>Darshan shah</b></h6>
+                    <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i class="fa fa-star"></i> <i
+                        class="fa fa-star"></i><i class="fa-regular fa-star"></i>
+                </div>
+            </div>
+
+            <div class="column is-4">
+                <div class="box has-background-info-light">
+                    <div class="columns">
+                        <div class="column">
+                            <figure class="image">
+                                <img src="3220315.png">
+                            </figure>
+                        </div>
+
+
+                        <div class="column">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing.
+                        </div>
+                    </div>
+                    <h6 class=is-size-6><b>Mahima patel</b></h6>
+                    <i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i
+                        class="fa fa-star"></i><i class="fa fa-star"></i>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <section class="cta">
+        <h4 class="is-size-4 has-text-white"><b>Enroll for our various online Vaccency <br> anywhere from the world.</b>
+        </h4>
+
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -51,6 +51,7 @@
       tr.innerHTML="<td class='sno'>"+sno+"</td> <td><input type='text'class='form-control'></td> <td><input type='text'class='form-control'></td> <td><input type='button' value='+' onclick='add_row()' class='btn btn-success btn-xs'></td> <td><input type='button' value='-' onclick='remove_row(this)' class='btn btn-danger btn-xs'></td>";
       document.getElementById("tbl").appendChild(tr);
     }
+    
     function remove_row(e)
     {
       var n=document.querySelector("#tbl").querySelectorAll("tr").length;
