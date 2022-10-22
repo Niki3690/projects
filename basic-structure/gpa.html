@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        padding: 0px;
+        margin: 0px;
+        box-sizing: border-box;
+    }
+
+    .wrapper {
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .table {
+        row-gap: 20px;
+    }
+
+    th {
+        width: 100px;
+        height: 50px;
+        margin: 50px;
+        border: solid white;
+        background: green;
+        color: white;
+
+
+    }
+
+    td {
+        width: 100px;
+        margin: 50px;
+        border: solid black;
+    }
+
+    .wrapper {
+        display: grid;
+        width: 100vw;
+        height: 100vh;
+        place-items: center;
+    }
+
+    .box {
+        padding: 5px;
+        background: rgba(0, 0, 0, 0.5)
+    }
+
+    .points,
+    .gpoints {
+        width: 100px;
+        background: wheat;
+        border: solid rgb(17, 207, 17);
+        height: 20px;
+        font-weight: bolder;
+    }
+
+    .select {
+        width: 100px;
+        font-weight: bolder;
+    }
+
+    /* .btn {
+        width: 120px;
+        height: 35px;
+        text-align: center;
+        font-weight: bolder;
+        font-size: 20px;
+        background: black;
+        color: white;
+    } */
+
+    .result {
+        width: 310px;
+        height: 35px;
+        border: solid green;
+        background: white;
+        color: black;
+        font-weight: bolder;
+    }
+
+    .last {
+        display: flex;
+        flex-direction: row;
+    }
+</style>
+
+<body>
+    <div class="section">
+        <div class="container">
+            <div class="wrapper">
+                <div class="box">
+                    <table>
+                        <th>Grades</th>
+                        <th>Points</th>
+                        <th>chours</th>
+                        <th>gpoints</th>
+                        <tr>
+
+                            <td><select class="grades" onclick="assignpoints(), assignpoint2()">
+                                    <option>select</option>
+                                    <option>A</option>
+                                    <option>B</option>
+                                    <option>C</option>
+                                    <option>D</option>
+                                </select></td>
+                            <td>
+                                <p class="points"></p>
+                            </td>
+                            <td><select class="chours" onclick="assignpoints()">
+                                    <option>select</option>
+                                    <option>1</option>
+                                    <option>2</option>
+                                    <option>3</option>
+                                    <option>4</option>
+                                </select></td>
+                            <td>
+                                <p class="gpoints"></p>
+                            </td>
+                        </tr>
+
+                        <td><select class="grades" onclick="assignpoints(),assignpoint2()">
+                                <option>select</option>
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                            </select></td>
+                        <td>
+                            <p class="points"></p>
+                        </td>
+                        <td><select class="chours" onclick="assignpoints()">
+                                <option>select</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select></td>
+                        <td>
+                            <p class="gpoints"></p>
+                        </td>
+                        </tr>
+
+
+                        <td><select class="grades" onclick="assignpoints(),assignpoint2()">
+                                <option>select</option>
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                            </select></td>
+                        <td>
+                            <p class="points"></p>
+                        </td>
+                        <td><select class="chours" onclick="assignpoints()">
+                                <option>select</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select></td>
+                        <td>
+                            <p class="gpoints"></p>
+                        </td>
+                        </tr>
+
+
+
+                        <td><select class="grades" onclick="assignpoints(),assignpoint2()">
+                                <option>select</option>
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                            </select></td>
+                        <td>
+                            <p class="points"></p>
+                        </td>
+                        <td><select class="chours" onclick="assignpoints()">
+                                <option>select</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select></td>
+                        <td>
+                            <p class="gpoints"></p>
+                        </td>
+                        </tr>
+
+
+                        <td><select class="grades" onclick="assignpoints(),assignpoint2()">
+                                <option>select</option>
+                                <option>A</option>
+                                <option>B</option>
+                                <option>C</option>
+                                <option>D</option>
+                            </select></td>
+                        <td>
+                            <p class="points"></p>
+                        </td>
+                        <td><select class="chours" onclick="assignpoints()">
+                                <option>select</option>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select></td>
+                        <td>
+                            <p class="gpoints"></p>
+                        </td>
+                        </tr>
+
+
+                    </table>
+                    <div class="last">
+                        <button class="btn" onclick="calculate()">Calculate</button>
+                        <p class="result"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const grades = document.querySelectorAll(".grades");
+        const chours = document.querySelectorAll(".chours");
+        const points = document.querySelectorAll(".points");
+        const gpoints = document.querySelectorAll(".gpoints");
+        const result = document.querySelector(".result");
+
+        function calculate() {
+            let p = 0;
+            let cr = 0;
+            for (var i = 0; i < grades.length; i++) {
+                if (grades[i].value == "A" && chours[i] == "1") {
+                    p = p + 3.7;
+                    cr = cr + 1;
+                }
+                else if (grades[i].value == "A" && chours[i] == "2") {
+                    p = p + 7.4;
+                    cr = cr + 2;
+                }
+                else if (grades[i].value == "A" && chours[i] == "3") {
+                    p = p + 11.2;
+                    cr = cr + 3;
+                }
+                else if (grades[i].value == "A" && chours[i] == "4") {
+                    p = p + 14.4;
+                    cr = cr + 4;
+                }
+                else if (grades[i].value == "B" && chours[i] == "1") {
+                    p = p + 3;
+                    cr = cr + 1;
+                }
+                else if (grades[i].value == "B" && chours[i] == "2") {
+                    p = p + 6;
+                    cr = cr + 2;
+                }
+                else if (grades[i].value == "B" && chours[i] == "3") {
+                    p = p + 9;
+                    cr = cr + 3;
+                }
+                else if (grades[i].value == "B" && chours[i] == "4") {
+                    p = p + 12;
+                    cr = cr + 4;
+                }
+                else if (grades[i].value == "C" && chours[i] == "1") {
+                    p = p + 1.5;
+                    cr = cr + 1;
+                }
+                else if (grades[i].value == "C" && chours[i] == "2") {
+                    p = p + 3;
+                    cr = cr + 2;
+                }
+                else if (grades[i].value == "C" && chours[i] == "3") {
+                    p = p + 4.5;
+                    cr = cr + 3;
+                }
+                else if (grades[i].value == "C" && chours[i] == "4") {
+                    p = p + 6;
+                    cr = cr + 4;
+                }
+                else if (grades[i].value == "D" && chours[i] == "1") {
+                    p = p + 1;
+                    cr = cr + 1;
+                }
+                else if (grades[i].value == "D" && chours[i] == "2") {
+                    p = p + 2;
+                    cr = cr + 2;
+                }
+                else if (grades[i].value == "D" && chours[i] == "3") {
+                    p = p + 3;
+                    cr = cr + 3;
+                }
+                else if (grades[i].value == "D" && chours[i] == "4") {
+                    p = p + 4;
+                    cr = cr + 4;
+                }
+            }
+
+            var total = p / cr;
+            result.innerHTML = `Your GPA is ${total}`;
+        }
+
+
+        function assignpoints() {
+            for (var i = 0; i < grades.length; i++) {
+                if (grades[i].value == "A" && chours[i] == "1") {
+                    gpoints[i].innerHTML = "3.7"
+                }
+                else if (grades[i].value == "A" && chours[i] == "2") {
+                    gpoints[i].innerHTML = "7.4"
+                }
+                else if (grades[i].value == "A" && chours[i] == "3") {
+                    gpoints[i].innerHTML = "11.2"
+                }
+                else if (grades[i].value == "A" && chours[i] == "4") {
+                    gpoints[i].innerHTML = "14.4"
+                }
+                else if (grades[i].value == "B" && chours[i] == "1") {
+                    gpoints[i].innerHTML = "3"
+                }
+                else if (grades[i].value == "B" && chours[i] == "2") {
+                    gpoints[i].innerHTML = "6"
+                }
+                else if (grades[i].value == "B" && chours[i] == "3") {
+                    gpoints[i].innerHTML = "9"
+                }
+                else if (grades[i].value == "B" && chours[i] == "4") {
+                    gpoints[i].innerHTML = "12"
+                }
+                else if (grades[i].value == "C" && chours[i] == "1") {
+                    gpoints[i].innerHTML = "1.5"
+                }
+                else if (grades[i].value == "C" && chours[i] == "2") {
+                    gpoints[i].innerHTML = "3"
+                }
+                else if (grades[i].value == "C" && chours[i] == "3") {
+                    gpoints[i].innerHTML = "4.5"
+                }
+                else if (grades[i].value == "C" && chours[i] == "4") {
+                    gpoints[i].innerHTML = "6"
+                }
+                else if (grades[i].value == "D" && chours[i] == "1") {
+                    gpoints[i].innerHTML = "1"
+                }
+                else if (grades[i].value == "D" && chours[i] == "2") {
+                    gpoints[i].innerHTML = "2"
+                }
+                else if (grades[i].value == "D" && chours[i] == "3") {
+                    gpoints[i].innerHTML = "3"
+                }
+                else if (grades[i].value == "D" && chours[i] == "4") {
+                    gpoints[i].innerHTML = "4"
+                }
+            }
+
+            function assignpoint2() {
+                for (let i = 0; i < grades.length; i++) {
+                    if (grades[i].value == "A") {
+                        points[i].innerHTML == "3.7"
+                    }
+                    else if (grades[i].value == "B") {
+                        points[i].innerHTML == "3"
+                    }
+                    else if (grades[i].value == "C") {
+                        points[i].innerHTML == "1.5"
+                    }
+                    else if (grades[i].value == "D") {
+                        points[i].innerHTML == "1"
+                    }
+
+
+                }
+
+            }
+        }
+    
+
+    </script>
+</body>
+
+</html>
