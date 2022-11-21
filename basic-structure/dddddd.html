@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <title>GPA</title>
+  </head>
+
+  <body>
+    <div class="container is-fluid m-2 p-2">
+      <div class="columns is-centered mt-5">
+        <div class="column is-8" id="column-8">
+          <div class="card card-body text-center mt-7">
+            <!--use for Title(GPA calculator)-->
+            <h3 class="is-size-3 has-text-centered">
+              <strong>GPA Calculator</strong>
+            </h3>
+            <div class="page-group__header">
+              <!--use for subtitle(semester 1) -->
+
+              <section class="section">
+                <div class="columns">
+                  <div class="column is-12" id="column-12">
+                    <!--use for Column name-->
+                    <div id="myDynamicTable"></div>
+                    <!--use for hr tag-->
+
+                    <hr
+                      style="height: 1px; color: gray; background-color: gray"
+                    />
+
+                    <div
+                      style="
+                        border: 1px solid;
+                        border-radius: 5px;
+                        height: 30px;
+                        width: 200px;
+                        background-color: aliceblue;
+                        color: #5ffc82;
+                        text-align: center;
+                        margin-bottom: 5px;
+                      "
+                    >
+                      <p id="totalCGPA"></p>
+                    </div>
+
+                    <!--use for ADD New Semester -->
+                    <p class="buttons">
+                      <button
+                        class="button is-rounded is-small is-success is-outlined"
+                        id="addSemester"
+                        onclick="addSemester()"
+                      >
+                        <span class="icon is-small">
+                          <em class="fa fa-plus"></em>
+                        </span>
+                        <span>Add Semester</span>
+                      </button>
+                      <button
+                        class="button is-rounded is-small is-success is-outlined"
+                        id="overAll"
+                        onclick="overall()"
+                      >
+                        <span>overAll</span>
+                      </button>
+                    </p>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- javascript start -->
+    <script>
+      var countersemester = 1;
+      window.onload = addSemester();
+
+      function addSubject(tblnum) {
+        var table = document.getElementById("tbl" + tblnum);
+        let i = table.rows.length;
+        let row = table.insertRow();
+        let cell1 = row.insertCell(0);
+        let cell2 = row.insertCell(1);
+        let cell3 = row.insertCell(2);
+        let cell4 = row.insertCell(3);
+        var cell5 = row.insertCell(4);
+
+        cell1.innerHTML =
+          '<input class="input is-small is-success" type="number" name="subjectCode" placeholder="Subject Code" id="subjectCode' +
+          i +
+          "" +
+          tblnum +
+          '">';
+        cell2.innerHTML =
+          '<input class="input is-small is-success" type="text" name="subjectName" placeholder="Subject Name" id="subjectName' +
+          i +
+          "" +
+          tblnum +
+          '">';
+        cell3.innerHTML =
+          '<div class="select is-small is-success"  name="subjectGrade"><select id="grade' +
+          i +
+          "" +
+          tblnum +
+          '"><option>SelectGrade</option><option value="10">AA</option><option value="9">AB</option><option value="8">BB</option><option value="7">BC</option><option value="6">CC</option><option value="5">CD</option><option value="4">DD</option><option value="0">FF</option> </select></div>';
+        cell4.innerHTML =
+          '<div class="select is-small is-success"  name="subjectCredit"><select id="credit' +
+          i +
+          "" +
+          tblnum +
+          '"> <option>Credit</option><option value="10">10</option><option value="9">9</option><option value="8">8</option><option value="7">7</option><option value="6">6</option><option value="5">5</option><option value="4">4</option><option value="0">0</option></select>';
+        cell5.innerHTML =
+          '<button class="button is-small is-success is-outlined" id="remove' +
+          i +
+          "" +
+          tblnum +
+          '" onclick="removerow(' +
+          i +
+          "," +
+          tblnum +
+          ')"><span class="icon is-small"><i class="fa fa-close"></i></span><span>Remove</span></button>';
+      }
+
+      function addSemester() {
+        if (countersemester <= 8) {
+          var myTableDiv = document.getElementById("myDynamicTable");
+          var h1 = document.createElement("H1");
+          h1.className = "is-size-5 has-text-left";
+          var b = document.createElement("B");
+          b.innerHTML = "Semester " + countersemester + "";
+          h1.appendChild(b);
+          myTableDiv.appendChild(h1);
+          var br = document.createElement("BR");
+          myTableDiv.appendChild(br);
+          var table = document.createElement("TABLE");
+          table.border = "1";
+          table.className = "table is-bordered";
+          table.id = "tbl" + countersemester;
+          var tablehhead = document.createElement("THEAD");
+          var td1 = document.createElement("th");
+          var td2 = document.createElement("th");
+          var td3 = document.createElement("th");
+          var td4 = document.createElement("th");
+          var td5 = document.createElement("th");
+          td1.appendChild(document.createTextNode("Subject Code"));
+          td2.appendChild(document.createTextNode("Subject Name"));
+          td3.appendChild(document.createTextNode("Grade"));
+          td4.appendChild(document.createTextNode("Grade credit of Subject"));
+          td5.appendChild(document.createTextNode("Remove Subject"));
+          tablehhead.appendChild(td1);
+          tablehhead.appendChild(td2);
+          tablehhead.appendChild(td3);
+          tablehhead.appendChild(td4);
+          tablehhead.appendChild(td5);
+          table.appendChild(tablehhead);
+          var tableBody = document.createElement("TBODY");
+          table.appendChild(tableBody);
+          myTableDiv.appendChild(table);
+          for (var i = 0; i < 4; i++) {
+            var row = tablehhead.insertRow();
+            var cell1 = row.insertCell(0);
+            var cell2 = row.insertCell(1);
+            var cell3 = row.insertCell(2);
+            var cell4 = row.insertCell(3);
+            var cell5 = row.insertCell(4);
+            cell1.innerHTML =
+              '<input class="input is-small is-success" type="number" name="subjectCode" placeholder="Subject Code" id="subjectCode' +
+              i +
+              "" +
+              countersemester +
+              '">';
+            cell2.innerHTML =
+              '<input class="input is-small is-success" type="text" name="subjectName" placeholder="Subject Name" id="subjectName' +
+              i +
+              "" +
+              countersemester +
+              '">';
+            cell3.innerHTML =
+              '<div class="select is-small is-success" name="subjectGrade"><select id="grade' +
+              i +
+              "" +
+              countersemester +
+              '" ><option>SelectGrade</option><option value="10">AA</option><option value="9">AB</option><option value="8">BB</option><option value="7">BC</option><option value="6">CC</option><option value="5">CD</option><option value="4">DD</option><option value="0">FF</option> </select></div>';
+            cell4.innerHTML =
+              '<div class="select is-small is-success"  name="subjectCredit"><select id="credit' +
+              i +
+              "" +
+              countersemester +
+              '"> <option>Credit</option><option value="10">10</option><option value="9">9</option><option value="8">8</option><option value="7">7</option><option value="6">6</option><option value="5">5</option><option value="4">4</option><option value="0">0</option></select>';
+            cell5.innerHTML =
+              '<button class="button is-small is-success is-outlined" id="remove' +
+              i +
+              "" +
+              countersemester +
+              '" onclick="removerow(' +
+              i +
+              "," +
+              countersemester +
+              ')"><span class="icon is-small"><i class="fa fa-close"></i></span><span>Remove</span></button>';
+          }
+          var h6 = document.createElement("H6");
+          h6.className = "is-size-6 has-text-left";
+          h6.setAttribute("style", "margin-bottom: 10px;");
+          h6.innerHTML = "Semester " + countersemester + " CGPA: ";
+          var strong = document.createElement("STRONG");
+          strong.id = "GPA" + countersemester;
+          h6.appendChild(strong);
+          h6.appendChild(br);
+          var btn = document.createElement("BUTTON");
+          btn.className = "button is-small is-success is-outlined";
+          btn.innerHTML = "submit";
+          btn.setAttribute("onclick", "addTotal(" + countersemester + ")");
+          btn.id = "submit" + countersemester;
+          h6.appendChild(btn);
+          var br1 = document.createElement("BR");
+          var br2 = document.createElement("BR");
+          h6.appendChild(br1);
+          h6.appendChild(br2);
+          var btn1 = document.createElement("BUTTON");
+          btn1.className = "button is-rounded is-small is-success is-outlined";
+          btn1.innerHTML =
+            '<span class="icon is-small"><em class="fa fa-book fa_custom"></em> </span><span>Add Subject</span>';
+          btn1.setAttribute("onclick", "addSubject(" + countersemester + ")");
+          btn1.id = "submit" + countersemester;
+          h6.appendChild(btn1);
+          myTableDiv.appendChild(h6);
+          countersemester++;
+        } else {
+          alert("you can only add 8 semester...");
+        }
+      }
+
+      function removerow(row, table) {
+        var table = document.getElementById("tbl" + table);
+        let rowCount = table.rows.length;
+        if (rowCount > 4) {
+          table.deleteRow(row);
+        } else {
+          alert("There should be atleast four sub");
+        }
+      }
+
+      function overall() {
+        let fg = true;
+        let tt = 0;
+        for (let i = 1; i < countersemester; i++) {
+          var over = addTotal(i);
+          if (over == false) {
+            fg = false;
+            break;
+          } else {
+            tt += over;
+          }
+        }
+        if (fg == false) {
+          alert("unable to fetch the data");
+        } else {
+          let divide = countersemester - 1;
+          let tt1 = tt / divide;
+          console.log(tt1);
+          document.getElementById("totalCGPA").innerHTML = tt1;
+        }
+      }
+
+      function addTotal(tblnum) {
+        let flag = false;
+        let table = document.getElementById("tbl" + tblnum);
+        let rowCount = table.rows.length;
+        for (let i = 0; i < rowCount; i++) {
+          let subjectGrade = parseInt(
+            document.getElementById("grade" + i + "" + tblnum).value
+          );
+          if (
+            subjectGrade == 0 ||
+            subjectGrade == null ||
+            isNaN(subjectGrade) ||
+            subjectGrade == undefined
+          ) {
+            flag = true;
+            break;
+          }
+        }
+        if (!flag) {
+          let arraysub = [];
+          let total = 0;
+          for (let j = 0; j < rowCount; j++) {
+            let subjectGrade = parseInt(
+              document.getElementById("grade" + j + "" + tblnum).value
+            );
+            let subjectCredit = parseInt(
+              document.getElementById("credit" + j + "" + tblnum).value
+            );
+            total = total + subjectGrade * subjectCredit;
+            arraysub.push(subjectGrade);
+          }
+          let cgpa = total / rowCount;
+          let GPA = document.getElementById("GPA" + tblnum);
+          GPA.innerHTML = cgpa;
+          return cgpa;
+        } else {
+          alert("please add all subject data");
+          return flag;
+        }
+      }
+    </script>
+  </body>
+</html>

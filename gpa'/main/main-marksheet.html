@@ -501,7 +501,20 @@ css/font-awesome.min.css">
                 }
             }
         }
-
+        
+        function GetLetterFromGPA(TotalCGPA)
+   {
+      var letter="";
+      var lettertbl=['A+','A','A-','B+','B','B-','C+','C','C-','D+','D','D-','F'];
+      var gpatbl=[4.33,4.00, 3.67, 3.33, 3.00, 2.67, 2.33, 2.00, 1.67, 1.33, 1.00, 0.67, 0];
+      for(var i=0; i<gpatbl.length; i++)
+         if( gpa>=gpatbl[i] )
+         {
+            letter = lettertbl[i];
+            break;
+         }
+      return letter;
+   }
 
 
     </script>
