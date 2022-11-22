@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"/>
+    <title>Document</title>
+</head>
+<body>
+    <div class="section">
+        <div class="container">
+            <!-- <div class="columns">
+                <div class="column is-4">
+            <input class="input" type="text" placeholder="Text input"><br>
+            <input class="input" type="text" placeholder="Text input"><br>
+
+            <button class="button" onclick="table()">Button</button>
+        </div>
+    </div>
+        </div>
+    </div>
+    
+
+    <script>
+        function table(){
+            alert("tbl")
+            let tbl=document.createElement("table");
+            let tblbody=document.createElement("tbody");
+
+            for(let i=0;i<3;i++){
+
+                let row=document.createElement("tr");
+                for(let j=0;j<4;j++){
+                    
+                    let cell=document.createElement("td");
+                    
+                    let cellText=document.createTextNode(`cell ${i} and ${j}`);
+                    cell.appendChild(cellText);
+                    row.appendChild(cell);
+                 
+                }
+                    tblbody.appendChild(row);
+            }
+tbl.appendChild(tblbody);
+document.body.appendChild(tbl);
+tbl.setAttribute("border","5");
+        }
+       
+
+
+    </script>
+</body>
+</html> -->
+
+<table id="myTable" border="5"> </table>
+<input class="input" type="text" placeholder="Text input" id="column"><br>
+            <input class="input" type="text" placeholder="Text input" id="row"><br>
+            <button class="button" onclick="table()">Button</button>
+
+            <script>
+            
+    function table(){
+   
+
+    let column=document.getElementById("column").value;
+    let row=document.getElementById("row").value;
+
+for(var i=0;i<column;i++)
+  {
+   var x=document.getElementById('myTable').insertRow(i);
+
+for(var j=0;j<row;j++)  
+    {
+    var y=  x.insertCell(j);
+     y.innerHTML="Row-"+i+" Column-"+j; 
+    }
+   }
+}
+            </script>

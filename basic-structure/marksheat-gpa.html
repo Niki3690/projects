@@ -263,19 +263,25 @@
           if (over == false) {
             fg = false;
             break;
+            debugger
           } else {
             tt += over;
+            debugger
           }
         }
         if (fg == false) {
           alert("unable to fetch the data");
         } else {
           let divide = countersemester - 1;
+          debugger
           console.log("divide :->" + divide);
           let tt1 = tt / divide;
+          debugger;
           console.log("tt1 :->" + tt1);
           console.log(tt1);
+          debugger
           document.getElementById("totalCGPA").innerHTML = tt1;
+          debugger
         }
       }
 
@@ -314,13 +320,17 @@
               document.getElementById("credit" + j + "" + tblnum).value
             );
             console.log("subjectCredit :->" + subjectCredit);
-            total = total + subjectGrade * subjectCredit;
+             total = total + subjectGrade * subjectCredit;
+           
             console.log("total:->" + total);
             arraysub.push(subjectGrade);
           }
-          let cgpa = total / rowCount;
+           let cgpa = total / rowCount;
+           debugger
+         
           console.log("cgpa :->" + cgpa);
           let GPA = document.getElementById("GPA" + tblnum);
+          debugger
           GPA.innerHTML = cgpa;
           return cgpa;
         } else {

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <title>Document</title>
+</head>
+
+
+<div class="section">
+    <div class="container">
+        <div class="columns">
+            <div class="column is-4">
+               
+                <input class="input" type="text" placeholder="Text input" id="column"><br><br>
+                <input class="input" type="text" placeholder="Text input" id="row"><br>
+                <button class="button" onclick="table()">Button</button>
+                <table id="myTable" border="5"> </table>
+
+                <script>
+
+                    function table() {
+                        myTable.innerHTML = '';
+
+                        let column = document.getElementById("column").value;
+                        let row = document.getElementById("row").value;
+
+                        for (var i = 0; i < column; i++) {
+                            var x = document.getElementById('myTable').insertRow(i);
+
+                            for (var j = 0; j < row; j++) {
+                                var y = x.insertCell(j);
+                                y.innerHTML = "Row-" + i + " Column-" + j;
+                            }
+                        }
+                    }
+                    
+                </script>
