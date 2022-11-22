@@ -303,10 +303,14 @@
               document.getElementById("credit" + j + "" + tblnum).value
             );
             total = total + subjectGrade * subjectCredit;
+            console.log(total)
             arraysub.push(subjectGrade);
           }
           let cgpa = total / rowCount;
+          console.log(cgpa)
+         
           let GPA = document.getElementById("GPA" + tblnum);
+          console.log(GPA)
           GPA.innerHTML = cgpa;
           return cgpa;
         } else {

@@ -253,10 +253,13 @@
       }
 
       function overall() {
+        alert("overall");
         let fg = true;
+        console.log("fg:->" + fg);
         let tt = 0;
         for (let i = 1; i < countersemester; i++) {
           var over = addTotal(i);
+          console.log("over:->" + over);
           if (over == false) {
             fg = false;
             break;
@@ -268,7 +271,9 @@
           alert("unable to fetch the data");
         } else {
           let divide = countersemester - 1;
+          console.log("divide :->" + divide);
           let tt1 = tt / divide;
+          console.log("tt1 :->" + tt1);
           console.log(tt1);
           document.getElementById("totalCGPA").innerHTML = tt1;
         }
@@ -276,12 +281,16 @@
 
       function addTotal(tblnum) {
         let flag = false;
+        console.log("flag:->" + flag);
         let table = document.getElementById("tbl" + tblnum);
+        console.log("table :->" + table);
         let rowCount = table.rows.length;
+        console.log("rowCount:->" + rowCount);
         for (let i = 0; i < rowCount; i++) {
           let subjectGrade = parseInt(
             document.getElementById("grade" + i + "" + tblnum).value
           );
+          console.log("subjectGrade :->" + subjectGrade);
           if (
             subjectGrade == 0 ||
             subjectGrade == null ||
@@ -295,17 +304,22 @@
         if (!flag) {
           let arraysub = [];
           let total = 0;
+          console.log("total :->" + total);
           for (let j = 0; j < rowCount; j++) {
             let subjectGrade = parseInt(
               document.getElementById("grade" + j + "" + tblnum).value
             );
+            console.log("subjectGrade :->" + subjectGrade);
             let subjectCredit = parseInt(
               document.getElementById("credit" + j + "" + tblnum).value
             );
+            console.log("subjectCredit :->" + subjectCredit);
             total = total + subjectGrade * subjectCredit;
+            console.log("total:->" + total);
             arraysub.push(subjectGrade);
           }
           let cgpa = total / rowCount;
+          console.log("cgpa :->" + cgpa);
           let GPA = document.getElementById("GPA" + tblnum);
           GPA.innerHTML = cgpa;
           return cgpa;
