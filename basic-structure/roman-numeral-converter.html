@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Roman numeral converter</title>
+</head>
+
+<body>
+    <div class="section">
+        <div class="container">
+            <div class="text has-text-centered">
+                <div class="columns">
+                    <div class="column is-12">
+                        <div class="box">
+                            <div class="columns">
+                                <div class="column is-2">
+                                    <span>Numbers</span>
+                                    <input class="input" type="number" id="numberInput" placeholder="Text input">
+                                </div>
+                                <div class="column is-1"
+                                    style="margin-top: 25px;margin-right: 25px;margin-left: 25px ;">
+                                    <button class="button" onclick="convert()">Button</button>
+                                </div>
+
+                                <div class="column is-2">
+                                    <span>Roman Letters</span>
+                                    <input class="input" type="text" id="romanInput" placeholder="Text input">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let numeral = [
+
+            { number: 1000, roman: "M" },
+            { number: 900, roman: "CM" },
+            { number: 500, roman: "D" },
+            { number: 400, roman: "CD" },
+            { number: 100, roman: "C" },
+            { number: 90, roman: "XC" },
+            { number: 50, roman: "L" },
+            { number: 40, roman: "XL" },
+            { number: 10, roman: "X" },
+            { number: 9, roman: "IX" },
+            { number: 5, roman: "V" },
+            { number: 4, roman: "IV" },
+            { number: 1, roman: "I" },
+        ];
+
+        function convert(arebicNumber) {
+            let roman = '';
+            let number = arebicNumber;
+
+
+
+            for (let i = 0; i < numeral.length; i++) {
+                if (numeral[i].number >= number) {
+                    number = number - numeral[i].number;
+                    roman = roman + numeral[i].roman
+                    i--;
+
+                }
+            }
+
+            document.getElementById("romanInput").value = roman;
+            console.log(`This number is a ${arebicNumber} is ${roman} in roman letter`);
+
+        }
+
+        document.getElementById('convert').addEventListener('click', function () {
+            let number = document.getElementById("numberInput").value;
+
+            convert(number)
+
+        })
+
+
+    </script>

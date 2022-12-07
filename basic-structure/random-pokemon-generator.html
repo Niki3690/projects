@@ -61,7 +61,7 @@
     <div class="section" style="background-color:darkseagreen;">
         <div class="container">
             <div class="columns is-centered">
-                <div class="column is-10">
+                <div class="column is-12">
                     <form action="" class="box" style="margin-top:30;">
                         <h3 class="is-size-3 has-text-centered"><strong>Random Pokémon Generator</strong></h3>
                         <hr><br>
@@ -129,6 +129,13 @@
 
 
                             <div class="column">
+                                <div class="button is-medium is-dark is-outlined" id="showAll" onclick="showAll('all')">
+                                    Show All</div>
+                            </div>
+
+
+
+                            <div class="column">
 
                                 <div class="button is-medium is-success" onclick="random()"><strong>Generate</strong>
                                 </div>
@@ -147,6 +154,7 @@
 
     </fieldset>  -->
 
+
                     </form>
                     <div id="result" class="columns is-multiline is-centered">
 
@@ -164,7 +172,7 @@
             {
                 "id": 1,
                 "name": "Caterpie",
-                "image": "https://pokemongenerator.net/sprites/png/normal/96.png",
+                "image": "caterpie.webp",
                 "types": ["bug"],
                 "link": "https://static.wikia.nocookie.net/pokemon/images/5/5d/010Caterpie.png/revision/latest?cb=20201109201919",
             }, {
@@ -657,7 +665,7 @@
             }, {
                 "id": 83,
                 "name": "Sentret",
-                "image": "SeKakunantret.webp",
+                "image": "sentret.webp",
                 "types": ["normal"],
                 "link": "https://pokemon.fandom.com/wiki/Sentret",
             }, {
@@ -879,7 +887,7 @@
             }
 
         ]
-
+        console.table(pokemon, ['type', 'name']);
 
         function random() {
             let count = 0;
@@ -912,8 +920,12 @@
             if (sort.length > generate) {
                 for (let index = 0; index < generate; index++) {
                     let random = Math.floor(Math.random() * sort.length);
+                    console.clear()
+                    console.log("random :->" + random)
                     let data = sort[random]
+                    console.log("data :->" + data)
                     var img = document.createElement('DIV')
+                    console.log("img :->" + img)
                     img.innerHTML = `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card  has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${data.image}"></div><a href="${data.link}"><p class="card-footer-item title is-center is-size-4">Name:${data.name}</p><p class="card-footer-item title is-center is-size-4">Type:${data.types}</p></a></div></div></div>`
                     result.appendChild(img)
                     sort = sort.filter((f) => f != data)
@@ -931,6 +943,28 @@
                 count = 0
             }
         }
+
+        function showAll(all) {
+            let result = document.getElementById("result");
+            let value = 119
+            console.log("value:->" + value);
+            result.innerHTML = '';
+
+            for (i = 1; i <= value; i++) {
+
+                let random = Math.floor(Math.random(pokemon) * 119) + 1;
+                // txtFileData[randomNumber]
+                console.log("random:->" + random)
+
+                let element = pokemon[i];
+                console.log("element:->" + element)
+
+                document.getElementById("result").innerHTML += `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card has-background-light  has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><a href="${element.link}"><p class="card-footer-item title is-center is-size-4">Name:${element.name}</p><p class="card-footer-item title is-center is-size-4">types: ${element.types}</p></a></div></div></div>`
+            };
+        }
+
+
+
     </script>
 </body>
 
