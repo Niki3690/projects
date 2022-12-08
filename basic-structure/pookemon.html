@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Random Pok&eacute;mon Generator</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
+</head>
+
+
+
+
+
+
+<style>
+    .customize-card {
+        width: 100%;
+        margin: 0 auto;
+        text-align: center;
+
+    }
+
+    .card-content {
+        background-color: transparent;
+        padding: 1.5rem;
+        text-align: center;
+        height: 300px;
+
+    }
+
+    .image {
+        width: 100%;
+        height: 220px;
+        background-size: cover;
+        text-align: center;
+
+    }
+
+    .card-footer-item {
+        align-items: center;
+        display: flex;
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 0;
+        justify-content: center;
+        padding: .75rem;
+
+    }
+
+    .p {
+
+        text-align: center;
+
+    }
+</style>
+
+<body>
+    <div class="section" style="background-color:darkseagreen;">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-12">
+                    <form action="" class="box" style="margin-top:30;">
+                        <h3 class="is-size-3 has-text-centered"><strong>Random Pokémon Generator</strong></h3>
+                        <hr><br>
+                        <div class="columns">
+                            <div class="column" style="margin-left: 90px;">
+                                <div class="select">
+                                    <select id="generate">
+                                        <option value="1">1</option>
+                                        <option value="2">2</option>
+                                        <option value="3">3</option>
+                                        <option value="4">4</option>
+                                        <option value="5">5</option>
+                                        <option value="6">6</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+
+                            <div class="column">
+                                <div class="select">
+                                    <select id="types">
+                                        <option value="All Types">All Types</option>
+                                        <option value="bug">Bug</option>
+                                        <option value="dark">Dark</option>
+                                        <option value="dragon">Dragon</option>
+                                        <option value="electric">Electric</option>
+                                        <option value="fighting">Fighting</option>
+                                        <option value="fire">Fire</option>
+                                        <option value="flying">Flying</option>
+                                        <option value="ghost">Ghost</option>
+                                        <option value="grass">Grass</option>
+                                        <option value="ground">Ground</option>
+                                        <option value="ice">Ice</option>
+                                        <option value="normal">Normal</option>
+                                        <option value="poison">Poison</option>
+                                        <option value="psychic">Psychic</option>
+                                        <option value="rock">Rock</option>
+                                        <option value="steel">Steel</option>
+                                        <option value="water">Water</option>
+                                    </select>
+                                </div>
+                            </div>
+
+
+                            <div class="column">
+                                <div class="button is-medium is-dark is-outlined" id="showAll" onclick="showAll('all')">
+                                    Show All</div>
+                            </div>
+
+
+
+                            <div class="column">
+
+                                <div class="button is-medium is-success" onclick="random()"><strong>Generate</strong>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+
+
+
+                    </form>
+                    <div id="result" class="columns is-multiline is-centered">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <script>
+        var pokemon = [
+            {
+                "id": 1,
+                "name": "Caterpie",
+                "image": "metapod.webp",
+                "types": ["bug"],
+                "link": "https://static.wikia.nocookie.net/pokemon/images/5/5d/010Caterpie.png/revision/latest?cb=20201109201919",
+            }, {
+                "id": 2,
+                "name": "Metapod",
+                "image": "metapod.webp",
+                "types": ["bug"],
+                "link": "https://pokemon.fandom.com/wiki/Metapod",
+            }, {
+                "id": 3,
+                "name": "Butterfree",
+                "image": "butterfree.webp",
+                "types": ["bug", "flying"],
+                "link": "https://pokemon.fandom.com/wiki/Butterfree",
+            }, {
+                "id": 4,
+                "name": "Weedle",
+                "image": "weedle.webp",
+                "types": ["bug", "poison"],
+                "link": "https://pokemon.fandom.com/wiki/Weedle",
+            }, {
+                "id": 5,
+                "name": "Kakuna",
+                "image": "kakuna.webp",
+                "types": ["bug", "poison"],
+                "link": "https://pokemon.fandom.com/wiki/Kakuna",
+            }, {
+                "id": 6,
+                "name": "Beedrill",
+                "image": "beedrill.webp",
+                "types": ["bug", "poison"],
+                "link": "https://pokemon.fandom.com/wiki/Beedrill",
+            }, {
+                "id": 7,
+                "name": "Paras",
+                "image": "paras.webp",
+                "types": ["bug", "grass"],
+                "link": "https://pokemon.fandom.com/wiki/Paras",
+            }, {
+                "id": 8,
+                "name": "Rattata",
+                "image": "rattata.webp",
+                "types": ["normal"],
+                "link": "https://pokemon.fandom.com/wiki/Rattata",
+            }, {
+                "id": 9,
+                "name": "Raticate",
+                "image": "raticate.webp",
+                "types": ["normal"],
+                "link": "https://pokemon.fandom.com/wiki/Raticate",
+            }, {
+                "id": 10,
+                "name": "Meowth",
+                "image": "meowth.webp",
+                "types": ["normal"],
+                "link": "https://pokemon.fandom.com/wiki/Meowth",
+            }, {
+                "id": 11,
+                "name": "Persian",
+                "image": "persian.webp",
+                "types": ["normal"],
+                "link": "https://pokemon.fandom.com/wiki/Persian",
+            }, {
+                "id": 12,
+                "name": "Grimer",
+                "image": "grimer.webp",
+                "types": ["poison"],
+                "link": "https://pokemon.fandom.com/wiki/Grimer",
+            }, {
+                "id": 13,
+                "name": "Muk",
+                "image": "muk.webp",
+                "types": ["poison"],
+                "link": "https://pokemon.fandom.com/wiki/Muk",
+            }, {
+                "id": 14,
+                "name": "Gyarados",
+                "image": "gyarados.webp",
+                "types": ["water", "flying"],
+                "link": "https://pokemon.fandom.com/wiki/Gyarados",
+            }, {
+                "id": 15,
+                "name": "Charizard",
+                "image": "charizard.webp",
+                "types": ["fire", "flying"],
+                "link": "https://pokemon.fandom.com/wiki/Charizard",
+            }, {
+                "id": 16,
+                "name": "Exeggutor",
+                "image": "exeggutor.webp",
+                "types": ["grass", "psychic"],
+                "link": "https://pokemon.fandom.com/wiki/Exeggutor",
+            }, {
+                "id": 17,
+                "name": "Dragonair",
+                "image": "dragonair.webp",
+                "types": ["dragon"],
+                "link": "https://pokemon.fandom.com/wiki/Dragonair",
+            }, {
+                "id": 18,
+                "name": "Ampharos",
+                "image": "ampharos.webp",
+                "types": ["electric"],
+                "link": "https://pokemon.fandom.com/wiki/Ampharos",
+            }, {
+                "id": 19,
+                "name": "Kivibngdra",
+                "image": "kivibngdra.webp",
+                "types": ["water", "dragon"],
+                "link": "https://pokemon.fandom.com/wiki/Kingdra",
+            }, {
+                "id": 20,
+                "name": "Sceptile",
+                "image": "sceptile.webp",
+                "types": ["grass"],
+                "link": "https://pokemon.fandom.com/wiki/Sceptile",
+            }, {
+                "id": 21,
+                "name": "Vibrava",
+                "image": "vibrava.webp",
+                "types": ["ground", "dragon"],
+                "link": "https://pokemon.fandom.com/wiki/Vibrava",
+            }, {
+                "id": 22,
+                "name": "Pikachu",
+                "image": "pikachu.webp",
+                "types": ["electric"],
+                "link": "https://pokemon.fandom.com/wiki/Pikachu",
+            }, {
+                "id": 23,
+                "name": "Raichu",
+                "image": "raichu.webp",
+                "types": ["electric"],
+                "link": "https://pokemon.fandom.com/wiki/Raichu",
+            }, {
+                "id": 24,
+                "name": "Geodude",
+                "image": "geodude.webp",
+                "types": ["rock", "ground"],
+                "link": "https://pokemon.fandom.com/wiki/Geodude",
+            }, {
+                "id": 25,
+                "name": "Golem",
+                "image": "golem.webp",
+                "types": ["rock", "ground"],
+                "link": "https://pokemon.fandom.com/wiki/Golem",
+            }, {
+                "id": 26,
+                "name": "Magnemite",
+                "image": "magnemite.webp",
+                "types": ["electric", "steel"],
+                "link": "https://pokemon.fandom.com/wiki/Magnemite",
+            }, {
+                "id": 27,
+                "name": "Voltorb",
+                "image": "voltorb.webp",
+                "types": ["electric"],
+                "link": "https://pokemon.fandom.com/wiki/Voltorb",
+            }, {
+                "id": 28,
+                "name": "Jolteon",
+                "image": "jolteon.webp",
+                "Regions": "Regions",
+                "types": ["electric"],
+                "link": "https://pokemon.fandom.com/wiki/Jolteon",
+            }, {
+                "id": 29,
+                "name": "Mankey",
+                "image": "mankey.webp",
+                "types": ["Fighting"],
+                "link": "https://pokemon.fandom.com/wiki/Mankey",
+            }, {
+                "id": 30,
+                "name": "Primeape",
+                "image": "primeape.webp",
+                "types": ["fighting"],
+                "link": "https://pokemon.fandom.com/wiki/Primeape",
+            }, {
+                "id": 31,
+                "name": "Machop",
+                "image": "machop.webp",
+                "types": ["fighting"],
+                "link": "https://pokemon.fandom.com/wiki/Machop",
+            }, {
+                "id": 32,
+                "name": "Hitmonlee",
+                "image": "hitmonlee.webp",
+                "types": ["fighting"],
+                "link": "https://pokemon.fandom.com/wiki/Hitmonlee",
+            }, {
+                "id": 33,
+                "name": "Hitmonchan",
+                "image": "hitmonchan.webp",
+                "types": ["fighting"],
+                "link": "https://pokemon.fandom.com/wiki/Hitmonchan",
+            }, {
+                "id": 34,
+                "name": "Zapdos",
+                "image": "zapdos.webp",
+                "types": ["electric", "flying"],
+                "link": "https://pokemon.fandom.com/wiki/Zapdos",
+            }, {
+                "id": 35,
+                "name": "Mewtwo",
+                "image": "mewtwo.webp",
+                "types": ["psychic"],
+                "link": "https://pokemon.fandom.com/wiki/Mewtwo",
+            }, {
+                "id": 36,
+                "name": "Charmander",
+                "image": "charmander.webp",
+                "types": ["fire"],
+                "link": "https://pokemon.fandom.com/wiki/Charmander",
+            }, {
+                "id": 37,
+                "name": "Arcanine",
+                "image": "arcanine.webp",
+                "types": ["fire"],
+                "link": "https://pokemon.fandom.com/wiki/Arcanine",
+            }, {
+                "id": 38,
+                "name": "Ninetales",
+                "image": "ninetales.webp",
+                "types": ["fire"],
+                "link": "https://pokemon.fandom.com/wiki/Ninetales",
+            }, {
+                "id": 39,
+                "name": "Marowak",
+                "image": "marowak.webp",
+                "types": ["ground"],
+                "link": "https://pokemon.fandom.com/wiki/Marowak",
+            }, {
+                "id": 40,
+                "name": "Flareon",
+                "image": "flareon.webp",
+                "types": ["fire"],
+                "link": "https://pokemon.fandom.com/wiki/Flareon",
+            }, {
+                "id": 41,
+                "name": "Moltres",
+                "image": "moltres.webp",
+                "types": ["fire", "flying"],
+                "link": "https://pokemon.fandom.com/wiki/Moltres",
+            }, {
+                "id": 42,
+                "name": "Typhlosion",
+                "image": "typhlosion.webp",
+                "types": ["fire"],
+                "link": "https://pokemon.fandom.com/wiki/Typhlosion",
+            }, {
+                "id": 43,
+                "name": "Pidgey",
+                "image": "pidgey.webp",
+                "types": ["normal", "flying"],
+                "link": "https://pokemon.fandom.com/wiki/Pidgey",
+            }, {
+                "id": 44,
+                "name": "Pidgeotto",
+                "image": "pidgeotto.webp",
+                "types": ["normal", "flying"],
+                "link": "https://pokemon.fandom.com/wiki/Pidgeotto",
+            }, {
+                "id": 45,
+                "name": "Fearow",
+                "image": "fearow.webp",
+                "types": ["normal", "flying"],
+                "link": "https://pokemon.fandom.com/wiki/Fearow",
+            }, {
+                "id": 46,
+                "name": "Golbat",
+                "image": "golbat.webp",
+                "types": ["poison", "flying"],
+                "link": "https://pokemon.fandom.com/wiki/Golbat",
+            }, {
+                "id": 47,
+                "name": "Doduo",
+                "image": "doduo.webp",
+                "types": ["normal", "flying"],
+                "link": "https://pokemon.fandom.com/wiki/Doduo",
+            }, {
+                "id": 48,
+                "name": "Aerodactyl",
+                "types": ["rock", "flying"],
+                "image": "aerodactyl.webp",
+                "link": "https://pokemon.fandom.com/wiki/Aerodactyl",
+            }, {
+                "id": 49,
+                "name": "Articuno",
+                "image": "articuno.webp",
+                "types": ["ice", "flying"],
+                "link": "https://pokemon.fandom.com/wiki/Articuno",
+            }, {
+                "id": 50,
+                "name": "Gastly",
+                "image": "gastly.webp",
+                "types": ["ghost", "poison"],
+                "link": "https://pokemon.fandom.com/wiki/Gastly",
+            }, {
+                "id": 51,
+                "name": "Gengar",
+                "image": "gengar.webp",
+                "types": ["ghost", "poison"],
+                "link": "https://pokemon.fandom.com/wiki/Gengar",
+            }, {
+                "id": 52,
+                "name": "Corsola",
+                "image": "corsola.webp",
+                "types": ["water", "rock"],
+                "link": "https://pokemon.fandom.com/wiki/Corsola",
+            }, {
+                "id": 53,
+                "name": "Banette",
+                "image": "banette.webp",
+                "types": ["ghost"],
+                "link": "https://pokemon.fandom.com/wiki/Banette",
+            }, {
+                "id": 54,
+                "name": "Duskull",
+                "image": "duskull.webp",
+                "types": ["ghost"],
+                "link": "https://pokemon.fandom.com/wiki/Duskull",
+            }, {
+                "id": 55,
+                "name": "Drifloon",
+                "image": "drifloon.webp",
+                "types": ["ghost", "flying"],
+                "link": "https://pokemon.fandom.com/wiki/Drifloon",
+            }, {
+                "id": 56,
+                "name": "Mismagius",
+                "image": "mismagius.webp",
+                "types": ["ghost"],
+                "link": "https://pokemon.fandom.com/wiki/Mismagius",
+            }, {
+                "id": 57,
+                "name": "Bulbasaur",
+                "image": "bulbasaur.webp",
+                "types": ["grass", "poison"],
+                "link": "https://pokemon.fandom.com/wiki/Bulbasaur",
+            }, {
+                "id": 58,
+                "name": "Ivysaur",
+                "image": "ivysaur.webp",
+                "types": ["grass", "poison"],
+                "link": "https://pokemon.fandom.com/wiki/Ivysaur",
+            }, {
+                "id": 59,
+                "name": "Venusaur",
+                "image": "venusaur.webp",
+                "types": ["grass", "poison"],
+                "link": "https://pokemon.fandom.com/wiki/Venusaur",
+            }, {
+                "id": 60,
+                "name": "Oddish",
+                "image": "oddish.webp",
+                "types": ["grass", "poison"],
+                "link": "https://pokemon.fandom.com/wiki/Oddish",
+            }, {
+                "id": 61,
+                "name": "Gloom",
+                "image": "gloom.webp",
+                "types": ["grass", "poison"],
+                "link": "https://pokemon.fandom.com/wiki/Gloom",
+            }, {
+                "id": 62,
+                "name": "Vileplume",
+                "image": "vileplume.webp",
+                "types": ["grass", "poison"],
+                "link": "https://pokemon.fandom.com/wiki/Vileplume",
+            }, {
+                "id": 63,
+                "name": "Victreebel",
+                "image": "victreebel.webp",
+                "types": ["grass", "poison"],
+                "link": "https://pokemon.fandom.com/wiki/Victreebel",
+            }, {
+                "id": 64,
+                "name": "Diglett",
+                "image": "diglett.webp",
+                "types": ["ground"],
+                "link": "https://pokemon.fandom.com/wiki/Diglett",
+            }, {
+                "id": 65,
+                "name": "Dugtrio",
+                "image": "dugtrio.webp",
+                "types": ["ground"],
+                "link": "https://pokemon.fandom.com/wiki/Dugtrio",
+            }, {
+                "id": 66,
+                "name": "Onix",
+                "image": "onix.webp",
+                "types": ["rock", "ground"],
+                "link": "https://pokemon.fandom.com/wiki/Onix",
+            }, {
+                "id": 67,
+                "name": "Cubone",
+                "image": "cubone.webp",
+                "types": ["ground"],
+                "link": "https://pokemon.fandom.com/wiki/Cubone",
+            }, {
+                "id": 68,
+                "name": "Wooper",
+                "image": "wopper.webp",
+                "types": ["water", "ground"],
+                "link": "https://pokemon.fandom.com/wiki/Wooper",
+            }, {
+                "id": 69,
+                "name": "Quagsire",
+                "image": "quagsire.webp",
+                "types": ["water", "ground"],
+                "link": "https://pokemon.fandom.com/wiki/Quagsire",
+            }, {
+                "id": 70,
+                "name": "Swinub",
+                "image": "swinub.webp",
+                "types": ["ice", "ground"],
+                "link": "https://pokemon.fandom.com/wiki/Swinub",
+            }, {
+                "id": 71,
+                "name": "Sandshrew",
+                "image": "sandshrew.webp",
+                "types": ["ground"],
+                "link": "https://pokemon.fandom.com/wiki/Sandshrew",
+            }, {
+                "id": 72,
+                "name": "Sandslash",
+                "image": "sandslash.webp",
+                "types": ["ground"],
+                "link": "https://pokemon.fandom.com/wiki/Sandslash",
+            }, {
+                "id": 73,
+                "name": "Vulpix",
+                "image": "vulpix.webp",
+                "types": ["fire"],
+                "link": "https://pokemon.fandom.com/wiki/Vulpix",
+            }, {
+                "id": 74,
+                "name": "Dewgong",
+                "image": "dewgong.webp",
+                "types": ["water", "ice"],
+                "link": "https://pokemon.fandom.com/wiki/Dewgong",
+            }, {
+                "id": 75,
+                "name": "Cloyster",
+                "image": "cloyster.webp",
+                "types": ["water", "ice"],
+                "link": "https://pokemon.fandom.com/wiki/Cloyster",
+            }, {
+                "id": 76,
+                "name": "Mr. Mime",
+                "image": "mrmime.webp",
+                "types": ["psychic", "fairy"],
+                "link": "https://pokemon.fandom.com/wiki/Mr._Mime",
+            }, {
+                "id": 77,
+                "name": "Sneasel",
+                "image": "sneasel.webp",
+                "types": ["dark", "ice"],
+                "link": "https://pokemon.fandom.com/wiki/Sneasel",
+            }, {
+                "id": 78,
+                "name": "Farfetch'd",
+                "image": "farfetch.webp",
+                "types": ["normal", "flying"],
+                "link": "https://pokemon.fandom.com/wiki/Farfetch'd",
+            }, {
+                "id": 79,
+                "name": "Kangaskhan",
+                "image": "kangaskhan.webp",
+                "types": ["normal"],
+                "link": "https://pokemon.fandom.com/wiki/Kangaskhan",
+            }, {
+                "id": 80,
+                "name": "Tauros",
+                "image": "tauros.webp",
+                "types": ["normal"],
+                "link": "https://pokemon.fandom.com/wiki/Tauros",
+            }, {
+                "id": 81,
+                "name": "Porygon",
+                "image": "porygon.webp",
+                "types": ["normal"],
+                "link": "https://pokemon.fandom.com/wiki/Porygon",
+            }, {
+                "id": 82,
+                "name": "Snorlax",
+                "image": "snorlax.webp",
+                "types": ["normal"],
+                "link": "https://pokemon.fandom.com/wiki/Snorlax",
+            }, {
+                "id": 83,
+                "name": "Sentret",
+                "image": "sentret.webp",
+                "types": ["normal"],
+                "link": "https://pokemon.fandom.com/wiki/Sentret",
+            }, {
+                "id": 84,
+                "name": "Igglybuff",
+                "image": "igglybuff.webp",
+                "types": ["normal", "fairy"],
+                "link": "https://pokemon.fandom.com/wiki/Igglybuff",
+            }, {
+                "id": 85,
+                "name": "Nidoran",
+                "image": "nidoran.webp",
+                "types": ["poison"],
+                "link": "https://pokemon.fandom.com/wiki/Nidoran",
+            }, {
+                "id": 86,
+                "name": "Nidorina",
+                "image": "nidorina.webp",
+                "types": ["poison"],
+                "link": "https://pokemon.fandom.com/wiki/Nidorina",
+            }, {
+                "id": 87,
+                "name": "Zubat",
+                "image": "zubet.webp",
+                "types": ["poison", "flying"],
+                "link": "https://pokemon.fandom.com/wiki/Zubat",
+            }, {
+                "id": 88,
+                "name": "Bellsprout",
+                "image": "bellsprout.webp",
+                "types": ["grass", "poison"],
+                "link": "https://pokemon.fandom.com/wiki/Bellsprout",
+            }, {
+                "id": 89,
+                "name": "Weepinbell",
+                "image": "weepinbell.webp",
+                "types": ["grass", "poison"],
+                "link": "https://pokemon.fandom.com/wiki/Weepinbell",
+            }, {
+                "id": 90,
+                "name": "Tentacool",
+                "image": "tentacool.webp",
+                "types": ["water", "poison"],
+                "link": "https://pokemon.fandom.com/wiki/Tentacool",
+            }, {
+                "id": 91,
+                "name": "Slowbro",
+                "image": "slowbro.webp",
+                "types": ["water", "psychic"],
+                "link": "https://pokemon.fandom.com/wiki/Slowbro",
+            }, {
+                "id": 92,
+                "name": "Ponyta",
+                "image": "ponyta.webp",
+                "types": ["fire"],
+                "link": "https://pokemon.fandom.com/wiki/Ponyta",
+            }, {
+                "id": 93,
+                "name": "Slowpoke",
+                "image": "slowpoke.webp",
+                "types": ["water", "psychic"],
+                "link": "https://pokemon.fandom.com/wiki/Slowpoke",
+            }, {
+                "id": 94,
+                "name": "Drowzee",
+                "image": "drowzee.webp",
+                "types": ["psychic"],
+                "link": "https://pokemon.fandom.com/wiki/Drowzee",
+            }, {
+                "id": 95,
+                "name": "Starmie",
+                "image": "starmie.webp",
+                "types": ["water", "psychic"],
+                "link": "https://pokemon.fandom.com/wiki/Starmie",
+            }, {
+                "id": 96,
+                "name": "Jynx",
+                "image": "jynx.webp",
+                "types": ["ice", "psychic"],
+                "link": "https://pokemon.fandom.com/wiki/Jynx",
+            }, {
+                "id": 97,
+                "name": "Mew",
+                "image": "mew.webp",
+                "types": ["Psychic"],
+                "link": "https://pokemon.fandom.com/wiki/Mew",
+            }, {
+                "id": 98,
+                "name": "Espeon",
+                "image": "espeon.webp",
+                "types": ["psychic"],
+                "link": "https://pokemon.fandom.com/wiki/Espeon",
+            }, {
+                "id": 99,
+                "name": "Kabuto",
+                "image": "kabuto.webp",
+                "types": ["rock", "water"],
+                "link": "https://pokemon.fandom.com/wiki/Kabuto",
+            }, {
+                "id": 100,
+                "name": "Nosepass",
+                "image": "nosepass.webp",
+                "types": ["rock"],
+                "link": "https://pokemon.fandom.com/wiki/Nosepass",
+            }, {
+                "id": 101,
+                "name": "Aron",
+                "image": "aron.webp",
+                "types": ["steel", "rock"],
+                "link": "https://pokemon.fandom.com/wiki/Aron",
+            }, {
+                "id": 102,
+                "name": "Lairon",
+                "image": "lairon.webp",
+                "types": ["steel", "rock"],
+                "link": "https://pokemon.fandom.com/wiki/Lairon",
+            }, {
+                "id": 103,
+                "name": "Lunatone",
+                "image": "lunatone.webp",
+                "types": ["rock", "psychic"],
+                "link": "https://pokemon.fandom.com/wiki/Lunatone",
+            }, {
+                "id": 104,
+                "name": "Cradily",
+                "image": "cradily.webp",
+                "types": ["rock", "grass"],
+                "link": "https://pokemon.fandom.com/wiki/Cradily",
+            }, {
+                "id": 105,
+                "name": "Armaldo",
+                "image": "armaldo.webp",
+                "types": ["rock", "bug"],
+                "link": "https://pokemon.fandom.com/wiki/Armaldo",
+            }, {
+                "id": 106,
+                "name": "Magneton",
+                "image": "magneton.webp",
+                "types": ["steel", "electric"],
+                "link": "https://pokemon.fandom.com/wiki/Magneton",
+            }, {
+                "id": 107,
+                "name": "Forretress",
+                "image": "forretress.webp",
+                "types": ["bug", "steel"],
+                "link": "https://pokemon.fandom.com/wiki/Forretress",
+            }, {
+                "id": 108,
+                "name": "Scizor",
+                "image": "scizor.webp",
+                "types": ["bug", "steel"],
+                "link": "https://pokemon.fandom.com/wiki/Scizor",
+            }, {
+                "id": 109,
+                "name": "Skarmory",
+                "image": "skarmory.webp",
+                "types": ["steel", "flying"],
+                "link": "https://pokemon.fandom.com/wiki/Skarmory",
+            }, {
+                "id": 110,
+                "name": "Mawile",
+                "image": "mawile.webp",
+                "types": ["steel", "fairy"],
+                "link": "https://pokemon.fandom.com/wiki/Mawile",
+            }, {
+                "id": 111,
+                "name": "Aggron",
+                "image": "aggron.webp",
+                "types": ["steel", "rock"],
+                "link": "https://pokemon.fandom.com/wiki/Aggron",
+            }, {
+                "id": 112,
+                "name": "Sliggoo",
+                "image": "sliggoo.webp",
+                "types": ["dragon"],
+                "link": "https://pokemon.fandom.com/wiki/Sliggoo",
+            }, {
+                "id": 113,
+                "name": "Shellder",
+                "image": "shellder.webp",
+                "types": ["water"],
+                "link": "https://pokemon.fandom.com/wiki/Shellder",
+            }, {
+                "id": 114,
+                "name": "Kingler",
+                "image": "kingler.webp",
+                "types": ["water"],
+                "link": "https://pokemon.fandom.com/wiki/Kingler",
+            }, {
+                "id": 115,
+                "name": "Horsea",
+                "image": "horsea.webp",
+                "types": ["water"],
+                "link": "https://pokemon.fandom.com/wiki/Horsea",
+            }, {
+                "id": 116,
+                "name": "Seaking",
+                "image": "seaking.webp",
+                "types": ["water"],
+                "link": "https://pokemon.fandom.com/wiki/Seaking",
+            }, {
+                "id": 117,
+                "name": "Staryu",
+                "image": "staryu.webp",
+                "types": ["water"],
+                "link": "https://pokemon.fandom.com/wiki/Staryu",
+            }, {
+                "id": 118,
+                "name": "Totodile",
+                "image": "totodile.webp",
+                "types": ["water"],
+                "link": "https://pokemon.fandom.com/wiki/Totodile",
+            }, {
+                "id": 119,
+                "name": "Azumarill",
+                "image": "azumarill.webp",
+                "types": ["water", "fairy"],
+                "link": "https://pokemon.fandom.com/wiki/Azumarill",
+            }
+
+        ]
+        console.table(pokemon, ['type', 'name']);
+
+        function random() {
+            let count = 0;
+            let result = document.getElementById("result");
+            let generate = document.getElementById("generate").value;
+            let type = document.getElementById("types").value;
+            result.innerHTML = '';
+            let sort = []
+
+            pokemon.forEach(element => {
+                let temp = element.types
+                temp.forEach(e => {
+                    if (e == type) {
+                        if (!sort.includes(element)) {
+                            sort.push(element)
+                            count++;
+                        }
+                    }
+                });
+            });
+            if (type == "All Types") {
+                for (let index = 0; index < generate; index++) {
+                    let random = Math.floor(Math.random() * pokemon.length);
+                    let data = pokemon[random]
+                    var img = document.createElement('DIV')
+                    img.innerHTML = `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card  has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${data.image}"></div><a href="${data.link}"><p class="card-footer-item title is-center is-size-4">Name:${data.name}</p><p class="card-footer-item title is-center is-size-4">Type:${data.types}</p></a></div></div></div>`
+                    result.appendChild(img)
+                }
+            }
+            if (sort.length > generate) {
+                for (let index = 0; index < generate; index++) {
+                    let random = Math.floor(Math.random() * sort.length);
+                    console.clear()
+                    console.log("random :->" + random)
+                    let data = sort[random]
+                    console.log("data :->" + data)
+                    var img = document.createElement('DIV')
+                    console.log("img :->" + img)
+                    img.innerHTML = `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card  has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${data.image}"></div><a href="${data.link}"><p class="card-footer-item title is-center is-size-4">Name:${data.name}</p><p class="card-footer-item title is-center is-size-4">Type:${data.types}</p></a></div></div></div>`
+                    result.appendChild(img)
+                    sort = sort.filter((f) => f != data)
+                }
+            } else {
+                let l = sort.length;
+                for (let index = 0; index < count; index++) {
+                    let random = Math.floor(Math.random() * sort.length);
+                    let data = sort[random]
+                    var img = document.createElement('DIV')
+                    img.innerHTML = `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card  has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${data.image}"></div><a href="${data.link}"><p class="card-footer-item title is-center is-size-4">Name:${data.name}</p><p class="card-footer-item title is-center is-size-4">Type:${data.types}</p></a></div></div></div>`
+                    result.appendChild(img)
+                    sort = sort.filter((f) => f != data)
+                }
+                count = 0
+            }
+        }
+
+        function showAll(all) {
+            let result = document.getElementById("result");
+            let value = 119
+            console.log("value:->" + value);
+            result.innerHTML = '';
+
+            for (i = 1; i <= value; i++) {
+
+                let random = Math.floor(Math.random(pokemon) * 119) + 1;
+                // txtFileData[randomNumber]
+                console.log("random:->" + random)
+
+                let element = pokemon[i];
+                console.log("element:->" + element)
+
+                document.getElementById("result").innerHTML += `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card has-background-light  has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><a href="${element.link}"><p class="card-footer-item title is-center is-size-4">Name:${element.name}</p><p class="card-footer-item title is-center is-size-4">types: ${element.types}</p></a></div></div></div>`
+            };
+        }
+
+
+
+    </script>
+</body>
+
+</html>
