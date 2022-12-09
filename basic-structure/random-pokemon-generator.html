@@ -27,7 +27,7 @@
         background-color: transparent;
         padding: 1.5rem;
         text-align: center;
-        height: 300px;
+        height: 340px;
 
     }
 
@@ -36,7 +36,6 @@
         height: 220px;
         background-size: cover;
         text-align: center;
-
     }
 
     .card-footer-item {
@@ -48,11 +47,13 @@
         justify-content: center;
         padding: .75rem;
 
+
     }
 
     .p {
 
         text-align: center;
+
 
     }
 </style>
@@ -196,7 +197,7 @@
             }, {
                 "id": 10,
                 "name": "Meowth",
-                "image": "meowth.webp",
+                "image": "https://niki3690.github.io/projects/basic-structure/meowth.webp",
                 "types": ["normal"],
                 "link": "https://pokemon.fandom.com/wiki/Meowth",
             }, {
@@ -305,7 +306,6 @@
                 "id": 28,
                 "name": "Jolteon",
                 "image": "jolteon.webp",
-                "Regions": "Regions",
                 "types": ["electric"],
                 "link": "https://pokemon.fandom.com/wiki/Jolteon",
             }, {
@@ -927,9 +927,11 @@
                 console.log("random:->" + random)
 
                 let element = pokemon[i];
-                console.log("element:->" + element)
+
 
                 document.getElementById("result").innerHTML += `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card has-background-light  has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><a href="${element.link}"><p class="card-footer-item title is-center is-size-4">Name:${element.name}</p><p class="card-footer-item title is-center is-size-4">types: ${element.types}</p></a></div></div></div>`
+
+
             };
         }
 
