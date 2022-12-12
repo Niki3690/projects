@@ -11,21 +11,26 @@
 </head>
 
 <body>
-    <div class="section">
+    <div class="section" style="background-color: cornflowerblue; height: 660px" ;>
         <div class="container">
             <div class="text has-text-centered">
-                <div class="columns">
-                    <div class="column is-12">
-                        <div class="box">
+                <div class="columns is-centered" style="margin-top: 125px;">
+                    <div class="column is-9">
+                        <div class="box"
+                            style="border-radius: 25px; border-color: black; border-style: solid; height: 195px;">
                             <div class="columns">
                                 <div class="column is-2">
-                                    <span>Numbers</span>
-                                    <input class="input" type="number" id="arebicInput" placeholder="Text input" />
-                                </div>
 
-                                <div class="column is-5">
-                                    <span>Roman Letters</span>
-                                    <input class="input" type="text" id="romanInput" placeholder="Text input" />
+                                    <span style="margin-left: 345px;"><b>Numbers</b></span>
+                                    <input class="input" type="number" id="arebicInput" placeholder="Text input"
+                                        style="margin-left: 325px;">
+                                </div><br><br>
+                            </div>
+                            <div class="columns">
+                                <div class="column is-4 ">
+                                    <span style="margin-left: 345px;"><b>RomanLetters</b></span>
+                                    <input class="input" type="text" id="romanInput" placeholder="Text input"
+                                        style="margin-left: 325px;">
                                 </div>
                             </div>
                         </div>
@@ -33,6 +38,7 @@
                 </div>
             </div>
         </div>
+    </div>
     </div>
     <script>
         let arebicInput = document.getElementById("arebicInput");
