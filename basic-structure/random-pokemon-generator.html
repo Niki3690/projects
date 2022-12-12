@@ -10,11 +10,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css">
 </head>
 
-
-
-
-
-
 <style>
     .customize-card {
         width: 100%;
@@ -53,8 +48,6 @@
     .p {
 
         text-align: center;
-
-
     }
 </style>
 
@@ -883,7 +876,7 @@
                     let random = Math.floor(Math.random() * pokemon.length);
                     let data = pokemon[random]
                     var img = document.createElement('DIV')
-                    img.innerHTML = `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card  has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${data.image}"></div><a href="${data.link}"><p class="card-footer-item title is-center is-size-4">Name:${data.name}</p><p class="card-footer-item title is-center is-size-4">Type:${data.types}</p></a></div></div></div>`
+                    img.innerHTML = `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card   has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${data.image}"></div><a href="${data.link}"><footer class="card-footer"><p class="card-footer-item title is-center is-size-4">Name:${data.name}</p></footer><footer class="card-footer"><p class="card-footer-item title is-center is-size-4">types: ${data.types}</p></footer></a></div></div></div>`
                     result.appendChild(img)
                 }
             }
@@ -896,7 +889,7 @@
                     console.log("data :->" + data)
                     var img = document.createElement('DIV')
                     console.log("img :->" + img)
-                    img.innerHTML = `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card  has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${data.image}"></div><a href="${data.link}"><p class="card-footer-item title is-center is-size-4">Name:${data.name}</p><p class="card-footer-item title is-center is-size-4">Type:${data.types}</p></a></div></div></div>`
+                    img.innerHTML = `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card   has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${data.image}"></div><a href="${data.link}"><footer class="card-footer"><p class="card-footer-item title is-center is-size-4">Name:${data.name}</p></footer><footer class="card-footer"><p class="card-footer-item title is-center is-size-4">types: ${data.types}</p></footer></a></div></div></div>`
                     result.appendChild(img)
                     sort = sort.filter((f) => f != data)
                 }
@@ -906,7 +899,7 @@
                     let random = Math.floor(Math.random() * sort.length);
                     let data = sort[random]
                     var img = document.createElement('DIV')
-                    img.innerHTML = `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card  has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${data.image}"></div><a href="${data.link}"><p class="card-footer-item title is-center is-size-4">Name:${data.name}</p><p class="card-footer-item title is-center is-size-4">Type:${data.types}</p></a></div></div></div>`
+                    img.innerHTML = `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card   has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${data.image}"></div><a href="${data.link}"><footer class="card-footer"><p class="card-footer-item title is-center is-size-4">Name:${data.name}</p></footer><footer class="card-footer"><p class="card-footer-item title is-center is-size-4">types: ${data.types}</p></footer></a></div></div></div>`
                     result.appendChild(img)
                     sort = sort.filter((f) => f != data)
                 }
@@ -914,28 +907,19 @@
             }
         }
 
+
         function showAll(all) {
             let result = document.getElementById("result");
-            let value = 119
-            console.log("value:->" + value);
-            result.innerHTML = '';
-
-            for (i = 1; i <= value; i++) {
-
-                let random = Math.floor(Math.random(pokemon) * 119) + 1;
-                // txtFileData[randomNumber]
-                console.log("random:->" + random)
-
-                let element = pokemon[i];
-
-
-                document.getElementById("result").innerHTML += `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card   has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${element.image}"></div><a href="${element.link}"><p class="card-footer-item title is-center is-size-4">Name:${element.name}</p><p class="card-footer-item title is-center is-size-4">types: ${element.types}</p></a></div></div></div>`
-
-
-            };
+            for (let index = 0; index < 119; index++) {
+                console.log("index:->" + index);
+                let data = pokemon[index];
+                console.log("data:->" + data);
+                var img = document.createElement('DIV')
+                console.log("img:->" + img);
+                img.innerHTML = `<div class="text has-text-centered"> <div class="column is-narrow "><div class="card   has-text-centered customize-card"><div class="card-content"> <img class="tarot-card-image" src="${data.image}"></div><a href="${data.link}"><footer class="card-footer"><p class="card-footer-item title is-center is-size-4">Name:${data.name}</p></footer><footer class="card-footer"><p class="card-footer-item title is-center is-size-4">types: ${data.types}</p></footer></a></div></div></div>`
+                result.appendChild(img)
+            }
         }
-
-
 
     </script>
 </body>
