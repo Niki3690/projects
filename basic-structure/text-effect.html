@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Text-effect</title>
+</head>
+<style>
+    p {
+        color: black;
+        margin-top: 230px;
+        font-family: Cursive
+    }
+
+    body {
+        background-color: plum;
+        height: 655px;
+    }
+</style>
+
+<body>
+    <div class="section">
+        <div class="container">
+            <!-- <h1 class="is-size-1">I am a </h1> -->
+            <div class="box">
+
+            </div>
+
+        </div>
+    </div>
+    </div>
+
+    <script>
+        let containerElement = document.querySelector(".container");
+
+        let text = ["Girl", "Student", "Developer", "Instructor", "Helper"];
+
+        let textIndex = 0;
+
+        let CharacterIndex = 0;
+
+        effectText();
+
+        function effectText() {
+            CharacterIndex++;
+            containerElement.innerHTML = `<div class="text has-text-centered"><h1 class="is-size-1 has-text-centered"><p><b>I am a ${text[textIndex].slice(0, CharacterIndex)}</b><p></h1></div>`;
+
+
+            if (CharacterIndex === text[textIndex].length) {
+                textIndex++;
+                CharacterIndex = 0;
+            }
+
+            if (textIndex === text.length) {
+                textIndex = 0;
+            }
+            setTimeout(effectText, 500);
+        }
+
+
+    </script>
+</body>
+
+</html>

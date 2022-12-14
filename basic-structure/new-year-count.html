@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/">
+    <title>newyear counting</title>
+</head>
+
+<style>
+    .countdown div {
+        margin: 0 40px;
+        font-size: 2.5em;
+        font-weight: 500;
+        position: relative;
+        text-align: center;
+
+    }
+
+    .countdown div::before {
+        content: "";
+        position: absolute;
+        bottom: -30px;
+        left: 0;
+        font-size: .40em;
+        line-height: 35px;
+        letter-spacing: 1px;
+        font-weight: 500;
+    }
+
+    .countdown #day::before {
+        content: "Days";
+    }
+
+    .countdown #hour::before {
+        content: "Hours";
+    }
+
+    .countdown #minute::before {
+        content: "Minutes";
+    }
+
+    .countdown #second::before {
+        content: "Seconds";
+    }
+</style>
+
+<body style="background-color: lightsalmon;font-family: cursive;height: 657px;">
+    <div class="section">
+        <div class="conatiner">
+            <div class="text has-text-centered">
+                <div class="columns is-centered">
+                    <div class="column is-6">
+
+                        <div class="box"
+                            style="margin-top: 135px;height: 305px;border-radius: 25px;border-color: black;border-style:outset;">
+                            <h4 class="is-size-4"><b>Counting New-year</b></h4>
+                            <hr>
+
+                            <h2 class="is-size-2 year"><b>2023</b></h2><br>
+                            <div class="countdown" style="display: flex;justify-content: center;">
+
+                                <div id="day">00</div>
+                                <div id="hour">00</div>
+                                <div id="minute">00</div>
+                                <div id="second">00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let dayE1 = document.getElementById("day");
+        let hourE1 = document.getElementById("hour");
+        let minuteE1 = document.getElementById("minute");
+        let secondE1 = document.getElementById("second");
+
+        let newYearTime = new Date("jan 1,2023 00:00:00").getTime();
+
+        updateCounting();
+
+        function updateCounting() {
+            let now = new Date().getTime();
+            let gap = newYearTime - now;
+
+            let second = 1000;
+            let minute = second * 60;
+            let hour = minute * 60;
+            let day = hour * 24;
+
+            let d = Math.floor(gap / day);
+            let h = Math.floor((gap % day) / hour);
+            let m = Math.floor((gap % hour) / minute);
+            let s = Math.floor((gap % minute) / second);
+
+            dayE1.innerText = d;
+            hourE1.innerText = h;
+            minuteE1.innerText = m;
+            secondE1.innerText = s;
+            setTimeout(updateCounting, 1000);
+
+
+        }
+
+    </script>
