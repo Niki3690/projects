@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Sound</title>
+</head>
+
+<style>
+    * {
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: cursive;
+        margin: 0;
+        min-width: 100vh;
+        background-color: palegreen;
+        height: 100vh;
+    }
+
+    .btn {
+        background-color: lightslategray;
+        color: black;
+        font-family: cursive;
+        font-size: 1.2rem;
+        padding: 1.5rem 3rem;
+        border-radius: 5px;
+        border: none;
+        margin: 1rem;
+    }
+</style>
+
+<body>
+    <audio id="kesariya" src="kesariya.mp3"></audio>
+    <audio id="mehmaan" src="mehmaan.mp3"></audio>
+    <audio id="chandani" src="chandani.mp3"></audio>
+    <audio id="manda" src="manda.mp3"></audio>
+    <audio id="dilGalti" src="dilGalti.mp3"></audio>
+    <audio id="tumSat" src="tumSat.mp3"></audio>
+
+    <script>
+        let sounds = ["kesariya", "mehmaan", "chandani", "manda", "dilGalti", "tumSat"];
+
+        sounds.forEach((sound) => {
+            let btn = document.createElement("button");
+            btn.classList.add("btn");
+            btn.innerText = sound;
+            btn.addEventListener('click', () => {
+                stopSongs();
+
+                document.getElementById(sound).play();
+            });
+            document.body.appendChild(btn);
+        })
+
+        function stopSongs() {
+            sounds.forEach(sound => {
+                let song =
+                    document.getElementById(sound)
+                song.pause();
+                song.currentTime = 0;
+
+            })
+        }
+    </script>
+</body>
+
+</html>
