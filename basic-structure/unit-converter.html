@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Unit-converter</title>
+</head>
+
+<body>
+    <div class="section">
+        <div class="container">
+            <h3 class="is-size-3 has-text-centered"><b>Unit Converter</b></h3><br>
+
+
+            <div class="box" style="width: 525px;margin-left: 325px;background-color: lightsalmon;border-radius: 25px;">
+                <div class="columns">
+                    <div class="column is-4">
+
+                        <span style="margin-left: 130px;"><b>Feet</b></span>
+                        <input class="input" type="text" id="feet" placeholder="feet" value="1"
+                            style="margin-left: 125px;"><br><br><br>
+
+
+                        <input class="input" type="text" placeholder="="
+                            style="width:60px;margin-left:165px;text-align: center;justify-content: center;"><br><br>
+
+                        <span style="margin-left: 130px;"><b>Inches</b></span>
+                        <input class="input" type="text" id="inches" value="12" placeholder="inches"
+                            style="margin-left:125px">
+
+                    </div>
+                </div>
+
+                <script>
+
+
+                    let feet = document.getElementById("feet");
+
+                    let inches = document.getElementById("inches");
+
+                    feet.addEventListener("input", function () {
+                        let f = this.value;
+                        let i = f * 12;
+
+                        inches.value = i;
+                    });
+
+                    inches.addEventListener("input", function () {
+                        let i = this.value;
+                        let f = i / 12;
+
+
+                        if (!Number.isInteger(f)) {
+                            f = f.toFixed(2);
+                        }
+                        feet.value = f;
+                    });
+
+                </script>
+</body>
+
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blur-image</title>
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: cursive;
+    }
+
+    .container {
+        width: 100%;
+        height: 100vh;
+        background-image: url(chair.jpeg);
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+        position: relative;
+    }
+
+    #blur-area {
+        position: absolute;
+        width: 200vw;
+        height: 200vh;
+        left: -100vw;
+        top: -100vh;
+        -webkit-backdrop-filter: blur(15px);
+        backdrop-filter: blur(15px);
+        z-index: 1;
+        -webkit-mask-image: radial-gradient(150px at 50% 50%, transparent 100%, black 100%);
+        mask-image: radial-gradient(150px at 50% 50%, transparent 100%, black 100%);
+        mix-blend-mode: hue;
+    }
+
+    nav {
+        width: 100%;
+        padding: 20px 8%;
+        position: absolute;
+        top: 0;
+        z-index: 2;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    nav ul li {
+        list-style: none;
+        display: inline-block;
+        margin: 0 30px;
+    }
+
+    nav ul li a {
+        text-decoration: none;
+        color: white;
+        font-size: 17px;
+
+    }
+
+    .text-box {
+        position: relative;
+        z-index: 2;
+        text-align: center;
+    }
+
+    .text-box h1 {
+        color: white;
+        margin-top: 250px;
+    }
+
+    .text-box button {
+        background: #037299;
+        color: white;
+        padding: 15px 30px;
+        border: 0;
+        outline: 0;
+        cursor: pointer;
+        border-radius: 30px;
+        margin-top: 30px;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <div id="blur-area"></div>
+        <nav>
+            <ul>
+                <li><a href="">HOME</a></li>
+                <li><a href="">ABOUT US</a></li>
+                <li><a href="">SERVICES</a></li>
+                <li><a href="">CONTACT US</a></li>
+            </ul>
+        </nav>
+        <div class="text-box">
+            <h1 class="is-size-1"><b>How To Make A Website</b></h1>
+            <button type="button"><b>Expolre More</b></button>
+        </div>
+    </div>
+
+    <script>
+        let blueArea = document.getElementById("blur-area");
+        document.onmousemove = function (e) {
+            blueArea.style.transform = `translate(${e.pageX}px, ${e.pageY}px)`;
+        }
+    </script>
+
+</body>
+
+</html>

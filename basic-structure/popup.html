@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Popup</title>
+</head>
+
+<style>
+    body {
+        background-color: lightskyblue;
+        height: 100vh;
+    }
+
+    header {
+        text-align: center;
+        color: black;
+        padding-bottom: 3rem;
+    }
+
+    h2 {
+        margin-top: 250px;
+    }
+
+    .model {
+        display: none;
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: rgba(0, 0, 0, .5);
+        z-index: 1;
+    }
+
+    .model-content {
+        position: relative;
+        width: 80%;
+        max-width: 60rem;
+        background-color: #eee;
+        margin: 15% auto;
+        padding: 2rem;
+        border: 1px solid #777;
+        text-align: center;
+        animation: slide ease .8s;
+    }
+
+    @keyframes slide {
+        0% {
+            transform: translateY(-30rem);
+        }
+
+        100% {
+            transform: translateY(0);
+        }
+    }
+
+    .close {
+        position: absolute;
+        top: 5px;
+        right: 1rem;
+        color: palevioletred;
+        font-size: 2.4rem;
+        cursor: pointer;
+
+    }
+</style>
+
+<body>
+    <div class="section">
+        <div class="container">
+            <header>
+                <h2 class="is-size-2" style="text-align: center;"><span
+                        style="font-weight: 700;font-family: cursive;">Let's</span> <span
+                        style="font-family: cursive;">Create a
+                        Popup!!!</h2>
+                <div class="text has-text-centered" style="font-family: cursive;">
+                    <p>Click Buttotn Below</p>
+            </header>
+        </div>
+        <div class="text has-text-centered">
+            <button class="button" id="btn" style="font-family: cursive;">CLICK ME</button>
+        </div>
+
+
+        <div class="model">
+            <div class="model-content">
+                <span class="close">&times;</span>
+                <h4 class="is-size-4" style="color: black;font-family: cursive;"><b>Hello world!!</b></h4>
+                <hr>
+                <p style="color: black;font-family: cursive;">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                    Repudiandae in modi
+                    debitis sunt doloremque
+                    ut libero nemo iusto, explicabo pariatur consequatur repellendus, quibusdam laudantium veniam. Sed
+                    earum sint voluptatem accusamus dolore autem fugiat quam quos omnis odit.</p>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+    <script>
+        let model = document.querySelector(".model");
+
+        btn = document.getElementById("btn"),
+
+            close = document.querySelector(".close");
+
+        btn.addEventListener("click", openModel);
+        close.addEventListener("click", closeModel);
+        model.addEventListener("click", closeModel);
+
+        function openModel(e) {
+            e.preventDefault();
+            model.style.display = "block";
+        }
+
+        function closeModel() {
+            model.style.display = "none";
+        }
+
+    </script>
+</body>
+
+</html>
