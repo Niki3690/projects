@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Notes</title>
+</head>
+
+<style>
+    .textarea {
+        outline: none;
+        border: none;
+        width: 75px;
+        height: 75px;
+        padding: 40px 25px 25px 25px;
+
+    }
+
+    .container3 {
+        position: absolute;
+        top: 26%;
+        left: 40%;
+        display: none;
+    }
+
+    i {
+        color: gray;
+        right: 17%;
+        top: 4%
+    }
+</style>
+
+<body>
+    <div class="section">
+        <div class="container1">
+
+            <button class="button is-dark  btn btn-success" onclick="typeNote()">Create Note</button>
+
+        </div>
+
+        <div class="container2"></div>
+        <div class="container3">
+            <form>
+                <!-- <div class="columns is-centered">
+                    <div class="column is-4"> -->
+                <textarea class="textarea" id="note-text" placeholder="write Note.."
+                    style="font-family: cursive;"></textarea>
+
+                <i class="fas fa-check-circle" id="check-icon" style="margin-left: 320px;"></i>
+                <i class="fa-solid fa-circle-xmark" id="x-icon"></i>
+            </form>
+        </div>
+    </div>
+
+
+    <script>
+        let container2 = document.getElementsByClassName("container2")[0];
+
+        let container3 = document.getElementsByClassName("container3")[0];
+
+        let checkIcon = document.getElementById("check-icon");
+
+        let xIcon = document.getElementById("x-icon");
+
+        let i = 0;
+
+        xIcon.addEventListener("click", function () {
+            typeNote();
+        })
+
+        checkIcon.addEventListener("click", function () {
+            createNote();
+        })
+
+
+        function typeNote() {
+            if (container3.style.display == "none") {
+                container3.style.display = "block";
+            }
+            else {
+                container3.style.display = "none";
+            }
+        }
+
+
+        function createNote() {
+            let noteText = document.getElementById("note-text").value;
+
+            let node0 = document.createElement("div");
+            let node1 = document.createElement("h1");
+
+            node0.appendChild(node1);
+
+            container2.insertAdjacentElement("beforeend", node0);
+
+            node0.addEventListener("mouseenter", function () {
+                node0.style.transform = "scale(1.1)"
+            })
+
+            node0.addEventListener("mouseleave", function () {
+                node0.style.transform = "scale(1)"
+            })
+
+            node0.addEventListener("dblclick", function () {
+                node0.remove();
+            })
+
+            document.getElementById("note-text").value = "";
+
+
+            node1.innerHTML = noteText;
+            node1.setAttribute("style", "width:250px, height:250px;font-sixe:28px:padding:25px;margin-top:0px;overflow-hidden;")
+
+            node1.style.margin = margin();
+            node1.style.transform = rotate();
+            node1.style.background = color();
+
+        }
+
+        function margin() {
+            let random_margin = ["-5px", "1px", "5px", "10px", "15px", "20px"];
+
+            return random_margin[Math.floor(Math.random() * random_margin.length)];
+        }
+
+        function rotate() {
+            let random_rotate = ["rotate(3deg)", "rotate(1deg)", "rotate(-1deg)", "rotate(-3deg)", "rotate(-5deg)", "rotate(-10deg)"];
+
+            return random_rotate[Math.floor(Math.random() * random_rotate.length)];
+
+        }
+
+        function color() {
+            let random_color = ["#c2ff3d", "#ff3de8", "#3dc2ff"];
+
+            if (i > random_color.length - 1) {
+                i = 0;
+            }
+            return random_color[i++];
+
+        }
+
+
+    </script>
+</body>
+
+</html>

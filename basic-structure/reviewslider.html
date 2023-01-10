@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>slider review</title>
+</head>
+
+<body style="font-family: cursive;">
+    <div class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-4">
+                    <div class="box" style="background-color:lightgreen;margin-top: 150px;">
+                        <div class="review-container">
+                            <img src="https://images.unsplash.com/photo-1633332755192-727a05c4013d?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=580&q=80"
+                                alt="user-image"
+                                style="height: 75px;border-radius: 0%;margin-left:120px;margin-top: -65px;">
+
+                            <h5 class="is-size-5   text" style="line-height: 28px;">"I didn't even need training. Really
+                                good. It fits our needs
+                                perfectly.
+                                Sumsung should be nominated for service of the year."</h5><br>
+                            <h6 class="is-size-6   username"> <b>Brianna Z.</b></h6>
+
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+
+
+        let review = [{
+
+
+            name: "Brianna Z",
+            photoUrl: "https://images.unsplash.com/photo-1546961329-78bef0414d7c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+            text: "I didn't even need training. Really good. It fits our needs perfectly.Sumsung should be nominated for service of the year."
+        },
+
+        {
+            name: " Lay J.",
+            photoUrl: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+            text: "We can't understand how we've been living without sumsung.",
+        },
+
+        {
+            name: "Osborne V.",
+            photoUrl: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+            text: "Wow what great service, I love it! Sumsung impressed me on multiple levels. I'm good to go. ",
+        },
+
+        {
+            name: "Perrine B.",
+            photoUrl: "https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+            text: "Sumsung was the best investment I ever made. Sumsung was the best investment I ever made. The service was excellent.",
+        },
+
+        {
+            name: "Thomasine I.",
+            photoUrl: "https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=387&q=80",
+            text: "We're loving it. It's really wonderful. After using sumsung my business skyrocketed! Your company is truly upstanding and is behind its product 100%.",
+        },
+
+        ];
+
+        let imgE1 = document.querySelector("img");
+        let textE1 = document.querySelector(".text");
+        let usernameE1 = document.querySelector("username");
+        let idx = 0;
+
+        updatereview();
+
+        function updatereview() {
+            let { name, photoUrl, text } =
+                review[idx];
+            imgE1.src = photoUrl;
+            textE1.innerText = text;
+            // usernameE1.innerText = name;
+            idx++;
+            if (idx === review.length) {
+                idx = 0;
+            }
+            setTimeout(() => {
+                updatereview();
+            }, 2000)
+
+        }
+    </script>
+
+</body>
+
+</html>

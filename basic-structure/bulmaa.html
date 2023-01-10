@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Document</title>
+</head>
+
+<style>
+    .bulma .h7 {
+        margin-top: 150px;
+    }
+</style>
+
+<body>
+    <!-- <div class="section">
+        <div class="container"> -->
+    <div class="columns">
+        <div class="column is-2" style="background-color: #FAFAFA;">
+            <input class="input" type="text" placeholder="Filter links"
+                style="margin: 0px 12px 0px 12px;margin-top: 12px;font-size: 12px;width: 190px;">
+
+            <p style="color: #BCBCBC;font-size: 10px;margin-top:15px;margin-left: 18px;">GUIDES</p>
+            <h5 class="is-size-6" style="margin-left: 35px;margin-top: 12px;"><b>Overview</b></h5>
+
+            <h5 class="is-size-6" style="margin-left: 35px;margin-top: 12px;"><b>Customize</b></h5>
+
+            <h5 class="is-size-6" style="margin-left: 35px;margin-top: 12px;"><b>Utilities</b></h5>
+
+
+
+            <p style="color: #BCBCBC;font-size: 10px;margin-top:15px;margin-left: 18px;">CSS LIBRARY</p>
+            <h5 class="is-size-6" style="margin-left: 35px;margin-top: 12px;"><b>Columns</b></h5>
+
+            <h5 class="is-size-6" style="margin-left: 35px;margin-top: 12px;"><b>Elements</b></h5>
+
+            <h5 class="is-size-6" style="margin-left: 35px;margin-top: 12px;"><b>Components</b></h5>
+
+            <h5 class="is-size-6" style="margin-left: 35px;margin-top: 12px;"><b>Form</b></h5>
+
+            <h5 class="is-size-6" style="margin-left: 35px;margin-top: 12px;"><b>Layout</b></h5>
+
+            <h5 class="is-size-6" style="margin-left: 35px;margin-top: 12px;"><b>Helpers</b></h5>
+        </div>
+
+        <div class="column is-8">
+            <div class="box">
+                <h3 class="is-size-3" style="padding-top: 40px;margin-bottom: -5px;"><b>Documentation</b></h3>
+                <h4 class="is-size-4">Everything you need to <b>create a website</b> with Bulma</h4><br>
+                <hr><br>
+                <div class="columns">
+                    <div class="column is-6">
+                        <i class="fa fa-eye fa-2x" style="color: #00D1B2"></i>
+                        <h4 class="is-size-4" style="margin-left: 55px;margin-top: -35px;"><b>Overview</b></h4>
+                        <h5 class="is-size-5" style="margin-left: 55px;">An overview of what Bulma as a<br>
+                            <strong>framework</strong> is all about
+                        </h5><br><br>
+
+                        <i class="fa-solid fa-paintbrush fa-2x" style="color: #00D1B2"></i>
+                        <h4 class="is-size-4" style="margin-left: 55px;margin-top: -35px;"><b>Customize</b></h4>
+                        <h5 class="is-size-5" style="margin-left: 55px;"> Create your <strong>own theme</strong>
+                            with a simple set of <strong>variables</strong></h5><br><br>
+
+                        <i class="fas fa-columns  fa-2x" style="color: #00D1B2"></i>
+                        <h4 class="is-size-4" style="margin-left: 55px;margin-top: -35px;"><b>Columns</b></h4>
+                        <h5 class="is-size-5" style="margin-left: 55px;"> The power of <strong>Flexbox</strong>
+                            in a
+                            simple interface</h5><br><br>
+
+                        <i class="fa fa-edit   fa-2x" style="color: #00D1B2"></i>
+                        <h4 class="is-size-4" style="margin-left: 55px;margin-top: -35px;"><b>Form</b></h4>
+                        <h5 class="is-size-5" style="margin-left: 55px;">The indispensable <strong>form
+                                controls</strong>, designed for maximum clarity</h5><br><br>
+
+                        <i class="fa fa-cubes fa-2x" style="color: #00D1B2"></i>
+                        <h4 class="is-size-4" style="margin-left: 55px;margin-top: -35px;"><b>Components</b>
+                        </h4>
+                        <h5 class="is-size-5" style="margin-left: 55px;"> Advanced multi-part components with
+                            lots
+                            of possibilities</h5><br><br>
+
+                    </div>
+
+                    <div class="column is-6">
+
+                        <i class="fas fa-tools fa-2x" style="color: #00D1B2"></i>
+                        <h4 class="is-size-4" style="margin-left: 55px;margin-top: -35px;"><b>Utilities</b></h4>
+                        <h5 class="is-size-5" style="margin-left: 55px;"> Sass tools used by Bulma and available
+                            for
+                            you</h5><br><br>
+
+
+                        <i class="fa fa-medkit fa-2x" style="color: #00D1B2"></i>
+                        <h4 class="is-size-4" style="margin-left: 55px;margin-top: -35px;"><b>Helpers</b></h4>
+                        <h5 class="is-size-5" style="margin-left: 55px;">Apply <strong>helper classes</strong>
+                            to
+                            almost any element, in order to alter their style</h5><br><br>
+
+                        <i class="fas fa-warehouse fa-2x" style="color: #00D1B2"></i>
+                        <h4 class="is-size-4" style="margin-left: 55px;margin-top: -35px;"><b>Layout</b></h4>
+                        <h5 class="is-size-5" style="margin-left: 55px;">Design the <strong>structure</strong>
+                            of
+                            your webpage with these CSS classes</h5><br><br>
+
+                        <i class="fas fa-cube fa-2x" style="color: #00D1B2"></i>
+                        <h4 class="is-size-4" style="margin-left: 55px;margin-top: -35px;"><b>Elements</b></h4>
+                        <h5 class="is-size-5" style="margin-left: 55px;">Essential interface elements that only
+                            require a <strong>single CSS class</strong></h5><br><br>
+
+                    </div>
+                </div>
+                <h6 class="is-size-6" style="color: gray;">This page is <b>open source.</b> Noticed a typo? Or
+                    something unclear?</h6>
+                <h6 class="is-size-6" style="text-decoration: underline;">Improve this page on GitHub</h6>
+
+                <img src="https://bulma.io/images/made-with-bulma.png" style="height: 25px;margin-left:550px">
+                <br><br><br>
+            </div>
+            <div class="niki" style="background-color: #FAFAFA"><br><br><br>
+
+                <h5 class="is-size-4" style="color: gray;text-align: center;"><b>Support</b> Bulma 😃</h5><br>
+
+                <h6 class="is-size-6" style="color: gray;"><b>One-time</b> donation</h6>
+                <h6 class="is-size-6" style="color: gray;text-align: center;margin-top: -25px;">Visit our
+                    <b>Sponsors</b>
+                </h6>
+                <h6 class="is-size-6" style="color: gray;text-align: right;margin-top: -25px"><b>Monthly</b>
+                    donation</h6><br>
+
+                <img src="https://bulma.io/images/paypal-donate.png" style="height:30px;width: 120px;">
+                <img src="https://bulma.io/images/amis/polygon.png" style="height:50px;width: 120px;margin-left: 35px;">
+                <img src="https://bulma.io/images/amis/kasinohai.png" style="margin-left: 35px;width: 120px;">
+                <img src="https://bulma.io/images/amis/casinoutanlicens.png" style="margin-left:35px;width: 120px;">
+                <button class="button"
+                    style="background-color: #E93FA5;color:white;height: 55px;border-radius: 12px;margin-left: 85px;"><b>Become
+                        a
+                        sponsor</b></button>
+            </div>
+        </div><br><br>
+
+
+
+
+
+
+        <div class="column is-2" id="bulma" style="background-color: #FAFAFA">
+
+            <h7 class="is-size-7" style="color: gray;">My CSS ebook</h7>
+            <img src="https://bulma.io/images/css-book/css-in-44-minutes-book-cover.png"
+                style="margin-top:225px;height: 180px;">
+        </div>
+
+    </div>
+    </div>
+
+
+    <div class="section">
+        <div class="container">
+            <div class="box"
+                style="height: 195px;padding-top: 70px;background-color: #9341B5;color: white;border-radius: 25px;">
+                <!-- <div class="box" style="width: 180px;">
+                    <h6 class="is-size-6">CSS In 44 minutes</h6>
+                    <h6 class="is-size-7">Buy the ebook now!</h6>
+                </div> -->
+                <h7 class="is-size-7"
+                    style="letter-spacing: 2px;text-transform: uppercase;text-align: center;justify-content: center;margin-left:300px;">
+                    CSS in 44 minutes</h5><br>
+                    <h7 class="is-size-6" style="margin-left:300px;">Learn how to build your own webpage from scratch!
+                    </h7>
+                    <button class="button"
+                        style="background-color:#3BB76D;color:white;height: 55px;;margin-left: 35px;margin-top: -35px;border: none;border-radius: 0px;"><b>Buy
+                            the book</b></button>
+            </div>
+        </div>
+    </div>
+
+    <div class="bbbbb" style="background-color: #FAFAFA;">
+        <div class="section">
+            <div class="container">
+
+
+                <div class="box" style="border-radius: 16px;">
+                    <i class="fas fa-paper-plane fa-2x" style="color: #00D1B2"></i>
+                    <h2 class="is-size-2" style="margin-left: 65px;margin-top: -45px;"><b>Newsletter</b></h2>
+                    <h2 class="is-size-3" style="margin-left: 65px;line-height: 34px;color: gray;">Features,
+                        releases,<br> showcase… stay in the<br> loop!</h2>
+
+                    <div class="control has-icons-left has-icons-right"
+                        style="width: 300px;margin-left: 525px;justify-content: center;">
+                        <input class="input is-medium" type="email" placeholder="email address"
+                            style="border-radius: 10px;">
+                        <span class="icon is-left">
+                            <i class="fas fa-envelope"></i>
+                        </span>
+                    </div>
+                    <button class="button"
+                        style="background-color:#00D1B2;color:white;height: 45px;;margin-left: 35px;margin-top: -35px;border: none;border-radius: 5px;width: 120px;margin-left: 835px;margin-top: -50px;"><b>Subscribe</b></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="section">
+        <div class="container">
+            <div class="columns" style="background-color: #FAFAFA;;">
+                <div class="column is-4">
+                    <h5 class="is-size-5"><b>Bulma</b> by <span style="color:#3C87C1;">Jeremy Thomas.</span></h5>
+                    <span style="color:#3C87C1;">@jgthms</span><br><br>
+
+                    <span style="color: gray;">Source code licensed</span> <span style="color:#3C87C1;">MIT.</span><br>
+                    <span style="color: gray;">Website content licensed</span> <span style="color:#3C87C1;">CC BY-NC-SA
+                        4.0</span>
+                </div>
+
+                <div class="column is-4">
+                    <h5 class="is-size-5"><b>Contribute</b> on GitHub
+                    </h5>
+                    <img src="stra'.PNG">
+                </div>
+
+                <div class="column is-4">
+                    <h5 class="is-size-5" style="margin-bottom: 10px;"><b>Share</b> on social media</h5>
+                    <h5 class="is-size-6" style="color: #3C87C1;">Tweet</h5>
+                </div>
+            </div><br><br><br>
+            <div class="columns" style="background-color: #FAFAFA;;">
+                <div class="column is-3">
+                    <h5 class="is-size-5"><b>Home</b></h5><br>
+                    <h5 class="is-size-5" style="margin-bottom: 6px;"><b>Blog</b></h5>
+                    <h6 class="is-size-6" style="margin-bottom: 6px;">The Bulma block</h6>
+                    <h6 class="is-size-6" style="margin-bottom: 6px;">New feature: Icon Text</h6>
+                    <h6 class="is-size-6" style="margin-bottom: 6px;">Light/Dark colors, better look, larger<br>
+                        controls</h6>
+                    <h6 class="is-size-6" style="margin-bottom: 6px;">Automatic variables docs</h6>
+                    <h7 class="is-size-7" style="color: gray;">View all posts
+
+                    </h7>
+                </div>
+
+
+
+
+                <div class="column is-3">
+                    <h5 class="is-size-5"><b>Documentation</b></h5>
+                    <h6 class="is-size-6" style="margin-bottom: 6px;">Overview</h6>
+                    <h6 class="is-size-6" style="margin-bottom: 6px;">Utilities</h6>
+                    <h6 class="is-size-6" style="margin-bottom: 6px;">Customize</h6>
+                    <h6 class="is-size-6" style="margin-bottom: 6px;">Helpers</h6>
+                    <h6 class="is-size-6" style="margin-bottom: 6px;">Columns</h6>
+                    <h6 class="is-size-6" style="margin-bottom: 6px;">Layout</h6>
+                    <h6 class="is-size-6" style="margin-bottom: 6px;">Form</h6>
+                    <h6 class="is-size-6" style="margin-bottom: 6px;">Elements</h6>
+                    <h6 class="is-size-6" style="margin-bottom: 6px;">Components</h6>
+
+
+                </div>
+
+                <div class="column is-3">
+                    <h5 class="is-size-5" style="margin-bottom: 12px;"><b>More</b></h5>
+                    <i class="fa-solid fa-star" style="color:#FFD257"></i>
+                    <h5 class="is-size-6" style="margin-left: 25px;margin-top: -25px;margin-bottom: 7px;">Expo</h5>
+
+                    <i class="fa-solid fa-heart" style="color: #F14668;"></i>
+                    <h5 class="is-size-6" style="margin-left: 25px;margin-top: -25px;margin-bottom: 7px;">Love</h5>
+
+                    <i class="fab fa-patreon" style="color:#F96854"></i>
+                    <h5 class="is-size-6" style="margin-left: 25px;margin-top: -25px;margin-bottom: 7px;">Backers</h5>
+
+                    <i class="fa-solid fa-plug" style="color: #3E8ED0  "></i>
+                    <h5 class="is-size-6" style="margin-left: 25px;margin-top: -25px;margin-bottom: 7px;">Bulma
+                        extensions</h5>
+
+                    <i class="fa-solid fa-bookmark" style="color: #ABF47C"></i>
+                    <h5 class="is-size-6" style="margin-left: 25px;margin-top: -25px;margin-bottom: 7px;">The
+                        official<br>Bulma book</h5>
+
+                    <i class="fa-solid fa-wifi" style="color: #F26826"></i>
+                    <h5 class="is-size-6" style="margin-left: 25px;margin-top: -25px;margin-bottom: 7px;">Blog</h5>
+
+                    <i class="fa-solid fa-medal" style="color: #00D1B2"></i>
+                    <h5 class="is-size-6" style="margin-left: 25px;margin-top: -25px;margin-bottom: 7px;">Brand</h5>
+
+
+                    <i class="fa-solid fa-rocket" style="color:#48C78E"></i>
+                    <h5 class="is-size-6" style="margin-left: 25px;margin-top: -25px;margin-bottom: 7px;">Bulma start
+                    </h5>
+
+
+
+
+                    <i class="fas fa-certificate" style="color:#FFE08A"></i>
+                    <h5 class="is-size-6" style="margin-left: 25px;margin-top: -25px;margin-bottom: 7px;">Made with
+                        bulma</h5>
+
+                    <i class="fas fa-certificate" style="color:#FFE08A"></i>
+                    <h5 class="is-size-6" style="margin-left: 25px;margin-top: -25px;margin-bottom: 7px;">Coming from
+                        Bootstrap</h5>
+
+
+                    <i class="fas fa-exchange-alt" style="color:#6F5499"></i>
+                    <h5 class="is-size-6" style="margin-left: 25px;margin-top: -25px;margin-bottom: 7px;">Made with
+                        bulma</h5>
+
+                </div>
+
+                <div class="column is-4">
+                    <div class="section">
+                        <div class="container">
+                            <p style="margin-left:45px ;">Official Bulma showcase</p>
+                            <p>Fans of Bulma around the world</p>
+                            <p>Everyone who is supporting Bulma via Patreon and GitHub</p>
+                            <p>Side projects to enhance Bulma</p>
+                            <p>A step-by-step guide that teaches you how to build a web</p>
+                            interface from scratch using Bulm
+                            <p>Stay updated with new features</p>
+                            <p> The official Bulma logos</p>
+                            <p>A tiny npm package to get started</p>
+                            <p>The official community badge</p>
+                            <p>See how Bulma is an alternative to Bootstrap
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+</body>
+
+</html>

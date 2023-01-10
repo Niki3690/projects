@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Document</title>
+</head>
+
+<body style="color: white;">
+    <div class="section">
+        <div class="container">
+            <div class="columns is-centered" style="margin-top: 75px;">
+                <div class="column is-3">
+
+                    <div class="box" style="background-color:lightcoral;font-weight:700;border-radius: 40px;">
+                        <h5 class="is-size-3" id="month-name" style="text-align: center;font-weight:700;color: white;">
+                            <b>May</b>
+                        </h5>
+                        <hr>
+
+
+                        <h6 class="is-size-6" id="day-name" style="text-align: center;font-weight:700;color: white;">
+                            <b>Wednesday</b>
+                        </h6><br>
+
+
+                        <h1 class="is-size-1" id="day-number" style="text-align: center;font-weight:700;">
+                            <b>03</b>
+                        </h1>
+                        <br>
+
+                        <h4 class="is-size-5" id="year" style="text-align: center;font-weight:700;color: white;">
+                            <b>2023</b>
+                        </h4>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let monthNameE1 = document.getElementById("month-name");
+        let dayNameE1 = document.getElementById("day-name");
+        let dayNumE1 = document.getElementById("day-number");
+        let yearE1 = document.getElementById("year");
+
+        let date = new Date();
+        // console.log(date.getFullYear())
+        let month = date.getMonth()
+        monthNameE1.innerText = date.toLocaleString("en", {
+            month: "long"
+        });
+
+        dayNameE1.innerText = date.toLocaleString("en", {
+            weekday: "long"
+        });
+
+        dayNumE1.innerText = date.getDate();
+        yearE1.innerText = date.getFullYear();
+
+
+    </script>
+</body>
+
+</html>

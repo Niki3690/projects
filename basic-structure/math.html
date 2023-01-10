@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">\
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Math-quize</title>
+</head>
+
+<body style="font-family: cursive;">
+    <div class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-4">
+                    <div class="box">
+                        <h2 class="is-size-4" style="text-align: center;color: lightsalmon;"><b>Score -></b> <span
+                                id="score"><b>0</b></span>
+                        </h2>
+                        <hr>
+
+                        <h5 class="is-size-5" id="question" style="margin-bottom: 12px;"><b>Q. What is 8 multiply by
+                                4?</b></h5>
+
+                        <form id="questionForm" onsubmit="checkAnswer(event)">
+                            <input class="input" type="number" id="answerInput" required><br><br>
+                            <button class="button   primary-btn" type="submit"
+                                style="margin-left: 120px;background-color: lightsalmon;"><b>Submit</b></button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const questionEl = document.getElementById("question");
+        const questionFormEl = document.getElementById("questionForm");
+        const scoreEl = document.getElementById("score");
+        let storedAnswer;
+        let score = localStorage.getItem("score");
+        const randomNumber = (min, max) => {
+            return Math.floor(Math.random() * (max - min + 1) + min);
+        };
+
+        const generateQuestion = () => {
+            const randomNumber1 = randomNumber(1, 10);
+            const randomNumber2 = randomNumber(1, 10);
+            const questionType = randomNumber(1, 4);
+
+            let firstNumber;
+            let secondNumber;
+
+            if (randomNumber1 > randomNumber2 && questionType > 2) {
+                firstNumber = randomNumber1;
+                secondNumber = randomNumber2;
+            } else {
+                firstNumber = randomNumber2;
+                secondNumber = randomNumber1;
+            }
+
+            let question;
+            let answer;
+
+            switch (questionType) {
+                case 1:
+                    question = `Q. What is ${firstNumber} multiply by ${secondNumber} ?`;
+                    answer = firstNumber * secondNumber;
+                    break;
+                case 2:
+                    question = `Q. What is ${firstNumber} Add to ${secondNumber} ?`;
+                    answer = firstNumber + secondNumber;
+                    break;
+                case 3:
+                    question = `Q. What is ${firstNumber} Divided By ${secondNumber} ?`;
+                    answer = firstNumber / secondNumber;
+                    break;
+                case 4:
+                    question = `Q. What is ${firstNumber} Subtract from ${secondNumber} ?`;
+                    answer = firstNumber - secondNumber;
+                    break;
+                default:
+                    question = `Q. What is ${firstNumber} Subtract from ${secondNumber} ?`;
+                    answer = firstNumber - secondNumber;
+                    break;
+            }
+
+            return { question, answer };
+        };
+
+        const showQuestion = () => {
+            const { question, answer } = generateQuestion();
+            questionEl.innerText = question;
+            scoreEl.innerText = score;
+            storedAnswer = answer;
+        };
+        showQuestion();
+
+
+        let checkAnswer = (event) => {
+            event.preventDefault();
+            let formData = new FormData(questionFormEl);
+
+            let userAnswer = parseInt(formData.get("answer"));
+            if (userAnswer === storedAnswer) {
+                score += 1;
+            } else {
+                score -= 1;
+            }
+
+            scoreEl.innerText = score;
+            event.target.reset();
+            showQuestion();
+        };
+
+    </script>
+</body>
+
+</html>

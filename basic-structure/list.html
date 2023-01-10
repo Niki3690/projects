@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>noted-list</title>
+</head>
+
+<style>
+    .groceries input {
+        font-family: cursive;
+        outline: 0;
+        border: 0;
+        border-bottom: 3px solid black;
+    }
+</style>
+
+<body>
+    <div class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-4">
+
+                    <div class="box" style="background-color: lightpink;">
+                        <div class="groceries">
+                            <h3 class="is-size-3" style="text-align: center;font-family: cursive;">List</h3>
+                            <i class="fa fa-pencil fa-2x" id="pencil"></i>
+
+                            <input class="input" type="text" id="userInput" placeholder="Text input"
+                                style="margin-left: 25px;margin-top: -15px;width: 300px;" required>
+
+                            <div id="allItems" style="font-family: cursive;"></div>
+
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let groceries = document.getElementsByClassName("groceries")[0];
+        let pencil = document.getElementById("pencil");
+        let allItems = document.getElementById("allItems");
+
+        let userInput = document.getElementById("userInput");
+
+        pencil.addEventListener("click", function () {
+            allItems.innerHTML = "";
+        })
+
+
+        userInput.addEventListener("keydown", function (event) {
+            if (event.key == "Enter")
+                addItem();
+        })
+
+        function addItem() {
+            var h2 = document.createElement('h2');
+            h2.innerHTML = "- " + userInput.value;
+
+            h2.addEventListener("Click", function () {
+                h2.style.textDecoration = "line-through";
+            })
+
+            allItems.insertAdjacentElement("beforeend", h2);
+
+            userInput.value = "";
+        }
+
+
+
+    </script>
+</body>
+
+</html>
