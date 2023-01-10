@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-5">
+                    <div class="box">
+                        <h4 class="is-size-4" style="text-align: center;"><b>Login Page</b></h4><br>
+                        <h5 class="is-size-5"><b>Username:</b></h5>
+                        <input class="input is-primary" type="text" name="text" id="username" /><br /><br />
+
+                        <h5 class="is-size-5"><b>Password:</b></h5>
+                        <input class="input is-primary" type="password" name="text" id="password" /><br><br>
+
+                        <button class="button is-black" onclick="login()" style="margin-left:150px;">Submit
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        function login() {
+            let uname = document.getElementById("username").value;
+            let pass = document.getElementById("password").value;
+
+            if (uname == "world" && pass == "123") {
+                location.assign("http://127.0.0.1:5500/projects/basic-structure/pagee.html")
+            }
+            else {
+                window.alert("Login failed");
+            }
+
+        }
+    </script>
+</body>
+
+</html>

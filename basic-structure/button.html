@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Document</title>
+</head>
+
+<style>
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: lightgreen;
+        height: 100vh;
+        text-align: center;
+    }
+
+    .box {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: lightcoral;
+        width: 150px;
+        height: 150px;
+        border: 5px solid black;
+        border-radius: 10px;
+        color: #000000;
+        font-size: 25px;
+        font-weight: 800;
+        font-family: cursive;
+        transition: all 2s ease;
+
+
+    }
+
+    .box:hover {
+        transform: rotate(45deg);
+        transform: skew(30deg);
+        transform: scale(2);
+        transform: translateX(123px);
+        transform: translateY(123px);
+        transform: translate(123px, 123px);
+
+    }
+
+    button {
+        margin-top: -450px;
+        margin-left: -120px;
+        transition: all 2s ease;
+    }
+
+    button:hover {
+        transform: scale(2);
+    }
+
+    p {
+        border: solid 3px #4D545E;
+        padding: 6px;
+        margin-top: 300px;
+        margin-left: -125px;
+        transition: all 2s ease;
+
+    }
+
+    p:hover {
+        transform: skew(50deg);
+    }
+
+    span {
+        border: solid 3px #4D545E;
+        padding: 6px;
+        margin-top: 500px;
+        margin-left: -522px;
+        transition: all 2s ease;
+
+    }
+
+    span:hover {
+        transform: rotate(180deg);
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <div class="box">This is OneBox</div>
+        <button class="button is-warning">Warning</button>
+
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias error iusto reiciendis nemo rem vel!</p>
+
+        <span>MY NAME IS NIKI PATEL</span>
+    </div>
+    </div>
+</body>
+
+</html>
