@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Document</title>
+</head>
+
+<body style="background-color: #2c3e50;height: 100vh;">
+    <div class="section">
+        <div class="container" id="container">
+            <div class="time" id="time">
+                <div class="columns is-centered">
+                    <div class="column is-6">
+                        <div class="box"
+                            style="background-color: lightcoral;margin-top: 190px;border: 5px solid black;border-radius: 20px;">
+                            <span class="digit" id="hr"
+                                style="margin-top: 115px;font-size: 65px;color: #000000;font-weight: 500;margin-left: 35px;">00</span>
+
+                            <span class="txt" style="font-size: 25px">Hr</span>
+
+                            <span class="digit" id="min"
+                                style="font-size: 65px;color: #000000;font-weight: 500">00</span>
+
+                            <span class="txt" style="font-size: 25px">Min</span>
+
+                            <span class="digit" id="sec"
+                                style="font-size: 65px;color: #000000;font-weight: 500">00</span>
+
+                            <span class="txt" style="font-size: 25px">Sec</span>
+
+
+
+                            <span class="digit" id="count"
+                                style="font-size: 65px;color: #000000;font-weight: 500">00</span>
+
+                            <br><br><br>
+
+
+                            <div class="btn-container" id="btn-container">
+                                <button class="button is-danger" id="start" style="margin-left: 115px;"
+                                    onclick="start()">Start</button>
+                                <button class="button is-dark" id="stop" onclick="stop()">Stop</button>
+                                <button class="button is-primary" id="reset" onclick="reset()">Reset</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+
+        let hr = 0;
+        let min = 0;
+        let sec = 0;
+        let count = 0;
+
+        let timer = false;
+
+
+        function start() {
+            timer = true;
+            stopWatch();
+
+        }
+
+        function stop() {
+            timer = false;
+
+
+        }
+
+
+        function reset() {
+            timer = false;
+            hr = 0;
+            min = 0;
+            sec = 0;
+            count = 0;
+
+
+            document.getElementById("count").innerHTML = count;
+
+            document.getElementById("sec").innerHTML = sec;
+
+            document.getElementById("hr").innerHTML = hr;
+
+            document.getElementById("min").innerHTML = min;
+
+
+
+        }
+
+
+        function stopWatch() {
+            if (timer === true) {
+                count = count + 1;
+
+                if (count == 100) {
+                    sec = sec + 1;
+                    count = 0;
+
+                }
+
+                if (sec == 60) {
+                    min = min + 1;
+                    sec = 0;
+                }
+
+                if (min == 60) {
+                    hr = hr + 1;
+                    min = 0;
+                    sec = 0;
+                }
+
+
+
+                let hrString = hr;
+                let minString = min;
+                let secString = sec;
+                let countString = count;
+
+
+                if (hr < 10) {
+                    hrString = "0" + hrString;
+                }
+
+                if (min < 10) {
+                    minString = "0" + minString;
+                }
+
+                if (sec < 10) {
+                    secString = "0" + secString;
+                }
+
+                if (count < 10) {
+                    countString = "0" + countString;
+                }
+                document.getElementById("count").innerHTML = countString;
+
+                document.getElementById("sec").innerHTML = secString;
+
+                document.getElementById("hr").innerHTML = hrString;
+
+                document.getElementById("min").innerHTML = minString;
+
+
+                setTimeout("stopWatch()", 10);
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

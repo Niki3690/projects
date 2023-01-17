@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>RPS game</title>
+</head>
+<style>
+
+</style>
+
+<body>
+
+    <div class="section" style="background-color: black;height: 100vh;">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-5">
+                    <div class="box"
+                        style="padding-top:45px ;padding-bottom: 45px;margin-top: 20%;border: 15px solid gray;">
+                        <h3 class="is-size-3"><b>Computer Choice: </b><span id="computer-choice"
+                                style="font-family: cursive;color: #000000"></span></h3>
+                        <h3 class="is-size-3"><b>Your Choice: </b><span id="user-choice"
+                                style="font-family: cursive;color: #000000;"></span></h3>
+                        <h3 class="is-size-3"><b>Result: </b><span id="result"
+                                style="font-family: cursive;color: #000000"></span></h3><br>
+
+                        <button class="button is-link" id="rock">Rock</button>
+
+                        <button class="button is-link" id="paper">Paper</button>
+
+                        <button class="button is-link" id="scissors">Scissors</button>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        let computerChoiceDisplay = document.getElementById("computer-choice");
+
+        let userChoiceDisplay = document.getElementById("user-choice");
+
+        let resultDisplay = document.getElementById("result");
+
+        let possibleChoice = document.querySelectorAll("button");
+        let userChoice;
+        let computerChoice;
+        let result;
+
+
+        possibleChoice.forEach(possibleChoice =>
+            possibleChoice.addEventListener("click", (e) => {
+                userChoice = e.target.id
+                userChoiceDisplay.innerHTML = userChoice;
+                generateComputerChoice();
+                getResult();
+            }));
+
+        function generateComputerChoice() {
+            let randomNumber = Math.floor(Math.random() * 3) + 1;
+            // console.log(randomNumber);
+
+            if (randomNumber === 1) {
+                computerChoice = "rock";
+            }
+            if (randomNumber === 2) {
+                computerChoice = "scissors";
+            }
+            if (randomNumber === 3) {
+                computerChoice = "paper";
+            }
+
+            computerChoiceDisplay.innerHTML = computerChoice;
+        }
+
+        function getResult() {
+            if (computerChoice === userChoice) {
+                result = "This game is DRAW!"
+            }
+            if (computerChoice === "rock" && userChoice === "paper") {
+                result = "You are WIN!"
+            }
+            if (computerChoice === "rock" && userChoice === "scissors") {
+                result = "You are LOST!"
+            }
+            if (computerChoice === "paper" && userChoice === "scissors") {
+                result = "You are WIN!"
+            }
+            if (computerChoice === "paper" && userChoice === "rock") {
+                result = "You are LOST!"
+            }
+            if (computerChoice === "scissors" && userChoice === "rock") {
+                result = "You are WIN!"
+            }
+            if (computerChoice === "scissors" && userChoice === "papaer") {
+                result = "You are LOST!"
+            }
+            resultDisplay.innerHTML = result;
+        }
+
+
+    </script>
+</body>
+
+</html>

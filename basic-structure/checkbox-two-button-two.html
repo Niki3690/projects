@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="columns is-centered" style="margin-top: 115px">
+        <div class="column is-5">
+            <input type="checkbox" id="box" style="margin-left: 205px"><br>
+
+            <input type="checkbox" id="boxx" style="margin-left: 205px"><br><br><br>
+
+            <button class="button is-dark" id="check">Button</button>
+
+            <button class="button is-black" id="checkk">Button</button>
+        </div>
+    </div>
+
+
+    <script>
+        let checkbox = document.getElementById("box");
+        document.getElementById("check").addEventListener("click", function () {
+            let random = Math.floor(Math.random() * 20);
+            checkbox.style.transform = `translateX(${-20 * random}px)`;
+        });
+
+        let checkbox1 = document.getElementById("boxx");
+        document.getElementById("checkk").addEventListener("click", function () {
+            let random = Math.floor(Math.random() * 20);
+            checkbox1.style.transform = `translateY(${-20 * random}px)`;
+        });
+    </script>
+
+
+
+</body>
+
+</html>

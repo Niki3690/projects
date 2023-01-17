@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Piano</title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .top {
+        position: absolute;
+        width: 100%;
+        height: 100px;
+        background-color: black;
+        box-shadow: 0px 10px 20px black;
+        z-index: 999;
+    }
+
+    .white {
+        float: left;
+        margin-left: 4px;
+        height: 600px;
+        width: 110px;
+        box-shadow: inset 0px 0px 30px 20px white;
+        cursor: pointer;
+    }
+
+    .black,
+    .black2,
+    .black3,
+    .black4,
+    .black5,
+    .black6,
+    .black7 {
+        position: absolute;
+        height: 400px;
+        width: 65px;
+        z-index: 99;
+        margin-top: 0px;
+        margin-left: -1055px;
+        border: 1px solid black;
+        box-shadow: inset 0px 0px 10px 5px gray;
+        background: linear-gradient(to bottom, gray 0%, black 100%);
+        cursor: pointer;
+    }
+
+    .black:active {
+        background: linear-gradient(to bottom, black 100%, gray 0%);
+    }
+
+    .black2 {
+        margin-left: -945px;
+    }
+
+    .black2:active {
+        background: linear-gradient(to bottom, black 100%, gray 0%);
+    }
+
+    .black3 {
+        margin-left: -715px;
+    }
+
+    .black3:active {
+        background: linear-gradient(to bottom, black 100%, gray 0%);
+    }
+
+    .black4 {
+        margin-left: -600px;
+    }
+
+    .black4:active {
+        background: linear-gradient(to bottom, black 100%, gray 0%);
+    }
+
+    .black5 {
+        margin-left: -480px;
+    }
+
+    .black5:active {
+        background: linear-gradient(to bottom, black 100%, gray 0%);
+    }
+
+    .black6 {
+        margin-left: -260px;
+    }
+
+    .black6:active {
+        background: linear-gradient(to bottom, black 100%, gray 0%);
+    }
+
+    .black7 {
+        margin-left: -140px;
+    }
+
+    .black7:active {
+        background: linear-gradient(to bottom, black 100%, gray 0%);
+    }
+</style>
+
+<body>
+    <div class="top">
+    </div>
+    <div style="margin-left: 75px;">
+        <button class="white" onmousedown="one.play()"></button>
+        <button class="white" onmousedown="two.play()"></button>
+        <button class="white" onmousedown="three.play()"></button>
+        <button class="white" onmousedown="four.play()"></button>
+        <button class="white" onmousedown="five.play()"></button>
+        <button class="white" onmousedown="six.play()"></button>
+        <button class="white" onmousedown="seven.play()"></button>
+        <button class="white" onmousedown="eight.play()"></button>
+        <button class="white" onmousedown="nine.play()"></button>
+        <button class="white" onmousedown="ten.play()"></button>
+
+
+        <button class="black" onmousedown="blackone.play()"></button>
+        <button class="black2" onmousedown="blacktwo.play()"></button>
+        <button class="black3" onmousedown="blackthree.play()"></button>
+        <button class="black4" onmousedown="blackfour.play()"></button>
+        <button class="black5" onmousedown="blackfive.play()"></button>
+        <button class="black6" onmousedown="blacksix.play()"></button>
+        <button class="black7" onmousedown="blackseven.play()"></button>
+
+    </div>
+
+
+
+    <script>
+        let one = new Audio();
+        let two = new Audio();
+        let three = new Audio();
+        let four = new Audio();
+        let five = new Audio();
+        let six = new Audio();
+        let seven = new Audio();
+        let eight = new Audio();
+        let nine = new Audio();
+        let ten = new Audio();
+
+        let blackone = new Audio();
+        let blacktwo = new Audio();
+        let blackthree = new Audio();
+        let blackfour = new Audio();
+        let blackfive = new Audio();
+        let blacksix = new Audio();
+        let blackseven = new Audio();
+
+
+        one.src = "one.wav"
+        two.src = "two.wav"
+        three.src = "three.wav"
+        four.src = "four.wav"
+        five.src = "five.wav"
+        six.src = "six.wav"
+        seven.src = "seven.wav"
+        eight.src = "eight.wav"
+        nine.src = "nine.wav"
+        ten.src = "ten.wav"
+
+
+        blackone.src = "blackone.mp3";
+        blacktwo.src = "blacktwo.mp3";
+        blackthree.src = "blackthree.mp3";
+        blackfour.src = "blackfour.mp3";
+        blackfive.src = "blackfive.mp3";
+        blacksix.src = "blacksix.mp3";
+        blackseven.src = "blackseven.mp3";
+    </script>
+
+</body>
+
+</html>
