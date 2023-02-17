@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Github Profile</title>
+</head>
+
+<style>
+    .input:focus-visible {
+        outline: 1px solid black;
+    }
+
+
+    .button {
+        background-color: black;
+        color: white;
+        font-weight: 700;
+        font-size: 16px;
+    }
+
+    .button:hover {
+        background-color: white;
+        color: black;
+    }
+
+    .button:active {
+        background-color: blue;
+        color: white;
+        font-weight: 700;
+        font-size: 16px;
+        letter-spacing: 0.9px;
+    }
+
+    .niki:hover {
+        transform: rotate(-2deg) scale(1.01);
+        transition: 0.5s ease;
+
+    }
+</style>
+
+<body>
+    <div class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-6">
+                    <div class="box">
+                        <h4 class="is-size-4" style="text-align: center;"><b>Search Github Profile</b></h4><br><br>
+                        <div class="field has-addons" style="margin-left: 15px;">
+                            <p class="control">
+                                <input class="input" type="text" id="searchInput" name="searchInput"
+                                    placeholder="Enter Your Github Profile..." style="width: 415px;">
+                            </p>
+                            <p class="control">
+                                <button class="primary-btn button" id="searchBtn">Button</button>
+                                <!-- <a class="primary-btn button" id="search-btn"
+                                    style="background-color: black;color: white;">
+                                    Search
+                                </a> -->
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="profileContainer"></div>
+    <div id="loading"></div>
+
+
+
+
+    <!-- <div class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="box niki">
+
+                        <img src="https://images.unsplash.com/photo-1527980965255-d3b416303d12?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8YXZhdGFyfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=500&q=60"
+                            style="height: 100px;border-radius: 50px;">
+
+                        <h4 class="is-size-4" style="margin-left: 120px;margin-top: -90px;color: #000000;"><b>Shah
+                                Vachan</b></h4>
+                        <h3 class="is-size-5" style="margin-left: 120px;color: #000000;font-weight: 500;">@vachanprofile
+                        </h3><br>
+
+                        <button class="primary-btn button" id="search-btn"
+                            style="margin-left:550px;margin-top: -90px;">Check Profile</button>
+
+                        <h5 class="is-size-4" style="margin-left: 15px;font-weight: 500;color: #000000;"><b>About</b>
+                        </h5>
+                        <h5 class="is-size-5" style="color: #000000;margin-left: 15px">Engineer | Influencer</h5><br>
+
+
+                        <h5 class="is-size-4" style="margin-left: 15px;font-weight: 500;color: #000000;">
+                            <b>Followers</b>
+                        </h5>
+                        <h5 class="is-size-5" style="color: #000000;margin-left: 15px">72</h5>
+
+                        <h5 class="is-size-4"
+                            style="margin-left: 315px;font-weight: 500;color: #000000;margin-top: -60px;">
+                            <b>Followings</b>
+                        </h5>
+                        <h5 class="is-size-5" style="color: #000000;margin-left: 315px;margin-top: -1px;">12</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div> -->
+
+
+
+    <script>
+
+        let url = "https://api.github.com/users";
+        let searchInputEl = document.getElementById("searchInput");
+        let searchButtonEl = document.getElementById("searchBtn");
+        let profileContainerEl = document.getElementById("profileContainer");
+        let loadingEl = document.getElementById("loading");
+
+        let generateProfile = (profile) => {
+            return (
+                `
+                <div class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="box niki">
+
+                        <img src="${profile.avatar_url}"
+                            style="height: 100px;border-radius: 50px;">
+
+                        <h4 class="is-size-4" style="margin-left: 120px;margin-top: -90px;color: #000000;"><b>${profile.name}</b></h4>
+                        <h3 class="is-size-5" style="margin-left: 120px;color: #000000;font-weight: 500;">${profile.login}
+                        </h3><br>
+                        <a href="${profile.repos_url}">
+                        <button class="primary-btn button" id="search-btn"
+                            style="margin-left:550px;margin-top: -90px;">Check Profile</button>
+                            </a>
+
+                        <h5 class="is-size-4" style="margin-left: 15px;font-weight: 500;color: #000000;"><b>About</b>
+                        </h5>
+                        <h5 class="is-size-5" style="color: #000000;margin-left: 15px">${profile.bio}
+
+
+                        <h5 class="is-size-4" style="margin-left: 15px;font-weight: 500;color: #000000;">
+                            <b>Followers</b>
+                        </h5>
+                        <h5 class="is-size-5" style="color: #000000;margin-left: 15px">${profile.followers}</h5>
+
+                        <h5 class="is-size-4"
+                            style="margin-left: 315px;font-weight: 500;color: #000000;margin-top: -60px;">
+                            <b>Followings</b>
+                        </h5>
+                        <h5 class="is-size-5" style="color: #000000;margin-left: 315px;margin-top: -1px;">${profile.following}</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>`
+            )
+        }
+
+
+
+
+
+        let fetchProfile = async () => {
+
+            let username = searchInputEl.value;
+
+            loadingEl.innerText = "loading....";
+            loadingEl.style.color = "black";
+
+
+            try {
+
+                let res = await fetch(`${url}/${username}`);
+                let data = await res.json();
+
+                if (data.bio) {
+                    loadingEl.innerText = "";
+                    profileContainerEl.innerHTML = generateProfile(data);
+                }
+                else {
+                    loadingEl.innerHTML = data.message;
+                    loadingEl.style.color = "red";
+                }
+                console.log("data", data);
+            } catch (error) {
+                console.log({ error });
+                loadingEl.innerText = "";
+            }
+        };
+        searchButtonEl.addEventListener("click", fetchProfile);
+
+    </script>
+
+
+
+</html>

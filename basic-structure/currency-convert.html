@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Currency Convert</title>
+</head>
+
+<style>
+    .currency-container {
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    .currency-container select {
+        padding: 10px;
+    }
+
+    .exchange-rate {
+        font-size: 16px;
+        font-weight: 600;
+        text-align: center;
+    }
+
+    select:focus,
+    .input:focus {
+        outline: 0;
+    }
+</style>
+
+<body style="font-family: Verdana, Geneva, Tahoma, sans-serif;background-color:darkolivegreen;height: 100vh;">
+    <div class="section">
+        <div class="container">
+            <div class="columns is-centered" style="margin-top:90px;">
+                <div class="column is-5">
+                    <div class="box"
+                        style="background-color: lightgreen;color: darkgreen;padding: 45px;border-radius: 10px;">
+
+
+                        <h4 class="is-size-4" style="text-align: center;font-weight: 600;">Currency
+                            Converter</h4><br>
+                        <div class="currency-container">
+                            <select id="currency-first">
+                                <option value="AUD">AUD</option>
+                                <option value="CAD">CAD</option>
+                                <option value="EUR">EUR</option>
+                                <option value="GBP">GBP</option>
+                                <option value="INR">INR</option>
+                                <option value="JPY">JPY</option>
+                                <option value="USD">USD</option>
+                            </select>
+
+                            <input class="input" value="1" id="worth-first" type="number" placeholder="Text input"
+                                min="0"
+                                style="margin-left: 90px;border-radius: 0px;background: transparent;text-align: right;color:darkgreen;font-size: 20px;">
+                        </div>
+
+
+
+                        <div class="currency-container">
+                            <select id="currency-second">
+                                <option value="AUD">AUD</option>
+                                <option value="CAD">CAD</option>
+                                <option value="EUR">EUR</option>
+                                <option value="GBP">GBP</option>
+                                <option value="INR" selected>INR</option>
+                                <option value="JPY">JPY</option>
+                                <option value="USD">USD</option>
+                            </select>
+
+                            <input class="input" id="worth-second" type="number" disabled
+                                style="margin-left: 90px;border-radius: 0px;background: transparent;text-align: right;color:darkgreen;font-size: 20px">
+                        </div><br>
+
+                        <h5 class="exchange-rate is-size-5" id="exchange-rate">1 USD=138.5802 JPY</h5>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let currencyFirstE1 = document.getElementById("currency-first");
+
+        let worthFirstE1 = document.getElementById("worth-first");
+
+        let currencySecondE1 = document.getElementById("currency-second");
+
+        let worthSecondE1 = document.getElementById("worth-second");
+
+        let exchangeRateE1 = document.getElementById("exchange-rate");
+
+        function updateRate() {
+            fetch(
+                `https://v6.exchangerate-api.com/v6/5f9d1c87f7250159c9c9b17d/latest/${currencyFirstE1.value}`
+            )
+                .then((res) => res.json())
+                .then((data) => {
+                    let rate = data.conversion_rates[currencySecondE1.value];
+                    console.log(rate);
+
+                    exchangeRateE1.innerText = `1 ${currencyFirstE1.value} = ${rate + " " + currencySecondE1.value
+                        }`;
+
+                    worthSecondE1.value = (worthFirstE1.value * rate).toFixed(2);
+                });
+        }
+        currencyFirstE1.addEventListener("change", updateRate);
+
+        currencySecondE1.addEventListener("change", updateRate);
+
+        worthFirstE1.addEventListener("input", updateRate)
+    </script>
+
+
+</body>
+
+</html>

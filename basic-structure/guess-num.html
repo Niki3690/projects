@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Guess Number</title>
+</head>
+
+<style>
+    .button {
+        margin-left: 125px;
+        margin-bottom: 25px;
+        padding: 25px 35px;
+        background-color: #152238;
+        color: white;
+        font-size: 22px;
+        font-family: cursive;
+    }
+
+    .button:hover {
+        background-color: aqua;
+        transition-duration: 0.1s;
+    }
+
+
+    .info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 1rem;
+        font-size: 22px;
+        color: #152238;
+        font-weight: 700;
+        font-family: cursive;
+    }
+
+    .info span {
+        font-size: 2rem;
+        color: #ff0511;
+        margin-left: 55px;
+    }
+
+    #gameArea {
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<body onload="init()">
+    <div class="section">
+        <div class="container">
+            <div class="columns is-centered" style="margin-top: 0px;">
+                <div class="column is-5">
+                    <div class="box"
+                        style="background-color: lightgreen;border-radius: 1rem;padding-top: 45px;padding-bottom: 45px;">
+                        <main>
+                            <div class="welcomeScreen">
+                                <h4 class="is-size-4"
+                                    style="text-align: center;font-weight: 700;font-family: cursive;color: #152238;">
+                                    Predict The Random Number<br> Between 1-100</h4><br>
+
+                                <img src="https://content.instructables.com/FGE/F6F0/K1NVATVK/FGEF6F0K1NVATVK.jpg?auto=webp"
+                                    style="margin-left:200px;height: 100px;margin-bottom: 25px;">
+
+                                <section class="eventSection">
+                                    <p
+                                        style="text-align: center;font-weight: 700;color: #152238;font-size: 22px;font-family: cursive;">
+                                        Select The Laborious</p><br>
+                                    <div class="button-wrapper">
+                                        <button class="button" onclick="easyMode()">Easy:
+                                            10 attempts</button><br>
+                                        <button class="button" onclick="hardMode()">Hard:
+                                            5 attempts</button><br><br><br>
+                                    </div>
+                                </section>
+                            </div>
+                            <div id="gameArea">
+                                <div id="newGameButton">
+                                    <button class="button" onclick="newGameBegin()" style="margin-left: 10px;">New
+                                        Game</button>
+                                </div><br>
+
+                                <section>
+                                    <h5 class="is-size-4" id="textOutput"
+                                        style="text-align: center;color: #152238;font-weight: 700;font-family: cursive;margin-bottom: 15px;">
+                                        Your Guess</h5>
+
+                                    <input class="input is-medium" type="number" placeholder=" Predict number" min="1"
+                                        max="100" id="inputBox" onchange="compareGuess()"
+                                        style="width: 180px;margin-left: 10px;margin-bottom: 15px;border: 4px solid #152238;">
+                                </section>
+                                <section class="stats">
+                                    <div class="info">
+                                        <p>Number of previous attempts</p>
+
+                                        <span id="attempts">0</span>
+                                    </div>
+
+                                    <div class="info">
+                                        <p>Number of previous guesses</p>
+
+                                        <span id="guesses">0</span>
+                                    </div>
+                                </section>
+                            </div>
+                        </main>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let computerGuess;
+        let userGuess = [];
+        let userGuessUpdate = document.getElementById("textOutput");
+        let userNumberUpdate = document.getElementById("inputBox");
+        let audio = new Audio("mixkit-retro-game-notification-212.wav");
+
+
+        let init = () => {
+            computerGuess = Math.floor(Math.random() * 100);
+            console.log(computerGuess);
+
+            document.getElementById("newGameButton").style.display = "none";
+
+            // document.getElementById("gameArea").style.display = "none";
+        };
+
+        let startGame = () => {
+
+            // document.getElementById("welcomeScreen").style.display = "none";
+            // document.getElementById("gameArea").style.display = "block";
+        };
+
+        let newGameBegin = () => {
+            audio.play();
+            window.location.reload();
+        };
+
+        let startNewGame = () => {
+            audio.play();
+            document.getElementById("newGameButton").style.display = "inline";
+            userNumberUpdate.setAttribute('disabled', true)
+        }
+
+        function compareGuess() {
+            audio.play();
+            let userNumber = Number(document.getElementById("inputBox").value);
+            userGuess = [...userGuess, userNumber];
+            document.getElementById("guesses").innerHTML = userGuess;
+            if (userGuess.length < maxGuess) {
+                {
+
+                    if (userNumber > computerGuess) {
+                        userGuessUpdate.innerHTML = "Your Predict is High";
+                        userNumberUpdate.value = "";
+                    } else if (userNumber < computerGuess) {
+                        userGuessUpdate.innerHTML = "Your Predict is Low";
+                        userNumberUpdate.value = "";
+                    } else {
+                        userGuessUpdate.innerHTML = "yehhhhh!  You are done";
+                        userNumberUpdate.value = "";
+                        startNewGame();
+                    }
+                }
+            } else {
+                if (userNumber > computerGuess) {
+                    userGuessUpdate.innerHTML = `You Loose!! correct number was ${computerGuess}`;
+                    userNumberUpdate.value = "";
+                    startNewGame();
+                } else if (userNumber < computerGuess) {
+                    userGuessUpdate.innerHTML = `You Loose!! correct number was ${computerGuess}`;
+                    userNumberUpdate.value = "";
+                    startNewGame();
+                } else {
+                    userGuessUpdate.innerHTML = "yehhhhh!  You are done";
+                    userNumberUpdate.value = "";
+                    startNewGame();
+                }
+            }
+
+            document.getElementById("attempts").innerHTML = userGuess.length;
+        }
+
+
+
+        function easyMode() {
+            audio.play();
+            maxGuess = 10;
+            startGame();
+        };
+
+        function hardMode() {
+            audio.play();
+            maxGuess = 5;
+            startGame();
+
+        }
+
+
+    </script>
+
+</body>
+
+</html>

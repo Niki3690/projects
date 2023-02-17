@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Search filter</title>
+</head>
+
+<body>
+
+    <div class="section" style="background-color: #000000;height: 100vh;">
+        <div class="container">
+            <div class="columns is-centered" style="margin-top: 65px;">
+                <div class="column is-7">
+                    <div class="box" style="background-color:lightcyan;padding: 25px;">
+
+
+                        <h4 class="is-size-4" style="text-transform: uppercase;text-align: center;"><b>My Lists</b></h4>
+                        <br>
+                        <input class="input" type="text" id="myInput" placeholder="name.." onkeyup="searchFun()"
+                            style="border: 3px solid #000000;">
+                        <br><br>
+
+                        <table id="myTable" class="table is-bordered is-striped is-narrow is-hoverable"
+                            style="margin-left: 0px;border: 3px solid #000000;">
+                            <tr class="header">
+                                <th style="width: 40%">Name</th>
+                                <th style="width: 30%">Degree</th>
+                                <th style="width: 30%">Profession</th>
+                            </tr>
+
+                            <tr>
+                                <td>Pooja</td>
+                                <td>MBA</td>
+                                <td>Master in electrical field</td>
+                            </tr>
+
+                            <tr>
+                                <td>Prapti</td>
+                                <td>Diploma</td>
+                                <td>Mechnical engineer</td>
+                            </tr>
+
+                            <tr>
+                                <td>Shivani</td>
+                                <td>Degree</td>
+                                <td>Computer engineer</td>
+                            </tr>
+
+                            <tr>
+                                <td>Niti</td>
+                                <td>MCOM</td>
+                                <td>Instrument controller</td>
+                            </tr>
+
+                            <tr>
+                                <td>Pari</td>
+                                <td>BCOM</td>
+                                <td>Accounter in asopalav</td>
+                            </tr>
+
+                            <tr>
+                                <td>Anvi</td>
+                                <td>BBA</td>
+                                <td>Master in computer</td>
+                            </tr>
+
+                            <tr>
+                                <td>Sanvi</td>
+                                <td>MCA</td>
+                                <td>Software engineer HR</td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        let searchFun = () => {
+            let filter = document.getElementById("myInput").value.toUpperCase();
+
+            let myTable = document.getElementById("myTable");
+
+            let tr = myTable.getElementsByTagName("tr");
+
+            for (let i = 0; i < tr.length; i++) {
+
+                let td = tr[i].getElementsByTagName("td")[0];
+
+                if (td) {
+                    let textValue = td.textContent || td.innerHTML;
+                    if (textValue.toUpperCase().indexOf(filter) > -1) {
+                        tr[i].style.display = "";
+                    } else {
+                        tr[i].style.display = "none"
+                    }
+                }
+            }
+
+        }
+    </script>
+</body>
+
+</html>

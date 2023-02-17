@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Loan Calc</title>
+</head>
+
+<body style="font-family:sans-serif;background-color: cornflowerblue;height: 100vh;">
+    <div class="section">
+        <div class="container">
+            <div class="columns is-centered" style="margin-top: 70px;">
+                <div class="column is-4" style="text-align: center;">
+                    <div class="box" style="padding: 35px;">
+                        <h4 class="is-size-4" style="font-weight: 600;">Loan Calculator</h4><br>
+
+                        <h6 class="is-size-6" style="text-align: left;"><b>Loan Amount $</b></h6>
+                        <input onchange="calculateLoan()" class="input is-success" type="number" id="loan-amount"
+                            min="1" max="50000" value="10000">
+                        <br><br>
+
+
+
+                        <h6 class="is-size-6" style="text-align: left;"><b>Interest Rate %</b></h6>
+                        <input onchange="calculateLoan()" class="input is-success" type="number" id="interest-rate"
+                            min="0" max="100" value="10" step=".1">
+                        <br><br>
+
+
+                        <h6 class="is-size-6" style="text-align: left;"><b>Months to pay</b></h6>
+                        <input onchange="calculateLoan()" class="input is-success" type="text" id="months-to-pay"
+                            min="6" max="48" value="12"><br><br>
+
+                        <h6 class="payment is-size-6" id="payment" style="text-align: left;font-weight: 600;">Monthly
+                            Payment:</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+
+        function calculateLoan() {
+            loanAmountValue = document.getElementById("loan-amount").value;
+
+            interestRateValue = document.getElementById("interest-rate").value;
+
+            MonthToPayValue = document.getElementById("months-to-pay").value;
+
+            interest = (loanAmountValue * (interestRateValue * 0.01)) / MonthToPayValue;
+
+            monthlyPayment = (loanAmountValue / MonthToPayValue + interest).toFixed(2);
+
+            document.getElementById("payment").innerHTML = `Monthly Payment:${monthlyPayment}`
+
+
+        }
+    </script>
+</body>
+
+</html>

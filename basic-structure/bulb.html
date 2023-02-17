@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Bulb ON OFF</title>
+</head>
+
+<style>
+    .lightapp {
+        width: 100%;
+        height: 80vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    figcaption {
+        text-align: center;
+    }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: brown;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    .slider:before {
+        position: absolute;
+        content: "";
+        height: 26px;
+        width: 26px;
+        left: 4px;
+        bottom: 4px;
+        background-color: white;
+        -webkit-transition: .4s;
+        transition: .4s;
+    }
+
+    input:checked+.slider {
+        background-color: #2196F3;
+    }
+
+    input:focus+.slider {
+        box-shadow: 0 0 1px #2196F3;
+    }
+
+    input:checked+.slider:before {
+        -webkit-transform: translateX(26px);
+        -ms-transform: translateX(26px);
+        transform: translateX(26px);
+    }
+
+    .onoffbtn {
+        width: 100%;
+        margin-top: -50px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+</style>
+
+<body>
+
+    <div class="section">
+        <div class="container">
+            <h4 class="is-size-4" id="bulbdata" style="text-align: center;font-weight: 500;"><b>Lights ON OFF</b></h4>
+            <main class="lightapp">
+                <figure class="lightstyle">
+                    <img src="offlight.jpg" id="lightid1" style="height: 315px;">
+                    <figcaption>
+                        <h5 class="is-size-5">Light ON OFF</h5>
+                    </figcaption>
+                </figure>
+
+                <figure class="lightstyle">
+                    <img src="offlight.jpg" id="lightid2" style="height: 315px;">
+                    <figcaption>
+                        <h5 class="is-size-5">Light ON OFF</h5>
+                    </figcaption>
+                </figure>
+
+                <figure class="lightstyle">
+                    <img src="offlight.jpg" id="lightid3" style="height: 315px;">
+                    <figcaption>
+                        <h5 class="is-size-5">Light ON OFF</h5>
+                    </figcaption>
+                </figure>
+
+                <figure class="lightstyle">
+                    <img src="offlight.jpg" id="lightid4" style="height: 315px;">
+                    <figcaption>
+                        <h5 class="is-size-5">Light ON OFF</h5>
+                    </figcaption>
+                </figure>
+
+                <figure class="lightstyle">
+                    <img src="offlight.jpg" id="lightid5" style="height: 315px;">
+                    <figcaption>
+                        <h5 class="is-size-5">Light ON OFF</h5>
+                    </figcaption>
+                </figure>
+            </main>
+
+            <div class="onoffbtn">
+                <label class="switch">
+                    <input type="checkbox">
+                    <span class="slider" onclick="lights()"></span>
+                </label>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        let lights = () => {
+
+            let btext = document.getElementById("bulbdata");
+            for (x = 1; x < 6; x++) {
+                let bid = document.getElementById("lightid".concat(x));
+
+                if (bid.src.match("onlight")) {
+                    bid.src = "offlight.jpg";
+                    btext.innerHTML = "LIGHT OFF";
+                    btext.style.color = "black";
+
+                } else {
+                    bid.src = "onlight.webp";
+                    btext.innerHTML = "LIGHT ON";
+                    btext.style.color = "red";
+                }
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Random-emoji</title>
+</head>
+
+<style>
+    .btn {
+        font-size: 2rem;
+        border: none;
+        /* background: rgb(255, 255, 255, 0.3s); */
+        border-radius: 10px;
+        padding: 15px;
+        filter: grayscale();
+        transition: filter .3s ease-in-out;
+        cursor: pointer;
+        margin-left: 110px;
+        font-weight: 600;
+        background-color: #000000;
+        width: 105px;
+    }
+
+    .btn:hover {
+        filter: grayscale(0);
+    }
+</style>
+
+<body style="background-color: blueviolet; height: 100vh; font-family: serif">
+    <div class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-4" style="margin-top: 85px">
+                    <div class="box" style="background-color: tan; padding: 25px">
+                        <h4 class="is-size-3" style="text-align: center; font-weight: 600; color: #000000">
+                            Random Emoji
+                        </h4>
+                        <hr>
+
+                        <button class="btn button" id="btn">Click</button>
+                        <br /><br />
+
+                        <div class="box" style="
+                  width: 165px;
+                  margin-left: 80px;
+                  background-color: black;
+                  color: white;
+                ">
+                            <h5 class="emoji-name is-size-5" id="emoji-name" style="text-align: center">Emoji Name</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let btnE1 = document.getElementById("btn");
+        let emojiNameE1 = document.getElementById("emoji-name");
+
+
+        let emoji = [];
+
+        async function getEmoji() {
+            let response = await fetch("https://emoji-api.com/emojis?access_key=68b49538ee62789e78a8993512c00bc465eebe9d");
+
+            data = await response.json()
+            // console.log(data);
+            for (let i = 0; i < 1500; i++) {
+                emoji.push({
+                    emojiName: data[i].character,
+                    emojiCode: data[i].unicodeName,
+                });
+            }
+        }
+
+        getEmoji();
+
+
+        btnE1.addEventListener("click", () => {
+            let randomNum = Math.floor(Math.random() * emoji.length);
+            btnE1.innerText = emoji[randomNum].emojiName;
+            emojiNameE1.innerText = emoji[randomNum].emojiCode;
+        })
+
+    </script>
+</body>
+
+</html>

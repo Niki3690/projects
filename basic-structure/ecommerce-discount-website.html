@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Ecommerce disocunt website</title>
+</head>
+<style>
+    .fa-heart:hover {
+        color: red;
+    }
+
+    .fa-trash-can:hover {
+        color: red;
+    }
+</style>
+
+<body style="background-color: lightgrey;">
+    <div class="section">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="columns">
+                    <div class="main_cart column is-8">
+                        <div class="box" style="border-radius: 0px;height: 740px;">
+                            <h5 class="is-size-5"><b>Cart (2 items)</b></h5><br>
+                            <div class="columns">
+                                <div class="column is-4">
+                                    <div class="box">
+                                        <img src="https://m.media-amazon.com/images/I/61J6KA2B7UL._AC_.jpg"
+                                            class="img_fluid" alt="cart-img" style="height: 225px;">
+                                    </div>
+                                </div>
+
+                                <div class="column is-3">
+                                    <h5 class="product_name is-size-5" style="margin-bottom: 10px;margin-top: 35px;">
+                                        <b>Red Zara
+                                            Shirt</b>
+                                    </h5>
+                                    <h6 class="is-size-6" style="margin-bottom: 5px;">SHIRT_RED</h6>
+                                    <h6 class="is-size-6" style="margin-bottom: 5px;"><b>COLOR:</b> RED</h6>
+                                    <h6 class="is-size-6" style="margin-bottom: 5px;"><b>SIZE:</b> M</h6>
+
+
+                                    <ul class="pagination-list" style="margin-left: 315px;margin-top: -115px;">
+                                        <li class="page-item">
+                                            <button class="page-link button"
+                                                onclick="decreaseNumber('textbox','itemval')"><i class="fa fa-minus"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                        <li class="page-item">
+                                            <input class="page-link input" value="0" id="textbox" type="text"
+                                                placeholder="Text input"
+                                                style="width: 45px;margin-left: 48px;margin-top: -40px;background-color: red;color: white;">
+                                        <li class="page-item">
+                                            <button class="page-link button"
+                                                onclick="increaseNumber('textbox','itemval')"
+                                                style="margin-left: 93px;margin-top: -65px;"><i class="fa fa-plus"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul><br><br>
+                                    <i class="fa-solid fa-trash-can"></i>
+                                    <i class="fa-solid fa-heart" style="margin-left: 115px;"></i>
+                                    <h5 class="is-size-5" style="margin-left: 345px;margin-top: -35px;"><b>$<span
+                                                id="itemval">0.00</span></b></h5>
+                                </div>
+                            </div>
+                            <hr>
+
+
+
+
+
+
+
+
+                            <div class="columns">
+                                <div class="column is-4">
+                                    <div class="box">
+                                        <img src="https://m.media-amazon.com/images/I/41EYhXi8o5L._AC_UL240_SR240,220_.jpg"
+                                            class="img_fluid" alt="cart-img" style="height: 225px;">
+                                    </div>
+                                </div>
+
+                                <div class="column is-3">
+                                    <h5 class="product_name is-size-5" style="margin-bottom: 10px;margin-top: 35px;">
+                                        <b>Blue Zara
+                                            Shirt</b>
+                                    </h5>
+                                    <h6 class="is-size-6" style="margin-bottom: 5px;">SHIRT_BLUE</h6>
+                                    <h6 class="is-size-6" style="margin-bottom: 5px;"><b>COLOR:</b> BLUE</h6>
+                                    <h6 class="is-size-6" style="margin-bottom: 5px;"><b>SIZE:</b> M</h6>
+
+
+                                    <ul class="pagination-list" style="margin-left: 315px;margin-top: -115px;">
+                                        <li class="page-item">
+                                            <button class="page-link button"
+                                                onclick="decreaseNumber('textbox1','itemval1')"><i class="fa fa-minus"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                        <li class="page-item">
+                                            <input class="page-link input" value="0" id="textbox1" type="text"
+                                                placeholder="Text input"
+                                                style="width: 45px;margin-left: 48px;margin-top: -40px;background-color: red;color: white;">
+                                        <li class="page-item">
+                                            <button class="page-link button"
+                                                onclick="increaseNumber('textbox1','itemval1')"
+                                                style="margin-left: 93px;margin-top: -65px;"><i class="fa fa-plus"
+                                                    aria-hidden="true"></i></button>
+                                        </li>
+                                    </ul><br><br>
+
+                                    <i class="fa-solid fa-trash-can"></i>
+                                    <i class="fa-solid fa-heart" style="margin-left: 115px;"></i>
+                                    <h5 class="is-size-5" style="margin-left: 345px;margin-top: -35px;"><b>$<span
+                                                id="itemval1">0.00</span></b></h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+
+
+
+
+
+                    <div class="column is-4">
+                        <div class="box" style="border-radius: 0px;">
+                            <h5 class="product_name is-size-4" style="text-align: center;"><b>The Total Amount Of</b>
+                            </h5>
+                            <hr>
+
+                            <h5 class="is-size-5">Product Amount</h5>
+                            <h5 class="is-size-5" style="margin-left: 290px;margin-top: -25px;"><b>$<span
+                                        id="product_total_amt">00</span></b>
+                            </h5><br>
+
+
+
+                            <h5 class="is-size-5">Shipping Charge</h5>
+                            <h5 class="is-size-5" style="margin-left: 290px;margin-top: -25px;"><b>$<span
+                                        id="shipping_charge">20</span></b></h5>
+                            <hr>
+
+                            <h5 class="is-size-5"><b>The total amount of<br>(including VAT)</b></h5>
+                            <h5 class="is-size-5" style="margin-left: 290px;margin-top: -45px;"><b>$<span
+                                        id="total_cart_amt">00</span></b></h5><br>
+                            <button class="button is-link" style="margin-left: 115px;">CHECKOUT</button>
+                        </div>
+
+
+                        <div class="box" style="border-radius: 0px;">
+                            <h5 class="is-size-5" style="margin-bottom: 10px;"><b>Add a discount code(optional)</b></h5>
+                            <input class="input" type="text" id="discount_code1" placeholder="Enter discount code">
+                            <h6 class="is-size-7" id="error_trw">code is Hari@3690</h6><br><br>
+                            <button class="btn button is-link" onclick="discount_code()">Apply</button>
+                        </div>
+
+
+
+                        <div class="box" style="border-radius: 0px;">
+                            <h5 class="is-size-5" style="margin-bottom: 10px;"><b>Expected delivery date</b></h5>
+                            <h5 class="is-size-6">July 27th 2023-july 29th 2023</h5>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
+
+
+
+
+
+    <script>
+
+        // function decreaseNumber() {
+        //     let itemval = document.getElementById("textbox");
+        //     // console.log(itemval.value);
+
+        //     if (itemval.value <= 0) {
+        //         itemval.value = 0;
+        //     } else {
+        //         itemval.value = parseInt(itemval.value) - 1;
+        //         itemval.style.background = "#fff";
+        //         itemval.style.color = "#000";
+        //     }
+
+        // }
+
+
+
+        // function increaseNumber() {
+        //     let itemval = document.getElementById("textbox");
+        //     // console.log(itemval.value);
+
+        //     if (itemval.value >= 5) {
+        //         itemval.value = 5;
+        //         alert("Max 4 items Allowed");
+        //         itemval.style.background = "red";
+        //         itemval.style.color = "#fff";
+
+        //     } else {
+        //         itemval.value = parseInt(itemval.value) + 1;
+        //     }
+
+        // }
+        var product_total_amt = document.getElementById('product_total_amt');
+        var shipping_charge = document.getElementById('shipping_charge');
+        var total_cart_amt = document.getElementById('total_cart_amt');
+        var discountCode = document.getElementById('discount_code1');
+
+        function decreaseNumber(incdec, itemprice) {
+            var itemval = document.getElementById(incdec);
+            var itemprice = document.getElementById(itemprice);
+
+            if (itemval.value <= 0) {
+                itemval.value = 0;
+
+            } else {
+                itemval.value = parseInt(itemval.value) - 1;
+                itemval.style.background = '#fff';
+                itemval.style.color = '#000';
+                itemprice.innerHTML = parseInt(itemprice.innerHTML) - 15;
+                product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) - 15;
+                total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
+            }
+        }
+        function increaseNumber(incdec, itemprice) {
+            var itemval = document.getElementById(incdec);
+            var itemprice = document.getElementById(itemprice);
+            // console.log(itemval.value);
+            if (itemval.value >= 5) {
+                itemval.value = 5;
+                alert('max 5 allowed');
+                itemval.style.background = 'red';
+                itemval.style.color = '#fff';
+            } else {
+                itemval.value = parseInt(itemval.value) + 1;
+            }
+            itemprice.innerHTML = parseInt(itemprice.innerHTML) + 15;
+            product_total_amt.innerHTML = parseInt(product_total_amt.innerHTML) + 15;
+            total_cart_amt.innerHTML = parseInt(product_total_amt.innerHTML) + parseInt(shipping_charge.innerHTML);
+        }
+
+
+        function discount_code() {
+            let totalamtcurr = parseInt(total_cart_amt.innerHTML);
+            let error_trw = document.getElementById('error_trw');
+            if (discountCode.value === 'Hari@3690') {
+                let newtotalamt = totalamtcurr - 15;
+                total_cart_amt.innerHTML = newtotalamt;
+                error_trw.innerHTML = "Hurray! code is valid";
+            } else {
+                error_trw.innerHTML = "Try Again! Invalid code";
+            }
+        }
+
+    </script>
+
+</body>
+
+</html>

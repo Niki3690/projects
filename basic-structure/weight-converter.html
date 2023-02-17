@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Document</title>
+</head>
+
+<style>
+    .error {
+        color: red;
+
+    }
+</style>
+
+<body style="background: linear-gradient(to left,hotpink,lightgreen,hotpink);height:100vh ;">
+
+    <div class="section">
+        <div class="container">
+            <div class="columns is-centered" style="margin-top: 120px;">
+                <div class="column is-4">
+                    <div class="box">
+                        <h4 class="is-size-4" style="text-align: center;font-weight: 600;">Weight Converter</h4><br>
+
+                        <h6 class="is-size-5" style="font-weight: 600;margin-left: 15px;">Pounds:</h6>
+
+                        <input class="input is-success" type="number" id="input" placeholder="Enter Number" step=".1"
+                            style="width: 200px;margin-left: 110px;margin-top: -30px;margin-bottom: 25px;">
+
+
+                        <h6 class="is-size-6" style="margin-left: 15px;font-weight: 600;margin-bottom: 15px;">Your
+                            weight in kg:
+                            <span id="result">0</span>
+                        </h6>
+
+                        <h6 class="error is-size-6" id="error" style="margin-left: 15px;font-weight: 600;">Error</h6>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        const inputEl = document.getElementById("input");
+        const errorEl = document.getElementById("error");
+        const resultEl = document.getElementById("result");
+        let errorTime;
+        let resultTime;
+        function updateResults() {
+            if (inputEl.value <= 0 || isNaN(inputEl.value)) {
+                errorEl.innerText = "Please enter a valid number!";
+                clearTimeout(errorTime);
+                errorTime = setTimeout(() => {
+                    errorEl.innerText = "";
+                    inputEl.value = "";
+                }, 2000);
+            } else {
+                resultEl.innerText = (+inputEl.value / 2.2).toFixed(2);
+                clearTimeout(resultTime);
+                resultTime = setTimeout(() => {
+                    resultEl.innerText = "";
+                    inputEl.value = "";
+                }, 10000);
+            }
+        }
+        inputEl.addEventListener("input", updateResults);
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Feedback UI</title>
+</head>
+
+<style>
+    .rating img {
+        width: 40px;
+    }
+
+    /* .container {
+        background: rgba(255, 255, 255, .3);
+        box-shadow: 0 5px 10px rgba(0,0,0,.3);
+        border-radius: 10px;
+        padding: 20px;
+        width: 85%;
+        max-width: 400px;
+        text-align: center;
+        font-size: 20px;
+
+    } */
+
+    .ratings-container {
+        display: flex;
+        padding: 20px 0;
+    }
+
+    .rating {
+        cursor: pointer;
+        padding: 10px;
+        margin: 10px 5px;
+    }
+
+    .rating:hover,
+    .rating.active {
+        background: darkseagreen;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+        color: aliceblue;
+        transition: all 300ms ease;
+    }
+
+    .btn {
+        background-color: darkcyan;
+        color: aliceblue;
+        border: 0;
+        margin: 10px;
+        border-radius: 4px;
+        padding: 14px 30px;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+        transition: all 300ms ease;
+    }
+
+    .btn:active {
+        transform: scale(0.96);
+    }
+</style>
+
+<body style="
+      background-color: lightcyan;
+      height: 100vh;
+      color: darkgreen;
+      display: flex;
+      min-height: 100vh;
+      justify-content: center;
+      align-items: center;
+      font-family: monospace;
+    ">
+    <div class="container" id="container">
+        <div class="columns is-centered">
+            <div class="column is-5">
+                <div class="box" style="
+              box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+              background: rgba(255, 255, 255, 0.3);
+              border-radius: 10px;
+              padding: 20px;
+              text-align: center;
+              font-size: 20px;
+              color: darkgreen;
+            ">
+                    <h4 class="is-size-4" style="margin: 7px"><b>Feedback UI</b></h4>
+                    <div class="ratings-container" id="ratings-container">
+                        <div class="rating active">
+                            <img src="https://cdn-icons-png.flaticon.com/512/166/166527.png" />
+                            <small>Unhappy</small>
+                        </div>
+
+                        <div class="rating">
+                            <img src="https://cdn-icons-png.flaticon.com/512/1791/1791385.png" />
+                            <small>Neutal</small>
+                        </div>
+
+                        <div class="rating">
+                            <img src="https://cdn-icons-png.flaticon.com/512/166/166538.png" />
+                            <small>Satisfied</small>
+                        </div>
+                    </div>
+                    <button class="btn" id="btn">Send Review</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let ratingE1 = document.querySelectorAll(".rating");
+
+        let btnE1 = document.getElementById("btn");
+
+        let containerE1 = document.getElementById("container");
+
+        let selectedRating = "";
+        ratingE1.forEach((ratingE1) => {
+            ratingE1.addEventListener("click", (event) => {
+                removeActive();
+                selectedRating =
+                    event.target.innerText || event.target.parentNode.innerText;
+
+                event.target.classList.add("active");
+                event.target.parentsNode.classList.add("active");
+            });
+        });
+
+        btnE1.addEventListener("click", () => {
+            if (selectedRating != "") {
+                containerE1.innerHTML = ` <div class="columns is-centered">
+            <div class="column is-5">
+
+                <div class="box"
+                    style=" box-shadow: 0 5px 10px rgba(0,0,0,.3);  background: rgba(255, 255, 255, .3); border-radius: 10px;  padding: 20px;text-align: center;font-size: 20px;color:darkgreen">
+                <strong> Thank You! </strong>
+                <br><br>
+                <strong>Feedback:${selectedRating}</srong><br><br>
+                    <p>we will use your feedback to improve our customer support</p></div></div></div>
+                    `;
+            }
+        });
+
+        function removeActive() {
+            ratingE1.forEach((ratingE1) => {
+                ratingE1.classList.remove("active");
+            });
+        }
+    </script>
+</body>
+
+</html>

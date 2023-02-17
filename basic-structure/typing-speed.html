@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Typing speed</title>
+</head>
+
+<style>
+    body {
+        background-color: #17a2b8;
+        height: 100vh;
+    }
+
+    .wrapper .input-field {
+        opacity: 0;
+        z-index: -999;
+        position: absolute;
+    }
+
+    .typing-text {
+        font-size: 21px;
+        text-align: justify;
+        letter-spacing: 1px;
+        word-break: break-all;
+        color: #000000;
+        font-weight: 600;
+    }
+
+    .result-details {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 30px;
+        list-style: none;
+        border-top: 4px solid #ccc;
+        padding-top: 15px;
+        color: #000000;
+        font-weight: 600;
+        font-size: 22px;
+        text-align: center;
+    }
+
+    button:active {
+        transform: scale(0.97);
+        transition: transform 0.3s ease;
+    }
+
+    .typing-text p span.correct {
+        color: #56964f;
+    }
+
+    .typing-text p span.incorrect {
+        color: #cb3439;
+        background: #ffc0cb;
+        outline: 2px solid #fff;
+        border-radius: 4px;
+    }
+
+    .typing-text p span {
+        position: relative;
+    }
+
+    .typing-text p span.active {
+        color: #17a2b8;
+    }
+
+    .typing-text p span.active::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 2px;
+        width: 100%;
+        background: #17a2b8;
+        animation: blink 1s ease-in-out infinite;
+        opacity: 0;
+    }
+</style>
+
+<body>
+    <div class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-8">
+                    <div class="box" style="margin-top: 45px; padding: 40px; border-radius: 10px">
+
+                        <div class="wrapper">
+                            <input type="text" class="input-field">
+                            <div class="typing-text">
+                                <p></p>
+
+                            </div>
+                            <div class="result-details">
+                                <li class="time">
+                                    <p>Time Left:</p>
+                                    <span><b>60</b> s</span>
+                                </li>
+
+                                <li class="mistake">
+                                    <p>Mistake:</p>
+                                    <span><b>0</b></span>
+                                </li>
+
+                                <li class="wpm">
+                                    <p>WPM:</p>
+                                    <span><b>0</b></span>
+                                </li>
+
+                                <li class="cpm">
+                                    <p>CPM:</p>
+                                    <span><b>0</b></span>
+                                </li>
+
+                                <button class="button is-medium" style="
+                    background-color: #17a2b8;
+                    color: #000000;
+                    margin-top: 15px;
+                    font-weight: 600;
+                    padding: 25px;
+                    border: 4px solid black;
+                    letter-spacing: 1.9px;
+                    border-radius: 10px;
+                  ">
+                                    Try Again
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <script>
+            const paragraphs = [
+                "Authors often misinterpret the lettuce as a folklore rabbi, when in actuality it feels more like an uncursed bacon. Pursued distances show us how mother-in-laws can be charleses. Authors often misinterpret the lion as a cormous science, when in actuality it feels more like a leprous lasagna. Recent controversy aside, their band was, in this moment, a racemed suit. The clutch of a joke becomes a togaed chair. The first pickled chess is.",
+                "A cough is a talk from the right perspective. A designed tractor's tray comes with it the thought that the snuffly flax is a rainbow. Their health was, in this moment, an earthy passbook. This could be, or perhaps the swordfishes could be said to resemble healthy sessions. A capricorn is a helium from the right perspective. However, a sled is a mailman's tennis. The competitor of an alarm becomes a toeless raincoat. Their twist was, in this moment.",
+                "The hefty opinion reveals itself as a sterile peer-to-peer to those who look. This could be, or perhaps the watch of a diamond becomes a bosom baboon. In recent years, some posit the unstuffed road to be less than altern. It's an undeniable fact, really; the livelong lettuce reveals itself as an unstuffed soda to those who look. In ancient times a bit is a balance's season. The popcorn of a morning becomes a moonless beauty.",
+                "Those cowbells are nothing more than elements. This could be, or perhaps before stockings, thoughts were only opinions. A coil of the exclamation is assumed to be a hurtless toy. A board is the cast of a religion. In ancient times the first stinko sailboat is, in its own way, an exchange. Few can name a tutti channel that isn't a footless operation. Extending this logic, an oatmeal is the rooster of a shake. Those step-sons are nothing more than matches.",
+            ];
+            const typingText = document.querySelector(".typing-text p"),
+                inpField = document.querySelector(".wrapper .input-field"),
+                tryAgainBtn = document.querySelector(".content button"),
+                timeTag = document.querySelector(".time span b"),
+                mistakeTag = document.querySelector(".mistake span"),
+                wpmTag = document.querySelector(".wpm span"),
+                cpmTag = document.querySelector(".cpm span");
+
+
+            let timer,
+                maxTime = 60,
+                timeLeft = maxTime,
+                charIndex = mistakes = isTyping = 0;
+
+            function loadParagraph() {
+                const ranIndex = Math.floor(Math.random() * paragraphs.length);
+                typingText.innerHTML = "";
+                paragraphs[ranIndex].split("").forEach(char => {
+                    let span = `<span>${char}</span>`
+                    typingText.innerHTML += span;
+                });
+                typingText.querySelectorAll("span")[0].classList.add("active");
+                document.addEventListener("keydown", () => inpField.focus());
+                typingText.addEventListener("click", () => inpField.focus());
+            }
+
+            function initTyping() {
+                let characters = typingText.querySelectorAll("span");
+                let typedChar = inpField.value.split("")[charIndex];
+                if (charIndex < characters.length - 1 && timeLeft > 0) {
+                    if (!isTyping) {
+                        timer = setInterval(initTimer, 1000);
+                        isTyping = true;
+                    }
+                    if (typedChar == null) {
+                        if (charIndex > 0) {
+                            charIndex--;
+                            if (characters[charIndex].classList.contains("incorrect")) {
+                                mistakes--;
+                            }
+                            characters[charIndex].classList.remove("correct", "incorrect");
+                        }
+                    } else {
+                        if (characters[charIndex].innerText == typedChar) {
+                            characters[charIndex].classList.add("correct");
+                        } else {
+                            mistakes++;
+                            characters[charIndex].classList.add("incorrect");
+                        }
+                        charIndex++;
+                    }
+                    characters.forEach(span => span.classList.remove("active"));
+                    characters[charIndex].classList.add("active");
+
+                    let wpm = Math.round(((charIndex - mistakes) / 5) / (maxTime - timeLeft) * 60);
+                    wpm = wpm < 0 || !wpm || wpm === Infinity ? 0 : wpm;
+
+                    wpmTag.innerText = wpm;
+                    mistakeTag.innerText = mistakes;
+                    cpmTag.innerText = charIndex - mistakes;
+                } else {
+                    clearInterval(timer);
+                    inpField.value = "";
+                }
+            }
+
+            function initTimer() {
+                if (timeLeft > 0) {
+                    timeLeft--;
+                    timeTag.innerText = timeLeft;
+                    let wpm = Math.round(((charIndex - mistakes) / 5) / (maxTime - timeLeft) * 60);
+                    wpmTag.innerText = wpm;
+                } else {
+                    clearInterval(timer);
+                }
+            }
+
+            function resetGame() {
+                loadParagraph();
+                clearInterval(timer);
+                timeLeft = maxTime;
+                charIndex = mistakes = isTyping = 0;
+                inpField.value = "";
+                timeTag.innerText = timeLeft;
+                wpmTag.innerText = 0;
+                mistakeTag.innerText = 0;
+                cpmTag.innerText = 0;
+            }
+
+            loadParagraph();
+            inpField.addEventListener("input", initTyping);
+            tryAgainBtn.addEventListener("click", resetGame);
+        </script>
+</body>
+
+</html>

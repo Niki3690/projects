@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Heart Animation</title>
+</head>
+
+<style>
+    body {
+        margin: 0;
+        height: 100vh;
+        background-color: black;
+    }
+
+    span {
+        background: url("https://cdn4.iconfinder.com/data/icons/general-office/91/General_Office_54-256.png");
+        /* background: url("https://img.icons8.com/external-bearicons-outline-color-bearicons/256/external-Panda-chinese-new-year-bearicons-outline-color-bearicons.png"); */
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        background-size: cover;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+        animation: animate 6s linear;
+    }
+
+
+    @keyframes animate {
+        0% {
+            transform: translate(-50%, -50%);
+            opacity: 1;
+            filter: hue-rotate(0);
+        }
+
+        100% {
+            transform: translate(-50%, -5000%);
+            opacity: 0;
+            filter: hue-rotate(720deg);
+        }
+
+    }
+</style>
+
+<body>
+
+
+
+    <script>
+        let bodyE1 = document.querySelector("body")
+
+        bodyE1.addEventListener("mousemove", (event) => {
+            // console.log(event.offsetX);
+            let xPos = event.offsetX;
+            let yPos = event.offsetY;
+            let spanE1 = document.createElement("span");
+            spanE1.style.left = xPos + "px";
+            spanE1.style.top = yPos + "px";
+
+            let size = Math.random() * 100;
+            spanE1.style.width = size + "px";
+            spanE1.style.height = size + "px";
+
+            bodyE1.appendChild(spanE1);
+            setTimeout(() => {
+                spanE1.remove();
+            }, 3000)
+        })
+    </script>
+</body>
+
+</html>

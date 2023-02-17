@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Slygify</title>
+</head>
+</head>
+<style>
+    label {
+        font-size: 22px;
+    }
+</style>
+
+<body style="background-color: #FCFCFC;">
+
+
+    <div class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-11">
+                    <div class="box">
+                        <h4 class="is-size-5" style="color: #000000;font-weight: 600;">INPUT STRING: (Article title,
+                            tutorial title
+                            or any web page title)</h4><br>
+
+                        <input class="input" type="text" id="optxt" style="background-color: #FCFCFC;"><br><br>
+
+                        <div class="select">
+                            <select id="sep" onchange="op(event)">
+                                <option value="">select</option>
+                                <option value="-">Seprate with dash(-)</option>
+                                <option value="_">Seprate with underscore(_)</option>
+                            </select>
+                        </div>
+
+                        <label for="num" style="margin-left: 215px;">Remove numbers</label>
+                        <input onclick="numcheck(event)" type="checkbox" name="number" id="num" style="margin-left: 5px;  width: 20px;
+                            height: 20px">
+                        <br><br><br>
+
+                        <button class="button" onclick="handleSubmit()"
+                            style="width: 625px;background-color: #506383;color: white;padding: 25px;font-weight: 600;">SLUGIFY
+                            (GEBERATE
+                            SLUG)</button>
+
+
+                        <button class="button  is-outlined is-gray" onclick="clearInput()"
+                            style="width: 150px;margin-left: 35px;padding: 25px;font-weight: 600;letter-spacing: 2px;">CLEAR</button>
+                        <button class="button  is-outlined is-gray" onclick="resetInput()"
+                            style="width: 150px;margin-left: 35px;padding: 25px;font-weight: 600;letter-spacing: 2px;">RESET</button><br><br>
+                    </div>
+                    <div class="box">
+
+                        <h4 class="is-size-5" style="color: #000000;font-weight: 600;">OUTPUT:(Clean URL slug)</h4><br>
+
+
+                        <h4 class="is-size-5" id="output" style="font-size: 32px;font-weight: 600;color: #000000;"></h4>
+                        <br>
+
+                        <button class="button  is-outlined is-gray" style="width: 100%;"> <i class="fa-solid fa-copy"
+                                onclick="copyfun()"></i>COPY</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        // let text = "";
+        // let sptxt = "";
+        // let num = false;
+        // let output = document.getElementById("output");
+
+        // document.getElementById("optxt").addEventListener("input", function (event) {
+        //     text = event.target.value;
+        // });
+
+        // const op = (event) => {
+        //     sptxt = event.target.value;
+        // };
+
+        // const numcheck = (event) => {
+        //     num = event.target.checked;
+        // };
+
+        // const handleSubmit = () => {
+        //     if (text === "") {
+        //         alert("Enter INPUT STRING: (Article title, tutorial title or any web page title)");
+        //     } else {
+        //         output.innerText = text.replace(/[^\w\s]/gi, '').replace(/\s+/g, sptxt).toLowerCase();
+        //         if (num) {
+        //             output.innerText = output.innerText.replace(/\d/g, '');
+        //         }
+        //     }
+        // };
+
+        // const clearInput = () => {
+        //     document.getElementById("optxt").value = "";
+        //     document.getElementById("output").innerText = "";
+        // };
+
+        // const resetInput = () => {
+        //     clearInput();
+        //     document.getElementById("sep").selectedIndex = 0;
+        //     document.getElementById("num").checked = false;
+        // };
+
+        let text = "";
+        let sptxt = "";
+        let num = false;
+        let output = document.getElementById("output");
+
+        document.getElementById("optxt").addEventListener("input", function (event) {
+            text = event.target.value;
+        });
+
+        const op = (event) => {
+            sptxt = event.target.value;
+        };
+
+        const numcheck = (event) => {
+            num = event.target.checked;
+        };
+
+        const handleSubmit = () => {
+            if (text === "") {
+                alert("Enter INPUT STRING: (Article title, tutorial title or any web page title)");
+            } else {
+                output.innerText = text.replace(/[^\w\s]/gi, '').replace(/\s+/g, sptxt).toLowerCase();
+                if (num) {
+                    output.innerText = output.innerText.replace(/\d/g, '');
+                }
+            }
+        };
+
+        const clearInput = () => {
+            document.getElementById("optxt").value = "";
+            document.getElementById("output").innerText = "";
+        };
+
+        const resetInput = () => {
+            clearInput();
+            document.getElementById("sep").selectedIndex = 0;
+            document.getElementById("num").checked = false;
+        };
+
+        const copyfun = () => {
+            let output = document.getElementById("output").innerText;
+        };
+    </script>
+</body>
+
+</html>

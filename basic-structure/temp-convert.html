@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Temp-convert</title>
+</head>
+
+<body style="font-family: sans-serif;background-color: lightblue;height: 100vh;">
+    <div class="section">
+        <div class="container">
+            <div class="columns is-centered" style="margin-top: 90px;">
+                <div class="column is-5">
+                    <div class="box" style="padding: 35px;">
+                        <h5 class="is-size-4" style="text-align: center;color: #000000;"><b>Temperature Converter</b>
+                        </h5>
+                        <hr>
+
+                        <h5 class="is-size-5"><b>Celsius:</b></h5>
+                        <input class="input is-primary" type="number" id="celsius" placeholder="Enter Temperature"
+                            name="celsius" onchange="computeTemp(event)"
+                            style="margin-left: 150px;width: 250px;margin-top: -35px;"><br><br>
+
+                        <h5 class="is-size-5"><b>Fahrenheit:</b></h5>
+
+                        <input class="input is-primary" type="number" id="fahrenheit" placeholder="Enter Temperature"
+                            name="fahrenheit" onchange="computeTemp(event)"
+                            style="margin-left: 150px;width: 250px;margin-top: -35px;"><br><br>
+
+                        <h5 class="is-size-5"><b>Kelvin:</b></h5>
+
+                        <input class="input is-primary" type="number" id="kelvin" placeholder="Enter Temperature"
+                            name="kelvin" onchange="computeTemp(event)"
+                            style="margin-left: 150px;width: 250px;margin-top: -35px;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        let celsiusE1 = document.getElementById("celsius");
+        let fahrenheitE1 = document.getElementById("fahrenheit");
+        let kelvinE1 = document.getElementById("kelvin");
+
+
+        function computeTemp(event) {
+            // console.log("change");
+            let currentValue = +event.target.value;
+
+            switch (event.target.name) {
+                case "celsius":
+                    kelvinE1.value = (currentValue + 273.32).toFixed(2);
+                    fahrenheitE1.value = (currentValue * 1.8 + 32).toFixed(2);
+                    break;
+
+                case "fahrenheit":
+                    celsiusE1.value = ((currentValue - 32) / 1.8).toFixed(2);
+                    kelvinE1.value = ((currentValue - 32) / 1.8 + 273.32).toFixed(2);
+                    break;
+                case "kelvin":
+                    celsiusE1.value = (currentValue - 273.32).toFixed(2);
+                    fahrenheitE1.value = ((currentValue - 273.32) * 1.8 + 32).toFixed(2);
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

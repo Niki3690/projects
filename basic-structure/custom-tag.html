@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Document</title>
+</head>
+
+<body style="font-family: cursive;background-color: black;height: 100vh;">
+    <div class="section">
+        <div class="container">
+            <div class="columns is-centered" style="margin-top: 115px;">
+                <div class="column is-5">
+
+                    <div class="box" style="padding: 45px;border-radius: 20%;">
+
+
+
+
+                        <div class="wrapper">
+
+
+                            <div class="title">
+
+                                <h5 class="is-size-4" style="font-family: cursive;font-weight: 600;text-align: center;">
+                                    Tags</h5>
+                            </div>
+
+
+                            <div class="content">
+                                <h5 class="is-size-5">click enter or add a comma after each tag</h5>
+                                <ul>
+                                    <li>Keyframe <i class="fa fa-close" onclick="remove(this, 'Keyframe')"></i></li>
+                                    <li>Effects <i class="fa fa-close" onclick="remove(this, 'Effects')"></i></li><br>
+                                    <input class="input is-primary" type="text" spellcheck="false">
+
+                                </ul>
+                            </div>
+
+
+                            <div class="details">
+                                <h5 class="is-size-5"><b><span>8</span> tags are remaining</b></h5><br>
+                                <button class="button is-primary is-outlined" style="margin-left: 115px;">Remove
+                                    All</button>
+
+
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+</body>
+
+<script>
+
+    const ul = document.querySelector("ul"),
+        input = document.querySelector("input"),
+        tagNumb = document.querySelector(".details span");
+
+    let maxTags = 10,
+        tags = ["Keyframe", "Effects"];
+
+    countTags();
+    createTag();
+
+    function countTags() {
+        input.focus();
+        tagNumb.innerText = maxTags - tags.length;
+    }
+
+
+    function createTag() {
+        ul.querySelectorAll("li").forEach(li => li.remove());
+        tags.slice().reverse().forEach(tag => {
+            let liTag = `<li>${tag} <i class="fa fa-close" onclick="remove(this, '${tag}')"></i></li>`;
+            ul.insertAdjacentHTML("afterbegin", liTag);
+        });
+        countTags();
+    }
+
+
+    function remove(element, tag) {
+        let index = tags.indexOf(tag);
+        tags = [...tags.slice(0, index), ...tags.slice(index + 1)];
+        element.parentElement.remove();
+        countTags();
+    }
+
+
+    function addTag(e) {
+        if (e.key == "Enter") {
+            let tag = e.target.value.replace(/\s+/g, ' ');
+            if (tag.length > 1 && !tags.includes(tag)) {
+                if (tags.length < 10) {
+                    tag.split(',').forEach(tag => {
+                        tags.push(tag);
+                        createTag();
+                    });
+                }
+            }
+            e.target.value = "";
+        }
+    }
+
+    input.addEventListener("keyup", addTag);
+
+    const removeBtn = document.querySelector(".details button");
+    removeBtn.addEventListener("click", () => {
+        tags.length = 0;
+        ul.querySelectorAll("li").forEach(li => li.remove());
+        countTags();
+    });
+
+
+</script>
+
+
+</body>
+
+</html>

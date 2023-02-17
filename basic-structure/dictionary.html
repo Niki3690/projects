@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Dictionary</title>
+</head>
+
+<style>
+    .meaning-container {
+        display: none;
+    }
+</style>
+
+<body style="background-color: salmon; min-height: 100vh; font-family: monospace">
+    <div class="section">
+        <div class="container">
+            <div class="columns is-centered" style="margin-top: 115px">
+                <div class="column is-4">
+                    <div class="box"
+                        style="padding: 28px;border-radius: 7px;background-color: rgba(255,255,255,.3);margin: 10px;text-align: center;font-size: 19px;font-weight: 500;">
+                        <div class="container1"></div>
+                        <h4 class="is-size-4" style="text-align: center; margin-bottom: 15px;color: #000000;">
+                            <b>English Dictionary</b>
+                        </h4>
+
+                        <input class="input input" type="text" id="input" placeholder="search box"
+                            style="background-color: rgba(255,255,255,.6);font-size: 17px;padding: 0 42px;border-radius: 5px;border-color: rgba(255,255,255,.4);margin-bottom: 7px;" />
+
+                        <p class="info-text" id="info-text" style="font-size: 15px;color: #000000;">
+                            Type a word and click enter
+                        </p>
+
+                        <div class="meaning-container" id="meaning-container">
+                            <p>
+                                <b>Word Title: </b> <span class="title" id="title"
+                                    style="font-size: 22px;color: #000000;font-weight: 600;">___</span>
+                            </p><br>
+
+                            <p>
+                                <b>Meaning: </b> <span class="meaning" id="meaning"
+                                    style="font-size: 22px;color:#000000;font-weight: 600;">___</span>
+                            </p><br>
+
+                            <audio src="" controls id="audio"></audio>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const inputEl = document.getElementById("input");
+        const infoTextEl = document.getElementById("info-text");
+        const meaningContainerEl = document.getElementById("meaning-container");
+        const titleEl = document.getElementById("title");
+        const meaningEl = document.getElementById("meaning");
+        const audioEl = document.getElementById("audio");
+
+        async function fetchAPI(word) {
+            try {
+                infoTextEl.style.display = "block";
+                meaningContainerEl.style.display = "none";
+                infoTextEl.innerText = `Searching the meaning of "${word}"`;
+                const url = `https://api.dictionaryapi.dev/api/v2/entries/en/${word}`;
+                const result = await fetch(url).then((res) => res.json());
+
+                if (result.title) {
+                    meaningContainerEl.style.display = "block";
+                    infoTextEl.style.display = "none";
+                    titleEl.innerText = word;
+                    meaningEl.innerText = "N/A";
+                    audioEl.style.display = "none";
+                } else {
+                    infoTextEl.style.display = "none";
+                    meaningContainerEl.style.display = "block";
+                    audioEl.style.display = "inline-flex";
+                    titleEl.innerText = result[0].word;
+                    meaningEl.innerText = result[0].meanings[0].definitions[0].definition;
+                    audioEl.src = result[0].phonetics[0].audio;
+                }
+            } catch (error) {
+                console.log(error);
+                infoTextEl.innerText = `an error happened, try again later`;
+            }
+        }
+
+        inputEl.addEventListener("keyup", (e) => {
+            if (e.target.value && e.key === "Enter") {
+                fetchAPI(e.target.value);
+            }
+        });
+    </script>
+</body>
+
+</html>

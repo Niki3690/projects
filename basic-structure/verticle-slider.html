@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Vertical slider</title>
+</head>
+
+<style>
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+    }
+
+    body {
+        font-family: cursive;
+        height: 100vh;
+    }
+
+    .slider-container {
+        position: relative;
+        overflow: hidden;
+        width: 100vw;
+        height: 100vh;
+    }
+
+    .left-slide {
+        height: 100%;
+        width: 35%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: transform .5s ease-in-out
+    }
+
+    .left-slide>div {
+        height: 100%;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        color: white;
+    }
+
+    .left-slide h4 {
+        font-size: 40px;
+        margin-bottom: 10px;
+        margin-top: -30px;
+    }
+
+    .right-slide {
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 35%;
+        width: 65%;
+        transition: transform .5s ease-in-out
+    }
+
+    .right-slide>img {
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center center;
+        height: 100%;
+        width: 100%;
+    }
+
+    button {
+        background-color: #fff;
+        border: none;
+        color: #aaa;
+        cursor: pointer;
+        font-size: 16px;
+        padding: 15px;
+    }
+
+    button:hover {
+        color: #222;
+    }
+
+    button:focus {
+        outline: none;
+    }
+
+    .slider-container .action-buttons button {
+        position: absolute;
+        left: 35%;
+        top: 50%;
+        z-index: 100;
+    }
+
+    .slider-container .action-buttons .down-button {
+        transform: translateX(-100%);
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        margin-left: 125px;
+    }
+
+    .slider-container .action-buttons .up-button {
+        transform: translateY(-100%);
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+    }
+</style>
+
+<body>
+
+
+    <div class="slider-container">
+        <div class="left-slide">
+            <div style="background-color:#FD3555">
+                <h4 class="is-size-4">Nature Flower</h4>
+                <h5 class="is-size-5">All in pink</h5>
+            </div>
+
+            <div style="background-color:#2A86BA">
+                <h4 class="is-size-4">Bluuue Sky</h4>
+                <h5 class="is-size-5">With it's Mountains</h5>
+            </div>
+
+            <div style="background-color:#252E33">
+                <h4 class="is-size-4">Lonely Castle</h4>
+                <h5 class="is-size-5">In the wilderness</h5>
+            </div>
+
+            <div style="background-color:#FFB866">
+                <h4 class="is-size-4">Flying eagle</h4>
+                <h5 class="is-size-5">In the sunset</h5>
+            </div>
+        </div>
+        <div class="right-slide">
+
+
+
+
+            <img
+                src="https://media.istockphoto.com/id/483774404/photo/birds-flying-silhouette.jpg?s=612x612&w=0&k=20&c=Q3Uup4qupppgGbcys7CxyjsLe7oWCtY-EBoTJ9ZeIaM=">
+
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgQGlVxk2MMI5F6fPeUf3AJ3AgxIFkbS3fdA&usqp=CAU">
+
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNdBzZaBwokwjKpGApqTQgS6mWEU5ZOKpasJQQg-G0bK8bqtceqSHbg4HdyURn2472_ck&usqp=CAU">
+
+            <img
+                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQjW3WwUNq8a__jMFXwauWe3ec9tQqK7mpVMek0i7BD-dlmTTDKV5pjmdVqHVygP0wS7qI&usqp=CAU">
+
+
+
+            <div class="action-buttons">
+
+                <button class="down-button"
+                    style="margin-left: -300px;padding: 10px;margin-top: -110px;background-color: white;color: #000000;">
+                    <i class="fas fa-arrow-down"></i>
+                </button>
+
+                <button class="up-button"
+                    style="margin-left: -300px;padding: 10px;margin-top: -110px;background-color: white;color: #000000;">
+                    <i class="fas fa-arrow-up"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+    </div>
+    </div>
+
+
+
+    <script>
+        let sliderContainer = document.querySelector(".slider-container");
+        let slideRight = document.querySelector(".right-slide");
+        let slideLeft = document.querySelector(".left-slide");
+        let downButton = document.querySelector(".down-button");
+        let upButton = document.querySelector(".up-button");
+        let slidesLength = slideRight.querySelectorAll("img").length;
+
+        // console.log(slidesLength);
+
+
+        let activeSlideIndex = 0;
+
+        slideLeft.style.top = `-${(slidesLength - 1) * 100}vh`;
+
+        upButton.addEventListener("click", () => changeSlide("up"));
+        downButton.addEventListener("click", () => changeSlide("down"));
+
+
+        let changeSlide = (direction) => {
+            let sliderHeight = sliderContainer.clientHeight;
+
+            if (direction === "up") {
+                activeSlideIndex++;
+                if (activeSlideIndex > slidesLength - 1) {
+                    activeSlideIndex = 0;
+                }
+            }
+
+
+
+            slideRight.style.transform = `translateY(-${activeSlideIndex * sliderHeight}px)`;
+
+            slideLeft.style.transform = `translateY(${activeSlideIndex * sliderHeight}px)`
+
+
+        }
+
+
+
+    </script>
+
+</body>
+
+</html>

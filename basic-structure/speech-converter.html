@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Document</title>
+</head>
+
+<style>
+    body {
+        background-color: #85586F;
+        height: 100vh;
+    }
+
+
+    form .row textarea {
+        resize: none;
+        height: 100px;
+        border: 2px solid #3F4E4F;
+        font-size: 25px;
+        font-weight: 700;
+        color: #000000;
+    }
+
+    form .row .outer {
+        height: 47px;
+        display: flex;
+        border-radius: 4px;
+        align-items: center;
+        padding: 0 10px;
+    }
+
+    form .row select {
+        font-size: 22px;
+
+    }
+
+    form .button {
+        height: 52px;
+        margin-top: 10px;
+        background-color: #85586F;
+        color: #000000;
+        width: 450px;
+        border: none;
+        font-size: 22px;
+        font-weight: 700;
+        cursor: pointer;
+        margin-left: 75px;
+    }
+
+    .button:active {
+        color: #AC7D88;
+        background-color: #000000;
+        font-weight: 700;
+        transform: scale(0.97);
+        transition: transform 0.3s ease;
+
+    }
+</style>
+
+<body>
+
+    <div class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-6">
+                    <div class="box"
+                        style="padding: 30px;border-radius: 20px;background-color: #AC7D88;margin-top: 25px;">
+                        <div class="wrapper">
+                            <h5 class="is-size-3" style="text-align: center;font-weight: 700;color:#000000;">Text To
+                                Speech</h5><br>
+                            <hr style="margin-top: -12px;">
+                            <form action="#">
+                                <div class="row">
+                                    <label
+                                        style="color: white;font-size: 22px;margin-left: 12px;color: #000000;font-weight: 700;">Enter
+                                        Text</label>
+                                    <textarea class="textarea" placeholder=""
+                                        style="margin-top: 5px;border: none;border: 7px solid #85586F;border-radius: 15px;margin-bottom: 15px;margin-top: 10px;"></textarea>
+                                </div>
+                                <div class="row">
+                                    <label
+                                        style="color:#000000;font-size: 22px;margin-left: 12px;font-weight: 700;">Select
+                                        Voice</label>
+                                    <div class="outer" style="margin-top: 10px;padding: 26px;  width: 120px;">
+                                        <select
+                                            style="width:850px;background-color: #AC7D88;font-weight: 600;padding:8px;border: 6px solid #85586F;">
+                                            <!-- <option value="">G</option>
+                                            <option value="">l</option>
+                                            <option value="">o</option> -->
+                                        </select>
+                                    </div>
+                                </div><br><br>
+                                <button class="button">Convert To Speech</button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        const textarea = document.querySelector("textarea"),
+            voiceList = document.querySelector("select"),
+            speechBtn = document.querySelector("button");
+
+        let synth = speechSynthesis,
+            isSpeaking = true;
+
+        voices();
+
+        function voices() {
+            for (let voice of synth.getVoices()) {
+                let selected = voice.name === "Google US English" ? "selected" : "";
+                let option = `<option value="${voice.name}" ${selected}>${voice.name} (${voice.lang})</option>`;
+                voiceList.insertAdjacentHTML("beforeend", option);
+            }
+        }
+
+        synth.addEventListener("voiceschanged", voices);
+
+        function textToSpeech(text) {
+            let utterance = new SpeechSynthesisUtterance(text);
+            for (let voice of synth.getVoices()) {
+                if (voice.name === voiceList.value) {
+                    utterance.voice = voice;
+                }
+            }
+            synth.speak(utterance);
+        }
+
+        speechBtn.addEventListener("click", e => {
+            e.preventDefault();
+            if (textarea.value !== "") {
+                if (!synth.speaking) {
+                    textToSpeech(textarea.value);
+                }
+                if (textarea.value.length > 80) {
+                    setInterval(() => {
+                        if (!synth.speaking && !isSpeaking) {
+                            isSpeaking = true;
+                            speechBtn.innerText = "Convert To Speech";
+                        } else {
+                        }
+                    }, 500);
+                    if (isSpeaking) {
+                        synth.resume();
+                        isSpeaking = false;
+                        speechBtn.innerText = "Pause Speech";
+                    } else {
+                        synth.pause();
+                        isSpeaking = true;
+                        speechBtn.innerText = "Resume Speech";
+                    }
+                } else {
+                    speechBtn.innerText = "Convert To Speech";
+                }
+            }
+        });
+    </script>
+
+</body>
+
+</html>

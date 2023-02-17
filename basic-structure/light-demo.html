@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Light Demo</title>
+</head>
+
+<style>
+    #outer {
+        width: 600px;
+        height: 600px;
+        padding: 50px;
+        border: 5px solid #000000;
+        margin-left: 400px;
+    }
+
+    #inner {
+        width: 200px;
+        height: 400px;
+        border: 5px solid #000000;
+        margin: auto;
+        border-radius: 50px;
+        padding: 20px;
+        background-color: #000000;
+    }
+
+    #pole {
+        width: 50px;
+        height: 145px;
+        background-color: #000000;
+        margin: auto;
+
+    }
+
+
+    .light {
+        width: 70px;
+        height: 70px;
+        background: white;
+        margin: auto;
+        margin-top: 30px;
+        border-radius: 40px;
+    }
+
+    .red-off {
+        background: rgba(255, 0, 0, 0.3);
+    }
+
+    .yellow-off {
+        background: rgba(0, 255, 0, 0.3);
+        ;
+    }
+
+    .green-off {
+        background: rgba(255, 255, 0, 0.3);
+        ;
+    }
+
+
+
+
+    .red-on {
+        background: rgba(255, 0, 0, 1);
+        /* box-shadow: 0 0 2px 2px rgba(255, 0, 0, 1), 0 0 10px 10px rgba(255, 0, 0, 1), 0 0 10px 10px rgba(255, 0, 0, 1); */
+    }
+
+    .yellow-off {
+        background: rgba(255, 255, 0, 1);
+        /* box-shadow: 0 0 2px 2px rgba(255, 255, 0, 1), 0 0 10px 10px rgba(255, 255, 0, 1), 0 0 10px 10px rgba(255, 255, 0, 1); */
+        ;
+    }
+
+    .green-on {
+        background: rgba(0, 255, 0, 1);
+        /* box-shadow: 0 0 2px 2px rgba(0, 255, 0, 1), 0 0 10px 10px rgba(0, 255, 0, 1), 0 0 10px 10px rgba(0, 255, 0, 1); */
+        ;
+    }
+
+    #time {
+        margin: auto;
+        width: 100px;
+        font-size: 50px;
+        color: orangered;
+        margin-top: 4px;
+        text-align: center;
+    }
+</style>
+
+<body>
+    <div id="outer">
+        <div id="inner">
+            <div class="light red-on" id="red"></div>
+            <div class="light yellow-off" id="yellow"></div>
+            <div class="light green-off" id="green"></div>
+            <div id="time">00:00</div>
+        </div>
+        <div id="pole">
+        </div>
+    </div>
+    </div>
+
+    <script>
+        TS = [55, 4, 90];
+        TS_COPY = TS.slice();
+        Light = 0;
+        let red = document.getElementById("red");
+        let yellow = document.getElementById("yellow");
+        let green = document.getElementById("green");
+
+        function setTime() {
+            document.getElementById("time").innerHTML = convertTime(TS_COPY[Light]);
+            TS_COPY[Light]--;
+            if (TS_COPY[Light] < 0) {
+                if (Light == 0) {
+                    Light = 1;
+                    lightOff();
+
+                    yellow.classList.replace("yellow-off", "yellow-on")
+                }
+
+                else if (Light == 1) {
+                    Light = 2;
+                    lightOff();
+                    green.classList.replace("green-off", "green-on")
+                }
+
+                else if (Light == 2) {
+                    Light = 0;
+                    lightOff();
+                    red.classList.replace("red-off", "red-on")
+                    TS_COPY = TS.slice();
+
+                }
+            }
+        }
+
+        function lightOff() {
+            red.classList.replace("red-on", "red-off");
+            green.classList.replace("green-on", "green-off");
+            yellow.classList.replace("yellow-on", "yellow-off");
+        }
+
+        function convertTime(TS) {
+            m = parseInt(TS / 60);
+            s = TS % 60;
+            mt = m < 10 ? "0" + m : m;
+            st = s < 10 ? "0" + s : s;
+            return m + ":" + s;
+
+        }
+        setInterval(setTime, 1000);
+
+
+    </script>
+
+</body>
+
+</html>
