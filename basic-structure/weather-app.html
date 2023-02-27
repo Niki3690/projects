@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Weather App</title>
+</head>
+
+<style>
+    main {
+
+        height: 100vh;
+        background-color: black;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .row {
+        width: 500px;
+        height: 100px;
+        /* border: 2px solid white; */
+        text-align: center;
+        margin: 10px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        color: white;
+    }
+
+
+
+    #search {
+        font-size: 30px;
+        padding: 10px;
+        border-radius: 15px;
+        border: none;
+        outline: none;
+    }
+</style>
+
+<body style="background-color: wheat;">
+
+    <div class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column">
+                    <main>
+                        <div class="row">
+                            <form action="">
+                                <input class="input is-link" type="search" placeholder="search city name" id="search">
+                            </form>
+                        </div>
+                        <div class="row" id="weather">
+                            <!-- <div>
+                                <img src="">
+                            </div>
+
+                            <div>
+                                <h4 class="is-size-2">45</h4>
+                                <h5 class="is-size-5">Clear</h5>
+                            </div> -->
+                        </div>
+                    </main>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let API_KEY = `3265874a2c77ae4a04bb96236a642d2f`
+        let form = document.querySelector("form")
+        let search = document.querySelector("#search")
+        let weather = document.querySelector("#weather")
+
+        let getWeather = async (city) => {
+            weather.innerHTML = `<h2 class="is-size-2"> Loading... </h2>`
+            const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${API_KEY}&units=metric`
+            const response = await fetch(url);
+            const data = await response.json()
+            return showWeather(data)
+        }
+
+        let showWeather = (data) => {
+            if (data.cod == "404") {
+                weather.innerHTML = `<h4 class="is-size-3"> Search City Not Found In Record</h4>`
+                weather.style.color = "wheat";
+
+
+
+                return;
+            }
+            weather.innerHTML = `
+        <div>
+            <img src="https://openweathermap.org/img/wn/${data.weather[0].icon}@2x.png" alt="">
+        </div>
+        <div>
+            <h2>${data.main.temp} ℃</h2>
+            <h4> ${data.weather[0].main} </h4>
+        </div>
+    `
+        }
+
+        form.addEventListener(
+            "submit",
+            function (event) {
+                getWeather(search.value)
+                event.preventDefault();
+            }
+        )
+
+
+    </script>
+</body>
+
+</html>

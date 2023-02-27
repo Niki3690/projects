@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/
+css/font-awesome.min.css">
+    <title>Highlight Text</title>
+
+
+</head>
+
+<style>
+    .button:hover {
+        background-color: #557174;
+        color: white;
+    }
+
+    .input:hover {
+        background-color: #557174;
+
+    }
+
+    mark {
+        background-color: #002F35;
+        color: wheat;
+        padding: 9px;
+    }
+</style>
+
+<body style="background-color: #557174;height: 100vh;">
+    <div class="section">
+        <div class="container">
+            <div class="columns is-centered">
+                <div class="column is-5">
+                    <div class="box"
+                        style="margin-top: 25px;border: 3px solid #000000;padding-top: 25px;padding-bottom: 25px;">
+                        <div class="wrapper">
+
+                            <input class="input is-medium" type="text" placeholder="Enter text here..."
+                                id="text-to-search"
+                                style="width: 275px;background-color: #F7D1BA;color: #000000;font-weight: 700;font-size: 20px;border: 3px solid #000000;">
+
+
+                            <button class="button" onclick="searchBtn()"
+                                style="margin-left: 15px;padding: 24px 28px;font-size: 20px;font-weight: 700;background-color: #F7D1BA;border: 3px solid #000000;">Search</button>
+                        </div><br>
+
+                        <p id="para" style="font-size: 17px;color: #002F35;font-weight: 600;line-height:26px;">
+                            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Rem, iusto. Consequuntur, sit!
+                            Iusto, perferendis ipsam? Laborum maiores sunt, deserunt suscipit consequuntur facere sint
+                            fuga modi, quo temporibus dolores, quae doloremque molestias qui nisi dolorem quam similique
+                            mollitia asperiores vel iure voluptatibus laboriosam eligendi commodi? Sunt quaerat
+                            molestias, aliquid perspiciatis aut natus eligendi. Omnis perspiciatis praesentium
+                            voluptatibus quaerat eos laboriosam nisi odit, corporis illo magnam quisquam voluptatum
+                            porro corrupti impedit nam? Perspiciatis fuga delectus expedita rem voluptatem repudiandae
+                            autem dolorem obcaecati doloremque, ad omnis in commodi labore iusto, amet, consequuntur
+                            reiciendis quisquam accusamus facilis magnam adipisci doloribus? Ex non iste dolore.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <script>
+        function searchBtn() {
+            let textToSearch = document.getElementById("text-to-search").value;
+            let para = document.getElementById("para");
+            textToSearch = textToSearch.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+
+            let pattern = new RegExp(`${textToSearch}`, "gi");
+
+            para.innerHTML = para.textContent.replace(pattern, match => `<mark>${match}</mark>`)
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Num guesses</title>
+
+    <head>
+
+        <style>
+            #section2 {
+                display: none;
+            }
+
+            #section3 {
+                display: none;
+            }
+
+            body {
+                background-color: #85CAD0;
+                height: 100vh;
+            }
+        </style>
+
+
+    </head>
+
+<body>
+    <div class="container">
+        <div class="columns is-centered">
+            <div class="column is-5">
+                <div class="box" style="margin-top: 145px;">
+                    <div id="section1" class="container">
+
+                        <button class="btn button is-dark"
+                            style="margin-left: 110px;padding: 25px 25px;font-size: 22px;color: white;font-family: 700;"
+                            onclick=" genearte_number_btn()">Generate
+                            Number</button>
+
+                    </div>
+
+                    <div id="section2" class="container">
+
+                        <img src="https://media.tenor.com/wramzGSx50gAAAAC/cartoon-question-mark.gif"
+                            style="height: 150px;width: 150px;margin-left: 140px;margin-top: 25px;">
+
+                        <p class="text-danger"
+                            style="font-size: 27px;font-weight: 600;color: #000000;text-align: center;margin-top: 15px;margin-bottom: 15px;">
+                            Guess the number between 1 to 10 </p>
+
+                        <div class="form-group">
+
+                            <input class="input is-dark is-medium" type="text" placeholder="Enter here" id="field"
+                                style="border: 4px solid #000000;">
+
+                        </div><br>
+
+                        <button class="btn button" onclick="check_number()"
+                            style="margin-left: 160px;padding: 25px 25px;font-size: 22px;color: white;font-family: 700;border: 4px solid white;background-color: #000000;">Check</button>
+                    </div>
+
+
+                    <div id="section3" class="container">
+
+                        <img src="https://thumbs.gfycat.com/SecondTartCygnet-size_restricted.gif" alt="" style="width: 150px;margin-left: 145px;margin-top: 15px;
+        ">
+
+                        <h4 class="is-size-4"
+                            style="text-align: center;color: #000000;font-weight: 600;margin-top: 15px;">Generating
+                            Number..</h4>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        let number;
+        let genearte_number = () => {
+            let n1 = Math.random();
+            let n2 = n1 * 10;
+
+            n2 = Math.trunc(n2);
+
+            (n2 % 10) + 1;
+
+            number = n2;
+
+            console.log(number);
+        }
+
+
+        let genearte_number_btn = () => {
+
+            document.querySelector("#section1").style.display = "none";
+
+            document.querySelector("#section2").style.display = "none";
+
+            document.querySelector("#section3").style.display = "block";
+
+
+            setTimeout(() => {
+                genearte_number();
+                document.querySelector("#section1").style.display = "none";
+
+                document.querySelector("#section2").style.display = "block";
+
+                document.querySelector("#section3").style.display = "none";
+
+            }, 2000);
+        }
+
+        let check_number = () => {
+            let value = document.querySelector("#field").value;
+            if (value == number) {
+                alert("Yehh!!...You won this game");
+            } else {
+                alert("Oopss!!...You are wrong Guesssessss")
+            }
+            genearte_number_btn();
+        }
+    </script>
+</body>
+
+</html>

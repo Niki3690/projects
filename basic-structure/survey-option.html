@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Weather App</title>
+</head>
+
+<style>
+    body {
+        text-align: center;
+    }
+
+    a {
+        text-decoration: none;
+        color: #000000;
+        font-weight: 600;
+        font-size: 22px;
+    }
+
+    li {
+        text-decoration: none;
+        list-style: none;
+        font-size: 20px;
+        font-weight: 600;
+    }
+
+    .p {
+        font-size: 20px;
+    }
+
+    .survey {
+        width: 80%;
+        margin: 20px auto;
+        /* background: wheat; */
+        background: #A75D5D;
+        color: wheat;
+        height: 320px;
+        border-radius: 3px;
+        padding-top: 15px;
+
+    }
+
+    hr {
+        background-color: wheat;
+    }
+
+    .survey h4 {
+        margin: 8px;
+        padding-top: 10px;
+        font-weight: 700;
+        color: wheat;
+    }
+
+    .survey li {
+        margin: 10px;
+        cursor: pointer;
+    }
+
+    .survey li:hover {
+        background: black;
+        color: wheat;
+        width: 150px;
+        margin: 0 auto;
+        padding: 4px;
+        border-radius: 3px;
+        transition: 0.4s ease;
+    }
+
+    .end {
+        background-color: #A75D5D;
+        color: wheat;
+        width: 80%;
+        margin: 35% auto;
+        padding: 20px 0;
+        border-radius: 3px;
+
+    }
+
+    .end h4 {
+        margin: 5px;
+    }
+
+
+    .end p {
+        padding: 10px;
+        font-size: 24px;
+        font-weight: 600;
+    }
+
+    .end a {
+        display: inline-block;
+        margin-top: 10px;
+        padding: 5px;
+        border-radius: 4px;
+        background: yellow;
+        outline: none;
+    }
+
+    .end a:hover {
+        transition: 0.3s ease;
+    }
+
+
+    .q1 {
+        display: block;
+    }
+
+    .q2 {
+        display: none;
+    }
+
+    .q3 {
+        display: none;
+    }
+</style>
+
+<body>
+    <div class="section">
+        <div class="container">
+
+            <div class="columns is-centered">
+                <div class="column is-6">
+
+                    <h3 class="is-size-3"
+                        style="font-weight: 700; color: #A75D5D;;letter-spacing: 1.6px;margin-bottom: 9px;">Software
+                        Developers Options
+                    </h3>
+                    <h4 class="is-size-4" style="font-weight: 600; color: #A75D5D;">Give us information about you.
+                    </h4>
+
+                    <div class="survey">
+                        <div class="q1">
+                            <h4 class="is-size-4">What's the programming language you can learn??</h4>
+                            <ul class="option1">
+                                <hr>
+                                <li>Java-script</li>
+                                <li>Java</li>
+                                <li>Python</li>
+                                <li>PHP</li>
+                            </ul>
+                        </div>
+
+
+                        <div class="q2">
+                            <h4 class="is-size-4">How long have you been coading??</h4>
+                            <ul class="option2">
+                                <hr>
+                                <li>Just-started</li>
+                                <li>3 month</li>
+                                <li>6 month</li>
+                                <li>1 year</li>
+                            </ul>
+                        </div>
+
+
+
+                        <div class="q3">
+                            <h4 class="is-size-4">Whats's your plan after learning code??</h4>
+                            <ul class="option3">
+                                <hr>
+                                <li>Full time job</li>
+                                <li>Freelancer</li>
+                                <li>Own comapny</li>
+                                <li> No idea</li>
+                            </ul>
+                        </div>
+                    </div>
+
+
+                    <div class="end">
+                        <h4 class="is-size-2" style="font-weight: 700;">Thank you</h4>
+
+                        <p>Okay!! we will contact you get back as soon as possible.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let ul_1 = document.querySelector(".option1");
+        let ul_2 = document.querySelector(".option2");
+        let ul_3 = document.querySelector(".option3");
+
+        let q1 = document.querySelector(".q1");
+        let q2 = document.querySelector(".q2");
+        let q3 = document.querySelector(".q3");
+
+
+        let survey = document.querySelector(".survey");
+
+        let end = document.querySelector(".end");
+
+        ul_1.addEventListener("click", function () {
+            q1.style.display = "none";
+            q2.style.display = "block";
+        });
+
+
+        ul_2.addEventListener("click", function () {
+            q2.style.display = "none";
+            q3.style.display = "block";
+        });
+
+
+        ul_3.addEventListener("click", function () {
+            q3.style.display = "none";
+            survey.style.display = "none";
+            end.style.display = "block";
+        });
+    </script>
+
+</body>
+
+</html>

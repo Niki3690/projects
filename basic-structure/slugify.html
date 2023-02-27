@@ -93,12 +93,14 @@
             if (text === "") {
                 alert("Enter INPUT STRING: (Article title, tutorial title or any web page title)");
             } else {
-                output.innerText = text.replace(/[^\w\s]/gi, '').replace(/\s+/g, sptxt).toLowerCase();
+                const regExp = num ? /\d/g : /[^\w\s-]/gi;
+                output.innerText = text.replace(/[^\w\s\-_]/gi, '').replace(/\s+|[_-]+/g, sptxt).toLowerCase();
                 if (num) {
                     output.innerText = output.innerText.replace(/\d/g, '');
                 }
             }
         };
+
 
         const clearInput = () => {
             document.getElementById("optxt").value = "";

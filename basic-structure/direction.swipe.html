@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Direction swipe</title>
+</head>
+
+
+<style>
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        background: linear-gradient(to left, #D8AC9C, #FFF76A, #EFD9D1);
+        height: 100vh;
+    }
+
+    .container {
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        margin-top: -65px;
+        margin-top: 45px;
+    }
+
+    #touch-area {
+        background-color: #96CEB4;
+        height: 20em;
+        width: 20em;
+        border-radius: 0.6em;
+        border: 4px solid #000000;
+    }
+
+    #output {
+        font-family: "Poppins", sans-serif;
+        font-size: 22px;
+        background-color: #96CEB4;
+        text-align: center;
+        padding: 0.8em 0;
+        border-radius: 0.3em;
+        margin-top: 1em;
+        border: 4px solid #000000;
+        color: #000000;
+        font-weight: 700;
+    }
+</style>
+
+<body>
+    <br><br><br><br><br>
+    <h4 class="is-size-4" style="margin-left: 520px;font-weight: 700;color: #000000;">Move cursor in this box</h4>
+    <div class="container">
+        <div id="touch-area"></div>
+        <p id="output">Swipe Area</p>
+    </div>
+
+
+
+    <script>
+
+        let touchArea = document.getElementById("touch-area");
+        let output = document.getElementById("output");
+
+
+
+        let mouseX,
+            initialX = 0;
+        let mouseY,
+            initialY = 0;
+        let isSwiped;
+
+        let events = {
+            mouse: {
+                down: "mousedown",
+                move: "mousemove",
+                up: "mouseup",
+            },
+            touch: {
+                down: "touchstart",
+                move: "touchmove",
+                up: "touchend",
+            },
+        };
+
+        let deviceType = "";
+
+
+        const isTouchDevice = () => {
+            try {
+
+                document.createEvent("TouchEvent");
+                deviceType = "touch";
+                return true;
+            } catch (e) {
+                deviceType = "mouse";
+                return false;
+            }
+        };
+
+
+        let rectLeft = touchArea.getBoundingClientRect().left;
+        let rectTop = touchArea.getBoundingClientRect().top;
+
+
+        const getXY = (e) => {
+            mouseX = (!isTouchDevice() ? e.pageX : e.touches[0].pageX) - rectLeft;
+            mouseY = (!isTouchDevice() ? e.pageY : e.touches[0].pageY) - rectTop;
+        };
+
+        isTouchDevice();
+
+
+        touchArea.addEventListener(events[deviceType].down, (event) => {
+            isSwiped = true;
+
+            getXY(event);
+            initialX = mouseX;
+            initialY = mouseY;
+        });
+
+
+        touchArea.addEventListener(events[deviceType].move, (event) => {
+            if (!isTouchDevice()) {
+                event.preventDefault();
+            }
+            if (isSwiped) {
+                getXY(event);
+                let diffX = mouseX - initialX;
+                let diffY = mouseY - initialY;
+                if (Math.abs(diffY) > Math.abs(diffX)) {
+                    output.innerText = diffY > 0 ? "Down" : "Up";
+                } else {
+                    output.innerText = diffX > 0 ? "Right" : "Left";
+                }
+            }
+        });
+
+
+        touchArea.addEventListener(events[deviceType].up, () => {
+            isSwiped = false;
+        });
+
+        touchArea.addEventListener("mouseleave", () => {
+            isSwiped = false;
+        });
+
+        window.onload = () => {
+            isSwiped = false;
+        };
+    </script>
+</body>
+
+</html>

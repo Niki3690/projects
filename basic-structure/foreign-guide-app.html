@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Forign country app</title>
+
+</head>
+
+<style>
+    body {
+        background: linear-gradient(to left, #C9F4AA, #FCC2FC, #CDE990);
+        height: 150vh;
+    }
+
+    .container .flag-img {
+        height: 250px;
+        width: 250px;
+        margin-left: 90px;
+    }
+
+    #result {
+        margin-top: 1.25em;
+    }
+
+    h2 {
+        font-size: 30px;
+        text-align: center;
+        font-weight: 700;
+        color: #395144;
+        font-family: cursive;
+        margin-top: -30px;
+        text-transform: uppercase;
+        margin-bottom: 25px;
+    }
+
+    h4 {
+        font-size: 22px;
+        color: #395144;
+        font-weight: 700;
+    }
+
+    span {
+        color: red;
+        font-weight: 600;
+        font-size: 20px;
+    }
+
+    h3 {
+        text-align: center;
+        font-size: 25px;
+        font-weight: 700;
+        color: red;
+    }
+</style>
+
+<body>
+    <div class="section">
+        <div class="container">
+
+            <div class="columns is-centered">
+                <div class="column is-5">
+                    <div class="card"
+                        style="margin-top: 45px;padding-top: 15px;padding-bottom: 15px;background-color: #FFF7BC;padding-left: 15px;padding-right: 15px;border-radius: 25px;">
+                        <div class="search-wrapper">
+                            <input class="input is-medium" type="text" placeholder=" country name here.."
+                                id="country-inp"
+                                style="background-color: #395144;color: white;font-size: 25px;font-family: cursive;font-weight: 700;border-radius: 15px;">
+
+                            <button class="button is-outlined" id="search-btn"
+                                style="background-color: #395144;color: white;font-weight: 700;font-family: cursive;font-size: 20px;padding: 20px 30px;margin-left: 155px;margin-top: 15px;border-radius: 15px;">Search</button>
+
+                            <div id="result"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let searchBtn = document.getElementById("search-btn");
+        let countryInp = document.getElementById("country-inp");
+        searchBtn.addEventListener("click", () => {
+            let countryName = countryInp.value;
+            let finalURL = `https://restcountries.com/v3.1/name/${countryName}?fullText=true`;
+            console.log(finalURL);
+            fetch(finalURL)
+                .then((response) => response.json())
+                .then((data) => {
+
+                    result.innerHTML = `
+                    <img src="${data[0].flags.svg}" class="flag-img">
+        <h2>${data[0].name.common}</h2>
+        <div class="wrapper">
+            <div class="data-wrapper">
+                <h4>Capital:</h4>
+                <span>${data[0].capital[0]}</span>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="data-wrapper">
+                <h4>Continent:</h4>
+                <span>${data[0].continents[0]}</span>
+            </div>
+        </div>
+         <div class="wrapper">
+            <div class="data-wrapper">
+                <h4>Population:</h4>
+                <span>${data[0].population}</span>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="data-wrapper">
+                <h4>Currency:</h4>
+                <span>${data[0].currencies[Object.keys(data[0].currencies)].name
+                        } - ${Object.keys(data[0].currencies)[0]}</span>
+            </div>
+        </div>
+         <div class="wrapper">
+            <div class="data-wrapper">
+                <h4>Common Languages:</h4>
+                <span>${Object.values(data[0].languages)
+                            .toString()
+                            .split(",")
+                            .join(", ")}</span>
+            </div>
+        </div>
+      `;
+                })
+                .catch(() => {
+                    if (countryName.length == 0) {
+                        result.innerHTML = `<h3>input field can't be empty</h3>`;
+                    } else {
+                        result.innerHTML = `<h3>Please enter  well-founded country name.</h3>`;
+                    }
+                });
+        })
+
+
+    </script>
+
+</body>
+
+</html>

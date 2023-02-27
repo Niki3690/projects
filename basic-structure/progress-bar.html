@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <title>Dynamic progress bar</title>
+</head>
+<style>
+    body {
+        background: linear-gradient(to bottom, #9eb23b, #c7d36f, #D4D925, #BABD42);
+        height: 100vh;
+    }
+
+    .circular-progress {
+        position: relative;
+        height: 250px;
+        width: 250px;
+        background-color: #000000;
+        border-radius: 50%;
+        display: grid;
+        place-items: center;
+    }
+
+    .contain {
+        display: grid;
+        place-items: center;
+        height: 400px;
+        width: 400px;
+        /* background-color: wheat; */
+        background: linear-gradient(to bottom, #65C18C, #C1F4C5, #C0EDA6, #ACB992);
+        position: absolute;
+        transform: translate(-50%, -50%);
+        top: 50%;
+        left: 50%;
+        border-radius: 50px;
+        display: grid;
+        place-items: center;
+        box-shadow: 20px 20px 40px rgba(60, 60, 150, 0.25);
+        margin-top: 145px;
+    }
+
+    .circular-progress::before {
+        content: "";
+        position: absolute;
+        height: 84%;
+        width: 84%;
+        background-color: #ffffff;
+        border-radius: 50%;
+    }
+
+    .value-container {
+        position: absolute;
+        font-family: cursive;
+        font-size: 50px;
+        font-weight: 700;
+        color: #000000;
+    }
+</style>
+
+<body>
+    <div class="section">
+        <div class="container">
+            <div class="columns is-centered" style="margin-top: 145px">
+                <div class="column is-4">
+                    <div class="contain">
+                        <div class="circular-progress">
+                            <div class="value-container">0%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let progressBar = document.querySelector(".circular-progress");
+        let valueContainer = document.querySelector(".value-container");
+
+        let progressValue = 0;
+        let progressEndValue = 75;
+        let speed = 15;
+
+        let progress = setInterval(() => {
+            progressValue++;
+            console.log(progressValue);
+            valueContainer.textContent = `${progressValue}%`;
+            progressBar.style.background = `conic-gradient(#4d5bf9 ${progressValue * 3.6}deg, #cadcff ${progressValue * 3.6}deg)`;
+            if (progressValue == progressEndValue) {
+                clearInterval(progress);
+            }
+
+        }, speed);
+
+    </script>
+</body>
+
+</html>

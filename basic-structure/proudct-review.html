@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Product Preview</title>
+
+</head>
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: none;
+        border: none;
+        text-decoration: none;
+        transition: all .2s linear;
+        text-transform: capitalize;
+    }
+
+    html {
+        font-size: 62.5%;
+        overflow-x: hidden;
+    }
+
+    body {
+        background: #EAC8AF;
+        height: 140vh;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 3rem 2rem;
+    }
+
+    .container .title {
+        font-size: 3.5rem;
+        color: #4F0E0E;
+        margin-bottom: 3rem;
+        text-transform: uppercase;
+        text-align: center;
+        font-weight: 700;
+    }
+
+    .container .products-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+        gap: 2rem;
+    }
+
+    .container .products-container .product {
+        text-align: center;
+        padding: 3rem 2rem;
+        background: #fff;
+        box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .1);
+        outline: .3rem solid #4F0E0E;
+        outline-offset: -1.5rem;
+        cursor: pointer;
+    }
+
+    .container .products-container .product:hover {
+        outline: .6rem solid #4F0E0E;
+        outline-offset: 0;
+    }
+
+    .container .products-container .product img {
+        height: 25rem;
+    }
+
+    .container .products-container .product:hover img {
+        transform: scale(.9);
+    }
+
+    .container .products-container .product h3 {
+        padding: .5rem 0;
+        font-size: 25px;
+        color: #4F0E0E;
+        font-weight: 700;
+    }
+
+    .container .products-container .product:hover h3 {
+        color: #C06014;
+        font-weight: 700;
+    }
+
+    .container .products-container .product .price {
+        font-size: 22px;
+        color: #4F0E0E;
+        font-weight: 600;
+    }
+
+    .products-preview {
+        position: fixed;
+        top: 0;
+        left: 0;
+        min-height: 100vh;
+        width: 100%;
+        background: rgba(0, 0, 0, .8);
+        display: none;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .products-preview .preview {
+        display: none;
+        padding: 2rem;
+        text-align: center;
+        background: #fff;
+        position: relative;
+        margin: 2rem;
+        width: 40rem;
+    }
+
+    .products-preview .preview.active {
+        display: inline-block;
+    }
+
+    .products-preview .preview img {
+        height: 30rem;
+    }
+
+    .products-preview .preview .fa-times {
+        position: absolute;
+        top: 1rem;
+        right: 1.5rem;
+        cursor: pointer;
+        color: #4F0E0E;
+        font-size: 4rem;
+    }
+
+    .products-preview .preview .fa-times:hover {
+        transform: rotate(90deg);
+    }
+
+    .products-preview .preview h3 {
+        color: #4F0E0E;
+        padding: .5rem 0;
+        font-size: 25px;
+        font-weight: 700;
+    }
+
+    .products-preview .preview .stars {
+        padding: 1rem 0;
+        font-size: 1.7rem;
+    }
+
+    .products-preview .preview .stars i {
+        color: #F6E601;
+    }
+
+    .products-preview .preview .stars span {
+        color: #4F0E0E;
+        font-weight: 600;
+    }
+
+    .products-preview .preview p {
+        line-height: 1.5;
+        padding: 1rem 0;
+        font-size: 1.8rem;
+        color: #4F0E0E;
+        font-weight: 700;
+    }
+
+    .products-preview .preview .price {
+        padding: 1rem 0;
+        font-size: 2.5rem;
+        color: #C06014;
+        font-weight: 700;
+    }
+
+    .products-preview .preview .buttons {
+        display: flex;
+        gap: 1.5rem;
+        flex-wrap: wrap;
+        margin-top: 1rem;
+    }
+
+    .products-preview .preview .buttons a {
+        flex: 1 1 16rem;
+        padding: 1rem;
+        font-size: 1.8rem;
+        color: #4F0E0E;
+        border: .1rem solid #444;
+        font-weight: 700;
+    }
+
+    .products-preview .preview .buttons a.cart {
+        background: #C06014;
+        color: #fff;
+    }
+
+    .products-preview .preview .buttons a.cart:hover {
+        background: #000000;
+    }
+
+    .products-preview .preview .buttons a.buy:hover {
+        background: #4F0E0E;
+        color: #fff;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+
+        <h3 class="title"> organic products </h3>
+
+        <div class="products-container">
+
+            <div class="product" data-name="p-1">
+                <img src="https://pngimg.com/uploads/potato/potato_png2398.png" alt="">
+                <h3>strawberries</h3>
+                <div class="price">$2.00</div>
+            </div>
+
+            <div class="product" data-name="p-2">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoTV3xVr9rt8IG3Em_arBbszyGOTCczMyn0fVJLrxR65HLbqsVs_tJIYD9SbjiRFLAE8Y&usqp=CAU"
+                    alt="">
+                <h3>onions</h3>
+                <div class="price">$2.00</div>
+            </div>
+
+            <div class="product" data-name="p-3">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUav8HQgOtv10IY7FKvhGCnpgFR4xaI6BSkQ&usqp=CAU"
+                    alt="">
+                <h3>tomatoes</h3>
+                <div class="price">$2.00</div>
+            </div>
+
+            <div class="product" data-name="p-4">
+                <img src="https://freepngimg.com/convert-png/21718-tomatoes-with-a-transparent-background" alt="">
+                <h3>brinjal</h3>
+                <div class="price">$2.00</div>
+            </div>
+
+            <div class="product" data-name="p-5">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSckWhX76Ce9Iy8L0ncodnu88Cx8S4KTWGquA&usqp=CAU"
+                    alt="">
+                <h3>broccoli</h3>
+                <div class="price">$2.00</div>
+            </div>
+
+            <div class="product" data-name="p-6">
+                <img src="https://pngfre.com/wp-content/uploads/strawberry.jpg" alt="">
+                <h3>potatoes</h3>
+                <div class="price">$2.00</div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="products-preview">
+
+        <div class="preview" data-target="p-1">
+            <i class="fas fa-times"></i>
+            <img src="https://pngimg.com/uploads/potato/potato_png2398.png" alt="">
+            <h3>organic strawberries</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>( 250 )</span>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+            <div class="price">$2.00</div>
+            <div class="buttons">
+                <a href="#" class="buy">buy now</a>
+                <a href="#" class="cart">add to cart</a>
+            </div>
+        </div>
+
+        <div class="preview" data-target="p-2">
+            <i class="fas fa-times"></i>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSoTV3xVr9rt8IG3Em_arBbszyGOTCczMyn0fVJLrxR65HLbqsVs_tJIYD9SbjiRFLAE8Y&usqp=CAU"
+                alt="">
+            <h3>organic onions</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>( 250 )</span>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+            <div class="price">$2.00</div>
+            <div class="buttons">
+                <a href="#" class="buy">buy now</a>
+                <a href="#" class="cart">add to cart</a>
+            </div>
+        </div>
+
+        <div class="preview" data-target="p-3">
+            <i class="fas fa-times"></i>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRUav8HQgOtv10IY7FKvhGCnpgFR4xaI6BSkQ&usqp=CAU"
+                alt="">
+            <h3>organic tomatoes</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>( 250 )</span>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+            <div class="price">$2.00</div>
+            <div class="buttons">
+                <a href="#" class="buy">buy now</a>
+                <a href="#" class="cart">add to cart</a>
+            </div>
+        </div>
+
+        <div class="preview" data-target="p-4">
+            <i class="fas fa-times"></i>
+            <img src="https://freepngimg.com/convert-png/21718-tomatoes-with-a-transparent-background" alt="">
+            <h3>organic brinjal</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>( 250 )</span>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+            <div class="price">$2.00</div>
+            <div class="buttons">
+                <a href="#" class="buy">buy now</a>
+                <a href="#" class="cart">add to cart</a>
+            </div>
+        </div>
+
+        <div class="preview" data-target="p-5">
+            <i class="fas fa-times"></i>
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSckWhX76Ce9Iy8L0ncodnu88Cx8S4KTWGquA&usqp=CAU"
+                alt="">
+            <h3>organic broccoli</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>( 250 )</span>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+            <div class="price">$2.00</div>
+            <div class="buttons">
+                <a href="#" class="buy">buy now</a>
+                <a href="#" class="cart">add to cart</a>
+            </div>
+        </div>
+
+        <div class="preview" data-target="p-6">
+            <i class="fas fa-times"></i>
+            <img src="https://pngfre.com/wp-content/uploads/strawberry.jpg" alt="">
+            <h3>organic potatoes</h3>
+            <div class="stars">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                <span>( 250 )</span>
+            </div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, dolorem.</p>
+            <div class="price">$2.00</div>
+            <div class="buttons">
+                <a href="#" class="buy">buy now</a>
+                <a href="#" class="cart">add to cart</a>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        let preveiwContainer = document.querySelector('.products-preview');
+        let previewBox = preveiwContainer.querySelectorAll('.preview');
+
+        document.querySelectorAll('.products-container .product').forEach(product => {
+            product.onclick = () => {
+                preveiwContainer.style.display = 'flex';
+                let name = product.getAttribute('data-name');
+                previewBox.forEach(preview => {
+                    let target = preview.getAttribute('data-target');
+                    if (name == target) {
+                        preview.classList.add('active');
+                    }
+                });
+            };
+        });
+
+        previewBox.forEach(close => {
+            close.querySelector('.fa-times').onclick = () => {
+                close.classList.remove('active');
+                preveiwContainer.style.display = 'none';
+            };
+        });
+    </script>
+
+</body>

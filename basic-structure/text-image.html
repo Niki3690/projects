@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" />
+    <title>Text Image</title>
+</head>
+
+<style>
+    * {
+        font-family: 'Nunito', sans-serif;
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        outline: none;
+        border: none;
+        transition: all .2s linear;
+        font-family: cursive;
+    }
+
+    body {
+        background: white;
+
+    }
+
+    .container {
+        padding: 9%;
+        text-align: center;
+        position: relative;
+        display: flex;
+        flex-flow: column;
+        align-items: center;
+    }
+
+    .container .text {
+        color: #000000;
+        font-size: 8vw;
+        text-transform: capitalize;
+        padding: 30px;
+        cursor: pointer;
+    }
+
+    .container .text:hover {
+        color: #1F8A70;
+        position: relative;
+        z-index: 100;
+        text-shadow: 0 5px 10px rgba(0, 0, 0, .7);
+    }
+
+    .container .text:hover~.hover-img {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+
+    img {
+        height: 200px;
+        width: 250px;
+    }
+
+    .hover-img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transform: translate(-50%, -50%) scale(.5);
+        opacity: 0;
+        pointer-events: none;
+        z-index: 10;
+    }
+</style>
+
+<body>
+
+    <div class="container">
+        <h1 class="text"
+            data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjGAoqvy5QoKsoKLEjfq9lEUqhquX5fIKoINieflZs&s">
+            Burger</h1>
+        <h1 class="text"
+            data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSZOIM3jEjuHjKTXkpxH_t2mcrgwM_wbM5cEnageAhWV4XffmA4ccJaYr6tp4SPpwtqH-c&usqp=CAU">
+            Pizza</h1>
+        <h1 class="text"
+            data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9LivwzhdX-loUJSlhppNlGRx0C1s2XJnUNgUnyRBf&s">
+            Sandwich</h1>
+        <h1 class="text"
+            data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTAyiulQzBACP14ntpvi3NHjtlYw4n6OJFT9MXO5-kAQ2TESujO6JRAtXuWumAvn_fDpeY&usqp=CAU">
+            Icecream</h1>
+        <h1 class="text"
+            data-src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQug-ke9mTGj3M6gs85K_2VlC-_rA28wXYgNZ1pk7fQKO6zFXY7ZoUBWfyiXPw2MmeZny0&usqp=CAU">
+            Panipuri
+        </h1>
+        <h1 class="text" data-src="https://imaginewa.org/wp-content/uploads/2022/03/peanutbutter.jpg">
+            Bread-Butter</h1>
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSjGAoqvy5QoKsoKLEjfq9lEUqhquX5fIKoINieflZs&s"
+            class="hover-img" alt="">
+    </div>
+
+    <script>
+
+        let container = document.querySelector('.container');
+        let img = container.querySelector('.hover-img');
+
+        document.body.onmousemove = (e) => {
+            let x = e.pageX;
+            let y = e.pageY;
+            img.style.top = y + 'px';
+            img.style.left = x + 'px';
+        }
+
+        container.querySelectorAll('.text').forEach(text => {
+            text.onmousemove = () => {
+                img.src = text.getAttribute('data-src');
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>
